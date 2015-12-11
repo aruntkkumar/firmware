@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\MCU_Demo2.X.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>8192</length>
+      <used>754</used>
+      <free>7438</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>1008</length>
+      <used>31</used>
+      <free>977</free>
+    </memory>
+  </executable>
+</project>

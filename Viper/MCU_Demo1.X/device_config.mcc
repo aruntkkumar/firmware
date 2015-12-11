@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration device="PIC16F1619" mcc_version="v2.25.2">
+    <managers>
+        <manager generated="true" name="Pin Manager" reloadPin="manual">
+            <setting name="package" option="QFN20"/>
+            <setting name="sorting" option="true"/>
+            <resource customName="DAC1OUT" digital="false" direction="OUTPUT" function="DAC1OUT" ioc="0" module="DAC1" name="RA0" start="false" type="pin" wpu="false"/>
+            <resource customName="OE" digital="true" direction="OUTPUT" function="RA1" ioc="0" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
+            <resource customName="LED1" digital="true" direction="OUTPUT" function="RA2" ioc="0" module="GPIO" name="RA2" start="false" type="pin" wpu="false"/>
+            <resource customName="PE_D" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
+            <resource customName="LED2" digital="true" direction="OUTPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
+            <resource customName="SPI_SEL" digital="true" direction="OUTPUT" function="RB5" ioc="0" module="GPIO" name="RB5" start="false" type="pin" wpu="false"/>
+            <resource customName="CLK_GLOBAL" digital="true" direction="OUTPUT" function="RB6" ioc="0" module="GPIO" name="RB6" start="false" type="pin" wpu="false"/>
+            <resource customName="SPI_DATA" digital="true" direction="OUTPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC0" digital="true" direction="INPUT" function="RC0" ioc="0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC1" digital="true" direction="INPUT" function="RC1" ioc="0" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC2" digital="true" direction="INPUT" function="RC2" ioc="0" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC3" digital="true" direction="INPUT" function="RC3" ioc="0" module="GPIO" name="RC3" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC4" digital="true" direction="INPUT" function="RC4" ioc="0" module="GPIO" name="RC4" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC5" digital="true" direction="INPUT" function="RC5" ioc="0" module="GPIO" name="RC5" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC6" digital="true" direction="INPUT" function="RC6" ioc="0" module="GPIO" name="RC6" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC7" digital="true" direction="INPUT" function="RC7" ioc="0" module="GPIO" name="RC7" start="false" type="pin" wpu="false"/>
+            <file checksum="589533277" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
+            <file checksum="569374506" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
+        </manager>
+        <manager generated="true" name="System" reloadPin="manual">
+            <initializer comment="" name="Initialize">
+                <setting name="SCS" option="INTOSC" register="OSCCON"/>
+                <setting name="SPLLEN" option="disabled" register="OSCCON"/>
+                <setting name="IRCF" option="4MHz_HF" register="OSCCON"/>
+                <setting name="LFIOFR" option="disabled" register="OSCSTAT"/>
+                <setting name="HFIOFL" option="not2percent_acc" register="OSCSTAT"/>
+                <setting name="OSTS" option="intosc" register="OSCSTAT"/>
+                <setting name="PLLR" option="disabled" register="OSCSTAT"/>
+                <setting name="HFIOFS" option="not0.5percent_acc" register="OSCSTAT"/>
+                <setting name="HFIOFR" option="disabled" register="OSCSTAT"/>
+                <setting name="MFIOFR" option="disabled" register="OSCSTAT"/>
+                <setting name="TUN" option="0x0" register="OSCTUNE"/>
+                <additionalSetting name="pllMultiplier" option=""/>
+                <additionalSetting name="extclk" option="1.0 MHz"/>
+            </initializer>
+            <setting name="CLKOUTEN" option="OFF"/>
+            <setting name="FCMEN" option="ON"/>
+            <setting name="MCLRE" option="OFF"/>
+            <setting name="FOSC" option="INTOSC"/>
+            <setting name="BOREN" option="ON"/>
+            <setting name="IESO" option="ON"/>
+            <setting name="PWRTE" option="OFF"/>
+            <setting name="CP" option="OFF"/>
+            <setting name="PLLEN" option="ON"/>
+            <setting name="LPBOR" option="ON"/>
+            <setting name="LVP" option="ON"/>
+            <setting name="WRT" option="OFF"/>
+            <setting name="ZCD" option="OFF"/>
+            <setting name="STVREN" option="ON"/>
+            <setting name="PPS1WAY" option="ON"/>
+            <setting name="BORV" option="LO"/>
+            <setting name="WDTCWS" option="WDTCWS100"/>
+            <setting name="WDTCPS" option="WDTCPSE"/>
+            <setting name="WDTE" option="SWDTEN"/>
+            <setting name="WDTCCS" option="MFINTOSC"/>
+            <setting name="generateConfigBits" option="true"/>
+            <file checksum="2774962703" modified="false" name="mcc.c" path="mcc_generated_files/mcc.c"/>
+            <file checksum="1514333290" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
+        </manager>
+    </managers>
+    <modules>
+        <module generated="true" mode="GPIO" name="GPIO" order="0" reloadPin="manual" type="GPIO">
+            <resource customName="OE" digital="true" direction="OUTPUT" function="RA1" ioc="0" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
+            <resource customName="LED1" digital="true" direction="OUTPUT" function="RA2" ioc="0" module="GPIO" name="RA2" start="false" type="pin" wpu="false"/>
+            <resource customName="PE_D" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
+            <resource customName="LED2" digital="true" direction="OUTPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
+            <resource customName="SPI_SEL" digital="true" direction="OUTPUT" function="RB5" ioc="0" module="GPIO" name="RB5" start="false" type="pin" wpu="false"/>
+            <resource customName="CLK_GLOBAL" digital="true" direction="OUTPUT" function="RB6" ioc="0" module="GPIO" name="RB6" start="false" type="pin" wpu="false"/>
+            <resource customName="SPI_DATA" digital="true" direction="OUTPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC0" digital="true" direction="INPUT" function="RC0" ioc="0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC1" digital="true" direction="INPUT" function="RC1" ioc="0" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC2" digital="true" direction="INPUT" function="RC2" ioc="0" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC3" digital="true" direction="INPUT" function="RC3" ioc="0" module="GPIO" name="RC3" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC4" digital="true" direction="INPUT" function="RC4" ioc="0" module="GPIO" name="RC4" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC5" digital="true" direction="INPUT" function="RC5" ioc="0" module="GPIO" name="RC5" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC6" digital="true" direction="INPUT" function="RC6" ioc="0" module="GPIO" name="RC6" start="false" type="pin" wpu="false"/>
+            <resource customName="IO_RC7" digital="true" direction="INPUT" function="RC7" ioc="0" module="GPIO" name="RC7" start="false" type="pin" wpu="false"/>
+        </module>
+        <module generated="true" mode="DAC" name="DAC1" order="1" reloadPin="auto" type="dac_8bit">
+            <initializer comment="" name="Initialize">
+                <setting name="DAC1EN" option="enabled" register="DAC1CON0"/>
+                <setting name="DAC1OE" option="enabled" register="DAC1CON0"/>
+                <setting name="DAC1PSS" option="VDD" register="DAC1CON0"/>
+                <setting name="DAC1R" option="0x0" register="DAC1CON1"/>
+            </initializer>
+            <file checksum="2640482100" modified="false" name="dac1.c" path="mcc_generated_files/dac1.c"/>
+            <file checksum="270128939" modified="false" name="dac1.h" path="mcc_generated_files/dac1.h"/>
+        </module>
+        <module generated="true" mode="FVR" name="FVR" order="2" reloadPin="manual" type="vref_bandgap_0buf">
+            <initializer comment="" name="Initialize">
+                <setting name="FVRRDY" option="disabled" register="FVRCON"/>
+                <setting name="CDAFVR" option="off" register="FVRCON"/>
+                <setting name="FVREN" option="disabled" register="FVRCON"/>
+                <setting name="TSRNG" option="Lo_range" register="FVRCON"/>
+                <setting name="ADFVR" option="off" register="FVRCON"/>
+                <setting name="TSEN" option="enabled" register="FVRCON"/>
+            </initializer>
+            <initializer comment="" name="InitializeNew">
+                <setting name="FVRRDY" option="disabled" register="FVRCON"/>
+                <setting name="CDAFVR" option="off" register="FVRCON"/>
+                <setting name="FVREN" option="enabled" register="FVRCON"/>
+                <setting name="TSRNG" option="Lo_range" register="FVRCON"/>
+                <setting name="ADFVR" option="off" register="FVRCON"/>
+                <setting name="TSEN" option="disabled" register="FVRCON"/>
+            </initializer>
+            <file checksum="4072980414" modified="false" name="fvr.c" path="mcc_generated_files/fvr.c"/>
+            <file checksum="3465501545" modified="false" name="fvr.h" path="mcc_generated_files/fvr.h"/>
+        </module>
+    </modules>
+</configuration>

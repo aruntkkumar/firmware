@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="Lab11_HighEnduranceFlash"
+                     projectFiles="true">
+        <itemPath>Flash.h</itemPath>
+        <itemPath>HEFlash.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="mcc_generated_files"
+                     displayName="MCC Generated Files"
+                     projectFiles="true">
+        <itemPath>mcc_generated_files/pin_manager.h</itemPath>
+        <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
+        <itemPath>mcc_generated_files/mcc.h</itemPath>
+        <itemPath>mcc_generated_files/tmr1.h</itemPath>
+        <itemPath>mcc_generated_files/adc1.h</itemPath>
+        <itemPath>mcc_generated_files/tmr2.h</itemPath>
+        <itemPath>mcc_generated_files/tmr0.h</itemPath>
+        <itemPath>mcc_generated_files/pwm1.h</itemPath>
+      </logicalFolder>
+      <itemPath>global.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="Labs" displayName="Labs" projectFiles="true">
+        <logicalFolder name="Lab01_HelloWorld"
+                       displayName="Lab01_HelloWorld"
+                       projectFiles="true">
+          <itemPath>Labs/Lab01_HelloWorld/HelloWorld.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab02_Blink" displayName="Lab02_Blink" projectFiles="true">
+          <itemPath>Labs/Lab02_Blink/Blink.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab03_Rotate"
+                       displayName="Lab03_Rotate"
+                       projectFiles="true">
+          <itemPath>Labs/Lab03_Rotate/Rotate.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab04_AnalogToDigitalConverter"
+                       displayName="Lab04_AnalogToDigitalConverter"
+                       projectFiles="true">
+          <itemPath>Labs/Lab04_AnalogToDigitalConverter/ADC.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab05_VariableSpeedRotate"
+                       displayName="Lab05_VariableSpeedRotate"
+                       projectFiles="true">
+          <itemPath>Labs/Lab05_VariableSpeedRotate/VSR.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab06_PulseWidthModulation"
+                       displayName="Lab06_PulseWidthModulation"
+                       projectFiles="true">
+          <itemPath>Labs/Lab06_PulseWidthModulation/PWM.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab07_Timer1"
+                       displayName="Lab07_Timer1"
+                       projectFiles="true">
+          <itemPath>Labs/Lab07_Timer1/Timer1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab08_Interrupt"
+                       displayName="Lab08_Interrupt"
+                       projectFiles="true">
+          <itemPath>Labs/Lab08_Interrupt/Interrupt.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab09_SleepWakeUp"
+                       displayName="Lab09_SleepWakeUp"
+                       projectFiles="true">
+          <itemPath>Labs/Lab09_SleepWakeUp/SleepWakeUp.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Lab10_HighEnduranceFlash"
+                       displayName="Lab10_HighEnduranceFlash"
+                       projectFiles="true">
+          <itemPath>Labs/Lab10_HighEnduranceFlash/Flash.c</itemPath>
+          <itemPath>Labs/Lab10_HighEnduranceFlash/HEF.c</itemPath>
+          <itemPath>Labs/Lab10_HighEnduranceFlash/HEFlash.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="mcc_generated_files"
+                     displayName="MCC Generated Files"
+                     projectFiles="true">
+        <itemPath>mcc_generated_files/pin_manager.c</itemPath>
+        <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
+        <itemPath>mcc_generated_files/mcc.c</itemPath>
+        <itemPath>mcc_generated_files/tmr1.c</itemPath>
+        <itemPath>mcc_generated_files/adc1.c</itemPath>
+        <itemPath>mcc_generated_files/tmr2.c</itemPath>
+        <itemPath>mcc_generated_files/tmr0.c</itemPath>
+        <itemPath>mcc_generated_files/pwm1.c</itemPath>
+      </logicalFolder>
+      <itemPath>main.c</itemPath>
+      <itemPath>switch.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+      <itemPath>device_config.mcc</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="default" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>PIC16F1619</targetDevice>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool>PKOBSKDEPlatformTool</platformTool>
+        <languageToolchain>XC8</languageToolchain>
+        <languageToolchainVersion>1.35</languageToolchainVersion>
+        <platform>3</platform>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+        <archiverTool>
+        </archiverTool>
+        <loading>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
+          <alternateLoadableFile></alternateLoadableFile>
+        </loading>
+      </compileType>
+      <makeCustomizationType>
+        <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
+        <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
+        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+      </makeCustomizationType>
+      <HI-TECH-COMP>
+        <property key="asmlist" value="true"/>
+        <property key="define-macros" value=""/>
+        <property key="extra-include-directories" value=""/>
+        <property key="identifier-length" value="255"/>
+        <property key="operation-mode" value="free"/>
+        <property key="opt-xc8-compiler-strict_ansi" value="false"/>
+        <property key="optimization-assembler" value="true"/>
+        <property key="optimization-assembler-files" value="true"/>
+        <property key="optimization-debug" value="false"/>
+        <property key="optimization-global" value="true"/>
+        <property key="optimization-invariant-enable" value="false"/>
+        <property key="optimization-invariant-value" value="16"/>
+        <property key="optimization-level" value="9"/>
+        <property key="optimization-set" value="default"/>
+        <property key="optimization-speed" value="false"/>
+        <property key="preprocess-assembler" value="true"/>
+        <property key="undefine-macros" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="verbose" value="false"/>
+        <property key="warning-level" value="0"/>
+        <property key="what-to-do" value="ignore"/>
+      </HI-TECH-COMP>
+      <XC8-config-global>
+        <property key="advanced-elf" value="true"/>
+        <property key="output-file-format" value="-mcof,+elf"/>
+        <property key="stack-size-high" value="auto"/>
+        <property key="stack-size-low" value="auto"/>
+        <property key="stack-size-main" value="auto"/>
+        <property key="stack-type" value="compiled"/>
+      </XC8-config-global>
+    </conf>
+  </confs>
+</configurationDescriptor>

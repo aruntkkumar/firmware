@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/pin_manager.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -13520,237 +13520,41 @@ void PIN_MANAGER_Initialize(void);
 # 309
 void PIN_MANAGER_IOC(void);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdbool.h"
 typedef unsigned char bool;
 
-# 93 "mcc_generated_files/dac1.h"
-void DAC1_Initialize(void);
+# 51 "mcc_generated_files/pin_manager.c"
+void PIN_MANAGER_Initialize(void) {
+LATA = 0x00;
+TRISA = 0x28;
+ANSELA = 0x01;
 
-# 129
-void DAC1_SetOutput(uint8_t inputData);
+LATB = 0x00;
+TRISB = 0x20;
+ANSELB = 0x00;
+WPUB = 0x00;
 
-# 93 "mcc_generated_files/fvr.h"
-void FVR_Initialize(void);
+LATC = 0x00;
+TRISC = 0xFF;
+ANSELC = 0x00;
+WPUC = 0x00;
 
-# 127
-bool FVR_IsOutputReady(void);
+OPTION_REGbits.nWPUEN = 0x01;
 
-# 2 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stddef.h"
-typedef int ptrdiff_t;
-typedef unsigned size_t;
-typedef unsigned short wchar_t;
 
-# 13
-extern int errno;
+bool state = GIE;
+GIE = 0;
+PPSLOCK = 0x55;
+PPSLOCK = 0xAA;
+PPSLOCKbits.PPSLOCKED = 0x00;
 
-# 117 "mcc_generated_files/spi.h"
-void SPI_Initialize(void);
-
-# 152
-uint8_t SPI_Exchange8bit(uint8_t data);
-
-# 192
-uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-
-# 215
-bool SPI_IsBufferFull(void);
-
-# 240
-bool SPI_HasWriteCollisionOccured(void);
-
-# 264
-void SPI_ClearWriteCollisionStatus(void);
-
-# 70 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 83
-void OSCILLATOR_Initialize(void);
-
-# 52 "main.c"
-const uint8_t DacOutput[4] = {43,72,86,100};
-
-const uint8_t USIDLOW[44] = {0x80, 0x4C, 0x27, 0x40,
-0x80, 0x4C, 0xB0, 0x41,
-0x80, 0x4C, 0x30, 0x7F,
-0x80, 0x4C, 0xB0, 0x00,
-0x80, 0x4C, 0x30, 0x01,
-0x80, 0x4C, 0x30, 0x02,
-0x80, 0x4C, 0x30, 0x04,
-0x80, 0x4C, 0x30, 0x08,
-0x80, 0x4C, 0x30, 0x10,
-0x80, 0x4C, 0x30, 0x20,
-0x80, 0x4C, 0x30, 0x40};
-const uint8_t USIDHIGH[44] = {0x80, 0x5C, 0x07, 0x40,
-0x80, 0x5C, 0x90, 0x41,
-0x80, 0x5C, 0x10, 0x7F,
-0x80, 0x5C, 0x90, 0x00,
-0x80, 0x5C, 0x10, 0x01,
-0x80, 0x5C, 0x10, 0x02,
-0x80, 0x5C, 0x10, 0x04,
-0x80, 0x5C, 0x10, 0x08,
-0x80, 0x5C, 0x10, 0x10,
-0x80, 0x5C, 0x10, 0x20,
-0x80, 0x5C, 0x10, 0x40};
-uint8_t Byte1, Byte2, Byte3;
-uint8_t readDummy;
-
-void MIPIDATA (uint8_t i){
-for (uint8_t j=0; j<4; j++)
-readDummy = SPI_Exchange8bit(USIDHIGH[j]);
-for (uint8_t j=0; j<4; j++)
-readDummy = SPI_Exchange8bit(USIDHIGH[(i+j)]);
-}
-
-void main(void) {
-
-SYSTEM_Initialize();
-DAC1_Initialize();
-PIN_MANAGER_Initialize();
-SPI_Initialize();
-
-# 112
-DAC1_SetOutput(0);
-do { LATA1 = 0; } while(0);
-do { LATA4 = 0; } while(0);
-do { LATA2 = 0; } while(0);
-do { LATB4 = 0; } while(0);
-while (1) {
-while ((PORTC & 0xC0) != 0xC0){}
-Byte1 = PORTC;
-while ((PORTC & 0xC0) != 0x40){}
-Byte2 = PORTC & 0x3F;
-while ((PORTC & 0xC0) != 0x80){}
-Byte3 = PORTC & 0x3F;
-if (((Byte1 & 0x10) == 0x10) && ((Byte1 & 0x0C) != 0x00))
-DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);
-else
-DAC1_SetOutput(0);
-
-if ((Byte1 & 0x3C) == 0x20){
-do { LATA2 = 0; } while(0);
-do { LATB4 = 1; } while(0);
-}else{ if (((Byte1 & 0x30) != 0x00) && ((Byte1 & 0x0C) != 0x00)){
-if ((Byte2 == 5) || (Byte2 == 8) || (Byte2 == 12) || (Byte2 == 13) || (Byte2 == 20) || (Byte2 == 26) || (Byte2 == 29) || (Byte3 == 5) || (Byte3 == 8) || (Byte3 == 12) || (Byte3 == 13) || (Byte3 == 20) || (Byte3 == 26) || (Byte3 == 29)){
-do { LATA2 = 1; } while(0);
-do { LATB4 = 1; } while(0);
-}else{
-do { LATA2 = 0; } while(0);
-do { LATB4 = 1; } while(0);
-}
-}else{
-do { LATA2 = 0; } while(0);
-do { LATB4 = 0; } while(0);
-}
-}
-
-if (Byte2 == 3 && Byte3 == 7){
-do { LATA1 = 0; } while(0);
-do { LATA4 = 1; } while(0);
-}
-else{ if ((Byte2 == 7 && Byte3 == 0) || (Byte2 == 30 && Byte3 == 0) || (Byte2 == 41 && Byte3 == 0) || (Byte2 == 5 && Byte3 == 30) || (Byte2 == 7 && Byte3 == 20) || (Byte2 == 12 && Byte3 == 30) || (Byte2 == 41 && Byte3 == 41)){
-do { LATA1 = 1; } while(0);
-do { LATA4 = 0; } while(0);
-}
-else{
-do { LATA1 = 0; } while(0);
-do { LATA4 = 0; } while(0);
-}
-}
-
-# 170
-MIPIDATA (4);
-MIPIDATA (8);
-}
+SSPDATPPS = 0x0D;
+SSPCLKPPS = 0x0E;
+RB6PPS = 0x10;
+RB7PPS = 0x11;
+PPSLOCK = 0x55;
+PPSLOCK = 0xAA;
+PPSLOCKbits.PPSLOCKED = 0x01;
+GIE = state;
 }
 

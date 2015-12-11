@@ -49,7 +49,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 /*
                          Main application
  */
-const uint8_t DacOutput[4] = {42,70,85,99}; // 42=0.3V,70=0.5,85=0.6,99=0.7
+const uint8_t DacOutput[4] = {43,72,86,100}; // 43=0.3V,72=0.5,86=0.6,100=0.7
 //All are in reverse order for SPI mode transfer
 const uint8_t USIDLOW[44] =    {0x80, 0x4C, 0x27, 0x40, //PWR Mode: Normal
                                 0x80, 0x4C, 0xB0, 0x41, //F6-F7 ON
@@ -125,7 +125,7 @@ void main(void) {
             DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);    //DAC Output
         else
             DAC1_SetOutput(0);
-/*    // Main NIC LDO & Aux NIC LDO Power Enable Sequence
+    // Main NIC LDO & Aux NIC LDO Power Enable Sequence
         if ((Byte1 & 0x3C) == 0x20){
                 MAIN_NIC_LDO_EN_SetLow();               //Main_NIC_LDO is Low
                 AUX_NIC_LDO_EN_SetHigh();               //Aux_NIC_LDO is High        
@@ -141,7 +141,7 @@ void main(void) {
             MAIN_NIC_LDO_EN_SetLow();                   //0: OFF / MCM sleep mode
             AUX_NIC_LDO_EN_SetLow();            
         }
-        }    */
+        }    
     // RF Switch Selection Sequence
     if (Byte2 == 3 && Byte3 == 7){
         CTLA_SetLow();                                  // RF3 is ON

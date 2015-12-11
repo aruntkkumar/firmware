@@ -1,27 +1,57 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"152 mcc_generated_files/spi.h
-[v _SPI_Exchange8bit `(uc ~T0 @X0 0 ef1`uc ]
-[p mainexit ]
-"70 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"93 mcc_generated_files/dac1.h
-[v _DAC1_Initialize `(v ~T0 @X0 0 ef ]
-"297 mcc_generated_files/pin_manager.h
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"117 mcc_generated_files/spi.h
-[v _SPI_Initialize `(v ~T0 @X0 0 ef ]
-"129 mcc_generated_files/dac1.h
-[v _DAC1_SetOutput `(v ~T0 @X0 0 ef1`uc ]
-"26796 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16lf1618.h
-[v _LATA1 `Vb ~T0 @X0 0 e@2145 ]
-"26802
-[v _LATA4 `Vb ~T0 @X0 0 e@2148 ]
-"26798
-[v _LATA2 `Vb ~T0 @X0 0 e@2146 ]
-"26806
-[v _LATB4 `Vb ~T0 @X0 0 e@2156 ]
-"501
-[v _PORTC `Vuc ~T0 @X0 0 e@14 ]
+"2532 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16lf1618.h
+[v _LATA `Vuc ~T0 @X0 0 e@268 ]
+"1562
+[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
+"3219
+[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
+"2581
+[v _LATB `Vuc ~T0 @X0 0 e@269 ]
+"1611
+[v _TRISB `Vuc ~T0 @X0 0 e@141 ]
+"3265
+[v _ANSELB `Vuc ~T0 @X0 0 e@397 ]
+"4417
+[v _WPUB `Vuc ~T0 @X0 0 e@525 ]
+"2619
+[v _LATC `Vuc ~T0 @X0 0 e@270 ]
+"1649
+[v _TRISC `Vuc ~T0 @X0 0 e@142 ]
+"3303
+[v _ANSELC `Vuc ~T0 @X0 0 e@398 ]
+"4455
+[v _WPUC `Vuc ~T0 @X0 0 e@526 ]
+"1982
+[s S106 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S106 . PS PSA TMR0SE TMR0CS INTEDG nWPUEN ]
+"1990
+[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S107 . PS0 PS1 PS2 . T0SE T0CS ]
+"1981
+[u S105 `S106 1 `S107 1 ]
+[n S105 . . . ]
+"1999
+[v _OPTION_REGbits `VS105 ~T0 @X0 0 e@149 ]
+"26402
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"20695
+[v _PPSLOCK `Vuc ~T0 @X0 0 e@3599 ]
+"20701
+[s S921 :1 `uc 1 ]
+[n S921 . PPSLOCKED ]
+"20700
+[u S920 `S921 1 ]
+[n S920 . . ]
+"20705
+[v _PPSLOCKbits `VS920 ~T0 @X0 0 e@3599 ]
+"21445
+[v _SSPDATPPS `Vuc ~T0 @X0 0 e@3617 ]
+"21402
+[v _SSPCLKPPS `Vuc ~T0 @X0 0 e@3616 ]
+"22348
+[v _RB6PPS `Vuc ~T0 @X0 0 e@3742 ]
+"22391
+[v _RB7PPS `Vuc ~T0 @X0 0 e@3743 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1618.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -9978,542 +10008,90 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern __bit __timeout;
 [; ;pin_manager.h: 297: void PIN_MANAGER_Initialize(void);
 [; ;pin_manager.h: 309: void PIN_MANAGER_IOC(void);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;dac1.h: 93: void DAC1_Initialize(void);
-[; ;dac1.h: 129: void DAC1_SetOutput(uint8_t inputData);
-[; ;fvr.h: 93: void FVR_Initialize(void);
-[; ;fvr.h: 127: bool FVR_IsOutputReady(void);
-[; ;stddef.h: 2: typedef int ptrdiff_t;
-[; ;stddef.h: 3: typedef unsigned size_t;
-[; ;stddef.h: 4: typedef unsigned short wchar_t;
-[; ;stddef.h: 13: extern int errno;
-[; ;spi.h: 117: void SPI_Initialize(void);
-[; ;spi.h: 152: uint8_t SPI_Exchange8bit(uint8_t data);
-[; ;spi.h: 192: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi.h: 215: bool SPI_IsBufferFull(void);
-[; ;spi.h: 240: bool SPI_HasWriteCollisionOccured(void);
-[; ;spi.h: 264: void SPI_ClearWriteCollisionStatus(void);
-[; ;mcc.h: 70: void SYSTEM_Initialize(void);
-[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-"52 main.c
-[v _DacOutput `Cuc ~T0 @X0 -> 4 `i e ]
-[i _DacOutput
-:U ..
--> -> 43 `i `uc
--> -> 72 `i `uc
--> -> 86 `i `uc
--> -> 100 `i `uc
-..
-]
-[; ;main.c: 52: const uint8_t DacOutput[4] = {43,72,86,100};
+"51 mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
+{
+[; ;pin_manager.c: 51: void PIN_MANAGER_Initialize(void) {
+[e :U _PIN_MANAGER_Initialize ]
+[f ]
+[; ;pin_manager.c: 52: LATA = 0x00;
+"52
+[e = _LATA -> -> 0 `i `uc ]
+[; ;pin_manager.c: 53: TRISA = 0x28;
+"53
+[e = _TRISA -> -> 40 `i `uc ]
+[; ;pin_manager.c: 54: ANSELA = 0x01;
 "54
-[v _USIDLOW `Cuc ~T0 @X0 -> 44 `i e ]
-[i _USIDLOW
-:U ..
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 39 `i `uc
--> -> 64 `i `uc
-"55
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 176 `i `uc
--> -> 65 `i `uc
+[e = _ANSELA -> -> 1 `i `uc ]
+[; ;pin_manager.c: 56: LATB = 0x00;
 "56
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 127 `i `uc
+[e = _LATB -> -> 0 `i `uc ]
+[; ;pin_manager.c: 57: TRISB = 0x20;
 "57
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 176 `i `uc
--> -> 0 `i `uc
+[e = _TRISB -> -> 32 `i `uc ]
+[; ;pin_manager.c: 58: ANSELB = 0x00;
 "58
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 1 `i `uc
+[e = _ANSELB -> -> 0 `i `uc ]
+[; ;pin_manager.c: 59: WPUB = 0x00;
 "59
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 2 `i `uc
-"60
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 4 `i `uc
+[e = _WPUB -> -> 0 `i `uc ]
+[; ;pin_manager.c: 61: LATC = 0x00;
 "61
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 8 `i `uc
+[e = _LATC -> -> 0 `i `uc ]
+[; ;pin_manager.c: 62: TRISC = 0xFF;
 "62
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 16 `i `uc
+[e = _TRISC -> -> 255 `i `uc ]
+[; ;pin_manager.c: 63: ANSELC = 0x00;
 "63
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 32 `i `uc
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;pin_manager.c: 64: WPUC = 0x00;
 "64
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 64 `i `uc
-..
-]
-[; ;main.c: 54: const uint8_t USIDLOW[44] = {0x80, 0x4C, 0x27, 0x40,
-[; ;main.c: 55: 0x80, 0x4C, 0xB0, 0x41,
-[; ;main.c: 56: 0x80, 0x4C, 0x30, 0x7F,
-[; ;main.c: 57: 0x80, 0x4C, 0xB0, 0x00,
-[; ;main.c: 58: 0x80, 0x4C, 0x30, 0x01,
-[; ;main.c: 59: 0x80, 0x4C, 0x30, 0x02,
-[; ;main.c: 60: 0x80, 0x4C, 0x30, 0x04,
-[; ;main.c: 61: 0x80, 0x4C, 0x30, 0x08,
-[; ;main.c: 62: 0x80, 0x4C, 0x30, 0x10,
-[; ;main.c: 63: 0x80, 0x4C, 0x30, 0x20,
-[; ;main.c: 64: 0x80, 0x4C, 0x30, 0x40};
-"65
-[v _USIDHIGH `Cuc ~T0 @X0 -> 44 `i e ]
-[i _USIDHIGH
-:U ..
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 7 `i `uc
--> -> 64 `i `uc
+[e = _WPUC -> -> 0 `i `uc ]
+[; ;pin_manager.c: 66: OPTION_REGbits.nWPUEN = 0x01;
 "66
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 144 `i `uc
--> -> 65 `i `uc
-"67
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 127 `i `uc
-"68
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 144 `i `uc
--> -> 0 `i `uc
+[e = . . _OPTION_REGbits 0 5 -> -> 1 `i `uc ]
 "69
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 1 `i `uc
+[v _state `uc ~T0 @X0 1 a ]
+[; ;pin_manager.c: 69: bool state = GIE;
+[e = _state -> -> _GIE `i `uc ]
+[; ;pin_manager.c: 70: GIE = 0;
 "70
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 2 `i `uc
+[e = _GIE -> -> 0 `i `b ]
+[; ;pin_manager.c: 71: PPSLOCK = 0x55;
 "71
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 4 `i `uc
+[e = _PPSLOCK -> -> 85 `i `uc ]
+[; ;pin_manager.c: 72: PPSLOCK = 0xAA;
 "72
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 8 `i `uc
+[e = _PPSLOCK -> -> 170 `i `uc ]
+[; ;pin_manager.c: 73: PPSLOCKbits.PPSLOCKED = 0x00;
 "73
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
-"74
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 32 `i `uc
+[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
+[; ;pin_manager.c: 75: SSPDATPPS = 0x0D;
 "75
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 64 `i `uc
-..
-]
-[; ;main.c: 65: const uint8_t USIDHIGH[44] = {0x80, 0x5C, 0x07, 0x40,
-[; ;main.c: 66: 0x80, 0x5C, 0x90, 0x41,
-[; ;main.c: 67: 0x80, 0x5C, 0x10, 0x7F,
-[; ;main.c: 68: 0x80, 0x5C, 0x90, 0x00,
-[; ;main.c: 69: 0x80, 0x5C, 0x10, 0x01,
-[; ;main.c: 70: 0x80, 0x5C, 0x10, 0x02,
-[; ;main.c: 71: 0x80, 0x5C, 0x10, 0x04,
-[; ;main.c: 72: 0x80, 0x5C, 0x10, 0x08,
-[; ;main.c: 73: 0x80, 0x5C, 0x10, 0x10,
-[; ;main.c: 74: 0x80, 0x5C, 0x10, 0x20,
-[; ;main.c: 75: 0x80, 0x5C, 0x10, 0x40};
+[e = _SSPDATPPS -> -> 13 `i `uc ]
+[; ;pin_manager.c: 76: SSPCLKPPS = 0x0E;
 "76
-[v _Byte1 `uc ~T0 @X0 1 e ]
-[v _Byte2 `uc ~T0 @X0 1 e ]
-[v _Byte3 `uc ~T0 @X0 1 e ]
-[; ;main.c: 76: uint8_t Byte1, Byte2, Byte3;
+[e = _SSPCLKPPS -> -> 14 `i `uc ]
+[; ;pin_manager.c: 77: RB6PPS = 0x10;
 "77
-[v _readDummy `uc ~T0 @X0 1 e ]
-[; ;main.c: 77: uint8_t readDummy;
+[e = _RB6PPS -> -> 16 `i `uc ]
+[; ;pin_manager.c: 78: RB7PPS = 0x11;
+"78
+[e = _RB7PPS -> -> 17 `i `uc ]
+[; ;pin_manager.c: 79: PPSLOCK = 0x55;
 "79
-[v _MIPIDATA `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;main.c: 79: void MIPIDATA (uint8_t i){
-[e :U _MIPIDATA ]
-[v _i `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;main.c: 80: for (uint8_t j=0; j<4; j++)
+[e = _PPSLOCK -> -> 85 `i `uc ]
+[; ;pin_manager.c: 80: PPSLOCK = 0xAA;
 "80
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1123  ]
-[e $U 1124  ]
+[e = _PPSLOCK -> -> 170 `i `uc ]
+[; ;pin_manager.c: 81: PPSLOCKbits.PPSLOCKED = 0x01;
 "81
-[e :U 1123 ]
-[; ;main.c: 81: readDummy = SPI_Exchange8bit(USIDHIGH[j]);
-[e = _readDummy ( _SPI_Exchange8bit (1 *U + &U _USIDHIGH * -> _j `ux -> -> # *U &U _USIDHIGH `ui `ux ]
-"80
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1123  ]
-[e :U 1124 ]
-"81
-}
-[; ;main.c: 82: for (uint8_t j=0; j<4; j++)
+[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
+[; ;pin_manager.c: 82: GIE = state;
 "82
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1126  ]
-[e $U 1127  ]
+[e = _GIE -> _state `b ]
+[; ;pin_manager.c: 83: }
 "83
-[e :U 1126 ]
-[; ;main.c: 83: readDummy = SPI_Exchange8bit(USIDHIGH[(i+j)]);
-[e = _readDummy ( _SPI_Exchange8bit (1 *U + &U _USIDHIGH * -> -> + -> _i `i -> _j `i `ui `ux -> -> # *U &U _USIDHIGH `ui `ux ]
-"82
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1126  ]
-[e :U 1127 ]
-"83
-}
-[; ;main.c: 84: }
-"84
 [e :UE 1122 ]
-}
-"86
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 86: void main(void) {
-[e :U _main ]
-[f ]
-[; ;main.c: 88: SYSTEM_Initialize();
-"88
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 89: DAC1_Initialize();
-"89
-[e ( _DAC1_Initialize ..  ]
-[; ;main.c: 90: PIN_MANAGER_Initialize();
-"90
-[e ( _PIN_MANAGER_Initialize ..  ]
-[; ;main.c: 91: SPI_Initialize();
-"91
-[e ( _SPI_Initialize ..  ]
-[; ;main.c: 112: DAC1_SetOutput(0);
-"112
-[e ( _DAC1_SetOutput (1 -> -> 0 `i `uc ]
-[; ;main.c: 113: do { LATA1 = 0; } while(0);
-"113
-[e :U 1132 ]
-{
-[e = _LATA1 -> -> 0 `i `b ]
-}
-[e :U 1131 ]
-[; ;main.c: 114: do { LATA4 = 0; } while(0);
-"114
-[e :U 1135 ]
-{
-[e = _LATA4 -> -> 0 `i `b ]
-}
-[e :U 1134 ]
-[; ;main.c: 115: do { LATA2 = 0; } while(0);
-"115
-[e :U 1138 ]
-{
-[e = _LATA2 -> -> 0 `i `b ]
-}
-[e :U 1137 ]
-[; ;main.c: 116: do { LATB4 = 0; } while(0);
-"116
-[e :U 1141 ]
-{
-[e = _LATB4 -> -> 0 `i `b ]
-}
-[e :U 1140 ]
-[; ;main.c: 117: while (1) {
-"117
-[e :U 1143 ]
-{
-[; ;main.c: 118: while ((PORTC & 0xC0) != 0xC0){}
-"118
-[e $U 1145  ]
-[e :U 1146 ]
-{
-}
-[e :U 1145 ]
-[e $ != & -> _PORTC `i -> 192 `i -> 192 `i 1146  ]
-[e :U 1147 ]
-[; ;main.c: 119: Byte1 = PORTC;
-"119
-[e = _Byte1 _PORTC ]
-[; ;main.c: 120: while ((PORTC & 0xC0) != 0x40){}
-"120
-[e $U 1148  ]
-[e :U 1149 ]
-{
-}
-[e :U 1148 ]
-[e $ != & -> _PORTC `i -> 192 `i -> 64 `i 1149  ]
-[e :U 1150 ]
-[; ;main.c: 121: Byte2 = PORTC & 0x3F;
-"121
-[e = _Byte2 -> & -> _PORTC `i -> 63 `i `uc ]
-[; ;main.c: 122: while ((PORTC & 0xC0) != 0x80){}
-"122
-[e $U 1151  ]
-[e :U 1152 ]
-{
-}
-[e :U 1151 ]
-[e $ != & -> _PORTC `i -> 192 `i -> 128 `i 1152  ]
-[e :U 1153 ]
-[; ;main.c: 123: Byte3 = PORTC & 0x3F;
-"123
-[e = _Byte3 -> & -> _PORTC `i -> 63 `i `uc ]
-[; ;main.c: 124: if (((Byte1 & 0x10) == 0x10) && ((Byte1 & 0x0C) != 0x00))
-"124
-[e $ ! && == & -> _Byte1 `i -> 16 `i -> 16 `i != & -> _Byte1 `i -> 12 `i -> 0 `i 1154  ]
-[; ;main.c: 125: DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);
-"125
-[e ( _DAC1_SetOutput (1 *U + &U _DacOutput * -> -> & -> _Byte1 `i -> 3 `i `ui `ux -> -> # *U &U _DacOutput `ui `ux ]
-[e $U 1155  ]
-"126
-[e :U 1154 ]
-[; ;main.c: 126: else
-[; ;main.c: 127: DAC1_SetOutput(0);
-"127
-[e ( _DAC1_SetOutput (1 -> -> 0 `i `uc ]
-[e :U 1155 ]
-[; ;main.c: 129: if ((Byte1 & 0x3C) == 0x20){
-"129
-[e $ ! == & -> _Byte1 `i -> 60 `i -> 32 `i 1156  ]
-{
-[; ;main.c: 130: do { LATA2 = 0; } while(0);
-"130
-[e :U 1159 ]
-{
-[e = _LATA2 -> -> 0 `i `b ]
-}
-[e :U 1158 ]
-[; ;main.c: 131: do { LATB4 = 1; } while(0);
-"131
-[e :U 1162 ]
-{
-[e = _LATB4 -> -> 1 `i `b ]
-}
-[e :U 1161 ]
-"132
-}
-[; ;main.c: 132: }else{ if (((Byte1 & 0x30) != 0x00) && ((Byte1 & 0x0C) != 0x00)){
-[e $U 1163  ]
-[e :U 1156 ]
-{
-[e $ ! && != & -> _Byte1 `i -> 48 `i -> 0 `i != & -> _Byte1 `i -> 12 `i -> 0 `i 1164  ]
-{
-[; ;main.c: 133: if ((Byte2 == 5) || (Byte2 == 8) || (Byte2 == 12) || (Byte2 == 13) || (Byte2 == 20) || (Byte2 == 26) || (Byte2 == 29) || (Byte3 == 5) || (Byte3 == 8) || (Byte3 == 12) || (Byte3 == 13) || (Byte3 == 20) || (Byte3 == 26) || (Byte3 == 29)){
-"133
-[e $ ! || || || || || || || || || || || || || == -> _Byte2 `i -> 5 `i == -> _Byte2 `i -> 8 `i == -> _Byte2 `i -> 12 `i == -> _Byte2 `i -> 13 `i == -> _Byte2 `i -> 20 `i == -> _Byte2 `i -> 26 `i == -> _Byte2 `i -> 29 `i == -> _Byte3 `i -> 5 `i == -> _Byte3 `i -> 8 `i == -> _Byte3 `i -> 12 `i == -> _Byte3 `i -> 13 `i == -> _Byte3 `i -> 20 `i == -> _Byte3 `i -> 26 `i == -> _Byte3 `i -> 29 `i 1165  ]
-{
-[; ;main.c: 134: do { LATA2 = 1; } while(0);
-"134
-[e :U 1168 ]
-{
-[e = _LATA2 -> -> 1 `i `b ]
-}
-[e :U 1167 ]
-[; ;main.c: 135: do { LATB4 = 1; } while(0);
-"135
-[e :U 1171 ]
-{
-[e = _LATB4 -> -> 1 `i `b ]
-}
-[e :U 1170 ]
-"136
-}
-[; ;main.c: 136: }else{
-[e $U 1172  ]
-[e :U 1165 ]
-{
-[; ;main.c: 137: do { LATA2 = 0; } while(0);
-"137
-[e :U 1175 ]
-{
-[e = _LATA2 -> -> 0 `i `b ]
-}
-[e :U 1174 ]
-[; ;main.c: 138: do { LATB4 = 1; } while(0);
-"138
-[e :U 1178 ]
-{
-[e = _LATB4 -> -> 1 `i `b ]
-}
-[e :U 1177 ]
-"139
-}
-[e :U 1172 ]
-"140
-}
-[; ;main.c: 139: }
-[; ;main.c: 140: }else{
-[e $U 1179  ]
-[e :U 1164 ]
-{
-[; ;main.c: 141: do { LATA2 = 0; } while(0);
-"141
-[e :U 1182 ]
-{
-[e = _LATA2 -> -> 0 `i `b ]
-}
-[e :U 1181 ]
-[; ;main.c: 142: do { LATB4 = 0; } while(0);
-"142
-[e :U 1185 ]
-{
-[e = _LATB4 -> -> 0 `i `b ]
-}
-[e :U 1184 ]
-"143
-}
-[e :U 1179 ]
-"144
-}
-[e :U 1163 ]
-[; ;main.c: 143: }
-[; ;main.c: 144: }
-[; ;main.c: 146: if (Byte2 == 3 && Byte3 == 7){
-"146
-[e $ ! && == -> _Byte2 `i -> 3 `i == -> _Byte3 `i -> 7 `i 1186  ]
-{
-[; ;main.c: 147: do { LATA1 = 0; } while(0);
-"147
-[e :U 1189 ]
-{
-[e = _LATA1 -> -> 0 `i `b ]
-}
-[e :U 1188 ]
-[; ;main.c: 148: do { LATA4 = 1; } while(0);
-"148
-[e :U 1192 ]
-{
-[e = _LATA4 -> -> 1 `i `b ]
-}
-[e :U 1191 ]
-"149
-}
-[; ;main.c: 149: }
-[e $U 1193  ]
-"150
-[e :U 1186 ]
-[; ;main.c: 150: else{ if ((Byte2 == 7 && Byte3 == 0) || (Byte2 == 30 && Byte3 == 0) || (Byte2 == 41 && Byte3 == 0) || (Byte2 == 5 && Byte3 == 30) || (Byte2 == 7 && Byte3 == 20) || (Byte2 == 12 && Byte3 == 30) || (Byte2 == 41 && Byte3 == 41)){
-{
-[e $ ! || || || || || || && == -> _Byte2 `i -> 7 `i == -> _Byte3 `i -> 0 `i && == -> _Byte2 `i -> 30 `i == -> _Byte3 `i -> 0 `i && == -> _Byte2 `i -> 41 `i == -> _Byte3 `i -> 0 `i && == -> _Byte2 `i -> 5 `i == -> _Byte3 `i -> 30 `i && == -> _Byte2 `i -> 7 `i == -> _Byte3 `i -> 20 `i && == -> _Byte2 `i -> 12 `i == -> _Byte3 `i -> 30 `i && == -> _Byte2 `i -> 41 `i == -> _Byte3 `i -> 41 `i 1194  ]
-{
-[; ;main.c: 151: do { LATA1 = 1; } while(0);
-"151
-[e :U 1197 ]
-{
-[e = _LATA1 -> -> 1 `i `b ]
-}
-[e :U 1196 ]
-[; ;main.c: 152: do { LATA4 = 0; } while(0);
-"152
-[e :U 1200 ]
-{
-[e = _LATA4 -> -> 0 `i `b ]
-}
-[e :U 1199 ]
-"153
-}
-[; ;main.c: 153: }
-[e $U 1201  ]
-"154
-[e :U 1194 ]
-[; ;main.c: 154: else{
-{
-[; ;main.c: 155: do { LATA1 = 0; } while(0);
-"155
-[e :U 1204 ]
-{
-[e = _LATA1 -> -> 0 `i `b ]
-}
-[e :U 1203 ]
-[; ;main.c: 156: do { LATA4 = 0; } while(0);
-"156
-[e :U 1207 ]
-{
-[e = _LATA4 -> -> 0 `i `b ]
-}
-[e :U 1206 ]
-"157
-}
-[e :U 1201 ]
-"158
-}
-[e :U 1193 ]
-[; ;main.c: 157: }
-[; ;main.c: 158: }
-[; ;main.c: 170: MIPIDATA (4);
-"170
-[e ( _MIPIDATA (1 -> -> 4 `i `uc ]
-[; ;main.c: 171: MIPIDATA (8);
-"171
-[e ( _MIPIDATA (1 -> -> 8 `i `uc ]
-"172
-}
-[e :U 1142 ]
-"117
-[e $U 1143  ]
-[e :U 1144 ]
-[; ;main.c: 172: }
-[; ;main.c: 173: }
-"173
-[e :UE 1129 ]
 }

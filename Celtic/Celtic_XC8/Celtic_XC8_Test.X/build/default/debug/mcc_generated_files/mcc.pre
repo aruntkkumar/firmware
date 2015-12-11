@@ -1,5 +1,30 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/mcc.c"
+
+
+# 50
+#pragma config CLKOUTEN = OFF
+#pragma config MCLRE = OFF
+#pragma config FOSC = INTOSC
+#pragma config BOREN = OFF
+#pragma config PWRTE = ON
+#pragma config CP = OFF
+
+
+#pragma config PLLEN = OFF
+#pragma config LPBOR = OFF
+#pragma config LVP = ON
+#pragma config WRT = OFF
+#pragma config ZCD = OFF
+#pragma config STVREN = ON
+#pragma config PPS1WAY = ON
+#pragma config BORV = LO
+
+
+#pragma config WDTCWS = WDTCWSSW
+#pragma config WDTCPS = WDTCPS1F
+#pragma config WDTE = OFF
+#pragma config WDTCCS = SWC
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -13657,100 +13682,23 @@ void SYSTEM_Initialize(void);
 # 83
 void OSCILLATOR_Initialize(void);
 
-# 52 "main.c"
-const uint8_t DacOutput[4] = {43,72,86,100};
-
-const uint8_t USIDLOW[44] = {0x80, 0x4C, 0x27, 0x40,
-0x80, 0x4C, 0xB0, 0x41,
-0x80, 0x4C, 0x30, 0x7F,
-0x80, 0x4C, 0xB0, 0x00,
-0x80, 0x4C, 0x30, 0x01,
-0x80, 0x4C, 0x30, 0x02,
-0x80, 0x4C, 0x30, 0x04,
-0x80, 0x4C, 0x30, 0x08,
-0x80, 0x4C, 0x30, 0x10,
-0x80, 0x4C, 0x30, 0x20,
-0x80, 0x4C, 0x30, 0x40};
-const uint8_t USIDHIGH[44] = {0x80, 0x5C, 0x07, 0x40,
-0x80, 0x5C, 0x90, 0x41,
-0x80, 0x5C, 0x10, 0x7F,
-0x80, 0x5C, 0x90, 0x00,
-0x80, 0x5C, 0x10, 0x01,
-0x80, 0x5C, 0x10, 0x02,
-0x80, 0x5C, 0x10, 0x04,
-0x80, 0x5C, 0x10, 0x08,
-0x80, 0x5C, 0x10, 0x10,
-0x80, 0x5C, 0x10, 0x20,
-0x80, 0x5C, 0x10, 0x40};
-uint8_t Byte1, Byte2, Byte3;
-uint8_t readDummy;
-
-void MIPIDATA (uint8_t i){
-for (uint8_t j=0; j<4; j++)
-readDummy = SPI_Exchange8bit(USIDHIGH[j]);
-for (uint8_t j=0; j<4; j++)
-readDummy = SPI_Exchange8bit(USIDHIGH[(i+j)]);
-}
-
-void main(void) {
-
-SYSTEM_Initialize();
-DAC1_Initialize();
+# 75 "mcc_generated_files/mcc.c"
+void SYSTEM_Initialize(void) {
+OSCILLATOR_Initialize();
 PIN_MANAGER_Initialize();
+DAC1_Initialize();
+FVR_Initialize();
 SPI_Initialize();
-
-# 112
-DAC1_SetOutput(0);
-do { LATA1 = 0; } while(0);
-do { LATA4 = 0; } while(0);
-do { LATA2 = 0; } while(0);
-do { LATB4 = 0; } while(0);
-while (1) {
-while ((PORTC & 0xC0) != 0xC0){}
-Byte1 = PORTC;
-while ((PORTC & 0xC0) != 0x40){}
-Byte2 = PORTC & 0x3F;
-while ((PORTC & 0xC0) != 0x80){}
-Byte3 = PORTC & 0x3F;
-if (((Byte1 & 0x10) == 0x10) && ((Byte1 & 0x0C) != 0x00))
-DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);
-else
-DAC1_SetOutput(0);
-
-if ((Byte1 & 0x3C) == 0x20){
-do { LATA2 = 0; } while(0);
-do { LATB4 = 1; } while(0);
-}else{ if (((Byte1 & 0x30) != 0x00) && ((Byte1 & 0x0C) != 0x00)){
-if ((Byte2 == 5) || (Byte2 == 8) || (Byte2 == 12) || (Byte2 == 13) || (Byte2 == 20) || (Byte2 == 26) || (Byte2 == 29) || (Byte3 == 5) || (Byte3 == 8) || (Byte3 == 12) || (Byte3 == 13) || (Byte3 == 20) || (Byte3 == 26) || (Byte3 == 29)){
-do { LATA2 = 1; } while(0);
-do { LATB4 = 1; } while(0);
-}else{
-do { LATA2 = 0; } while(0);
-do { LATB4 = 1; } while(0);
-}
-}else{
-do { LATA2 = 0; } while(0);
-do { LATB4 = 0; } while(0);
-}
 }
 
-if (Byte2 == 3 && Byte3 == 7){
-do { LATA1 = 0; } while(0);
-do { LATA4 = 1; } while(0);
-}
-else{ if ((Byte2 == 7 && Byte3 == 0) || (Byte2 == 30 && Byte3 == 0) || (Byte2 == 41 && Byte3 == 0) || (Byte2 == 5 && Byte3 == 30) || (Byte2 == 7 && Byte3 == 20) || (Byte2 == 12 && Byte3 == 30) || (Byte2 == 41 && Byte3 == 41)){
-do { LATA1 = 1; } while(0);
-do { LATA4 = 0; } while(0);
-}
-else{
-do { LATA1 = 0; } while(0);
-do { LATA4 = 0; } while(0);
-}
-}
+void OSCILLATOR_Initialize(void) {
 
-# 170
-MIPIDATA (4);
-MIPIDATA (8);
-}
+OSCCON = 0x7A;
+
+OSCSTAT = 0x00;
+
+OSCTUNE = 0x00;
+
+
 }
 

@@ -1,27 +1,31 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"152 mcc_generated_files/spi.h
-[v _SPI_Exchange8bit `(uc ~T0 @X0 0 ef1`uc ]
-[p mainexit ]
-"70 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"93 mcc_generated_files/dac1.h
-[v _DAC1_Initialize `(v ~T0 @X0 0 ef ]
-"297 mcc_generated_files/pin_manager.h
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"117 mcc_generated_files/spi.h
-[v _SPI_Initialize `(v ~T0 @X0 0 ef ]
-"129 mcc_generated_files/dac1.h
-[v _DAC1_SetOutput `(v ~T0 @X0 0 ef1`uc ]
-"26796 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16lf1618.h
-[v _LATA1 `Vb ~T0 @X0 0 e@2145 ]
-"26802
-[v _LATA4 `Vb ~T0 @X0 0 e@2148 ]
-"26798
-[v _LATA2 `Vb ~T0 @X0 0 e@2146 ]
-"26806
-[v _LATB4 `Vb ~T0 @X0 0 e@2156 ]
-"501
-[v _PORTC `Vuc ~T0 @X0 0 e@14 ]
+"5283 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16lf1618.h
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@532 ]
+"5404
+[v _SSP1CON1 `Vuc ~T0 @X0 0 e@533 ]
+"4777
+[v _SSP1ADD `Vuc ~T0 @X0 0 e@530 ]
+"5423
+[s S274 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S274 . SSPM CKP SSPEN SSPOV WCOL ]
+"5430
+[s S275 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S275 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"5422
+[u S273 `S274 1 `S275 1 ]
+[n S273 . . . ]
+"5437
+[v _SSP1CON1bits `VS273 ~T0 @X0 0 e@533 ]
+"4524
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@529 ]
+"5294
+[s S270 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S270 . BF UA R_nW S P D_nA CKE SMP ]
+"5293
+[u S269 `S270 1 ]
+[n S269 . . ]
+"5305
+[v _SSP1STATbits `VS269 ~T0 @X0 0 e@532 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1618.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -9976,8 +9980,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
-[; ;pin_manager.h: 297: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 309: void PIN_MANAGER_IOC(void);
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;stddef.h: 2: typedef int ptrdiff_t;
+[; ;stddef.h: 3: typedef unsigned size_t;
+[; ;stddef.h: 4: typedef unsigned short wchar_t;
+[; ;stddef.h: 13: extern int errno;
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -10006,514 +10013,206 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;dac1.h: 93: void DAC1_Initialize(void);
-[; ;dac1.h: 129: void DAC1_SetOutput(uint8_t inputData);
-[; ;fvr.h: 93: void FVR_Initialize(void);
-[; ;fvr.h: 127: bool FVR_IsOutputReady(void);
-[; ;stddef.h: 2: typedef int ptrdiff_t;
-[; ;stddef.h: 3: typedef unsigned size_t;
-[; ;stddef.h: 4: typedef unsigned short wchar_t;
-[; ;stddef.h: 13: extern int errno;
 [; ;spi.h: 117: void SPI_Initialize(void);
 [; ;spi.h: 152: uint8_t SPI_Exchange8bit(uint8_t data);
 [; ;spi.h: 192: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
 [; ;spi.h: 215: bool SPI_IsBufferFull(void);
 [; ;spi.h: 240: bool SPI_HasWriteCollisionOccured(void);
 [; ;spi.h: 264: void SPI_ClearWriteCollisionStatus(void);
-[; ;mcc.h: 70: void SYSTEM_Initialize(void);
-[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-"52 main.c
-[v _DacOutput `Cuc ~T0 @X0 -> 4 `i e ]
-[i _DacOutput
-:U ..
--> -> 43 `i `uc
--> -> 72 `i `uc
--> -> 86 `i `uc
--> -> 100 `i `uc
-..
-]
-[; ;main.c: 52: const uint8_t DacOutput[4] = {43,72,86,100};
-"54
-[v _USIDLOW `Cuc ~T0 @X0 -> 44 `i e ]
-[i _USIDLOW
-:U ..
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 39 `i `uc
--> -> 64 `i `uc
-"55
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 176 `i `uc
--> -> 65 `i `uc
-"56
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 127 `i `uc
-"57
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 176 `i `uc
--> -> 0 `i `uc
-"58
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 1 `i `uc
-"59
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 2 `i `uc
-"60
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 4 `i `uc
-"61
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 8 `i `uc
-"62
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 16 `i `uc
-"63
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 32 `i `uc
-"64
--> -> 128 `i `uc
--> -> 76 `i `uc
--> -> 48 `i `uc
--> -> 64 `i `uc
-..
-]
-[; ;main.c: 54: const uint8_t USIDLOW[44] = {0x80, 0x4C, 0x27, 0x40,
-[; ;main.c: 55: 0x80, 0x4C, 0xB0, 0x41,
-[; ;main.c: 56: 0x80, 0x4C, 0x30, 0x7F,
-[; ;main.c: 57: 0x80, 0x4C, 0xB0, 0x00,
-[; ;main.c: 58: 0x80, 0x4C, 0x30, 0x01,
-[; ;main.c: 59: 0x80, 0x4C, 0x30, 0x02,
-[; ;main.c: 60: 0x80, 0x4C, 0x30, 0x04,
-[; ;main.c: 61: 0x80, 0x4C, 0x30, 0x08,
-[; ;main.c: 62: 0x80, 0x4C, 0x30, 0x10,
-[; ;main.c: 63: 0x80, 0x4C, 0x30, 0x20,
-[; ;main.c: 64: 0x80, 0x4C, 0x30, 0x40};
-"65
-[v _USIDHIGH `Cuc ~T0 @X0 -> 44 `i e ]
-[i _USIDHIGH
-:U ..
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 7 `i `uc
--> -> 64 `i `uc
-"66
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 144 `i `uc
--> -> 65 `i `uc
-"67
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 127 `i `uc
-"68
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 144 `i `uc
--> -> 0 `i `uc
-"69
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 1 `i `uc
-"70
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 2 `i `uc
-"71
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 4 `i `uc
-"72
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 8 `i `uc
-"73
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 16 `i `uc
-"74
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 32 `i `uc
-"75
--> -> 128 `i `uc
--> -> 92 `i `uc
--> -> 16 `i `uc
--> -> 64 `i `uc
-..
-]
-[; ;main.c: 65: const uint8_t USIDHIGH[44] = {0x80, 0x5C, 0x07, 0x40,
-[; ;main.c: 66: 0x80, 0x5C, 0x90, 0x41,
-[; ;main.c: 67: 0x80, 0x5C, 0x10, 0x7F,
-[; ;main.c: 68: 0x80, 0x5C, 0x90, 0x00,
-[; ;main.c: 69: 0x80, 0x5C, 0x10, 0x01,
-[; ;main.c: 70: 0x80, 0x5C, 0x10, 0x02,
-[; ;main.c: 71: 0x80, 0x5C, 0x10, 0x04,
-[; ;main.c: 72: 0x80, 0x5C, 0x10, 0x08,
-[; ;main.c: 73: 0x80, 0x5C, 0x10, 0x10,
-[; ;main.c: 74: 0x80, 0x5C, 0x10, 0x20,
-[; ;main.c: 75: 0x80, 0x5C, 0x10, 0x40};
-"76
-[v _Byte1 `uc ~T0 @X0 1 e ]
-[v _Byte2 `uc ~T0 @X0 1 e ]
-[v _Byte3 `uc ~T0 @X0 1 e ]
-[; ;main.c: 76: uint8_t Byte1, Byte2, Byte3;
-"77
-[v _readDummy `uc ~T0 @X0 1 e ]
-[; ;main.c: 77: uint8_t readDummy;
-"79
-[v _MIPIDATA `(v ~T0 @X0 1 ef1`uc ]
+"64 mcc_generated_files/spi.c
+[v _SPI_Initialize `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 79: void MIPIDATA (uint8_t i){
-[e :U _MIPIDATA ]
-[v _i `uc ~T0 @X0 1 r1 ]
+[; ;spi.c: 64: void SPI_Initialize(void) {
+[e :U _SPI_Initialize ]
 [f ]
-[; ;main.c: 80: for (uint8_t j=0; j<4; j++)
-"80
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1123  ]
-[e $U 1124  ]
-"81
-[e :U 1123 ]
-[; ;main.c: 81: readDummy = SPI_Exchange8bit(USIDHIGH[j]);
-[e = _readDummy ( _SPI_Exchange8bit (1 *U + &U _USIDHIGH * -> _j `ux -> -> # *U &U _USIDHIGH `ui `ux ]
-"80
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1123  ]
-[e :U 1124 ]
-"81
-}
-[; ;main.c: 82: for (uint8_t j=0; j<4; j++)
-"82
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1126  ]
-[e $U 1127  ]
-"83
-[e :U 1126 ]
-[; ;main.c: 83: readDummy = SPI_Exchange8bit(USIDHIGH[(i+j)]);
-[e = _readDummy ( _SPI_Exchange8bit (1 *U + &U _USIDHIGH * -> -> + -> _i `i -> _j `i `ui `ux -> -> # *U &U _USIDHIGH `ui `ux ]
-"82
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 4 `i 1126  ]
-[e :U 1127 ]
-"83
-}
-[; ;main.c: 84: }
-"84
+[; ;spi.c: 68: SSP1STAT = 0x00;
+"68
+[e = _SSP1STAT -> -> 0 `i `uc ]
+[; ;spi.c: 71: SSP1CON1 = 0x20;
+"71
+[e = _SSP1CON1 -> -> 32 `i `uc ]
+[; ;spi.c: 74: SSP1ADD = 0x00;
+"74
+[e = _SSP1ADD -> -> 0 `i `uc ]
+[; ;spi.c: 75: }
+"75
 [e :UE 1122 ]
 }
-"86
-[v _main `(v ~T0 @X0 1 ef ]
+"77
+[v _SPI_Exchange8bit `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 86: void main(void) {
-[e :U _main ]
+[; ;spi.c: 77: uint8_t SPI_Exchange8bit(uint8_t data) {
+[e :U _SPI_Exchange8bit ]
+[v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 88: SYSTEM_Initialize();
-"88
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 89: DAC1_Initialize();
-"89
-[e ( _DAC1_Initialize ..  ]
-[; ;main.c: 90: PIN_MANAGER_Initialize();
-"90
-[e ( _PIN_MANAGER_Initialize ..  ]
-[; ;main.c: 91: SPI_Initialize();
-"91
-[e ( _SPI_Initialize ..  ]
-[; ;main.c: 112: DAC1_SetOutput(0);
-"112
-[e ( _DAC1_SetOutput (1 -> -> 0 `i `uc ]
-[; ;main.c: 113: do { LATA1 = 0; } while(0);
-"113
-[e :U 1132 ]
+[; ;spi.c: 79: SSP1CON1bits.WCOL = 0;
+"79
+[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
+[; ;spi.c: 81: SSP1BUF = data;
+"81
+[e = _SSP1BUF _data ]
+[; ;spi.c: 83: while (SSP1STATbits.BF == 0x0) {
+"83
+[e $U 1124  ]
+[e :U 1125 ]
 {
-[e = _LATA1 -> -> 0 `i `b ]
+"84
 }
-[e :U 1131 ]
-[; ;main.c: 114: do { LATA4 = 0; } while(0);
-"114
-[e :U 1135 ]
+[e :U 1124 ]
+"83
+[e $ == -> . . _SSP1STATbits 0 0 `i -> 0 `i 1125  ]
+[e :U 1126 ]
+[; ;spi.c: 84: }
+[; ;spi.c: 86: return (SSP1BUF);
+"86
+[e ) _SSP1BUF ]
+[e $UE 1123  ]
+[; ;spi.c: 87: }
+"87
+[e :UE 1123 ]
+}
+"89
+[v _SPI_Exchange8bitBuffer `(uc ~T0 @X0 1 ef3`*uc`uc`*uc ]
 {
-[e = _LATA4 -> -> 0 `i `b ]
+[; ;spi.c: 89: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut) {
+[e :U _SPI_Exchange8bitBuffer ]
+[v _dataIn `*uc ~T0 @X0 1 r1 ]
+[v _bufLen `uc ~T0 @X0 1 r2 ]
+[v _dataOut `*uc ~T0 @X0 1 r3 ]
+[f ]
+"90
+[v _bytesWritten `uc ~T0 @X0 1 a ]
+[; ;spi.c: 90: uint8_t bytesWritten = 0;
+[e = _bytesWritten -> -> 0 `i `uc ]
+[; ;spi.c: 92: if (bufLen != 0) {
+"92
+[e $ ! != -> _bufLen `i -> 0 `i 1128  ]
+{
+[; ;spi.c: 93: if (dataIn != (0)) {
+"93
+[e $ ! != _dataIn -> -> 0 `i `*uc 1129  ]
+{
+[; ;spi.c: 94: while (bytesWritten < bufLen) {
+"94
+[e $U 1130  ]
+[e :U 1131 ]
+{
+[; ;spi.c: 95: if (dataOut == (0)) {
+"95
+[e $ ! == _dataOut -> -> 0 `i `*uc 1133  ]
+{
+[; ;spi.c: 96: SPI_Exchange8bit(dataIn[bytesWritten]);
+"96
+[e ( _SPI_Exchange8bit (1 *U + _dataIn * -> _bytesWritten `ux -> -> # *U _dataIn `ui `ux ]
+"97
+}
+[; ;spi.c: 97: } else {
+[e $U 1134  ]
+[e :U 1133 ]
+{
+[; ;spi.c: 98: dataOut[bytesWritten] = SPI_Exchange8bit(dataIn[bytesWritten]);
+"98
+[e = *U + _dataOut * -> _bytesWritten `ux -> -> # *U _dataOut `ui `ux ( _SPI_Exchange8bit (1 *U + _dataIn * -> _bytesWritten `ux -> -> # *U _dataIn `ui `ux ]
+"99
 }
 [e :U 1134 ]
-[; ;main.c: 115: do { LATA2 = 0; } while(0);
-"115
+[; ;spi.c: 99: }
+[; ;spi.c: 101: bytesWritten++;
+"101
+[e ++ _bytesWritten -> -> 1 `i `uc ]
+"102
+}
+[e :U 1130 ]
+"94
+[e $ < -> _bytesWritten `i -> _bufLen `i 1131  ]
+[e :U 1132 ]
+"103
+}
+[; ;spi.c: 102: }
+[; ;spi.c: 103: } else {
+[e $U 1135  ]
+[e :U 1129 ]
+{
+[; ;spi.c: 104: if (dataOut != (0)) {
+"104
+[e $ ! != _dataOut -> -> 0 `i `*uc 1136  ]
+{
+[; ;spi.c: 105: while (bytesWritten < bufLen) {
+"105
+[e $U 1137  ]
 [e :U 1138 ]
 {
-[e = _LATA2 -> -> 0 `i `b ]
+[; ;spi.c: 106: dataOut[bytesWritten] = SPI_Exchange8bit(0x0);
+"106
+[e = *U + _dataOut * -> _bytesWritten `ux -> -> # *U _dataOut `ui `ux ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;spi.c: 108: bytesWritten++;
+"108
+[e ++ _bytesWritten -> -> 1 `i `uc ]
+"109
 }
 [e :U 1137 ]
-[; ;main.c: 116: do { LATB4 = 0; } while(0);
-"116
-[e :U 1141 ]
-{
-[e = _LATB4 -> -> 0 `i `b ]
+"105
+[e $ < -> _bytesWritten `i -> _bufLen `i 1138  ]
+[e :U 1139 ]
+"110
 }
-[e :U 1140 ]
-[; ;main.c: 117: while (1) {
+[e :U 1136 ]
+"111
+}
+[e :U 1135 ]
+"112
+}
+[e :U 1128 ]
+[; ;spi.c: 109: }
+[; ;spi.c: 110: }
+[; ;spi.c: 111: }
+[; ;spi.c: 112: }
+[; ;spi.c: 114: return bytesWritten;
+"114
+[e ) _bytesWritten ]
+[e $UE 1127  ]
+[; ;spi.c: 115: }
+"115
+[e :UE 1127 ]
+}
 "117
-[e :U 1143 ]
+[v _SPI_IsBufferFull `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 118: while ((PORTC & 0xC0) != 0xC0){}
+[; ;spi.c: 117: bool SPI_IsBufferFull(void) {
+[e :U _SPI_IsBufferFull ]
+[f ]
+[; ;spi.c: 118: return (SSP1STATbits.BF);
 "118
-[e $U 1145  ]
-[e :U 1146 ]
-{
-}
-[e :U 1145 ]
-[e $ != & -> _PORTC `i -> 192 `i -> 192 `i 1146  ]
-[e :U 1147 ]
-[; ;main.c: 119: Byte1 = PORTC;
+[e ) . . _SSP1STATbits 0 0 ]
+[e $UE 1140  ]
+[; ;spi.c: 119: }
 "119
-[e = _Byte1 _PORTC ]
-[; ;main.c: 120: while ((PORTC & 0xC0) != 0x40){}
-"120
-[e $U 1148  ]
-[e :U 1149 ]
-{
+[e :UE 1140 ]
 }
-[e :U 1148 ]
-[e $ != & -> _PORTC `i -> 192 `i -> 64 `i 1149  ]
-[e :U 1150 ]
-[; ;main.c: 121: Byte2 = PORTC & 0x3F;
 "121
-[e = _Byte2 -> & -> _PORTC `i -> 63 `i `uc ]
-[; ;main.c: 122: while ((PORTC & 0xC0) != 0x80){}
+[v _SPI_HasWriteCollisionOccured `(uc ~T0 @X0 1 ef ]
+{
+[; ;spi.c: 121: bool SPI_HasWriteCollisionOccured(void) {
+[e :U _SPI_HasWriteCollisionOccured ]
+[f ]
+[; ;spi.c: 122: return (SSP1CON1bits.WCOL);
 "122
-[e $U 1151  ]
-[e :U 1152 ]
-{
-}
-[e :U 1151 ]
-[e $ != & -> _PORTC `i -> 192 `i -> 128 `i 1152  ]
-[e :U 1153 ]
-[; ;main.c: 123: Byte3 = PORTC & 0x3F;
+[e ) . . _SSP1CON1bits 0 4 ]
+[e $UE 1141  ]
+[; ;spi.c: 123: }
 "123
-[e = _Byte3 -> & -> _PORTC `i -> 63 `i `uc ]
-[; ;main.c: 124: if (((Byte1 & 0x10) == 0x10) && ((Byte1 & 0x0C) != 0x00))
-"124
-[e $ ! && == & -> _Byte1 `i -> 16 `i -> 16 `i != & -> _Byte1 `i -> 12 `i -> 0 `i 1154  ]
-[; ;main.c: 125: DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);
+[e :UE 1141 ]
+}
 "125
-[e ( _DAC1_SetOutput (1 *U + &U _DacOutput * -> -> & -> _Byte1 `i -> 3 `i `ui `ux -> -> # *U &U _DacOutput `ui `ux ]
-[e $U 1155  ]
+[v _SPI_ClearWriteCollisionStatus `(v ~T0 @X0 1 ef ]
+{
+[; ;spi.c: 125: void SPI_ClearWriteCollisionStatus(void) {
+[e :U _SPI_ClearWriteCollisionStatus ]
+[f ]
+[; ;spi.c: 126: SSP1CON1bits.WCOL = 0;
 "126
-[e :U 1154 ]
-[; ;main.c: 126: else
-[; ;main.c: 127: DAC1_SetOutput(0);
+[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
+[; ;spi.c: 127: }
 "127
-[e ( _DAC1_SetOutput (1 -> -> 0 `i `uc ]
-[e :U 1155 ]
-[; ;main.c: 129: if ((Byte1 & 0x3C) == 0x20){
-"129
-[e $ ! == & -> _Byte1 `i -> 60 `i -> 32 `i 1156  ]
-{
-[; ;main.c: 130: do { LATA2 = 0; } while(0);
-"130
-[e :U 1159 ]
-{
-[e = _LATA2 -> -> 0 `i `b ]
-}
-[e :U 1158 ]
-[; ;main.c: 131: do { LATB4 = 1; } while(0);
-"131
-[e :U 1162 ]
-{
-[e = _LATB4 -> -> 1 `i `b ]
-}
-[e :U 1161 ]
-"132
-}
-[; ;main.c: 132: }else{ if (((Byte1 & 0x30) != 0x00) && ((Byte1 & 0x0C) != 0x00)){
-[e $U 1163  ]
-[e :U 1156 ]
-{
-[e $ ! && != & -> _Byte1 `i -> 48 `i -> 0 `i != & -> _Byte1 `i -> 12 `i -> 0 `i 1164  ]
-{
-[; ;main.c: 133: if ((Byte2 == 5) || (Byte2 == 8) || (Byte2 == 12) || (Byte2 == 13) || (Byte2 == 20) || (Byte2 == 26) || (Byte2 == 29) || (Byte3 == 5) || (Byte3 == 8) || (Byte3 == 12) || (Byte3 == 13) || (Byte3 == 20) || (Byte3 == 26) || (Byte3 == 29)){
-"133
-[e $ ! || || || || || || || || || || || || || == -> _Byte2 `i -> 5 `i == -> _Byte2 `i -> 8 `i == -> _Byte2 `i -> 12 `i == -> _Byte2 `i -> 13 `i == -> _Byte2 `i -> 20 `i == -> _Byte2 `i -> 26 `i == -> _Byte2 `i -> 29 `i == -> _Byte3 `i -> 5 `i == -> _Byte3 `i -> 8 `i == -> _Byte3 `i -> 12 `i == -> _Byte3 `i -> 13 `i == -> _Byte3 `i -> 20 `i == -> _Byte3 `i -> 26 `i == -> _Byte3 `i -> 29 `i 1165  ]
-{
-[; ;main.c: 134: do { LATA2 = 1; } while(0);
-"134
-[e :U 1168 ]
-{
-[e = _LATA2 -> -> 1 `i `b ]
-}
-[e :U 1167 ]
-[; ;main.c: 135: do { LATB4 = 1; } while(0);
-"135
-[e :U 1171 ]
-{
-[e = _LATB4 -> -> 1 `i `b ]
-}
-[e :U 1170 ]
-"136
-}
-[; ;main.c: 136: }else{
-[e $U 1172  ]
-[e :U 1165 ]
-{
-[; ;main.c: 137: do { LATA2 = 0; } while(0);
-"137
-[e :U 1175 ]
-{
-[e = _LATA2 -> -> 0 `i `b ]
-}
-[e :U 1174 ]
-[; ;main.c: 138: do { LATB4 = 1; } while(0);
-"138
-[e :U 1178 ]
-{
-[e = _LATB4 -> -> 1 `i `b ]
-}
-[e :U 1177 ]
-"139
-}
-[e :U 1172 ]
-"140
-}
-[; ;main.c: 139: }
-[; ;main.c: 140: }else{
-[e $U 1179  ]
-[e :U 1164 ]
-{
-[; ;main.c: 141: do { LATA2 = 0; } while(0);
-"141
-[e :U 1182 ]
-{
-[e = _LATA2 -> -> 0 `i `b ]
-}
-[e :U 1181 ]
-[; ;main.c: 142: do { LATB4 = 0; } while(0);
-"142
-[e :U 1185 ]
-{
-[e = _LATB4 -> -> 0 `i `b ]
-}
-[e :U 1184 ]
-"143
-}
-[e :U 1179 ]
-"144
-}
-[e :U 1163 ]
-[; ;main.c: 143: }
-[; ;main.c: 144: }
-[; ;main.c: 146: if (Byte2 == 3 && Byte3 == 7){
-"146
-[e $ ! && == -> _Byte2 `i -> 3 `i == -> _Byte3 `i -> 7 `i 1186  ]
-{
-[; ;main.c: 147: do { LATA1 = 0; } while(0);
-"147
-[e :U 1189 ]
-{
-[e = _LATA1 -> -> 0 `i `b ]
-}
-[e :U 1188 ]
-[; ;main.c: 148: do { LATA4 = 1; } while(0);
-"148
-[e :U 1192 ]
-{
-[e = _LATA4 -> -> 1 `i `b ]
-}
-[e :U 1191 ]
-"149
-}
-[; ;main.c: 149: }
-[e $U 1193  ]
-"150
-[e :U 1186 ]
-[; ;main.c: 150: else{ if ((Byte2 == 7 && Byte3 == 0) || (Byte2 == 30 && Byte3 == 0) || (Byte2 == 41 && Byte3 == 0) || (Byte2 == 5 && Byte3 == 30) || (Byte2 == 7 && Byte3 == 20) || (Byte2 == 12 && Byte3 == 30) || (Byte2 == 41 && Byte3 == 41)){
-{
-[e $ ! || || || || || || && == -> _Byte2 `i -> 7 `i == -> _Byte3 `i -> 0 `i && == -> _Byte2 `i -> 30 `i == -> _Byte3 `i -> 0 `i && == -> _Byte2 `i -> 41 `i == -> _Byte3 `i -> 0 `i && == -> _Byte2 `i -> 5 `i == -> _Byte3 `i -> 30 `i && == -> _Byte2 `i -> 7 `i == -> _Byte3 `i -> 20 `i && == -> _Byte2 `i -> 12 `i == -> _Byte3 `i -> 30 `i && == -> _Byte2 `i -> 41 `i == -> _Byte3 `i -> 41 `i 1194  ]
-{
-[; ;main.c: 151: do { LATA1 = 1; } while(0);
-"151
-[e :U 1197 ]
-{
-[e = _LATA1 -> -> 1 `i `b ]
-}
-[e :U 1196 ]
-[; ;main.c: 152: do { LATA4 = 0; } while(0);
-"152
-[e :U 1200 ]
-{
-[e = _LATA4 -> -> 0 `i `b ]
-}
-[e :U 1199 ]
-"153
-}
-[; ;main.c: 153: }
-[e $U 1201  ]
-"154
-[e :U 1194 ]
-[; ;main.c: 154: else{
-{
-[; ;main.c: 155: do { LATA1 = 0; } while(0);
-"155
-[e :U 1204 ]
-{
-[e = _LATA1 -> -> 0 `i `b ]
-}
-[e :U 1203 ]
-[; ;main.c: 156: do { LATA4 = 0; } while(0);
-"156
-[e :U 1207 ]
-{
-[e = _LATA4 -> -> 0 `i `b ]
-}
-[e :U 1206 ]
-"157
-}
-[e :U 1201 ]
-"158
-}
-[e :U 1193 ]
-[; ;main.c: 157: }
-[; ;main.c: 158: }
-[; ;main.c: 170: MIPIDATA (4);
-"170
-[e ( _MIPIDATA (1 -> -> 4 `i `uc ]
-[; ;main.c: 171: MIPIDATA (8);
-"171
-[e ( _MIPIDATA (1 -> -> 8 `i `uc ]
-"172
-}
-[e :U 1142 ]
-"117
-[e $U 1143  ]
-[e :U 1144 ]
-[; ;main.c: 172: }
-[; ;main.c: 173: }
-"173
-[e :UE 1129 ]
+[e :UE 1142 ]
 }

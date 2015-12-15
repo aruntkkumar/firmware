@@ -51,36 +51,58 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  */
 const uint8_t DacOutput[4] = {43,72,86,100}; // 43=0.3V,72=0.5,86=0.6,100=0.7
 //All are in reverse order for SPI mode transfer
-const uint8_t USIDLOW[44] =    {0x80, 0x4C, 0x27, 0x40, //PWR Mode: Normal
-                                0x80, 0x4C, 0xB0, 0x41, //F6-F7 ON
-                                0x80, 0x4C, 0x30, 0x7F, //F1-F6 ON
-                                0x80, 0x4C, 0xB0, 0x00, //F7 ON
-                                0x80, 0x4C, 0x30, 0x01, //F6 ON
-                                0x80, 0x4C, 0x30, 0x02, //F5 ON
-                                0x80, 0x4C, 0x30, 0x04, //F4 ON
-                                0x80, 0x4C, 0x30, 0x08, //F3 ON
-                                0x80, 0x4C, 0x30, 0x10, //F2 ON
-                                0x80, 0x4C, 0x30, 0x20, //F1 ON
-                                0x80, 0x4C, 0x30, 0x40};//F1-F7 OFF
-const uint8_t USIDHIGH[44] =   {0x80, 0x5C, 0x07, 0x40, 
-                                0x80, 0x5C, 0x90, 0x41, 
-                                0x80, 0x5C, 0x10, 0x7F, 
-                                0x80, 0x5C, 0x90, 0x00, 
-                                0x80, 0x5C, 0x10, 0x01, 
-                                0x80, 0x5C, 0x10, 0x02, 
-                                0x80, 0x5C, 0x10, 0x04, 
-                                0x80, 0x5C, 0x10, 0x08, 
-                                0x80, 0x5C, 0x10, 0x10, 
-                                0x80, 0x5C, 0x10, 0x20, 
-                                0x80, 0x5C, 0x10, 0x40};
+const uint8_t USIDLOWREV[44] =    {0x80, 0x4C, 0x27, 0x40, //PWR Mode: Normal
+                                   0x80, 0x4C, 0xB0, 0x41, //F6-F7 ON
+                                   0x80, 0x4C, 0x30, 0x7F, //F1-F6 ON
+                                   0x80, 0x4C, 0xB0, 0x00, //F7 ON
+                                   0x80, 0x4C, 0x30, 0x01, //F6 ON
+                                   0x80, 0x4C, 0x30, 0x02, //F5 ON
+                                   0x80, 0x4C, 0x30, 0x04, //F4 ON
+                                   0x80, 0x4C, 0x30, 0x08, //F3 ON
+                                   0x80, 0x4C, 0x30, 0x10, //F2 ON
+                                   0x80, 0x4C, 0x30, 0x20, //F1 ON
+                                   0x80, 0x4C, 0x30, 0x40};//F1-F7 OFF
+const uint8_t USIDHIGHREV[44] =   {0x80, 0x5C, 0x07, 0x40, 
+                                   0x80, 0x5C, 0x90, 0x41, 
+                                   0x80, 0x5C, 0x10, 0x7F, 
+                                   0x80, 0x5C, 0x90, 0x00, 
+                                   0x80, 0x5C, 0x10, 0x01, 
+                                   0x80, 0x5C, 0x10, 0x02, 
+                                   0x80, 0x5C, 0x10, 0x04, 
+                                   0x80, 0x5C, 0x10, 0x08, 
+                                   0x80, 0x5C, 0x10, 0x10, 
+                                   0x80, 0x5C, 0x10, 0x20, 
+                                   0x80, 0x5C, 0x10, 0x40};
+const uint8_t USIDLOW[44] =    {0x01, 0x32, 0xE4, 0x02, //PWR Mode: Normal
+                                0x01, 0x32, 0x0D, 0x82, //F6-F7 ON
+                                0x01, 0x32, 0x0C, 0xFE, //F1-F6 ON
+                                0x01, 0x32, 0x0D, 0x00, //F7 ON
+                                0x01, 0x32, 0x0C, 0x80, //F6 ON
+                                0x01, 0x32, 0x0C, 0x40, //F5 ON
+                                0x01, 0x32, 0x0C, 0x20, //F4 ON
+                                0x01, 0x32, 0x0C, 0x10, //F3 ON
+                                0x01, 0x32, 0x0C, 0x08, //F2 ON
+                                0x01, 0x32, 0x0C, 0x04, //F1 ON
+                                0x01, 0x32, 0x0C, 0x02};//F1-F7 OFF
+const uint8_t USIDHIGH[44] =   {0x01, 0x3A, 0xE0, 0x02, 
+                                0x01, 0x3A, 0x09, 0x82, 
+                                0x01, 0x3A, 0x08, 0xFE, 
+                                0x01, 0x3A, 0x09, 0x00, 
+                                0x01, 0x3A, 0x08, 0x80, 
+                                0x01, 0x3A, 0x08, 0x40, 
+                                0x01, 0x3A, 0x08, 0x20, 
+                                0x01, 0x3A, 0x08, 0x10, 
+                                0x01, 0x3A, 0x08, 0x08, 
+                                0x01, 0x3A, 0x08, 0x04, 
+                                0x01, 0x3A, 0x08, 0x02};
 uint8_t Byte1, Byte2, Byte3;                // First 3 bytes from RFFE
 uint8_t readDummy;
 
 void MIPIDATA (uint8_t i){
     for (uint8_t j=0; j<4; j++)
-                readDummy = SPI_Exchange8bit(USIDHIGH[j]);
+                readDummy = SPI_Exchange8bit(USIDLOW[j]);
     for (uint8_t j=0; j<4; j++)
-                readDummy = SPI_Exchange8bit(USIDHIGH[(i+j)]);
+                readDummy = SPI_Exchange8bit(USIDLOW[(i+j)]);
 }
 
 void main(void) {
@@ -167,8 +189,40 @@ void main(void) {
     //    }
     //        SDO_PORT = SSPBUF;
 //        }   
-    MIPIDATA (4);
-    MIPIDATA (8);
+//    MIPIDATA (4);
+//    MIPIDATA (8);
+    // MIPI Clock and Data Generation
+    if ((Byte2 == 5) || (Byte3 == 5)){
+        MIPIDATA (4);
+        MIPIDATA (4);
+    }else{      if ((Byte2 == 8) || (Byte3 == 8)){
+        MIPIDATA (8);
+        MIPIDATA (8);        
+    }else{      if ((Byte2 == 12) || (Byte3 == 12)){
+        MIPIDATA (12);
+        MIPIDATA (12);         
+    }else{      if ((Byte2 == 13) || (Byte3 == 13)){
+        MIPIDATA (16);
+        MIPIDATA (16); 
+    }else{      if ((Byte2 == 20) || (Byte3 == 20)){
+        MIPIDATA (20);
+        MIPIDATA (20); 
+    }else{      if ((Byte2 == 26) || (Byte3 == 26)){
+        MIPIDATA (24);
+        MIPIDATA (24);         
+    }else{      if ((Byte2 == 29) || (Byte3 == 29)){
+        MIPIDATA (28);
+        MIPIDATA (28);         
+    }else{
+        MIPIDATA (40);
+        MIPIDATA (40);         
+    }        
+    }
+    }
+    }
+    }
+    }
+    }
     }
 }
    

@@ -1,13 +1,13 @@
 
 
-Microchip Technology PIC LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Tue Nov 24 22:45:04 2015
+Microchip Technology PIC LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Tue Dec 15 18:33:45 2015
 
-Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	16F1619
      2                           	opt	pw 120
      3                           	opt	lm
-     4                           	psect	stringtext,global,class=STRCODE,delta=2
+     4                           	psect	stringtext,global,reloc=256,class=STRCODE,delta=2
      5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
      6                           	psect	cinit,global,class=CODE,merge=1,delta=2
      7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
@@ -4081,8 +4081,8 @@ BITSFR31             0      0       0      32        0.0%
 SFR31                0      0       0      32        0.0%
 
 
-Microchip Technology PIC Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Tue Nov 24 22:45:04 2015
+Microchip Technology PIC Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Tue Dec 15 18:33:45 2015
 
         __size_of_WWDT_Initialize 0006                       __CFG_CP$OFF 0000                       __CFG_LVP$ON 0000  
                      main@ValueId 0078                   _DAC1_Initialize 056E                               l220 070D  

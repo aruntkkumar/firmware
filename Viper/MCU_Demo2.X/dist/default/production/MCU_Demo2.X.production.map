@@ -1,11 +1,11 @@
-Microchip MPLAB XC8 Compiler V1.35 ()
+Microchip MPLAB XC8 Compiler V1.34 ()
 
 Linker command line:
 
---edf=C:\Program Files\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
+--edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\MCU_Demo2.X.production.sym \
   --cmf=dist/default/production\MCU_Demo2.X.production.cmf -z -Q16F1619 \
-  -oC:\Users\Rob\AppData\Local\Temp\s9r4.2 \
+  -oC:\Users\ARUN~1.KUM\AppData\Local\Temp\s32s.6 \
   -Mdist/default/production/MCU_Demo2.X.production.map -E1 -ver=XC8 \
   -ASTACK=0200Fh-023dfh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -31,7 +31,7 @@ Linker command line:
   -pcinit=CODE -pfunctab=CODE -ACONFIG=08007h-08009h -pconfig=CONFIG \
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Rob\AppData\Local\Temp\s9r4.obj \
+  C:\Users\ARUN~1.KUM\AppData\Local\Temp\s32s.obj \
   dist/default/production\MCU_Demo2.X.production.obj 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 16F1619
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Rob\AppData\Local\Temp\s9r4.obj
+C:\Users\ARUN~1.KUM\AppData\Local\Temp\s32s.obj
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        3    1000E       0
@@ -67,7 +67,7 @@ dist/default/production\MCU_Demo2.X.production.obj
                 bssBANK0                             20       20        E       20       1
                 bssCOMMON                            79       79        5       70       1
                 nvBANK0                              2E       2E        1       20       1
-                stringtext                          800      800       59     1000       0
+                stringtext                          800      800       59       10       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -274,7 +274,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text10                         0006A9  00006A  000713       D52       0  CODE        2
                 maintext                       000713  0000DE  0007F1       E26       0  CODE        2
                 cinit                          0007F1  00000F  000800       FE2       0  CODE        2
-                stringtext                     000800  000059  000859      1000       0  STRCODE     2
+                stringtext                     000800  000059  000859        10       0  STRCODE     2
                 config                         008007  000003  00800A     1000E       0  CONFIG      2
 
 
@@ -1193,7 +1193,7 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	05D7	0000	30
+		_PIN_MANAGER_In		CODE           	05D7	0000	30
 
 mcc_generated_files/pin_manager.c estimated size: 30
 
@@ -1201,7 +1201,7 @@ shared
 		_ACTIVEBAND    		STRCODE        	0800	0000	65
 		_PARITY        		STRCODE        	0849	0000	9
 		_COMMANDPARITY 		STRCODE        	0855	0000	3
-		__initialization		CODE           	07F1	0000	13
+		__initializatio		CODE           	07F1	0000	13
 		_DACLEVEL      		STRCODE        	0851	0000	5
 		_VALUE         		STRCODE        	0840	0000	10
 		_SLAVEADDRESS  		STRCODE        	0857	0000	3
@@ -1209,15 +1209,15 @@ shared
 shared estimated size: 108
 
 mcc_generated_files/mcc.c
-		_OSCILLATOR_Initialize		CODE           	0573	0000	7
-		_SYSTEM_Initialize		CODE           	058E	0000	13
-		_WWDT_Initialize		CODE           	0579	0000	7
+		_OSCILLATOR_Ini		CODE           	0573	0000	7
+		_SYSTEM_Initial		CODE           	058E	0000	13
+		_WWDT_Initializ		CODE           	0579	0000	7
 
 mcc_generated_files/mcc.c estimated size: 27
 
 mcc_generated_files/dac1.c
 		_DAC1_SetOutput		CODE           	0569	0000	6
-		_DAC1_Initialize		CODE           	056E	0000	6
+		_DAC1_Initializ		CODE           	056E	0000	6
 
 mcc_generated_files/dac1.c estimated size: 12
 
@@ -1227,10 +1227,10 @@ main.c
 		_Fix_Initialize		CODE           	0585	0000	10
 		_EnableLDOs    		CODE           	0619	0000	48
 		_GenerateDACOut		CODE           	05A7	0000	23
-		_ConfigureShiftRegister		CODE           	06A9	0000	107
+		_ConfigureShift		CODE           	06A9	0000	107
 		_ConfigureSSC  		CODE           	0648	0000	98
 		_SendBit       		CODE           	059A	0000	14
-		_SendSlaveAddress		CODE           	05F4	0000	38
+		_SendSlaveAddre		CODE           	05F4	0000	38
 
 main.c estimated size: 588
 

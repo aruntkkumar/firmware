@@ -46,7 +46,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include <xc.h>
 #include "pin_manager.h"
-#include <stdbool.h>
 
 void PIN_MANAGER_Initialize(void) {
     LATA = 0x00;
@@ -55,7 +54,7 @@ void PIN_MANAGER_Initialize(void) {
 
     LATB = 0x00;
     TRISB = 0x20;
-    ANSELB = 0x00;
+    ANSELB = 0x20;
     WPUB = 0x00;
 
     LATC = 0x00;
@@ -66,20 +65,6 @@ void PIN_MANAGER_Initialize(void) {
     OPTION_REGbits.nWPUEN = 0x01;
 
 
-    bool state = GIE;
-    GIE = 0;
-    PPSLOCK = 0x55;
-    PPSLOCK = 0xAA;
-    PPSLOCKbits.PPSLOCKED = 0x00; // unlock PPS
-
-    SSPDATPPS = 0x0D; // RB5->MSSP:SDI
-    SSPCLKPPS = 0x0E; // RB6->MSSP:SCK
-    RB6PPS = 0x10; // RB6->MSSP:SCK
-    RB7PPS = 0x11; // RB7->MSSP:SDO
-    PPSLOCK = 0x55;
-    PPSLOCK = 0xAA;
-    PPSLOCKbits.PPSLOCKED = 0x01; // lock PPS
-    GIE = state;
 }
 /**
  End of File

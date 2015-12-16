@@ -13514,16 +13514,13 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 297 "mcc_generated_files/pin_manager.h"
+# 283 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize(void);
 
-# 309
+# 295
 void PIN_MANAGER_IOC(void);
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdbool.h"
-typedef unsigned char bool;
-
-# 51 "mcc_generated_files/pin_manager.c"
+# 50 "mcc_generated_files/pin_manager.c"
 void PIN_MANAGER_Initialize(void) {
 LATA = 0x00;
 TRISA = 0x28;
@@ -13531,7 +13528,7 @@ ANSELA = 0x01;
 
 LATB = 0x00;
 TRISB = 0x20;
-ANSELB = 0x00;
+ANSELB = 0x20;
 WPUB = 0x00;
 
 LATC = 0x00;
@@ -13542,19 +13539,5 @@ WPUC = 0x00;
 OPTION_REGbits.nWPUEN = 0x01;
 
 
-bool state = GIE;
-GIE = 0;
-PPSLOCK = 0x55;
-PPSLOCK = 0xAA;
-PPSLOCKbits.PPSLOCKED = 0x00;
-
-SSPDATPPS = 0x0D;
-SSPCLKPPS = 0x0E;
-RB6PPS = 0x10;
-RB7PPS = 0x11;
-PPSLOCK = 0x55;
-PPSLOCK = 0xAA;
-PPSLOCKbits.PPSLOCKED = 0x01;
-GIE = state;
 }
 

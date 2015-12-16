@@ -77,12 +77,11 @@ void SYSTEM_Initialize(void) {
     PIN_MANAGER_Initialize();
     DAC1_Initialize();
     FVR_Initialize();
-    SPI_Initialize();
 }
 
 void OSCILLATOR_Initialize(void) {
-    // SCS INTOSC; SPLLEN disabled; IRCF 4MHz_HF; 
-    OSCCON = 0x6A;
+    // SCS INTOSC; SPLLEN disabled; IRCF 16MHz_HF; 
+    OSCCON = 0x7A;
     // LFIOFR disabled; HFIOFL not2percent_acc; PLLR disabled; HFIOFS not0.5percent_acc; HFIOFR disabled; MFIOFR disabled; 
     OSCSTAT = 0x00;
     // TUN 0x0; 

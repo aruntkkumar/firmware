@@ -9,9 +9,8 @@
             <resource customName="MAIN_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA2" ioc="0" module="GPIO" name="RA2" start="false" type="pin" wpu="false"/>
             <resource customName="CTLB" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
             <resource customName="AUX_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
-            <resource customName="SDI" digital="true" direction="INPUT" function="SDI" ioc="0" module="MSSP" name="RB5" start="false" type="pin" wpu="false"/>
-            <resource customName="SCK" digital="true" direction="BIDIRECTIONAL_OUTPUT" function="SCK" ioc="0" module="MSSP" name="RB6" start="false" type="pin" wpu="false"/>
-            <resource customName="SDO" digital="true" direction="OUTPUT" function="SDO" ioc="0" module="MSSP" name="RB7" start="false" type="pin" wpu="false"/>
+            <resource customName="SCK" digital="true" direction="OUTPUT" function="RB6" ioc="0" module="GPIO" name="RB6" start="false" type="pin" wpu="false"/>
+            <resource customName="SDO" digital="true" direction="OUTPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC0" digital="true" direction="INPUT" function="RC0" ioc="0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC1" digital="true" direction="INPUT" function="RC1" ioc="0" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC2" digital="true" direction="INPUT" function="RC2" ioc="0" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
@@ -20,14 +19,14 @@
             <resource customName="IO_RC5" digital="true" direction="INPUT" function="RC5" ioc="0" module="GPIO" name="RC5" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC6" digital="true" direction="INPUT" function="RC6" ioc="0" module="GPIO" name="RC6" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC7" digital="true" direction="INPUT" function="RC7" ioc="0" module="GPIO" name="RC7" start="false" type="pin" wpu="false"/>
-            <file checksum="522580908" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
-            <file checksum="713365482" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
+            <file checksum="3439300780" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
+            <file checksum="1971548628" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
         </manager>
         <manager generated="true" name="System" reloadPin="manual">
             <initializer comment="" name="Initialize">
                 <setting name="SCS" option="INTOSC" register="OSCCON"/>
                 <setting name="SPLLEN" option="disabled" register="OSCCON"/>
-                <setting name="IRCF" option="4MHz_HF" register="OSCCON"/>
+                <setting name="IRCF" option="16MHz_HF" register="OSCCON"/>
                 <setting name="LFIOFR" option="disabled" register="OSCSTAT"/>
                 <setting name="HFIOFL" option="not2percent_acc" register="OSCSTAT"/>
                 <setting name="PLLR" option="disabled" register="OSCSTAT"/>
@@ -57,8 +56,8 @@
             <setting name="WDTE" option="OFF"/>
             <setting name="WDTCCS" option="SWC"/>
             <setting name="generateConfigBits" option="true"/>
-            <file checksum="3355459301" modified="false" name="mcc.c" path="mcc_generated_files/mcc.c"/>
-            <file checksum="1618810250" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
+            <file checksum="905328793" modified="false" name="mcc.c" path="mcc_generated_files/mcc.c"/>
+            <file checksum="3986886745" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
         </manager>
     </managers>
     <modules>
@@ -84,33 +83,7 @@
             <file checksum="1928237989" modified="false" name="fvr.c" path="mcc_generated_files/fvr.c"/>
             <file checksum="3201748420" modified="false" name="fvr.h" path="mcc_generated_files/fvr.h"/>
         </module>
-        <module generated="true" mode="SPI Master" name="MSSP" order="2" reloadPin="manual" type="mssp">
-            <initializer comment="" name="Initialize">
-                <setting name="R_nW" option="write_noTX" register="SSP1STAT"/>
-                <setting name="P" option="stopbit_notdetected" register="SSP1STAT"/>
-                <setting name="S" option="startbit_notdetected" register="SSP1STAT"/>
-                <setting name="BF" option="RCinprocess_TXcomplete" register="SSP1STAT"/>
-                <setting name="SMP" option="Sample At Middle" register="SSP1STAT"/>
-                <setting name="UA" option="dontupdate" register="SSP1STAT"/>
-                <setting name="CKE" option="Idle to Active" register="SSP1STAT"/>
-                <setting name="D_nA" option="lastbyte_address" register="SSP1STAT"/>
-                <setting name="SSPEN" option="enabled" register="SSP1CON1"/>
-                <setting name="WCOL" option="no_collision" register="SSP1CON1"/>
-                <setting name="CKP" option="Idle:Low, Active:High" register="SSP1CON1"/>
-                <setting name="SSPM" option="FOSC/4" register="SSP1CON1"/>
-                <setting name="SSPOV" option="no_overflow" register="SSP1CON1"/>
-                <setting name="SSP1ADD" option="0" register="SSP1ADD"/>
-                <additionalSetting name="frequency" option="1.0 MHz"/>
-            </initializer>
-            <setting name="mode" option="false"/>
-            <setting name="SSPI" option="false"/>
-            <setting name="BCLI" option="false"/>
-            <setting name="WriteBufferSize" option="8"/>
-            <setting name="ReadBufferSize" option="8"/>
-            <file checksum="1146180349" modified="true" name="spi.c" path="mcc_generated_files/spi.c"/>
-            <file checksum="2843262359" modified="false" name="spi.h" path="mcc_generated_files/spi.h"/>
-        </module>
-        <module generated="true" mode="GPIO" name="GPIO" order="3" reloadPin="manual" type="GPIO">
+        <module generated="true" mode="GPIO" name="GPIO" order="2" reloadPin="manual" type="GPIO">
             <resource customName="IO_RC0" digital="true" direction="INPUT" function="RC0" ioc="0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC1" digital="true" direction="INPUT" function="RC1" ioc="0" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC2" digital="true" direction="INPUT" function="RC2" ioc="0" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
@@ -123,6 +96,8 @@
             <resource customName="CTLB" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
             <resource customName="MAIN_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA2" ioc="0" module="GPIO" name="RA2" start="false" type="pin" wpu="false"/>
             <resource customName="AUX_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
+            <resource customName="SDO" digital="true" direction="OUTPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>
+            <resource customName="SCK" digital="true" direction="OUTPUT" function="RB6" ioc="0" module="GPIO" name="RB6" start="false" type="pin" wpu="false"/>
         </module>
     </modules>
 </configuration>

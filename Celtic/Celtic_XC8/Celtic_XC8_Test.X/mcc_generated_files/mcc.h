@@ -52,9 +52,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stdbool.h>
 #include "dac1.h"
 #include "fvr.h"
-#include "spi.h"
 
-#define _XTAL_FREQ  4000000
+#define _XTAL_FREQ  16000000
 
 /**
  * @Param

@@ -32,26 +32,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S105 . . . ]
 "1999
 [v _OPTION_REGbits `VS105 ~T0 @X0 0 e@149 ]
-"26402
-[v _GIE `Vb ~T0 @X0 0 e@95 ]
-"20695
-[v _PPSLOCK `Vuc ~T0 @X0 0 e@3599 ]
-"20701
-[s S921 :1 `uc 1 ]
-[n S921 . PPSLOCKED ]
-"20700
-[u S920 `S921 1 ]
-[n S920 . . ]
-"20705
-[v _PPSLOCKbits `VS920 ~T0 @X0 0 e@3599 ]
-"21445
-[v _SSPDATPPS `Vuc ~T0 @X0 0 e@3617 ]
-"21402
-[v _SSPCLKPPS `Vuc ~T0 @X0 0 e@3616 ]
-"22348
-[v _RB6PPS `Vuc ~T0 @X0 0 e@3742 ]
-"22391
-[v _RB7PPS `Vuc ~T0 @X0 0 e@3743 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16lf1618.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -10006,92 +9986,51 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
-[; ;pin_manager.h: 297: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 309: void PIN_MANAGER_IOC(void);
-[; ;stdbool.h: 12: typedef unsigned char bool;
-"51 mcc_generated_files/pin_manager.c
+[; ;pin_manager.h: 283: void PIN_MANAGER_Initialize(void);
+[; ;pin_manager.h: 295: void PIN_MANAGER_IOC(void);
+"50 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
 {
-[; ;pin_manager.c: 51: void PIN_MANAGER_Initialize(void) {
+[; ;pin_manager.c: 50: void PIN_MANAGER_Initialize(void) {
 [e :U _PIN_MANAGER_Initialize ]
 [f ]
-[; ;pin_manager.c: 52: LATA = 0x00;
-"52
+[; ;pin_manager.c: 51: LATA = 0x00;
+"51
 [e = _LATA -> -> 0 `i `uc ]
-[; ;pin_manager.c: 53: TRISA = 0x28;
-"53
+[; ;pin_manager.c: 52: TRISA = 0x28;
+"52
 [e = _TRISA -> -> 40 `i `uc ]
-[; ;pin_manager.c: 54: ANSELA = 0x01;
-"54
+[; ;pin_manager.c: 53: ANSELA = 0x01;
+"53
 [e = _ANSELA -> -> 1 `i `uc ]
-[; ;pin_manager.c: 56: LATB = 0x00;
-"56
+[; ;pin_manager.c: 55: LATB = 0x00;
+"55
 [e = _LATB -> -> 0 `i `uc ]
-[; ;pin_manager.c: 57: TRISB = 0x20;
-"57
+[; ;pin_manager.c: 56: TRISB = 0x20;
+"56
 [e = _TRISB -> -> 32 `i `uc ]
-[; ;pin_manager.c: 58: ANSELB = 0x00;
+[; ;pin_manager.c: 57: ANSELB = 0x20;
+"57
+[e = _ANSELB -> -> 32 `i `uc ]
+[; ;pin_manager.c: 58: WPUB = 0x00;
 "58
-[e = _ANSELB -> -> 0 `i `uc ]
-[; ;pin_manager.c: 59: WPUB = 0x00;
-"59
 [e = _WPUB -> -> 0 `i `uc ]
-[; ;pin_manager.c: 61: LATC = 0x00;
-"61
+[; ;pin_manager.c: 60: LATC = 0x00;
+"60
 [e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 62: TRISC = 0xFF;
-"62
+[; ;pin_manager.c: 61: TRISC = 0xFF;
+"61
 [e = _TRISC -> -> 255 `i `uc ]
-[; ;pin_manager.c: 63: ANSELC = 0x00;
-"63
+[; ;pin_manager.c: 62: ANSELC = 0x00;
+"62
 [e = _ANSELC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 64: WPUC = 0x00;
-"64
+[; ;pin_manager.c: 63: WPUC = 0x00;
+"63
 [e = _WPUC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 66: OPTION_REGbits.nWPUEN = 0x01;
-"66
+[; ;pin_manager.c: 65: OPTION_REGbits.nWPUEN = 0x01;
+"65
 [e = . . _OPTION_REGbits 0 5 -> -> 1 `i `uc ]
-"69
-[v _state `uc ~T0 @X0 1 a ]
-[; ;pin_manager.c: 69: bool state = GIE;
-[e = _state -> -> _GIE `i `uc ]
-[; ;pin_manager.c: 70: GIE = 0;
-"70
-[e = _GIE -> -> 0 `i `b ]
-[; ;pin_manager.c: 71: PPSLOCK = 0x55;
-"71
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;pin_manager.c: 72: PPSLOCK = 0xAA;
-"72
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;pin_manager.c: 73: PPSLOCKbits.PPSLOCKED = 0x00;
-"73
-[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
-[; ;pin_manager.c: 75: SSPDATPPS = 0x0D;
-"75
-[e = _SSPDATPPS -> -> 13 `i `uc ]
-[; ;pin_manager.c: 76: SSPCLKPPS = 0x0E;
-"76
-[e = _SSPCLKPPS -> -> 14 `i `uc ]
-[; ;pin_manager.c: 77: RB6PPS = 0x10;
-"77
-[e = _RB6PPS -> -> 16 `i `uc ]
-[; ;pin_manager.c: 78: RB7PPS = 0x11;
-"78
-[e = _RB7PPS -> -> 17 `i `uc ]
-[; ;pin_manager.c: 79: PPSLOCK = 0x55;
-"79
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;pin_manager.c: 80: PPSLOCK = 0xAA;
-"80
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;pin_manager.c: 81: PPSLOCKbits.PPSLOCKED = 0x01;
-"81
-[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
-[; ;pin_manager.c: 82: GIE = state;
-"82
-[e = _GIE -> _state `b ]
-[; ;pin_manager.c: 83: }
-"83
+[; ;pin_manager.c: 68: }
+"68
 [e :UE 1122 ]
 }

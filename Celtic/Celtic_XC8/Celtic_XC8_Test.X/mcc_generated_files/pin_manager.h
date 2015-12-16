@@ -129,20 +129,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define AUX_NIC_LDO_EN_SetAnalogMode()   do { ANSB4 = 1; } while(0)
 #define AUX_NIC_LDO_EN_SetDigitalMode()   do { ANSB4 = 0; } while(0)
-// get/set SDI aliases
-#define SDI_TRIS               TRISB5
-#define SDI_LAT                LATB5
-#define SDI_PORT               RB5
-#define SDI_ANS                ANSB5
-#define SDI_SetHigh()    do { LATB5 = 1; } while(0)
-#define SDI_SetLow()   do { LATB5 = 0; } while(0)
-#define SDI_Toggle()   do { LATB5 = ~LATB5; } while(0)
-#define SDI_GetValue()         RB5
-#define SDI_SetDigitalInput()    do { TRISB5 = 1; } while(0)
-#define SDI_SetDigitalOutput()   do { TRISB5 = 0; } while(0)
-
-#define SDI_SetAnalogMode()   do { ANSB5 = 1; } while(0)
-#define SDI_SetDigitalMode()   do { ANSB5 = 0; } while(0)
 // get/set SCK aliases
 #define SCK_TRIS               TRISB6
 #define SCK_LAT                LATB6

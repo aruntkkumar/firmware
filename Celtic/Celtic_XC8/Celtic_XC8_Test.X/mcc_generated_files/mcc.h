@@ -51,7 +51,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stdint.h>
 #include <stdbool.h>
 #include "dac1.h"
-#include "fvr.h"
 
 #define _XTAL_FREQ  16000000
 

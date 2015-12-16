@@ -13644,16 +13644,10 @@ void DAC1_Initialize(void);
 # 129
 void DAC1_SetOutput(uint8_t inputData);
 
-# 93 "mcc_generated_files/fvr.h"
-void FVR_Initialize(void);
-
-# 127
-bool FVR_IsOutputReady(void);
-
-# 69 "mcc_generated_files/mcc.h"
+# 68 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 82
+# 81
 void OSCILLATOR_Initialize(void);
 
 # 75 "mcc_generated_files/mcc.c"
@@ -13661,7 +13655,6 @@ void SYSTEM_Initialize(void) {
 OSCILLATOR_Initialize();
 PIN_MANAGER_Initialize();
 DAC1_Initialize();
-FVR_Initialize();
 }
 
 void OSCILLATOR_Initialize(void) {

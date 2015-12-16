@@ -7,7 +7,6 @@
       <logicalFolder name="mcc_generated_files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>mcc_generated_files/fvr.h</itemPath>
         <itemPath>mcc_generated_files/dac1.h</itemPath>
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
@@ -23,7 +22,6 @@
       <logicalFolder name="mcc_generated_files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>mcc_generated_files/fvr.c</itemPath>
         <itemPath>mcc_generated_files/dac1.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/mcc.c</itemPath>

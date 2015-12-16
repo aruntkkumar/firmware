@@ -11,23 +11,22 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
+$C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 3 2
 $dist/default/production\Celtic_XC8_Test.X.production.obj
-cinit CODE 0 7F8 7F8 8 2
-text1 CODE 0 5C3 5C3 C 2
-text2 CODE 0 5CF 5CF 1E 2
-text3 CODE 0 5BD 5BD 6 2
-text4 CODE 0 5AF 5AF 4 2
-text5 CODE 0 5B8 5B8 5 2
-text6 CODE 0 5ED 5ED CD 2
-text7 CODE 0 5B3 5B3 5 2
-maintext CODE 0 6BA 6BA 13E 2
+cinit CODE 0 7F9 7F9 7 2
+text1 CODE 0 5C7 5C7 9 2
+text2 CODE 0 5D0 5D0 1E 2
+text3 CODE 0 5C1 5C1 6 2
+text4 CODE 0 5BC 5BC 5 2
+text5 CODE 0 5EE 5EE CD 2
+text6 CODE 0 5B7 5B7 5 2
+maintext CODE 0 6BB 6BB 13E 2
 cstackCOMMON COMMON 1 70 70 B 1
-bssBANK0 BANK0 1 20 20 2 1
-stringtext STRCODE 0 800 800 E0 2
+bssBANK0 BANK0 1 20 20 1 1
+stringtext STRCODE 0 800 800 46 2
 bssCOMMON COMMON 1 7B 7B 3 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -35,24 +34,24 @@ bssCOMMON COMMON 1 7B 7B 3 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 22-6F 1
+RAM 21-6F 1
 RAM A0-EF 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
 RAM 2A0-2EF 1
 RAM 320-32F 1
-BANK0 22-6F 1
+BANK0 21-6F 1
 BANK1 A0-EF 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
 BANK5 2A0-2EF 1
 BANK6 320-32F 1
-CONST 4-5AE 2
-CONST 8E0-FFF 2
-ENTRY 4-5AE 2
-ENTRY 8E0-FFF 2
+CONST 4-5B6 2
+CONST 846-FFF 2
+ENTRY 4-5B6 2
+ENTRY 846-FFF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -76,9 +75,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2002-21EF 1
-CODE 4-5AE 2
-CODE 8E0-FFF 2
+STACK 2001-21EF 1
+CODE 4-5B6 2
+CODE 846-FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -90,10 +89,10 @@ SFR7 380-3EF 1
 SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-21EF 1
-STRCODE 4-5AE 2
-STRCODE 8E0-FFF 2
-STRING 4-5AE 2
-STRING 8E0-FFF 2
+STRCODE 4-5B6 2
+STRCODE 846-FFF 2
+STRING 4-5B6 2
+STRING 846-FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -108,151 +107,146 @@ STRING 8E0-FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Celtic_XC8_Test.X.production.obj
-5AF text4 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/fvr.c
-5AF text4 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/fvr.c
-5B2 text4 CODE >61:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/fvr.c
-5B3 text7 CODE >65:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
-5B4 text7 CODE >66:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
-5B7 text7 CODE >67:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
-5B8 text5 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
-5B8 text5 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
-5BB text5 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
-5BC text5 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
-5BD text3 CODE >82:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5BD text3 CODE >84:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5C0 text3 CODE >86:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5C1 text3 CODE >88:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5C2 text3 CODE >91:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5C3 text1 CODE >75:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5C3 text1 CODE >76:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5C6 text1 CODE >77:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5C9 text1 CODE >78:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5CC text1 CODE >79:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5CE text1 CODE >80:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
-5CF text2 CODE >50:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5CF text2 CODE >51:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5D1 text2 CODE >52:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5D4 text2 CODE >53:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5D7 text2 CODE >55:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5D9 text2 CODE >56:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5DC text2 CODE >57:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5DF text2 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5E1 text2 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5E3 text2 CODE >61:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5E6 text2 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5E8 text2 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5EA text2 CODE >65:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5EC text2 CODE >68:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
-5ED text6 CODE >130:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-5EE text6 CODE >131:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-5F0 text6 CODE >132:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-5F1 text6 CODE >133:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-5F3 text6 CODE >134:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-5FB text6 CODE >135:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-5FF text6 CODE >136:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-604 text6 CODE >137:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-605 text6 CODE >138:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-60C text6 CODE >139:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-60D text6 CODE >140:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-60F text6 CODE >141:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-613 text6 CODE >136:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-61B text6 CODE >143:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-621 text6 CODE >144:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-62C text6 CODE >145:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-631 text6 CODE >146:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-633 text6 CODE >147:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-63A text6 CODE >148:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-63B text6 CODE >149:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-63D text6 CODE >150:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-641 text6 CODE >145:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-649 text6 CODE >143:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-651 text6 CODE >153:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-652 text6 CODE >154:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-653 text6 CODE >155:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-655 text6 CODE >156:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-656 text6 CODE >157:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-658 text6 CODE >158:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-663 text6 CODE >159:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-667 text6 CODE >160:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-66C text6 CODE >161:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-66D text6 CODE >162:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-674 text6 CODE >163:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-675 text6 CODE >164:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-677 text6 CODE >165:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-67B text6 CODE >160:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-683 text6 CODE >167:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-689 text6 CODE >168:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-698 text6 CODE >169:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-69D text6 CODE >170:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-69F text6 CODE >171:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6A6 text6 CODE >172:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6A7 text6 CODE >173:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6A9 text6 CODE >174:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6AD text6 CODE >169:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6B5 text6 CODE >167:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6BA maintext CODE >179:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6BA maintext CODE >181:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6BD maintext CODE >182:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6C0 maintext CODE >183:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6C3 maintext CODE >205:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6C7 maintext CODE >206:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6C9 maintext CODE >207:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6CA maintext CODE >208:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6CB maintext CODE >209:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6CC maintext CODE >211:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6D4 maintext CODE >212:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6D8 maintext CODE >213:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6DF maintext CODE >214:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6E4 maintext CODE >215:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6EB maintext CODE >216:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6F0 maintext CODE >217:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-6F6 maintext CODE >218:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-700 maintext CODE >220:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-704 maintext CODE >222:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-70C maintext CODE >225:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-715 maintext CODE >226:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-74D maintext CODE >227:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-74F maintext CODE >228:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-750 maintext CODE >230:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-752 maintext CODE >231:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-753 maintext CODE >233:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-754 maintext CODE >234:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-756 maintext CODE >235:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-757 maintext CODE >239:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-75F maintext CODE >240:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-760 maintext CODE >241:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-761 maintext CODE >242:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-762 maintext CODE >243:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-794 maintext CODE >244:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-796 maintext CODE >248:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-797 maintext CODE >249:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-798 maintext CODE >266:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7A0 maintext CODE >269:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7A4 maintext CODE >270:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7AD maintext CODE >273:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7B1 maintext CODE >274:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7BA maintext CODE >277:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7BE maintext CODE >278:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7C7 maintext CODE >281:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7CB maintext CODE >282:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7D4 maintext CODE >285:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7D8 maintext CODE >286:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7E1 maintext CODE >289:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7E5 maintext CODE >290:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7EE maintext CODE >293:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7F2 maintext CODE >294:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7F3 maintext CODE >297:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7F7 maintext CODE >210:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-7F8 cinit CODE >4623:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7F8 cinit CODE >4626:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7F8 cinit CODE >4652:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7F9 cinit CODE >4653:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7FA cinit CODE >4654:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7FB cinit CODE >4658:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7FC cinit CODE >4659:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7FD cinit CODE >4665:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7FD cinit CODE >4666:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
-7FE cinit CODE >4667:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.
+5B7 text6 CODE >65:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
+5B8 text6 CODE >66:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
+5BB text6 CODE >67:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
+5BC text4 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
+5BC text4 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
+5BF text4 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
+5C0 text4 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
+5C1 text3 CODE >81:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5C1 text3 CODE >83:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5C4 text3 CODE >85:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5C5 text3 CODE >87:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5C6 text3 CODE >90:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5C7 text1 CODE >75:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5C7 text1 CODE >76:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5CA text1 CODE >77:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5CD text1 CODE >78:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5CF text1 CODE >79:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
+5D0 text2 CODE >50:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5D0 text2 CODE >51:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5D2 text2 CODE >52:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5D5 text2 CODE >53:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5D8 text2 CODE >55:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5DA text2 CODE >56:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5DD text2 CODE >57:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5E0 text2 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5E2 text2 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5E4 text2 CODE >61:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5E7 text2 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5E9 text2 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5EB text2 CODE >65:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5ED text2 CODE >68:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/pin_manager.c
+5EE text5 CODE >82:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+5EF text5 CODE >83:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+5F1 text5 CODE >84:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+5F2 text5 CODE >85:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+5F4 text5 CODE >86:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+5FC text5 CODE >87:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+600 text5 CODE >88:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+605 text5 CODE >89:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+606 text5 CODE >90:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+60D text5 CODE >91:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+60E text5 CODE >92:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+610 text5 CODE >93:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+614 text5 CODE >88:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+61C text5 CODE >95:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+622 text5 CODE >96:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+62D text5 CODE >97:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+632 text5 CODE >98:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+634 text5 CODE >99:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+63B text5 CODE >100:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+63C text5 CODE >101:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+63E text5 CODE >102:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+642 text5 CODE >97:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+64A text5 CODE >95:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+652 text5 CODE >105:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+653 text5 CODE >106:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+654 text5 CODE >107:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+656 text5 CODE >108:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+657 text5 CODE >109:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+659 text5 CODE >110:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+664 text5 CODE >111:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+668 text5 CODE >112:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+66D text5 CODE >113:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+66E text5 CODE >114:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+675 text5 CODE >115:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+676 text5 CODE >116:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+678 text5 CODE >117:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+67C text5 CODE >112:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+684 text5 CODE >119:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+68A text5 CODE >120:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+699 text5 CODE >121:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+69E text5 CODE >122:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6A0 text5 CODE >123:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6A7 text5 CODE >124:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6A8 text5 CODE >125:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6AA text5 CODE >126:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6AE text5 CODE >121:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6B6 text5 CODE >119:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6BB maintext CODE >131:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6BB maintext CODE >133:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6BE maintext CODE >134:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6C1 maintext CODE >135:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6C4 maintext CODE >137:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6C8 maintext CODE >138:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6CA maintext CODE >139:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6CB maintext CODE >140:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6CC maintext CODE >141:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6CD maintext CODE >143:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6D5 maintext CODE >144:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6D9 maintext CODE >145:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6E0 maintext CODE >146:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6E5 maintext CODE >147:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6EC maintext CODE >148:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6F1 maintext CODE >149:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+6F7 maintext CODE >150:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+701 maintext CODE >152:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+705 maintext CODE >154:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+70D maintext CODE >157:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+716 maintext CODE >158:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+74E maintext CODE >159:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+750 maintext CODE >160:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+751 maintext CODE >162:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+753 maintext CODE >163:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+754 maintext CODE >165:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+755 maintext CODE >166:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+757 maintext CODE >167:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+758 maintext CODE >171:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+760 maintext CODE >172:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+761 maintext CODE >173:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+762 maintext CODE >174:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+763 maintext CODE >175:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+795 maintext CODE >176:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+797 maintext CODE >180:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+798 maintext CODE >181:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+799 maintext CODE >187:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7A1 maintext CODE >188:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7A5 maintext CODE >189:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7AE maintext CODE >190:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7B2 maintext CODE >191:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7BB maintext CODE >192:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7BF maintext CODE >193:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7C8 maintext CODE >194:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7CC maintext CODE >195:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7D5 maintext CODE >196:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7D9 maintext CODE >197:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7E2 maintext CODE >198:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7E6 maintext CODE >199:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7EF maintext CODE >200:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7F3 maintext CODE >201:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7F4 maintext CODE >202:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7F8 maintext CODE >142:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+7F9 cinit CODE >3602:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7F9 cinit CODE >3605:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7F9 cinit CODE >3628:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7FA cinit CODE >3629:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7FB cinit CODE >3630:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7FC cinit CODE >3634:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7FD cinit CODE >3640:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7FD cinit CODE >3641:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
+7FE cinit CODE >3642:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -277,21 +271,21 @@ ltemp1 82 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 ltemp2 86 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 ltemp3 80 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lstringtext 0 0 ABS 0 stringtext -
-_USIDLOWREV 1176 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
+_USIDLOWREV 1042 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _LATA 10C 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 _LATB 10D 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 _LATC 10E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 _WPUB 20D 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
-_main D74 0 CODE 0 maintext dist/default/production\Celtic_XC8_Test.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
+_main D76 0 CODE 0 maintext dist/default/production\Celtic_XC8_Test.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-start 4 0 CODE 0 init C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
+start 4 0 CODE 0 init C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
 ttemp 7E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_MIPITRANSFER D74 0 CODE 0 text6 dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_MIPITRANSFER D76 0 CODE 0 text5 dist/default/production\Celtic_XC8_Test.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -307,13 +301,12 @@ ttemp2 84 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_USIDLOW 1176 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
-intlevel1 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
-intlevel2 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
-intlevel3 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
-intlevel4 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
-intlevel5 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
+intlevel0 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
+intlevel1 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
+intlevel2 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
+intlevel3 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
+intlevel4 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
+intlevel5 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 wtemp1 80 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
@@ -324,29 +317,23 @@ wtemp5 88 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 wtemp6 7F 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_DAC1_Initialize B7A 0 CODE 0 text5 dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_USIDLOWREV 11B8 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_DAC1_Initialize B82 0 CODE 0 text4 dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_USIDLOWREV 1084 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 _ANSELB 18D 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 _ANSELC 18E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-_FVR_Initialize B5E 0 CODE 0 text4 dist/default/production\Celtic_XC8_Test.X.production.obj
-_FVRCONbits 117 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
-_FVRCON 117 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-MIPITRANSFER@i_157 79 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
-MIPITRANSFER@j_155 75 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
-MIPITRANSFER@j_156 76 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
-MIPITRANSFER@j_158 77 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_USIDHIGH 10F2 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_USIDLOW1 10B0 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
-_DAC1_Initialize B70 0 CODE 0 text5 dist/default/production\Celtic_XC8_Test.X.production.obj
+MIPITRANSFER@i_111 79 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
+MIPITRANSFER@j_109 75 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
+MIPITRANSFER@j_110 76 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
+MIPITRANSFER@j_112 77 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
+_DAC1_Initialize B78 0 CODE 0 text4 dist/default/production\Celtic_XC8_Test.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-_PIN_MANAGER_Initialize B9E 0 CODE 0 text2 dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_FVR_Initialize B66 0 CODE 0 text4 dist/default/production\Celtic_XC8_Test.X.production.obj
-start_initialization FF0 0 CODE 0 cinit dist/default/production\Celtic_XC8_Test.X.production.obj
+_PIN_MANAGER_Initialize BA0 0 CODE 0 text2 dist/default/production\Celtic_XC8_Test.X.production.obj
+start_initialization FF2 0 CODE 0 cinit dist/default/production\Celtic_XC8_Test.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_SYSTEM_Initialize B9E 0 CODE 0 text1 dist/default/production\Celtic_XC8_Test.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
+__end_of_SYSTEM_Initialize BA0 0 CODE 0 text1 dist/default/production\Celtic_XC8_Test.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -420,7 +407,7 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__Lcinit FF0 0 CODE 0 cinit -
+__Lcinit FF2 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -479,13 +466,12 @@ __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800A 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
-__end_of_USIDHIGH1 1058 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
-_DAC1_SetOutput B66 0 CODE 0 text7 dist/default/production\Celtic_XC8_Test.X.production.obj
-_SYSTEM_Initialize B86 0 CODE 0 text1 dist/default/production\Celtic_XC8_Test.X.production.obj
+_DAC1_SetOutput B6E 0 CODE 0 text6 dist/default/production\Celtic_XC8_Test.X.production.obj
+_SYSTEM_Initialize B8E 0 CODE 0 text1 dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-__end_of_PIN_MANAGER_Initialize BDA 0 CODE 0 text2 dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_PIN_MANAGER_Initialize BDC 0 CODE 0 text2 dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -508,23 +494,23 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext D74 0 CODE 0 maintext dist/default/production\Celtic_XC8_Test.X.production.obj
+__pmaintext D76 0 CODE 0 maintext dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_DacOutput 11C0 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_DacOutput 108C 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_DAC1_SetOutput B70 0 CODE 0 text7 dist/default/production\Celtic_XC8_Test.X.production.obj
-stackhi 21EF 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
-stacklo 2002 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s84s.obj
+__end_of_DAC1_SetOutput B78 0 CODE 0 text6 dist/default/production\Celtic_XC8_Test.X.production.obj
+stackhi 21EF 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
+stacklo 2001 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9r0.obj
 MIPITRANSFER@i 78 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
 MIPITRANSFER@j 74 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
 MIPITRANSFER@k 73 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
 _OSCSTAT 9A 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 _OSCTUNE 98 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-_DacOutput 11B8 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
+_DacOutput 1084 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -538,21 +524,19 @@ end_of_initialization FFA 0 CODE 0 cinit dist/default/production\Celtic_XC8_Test
 __Hintentry 4 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
-__size_of_FVR_Initialize 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __CFG_WDTCCS$SWC 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 B86 0 CODE 0 text1 dist/default/production\Celtic_XC8_Test.X.production.obj
-__ptext2 B9E 0 CODE 0 text2 dist/default/production\Celtic_XC8_Test.X.production.obj
-__ptext3 B7A 0 CODE 0 text3 dist/default/production\Celtic_XC8_Test.X.production.obj
-__ptext4 B5E 0 CODE 0 text4 dist/default/production\Celtic_XC8_Test.X.production.obj
-__ptext5 B70 0 CODE 0 text5 dist/default/production\Celtic_XC8_Test.X.production.obj
-__ptext6 BDA 0 CODE 0 text6 dist/default/production\Celtic_XC8_Test.X.production.obj
-__ptext7 B66 0 CODE 0 text7 dist/default/production\Celtic_XC8_Test.X.production.obj
+__ptext1 B8E 0 CODE 0 text1 dist/default/production\Celtic_XC8_Test.X.production.obj
+__ptext2 BA0 0 CODE 0 text2 dist/default/production\Celtic_XC8_Test.X.production.obj
+__ptext3 B82 0 CODE 0 text3 dist/default/production\Celtic_XC8_Test.X.production.obj
+__ptext4 B78 0 CODE 0 text4 dist/default/production\Celtic_XC8_Test.X.production.obj
+__ptext5 BDC 0 CODE 0 text5 dist/default/production\Celtic_XC8_Test.X.production.obj
+__ptext6 B6E 0 CODE 0 text6 dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __pstringtext 1000 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_USIDHIGHREV 1134 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_USIDHIGHREV 1042 0 STRCODE 0 stringtext dist/default/production\Celtic_XC8_Test.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __CFG_LPBOR$OFF 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __CFG_WDTCPS$WDTCPS1F 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
@@ -565,8 +549,8 @@ __CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
 _readDummy 7D 0 COMMON 1 bssCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
 __Hend_init 8 0 CODE 0 end_init -
-_MIPITRANSFER BDA 0 CODE 0 text6 dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_main FF0 0 CODE 0 maintext dist/default/production\Celtic_XC8_Test.X.production.obj
+_MIPITRANSFER BDC 0 CODE 0 text5 dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_main FF2 0 CODE 0 maintext dist/default/production\Celtic_XC8_Test.X.production.obj
 _Byte1 20 0 BANK0 1 bssBANK0 dist/default/production\Celtic_XC8_Test.X.production.obj
 _Byte2 7B 0 COMMON 1 bssCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
 _Byte3 7C 0 COMMON 1 bssCOMMON dist/default/production\Celtic_XC8_Test.X.production.obj
@@ -583,13 +567,13 @@ _TRISC 8E 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-__end_of_OSCILLATOR_Initialize B86 0 CODE 0 text3 dist/default/production\Celtic_XC8_Test.X.production.obj
+__end_of_OSCILLATOR_Initialize B8E 0 CODE 0 text3 dist/default/production\Celtic_XC8_Test.X.production.obj
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-__initialization FF0 0 CODE 0 cinit dist/default/production\Celtic_XC8_Test.X.production.obj
+__initialization FF2 0 CODE 0 cinit dist/default/production\Celtic_XC8_Test.X.production.obj
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\Celtic_XC8_Test.X.production.obj
 __Hstringtext 0 0 ABS 0 stringtext -
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Celtic_XC8_Test.X.production.obj
-_OSCILLATOR_Initialize B7A 0 CODE 0 text3 dist/default/production\Celtic_XC8_Test.X.production.obj
+_OSCILLATOR_Initialize B82 0 CODE 0 text3 dist/default/production\Celtic_XC8_Test.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -615,17 +599,16 @@ _OSCILLATOR_Initialize B7A 0 CODE 0 text3 dist/default/production\Celtic_XC8_Tes
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7F8 FF0 8 2
-text1 0 5C3 B86 C 2
-text2 0 5CF B9E 1E 2
-text3 0 5BD B7A 6 2
-text4 0 5AF B5E 4 2
-text5 0 5B8 B70 5 2
-text6 0 5ED BDA CD 2
-text7 0 5B3 B66 5 2
-maintext 0 6BA D74 13E 2
+cinit 0 7F9 FF2 7 2
+text1 0 5C7 B8E 9 2
+text2 0 5D0 BA0 1E 2
+text3 0 5C1 B82 6 2
+text4 0 5BC B78 5 2
+text5 0 5EE BDC CD 2
+text6 0 5B7 B6E 5 2
+maintext 0 6BB D76 13E 2
 cstackCOMMON 1 70 70 E 1
 reset_vec 0 0 0 4 2
-bssBANK0 1 20 20 2 1
-stringtext 0 800 1000 E0 2
+bssBANK0 1 20 20 1 1
+stringtext 0 800 1000 46 2
 config 0 8007 1000E 3 2

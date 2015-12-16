@@ -56,8 +56,8 @@
             <setting name="WDTE" option="OFF"/>
             <setting name="WDTCCS" option="SWC"/>
             <setting name="generateConfigBits" option="true"/>
-            <file checksum="905328793" modified="false" name="mcc.c" path="mcc_generated_files/mcc.c"/>
-            <file checksum="3986886745" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
+            <file checksum="167457303" modified="false" name="mcc.c" path="mcc_generated_files/mcc.c"/>
+            <file checksum="3959884531" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
         </manager>
     </managers>
     <modules>
@@ -71,19 +71,7 @@
             <file checksum="979996543" modified="false" name="dac1.c" path="mcc_generated_files/dac1.c"/>
             <file checksum="356308854" modified="false" name="dac1.h" path="mcc_generated_files/dac1.h"/>
         </module>
-        <module generated="true" mode="FVR" name="FVR" order="1" reloadPin="manual" type="vref_bandgap_0buf">
-            <initializer comment="" name="Initialize">
-                <setting name="FVRRDY" option="disabled" register="FVRCON"/>
-                <setting name="CDAFVR" option="off" register="FVRCON"/>
-                <setting name="FVREN" option="enabled" register="FVRCON"/>
-                <setting name="TSRNG" option="Lo_range" register="FVRCON"/>
-                <setting name="ADFVR" option="off" register="FVRCON"/>
-                <setting name="TSEN" option="enabled" register="FVRCON"/>
-            </initializer>
-            <file checksum="1928237989" modified="false" name="fvr.c" path="mcc_generated_files/fvr.c"/>
-            <file checksum="3201748420" modified="false" name="fvr.h" path="mcc_generated_files/fvr.h"/>
-        </module>
-        <module generated="true" mode="GPIO" name="GPIO" order="2" reloadPin="manual" type="GPIO">
+        <module generated="true" mode="GPIO" name="GPIO" order="1" reloadPin="manual" type="GPIO">
             <resource customName="IO_RC0" digital="true" direction="INPUT" function="RC0" ioc="0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC1" digital="true" direction="INPUT" function="RC1" ioc="0" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC2" digital="true" direction="INPUT" function="RC2" ioc="0" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>

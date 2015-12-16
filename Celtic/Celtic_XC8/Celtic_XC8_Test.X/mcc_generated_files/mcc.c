@@ -76,7 +76,6 @@ void SYSTEM_Initialize(void) {
     OSCILLATOR_Initialize();
     PIN_MANAGER_Initialize();
     DAC1_Initialize();
-    FVR_Initialize();
 }
 
 void OSCILLATOR_Initialize(void) {

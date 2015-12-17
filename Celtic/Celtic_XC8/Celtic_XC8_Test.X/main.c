@@ -25,7 +25,7 @@
 
 const uint8_t DacOutput[4] = {43,72,86,100}; // 43=0.3V,72=0.5,86=0.6,100=0.7
 //All are in reverse order for SPI mode transfer
-const uint8_t USIDLOWREV[33] =    {0x4C, 0x27, 0x40, //PWR Mode: Normal
+const uint8_t USIDLOWREV[36] =    {0x4C, 0x27, 0x40, //PWR Mode: Normal
                                    0x4C, 0xB0, 0x41, //F6-F7 ON
                                    0x4C, 0x30, 0x7F, //F1-F6 ON
                                    0x4C, 0xB0, 0x00, //F7 ON
@@ -35,7 +35,8 @@ const uint8_t USIDLOWREV[33] =    {0x4C, 0x27, 0x40, //PWR Mode: Normal
                                    0x4C, 0x30, 0x08, //F3 ON
                                    0x4C, 0x30, 0x10, //F2 ON
                                    0x4C, 0x30, 0x20, //F1 ON
-                                   0x4C, 0x30, 0x40};//F1-F7 OFF
+                                   0x4C, 0x30, 0x40, //F1-F7 OFF
+                                   0x4C, 0x30, 0x54};//State 10 (0101000) [F1 F2 F3 F4 F5 F6 F7]
 const uint8_t USIDHIGHREV[33] =   {0x5C, 0x07, 0x40, 
                                    0x5C, 0x90, 0x41, 
                                    0x5C, 0x10, 0x7F, 
@@ -79,7 +80,7 @@ uint8_t readDummy;
                 readDummy = SPI_Exchange8bit(USIDLOW[(i+j)]);
 }*/
 
-void MIPITRANSFER (uint8_t k){
+void MIPITRANSFER1 (uint8_t k){
         SDO_SetHigh();
         asm("NOP");
         SDO_SetLow();
@@ -118,6 +119,55 @@ void MIPITRANSFER (uint8_t k){
             }
         for (uint8_t i=1; i<3; i++){
             readDummy = USIDLOWREV[(k+i)];
+            for (uint8_t j=0; j<8; j++){
+            SCK_SetHigh();
+            SDO_LAT = readDummy & 0x01;
+            asm("NOP");
+            SCK_SetLow();
+            readDummy = readDummy >> 1;
+            }
+        }
+}
+
+void MIPITRANSFER2 (uint8_t k){
+        SDO_SetHigh();
+        asm("NOP");
+        SDO_SetLow();
+        readDummy = USIDHIGHREV[0];
+        readDummy = readDummy >> 1;
+        for (uint8_t j=0; j<7; j++){
+            SCK_SetHigh();
+            SDO_LAT = readDummy & 0x01;
+            asm("NOP");
+            SCK_SetLow();
+            readDummy = readDummy >> 1;
+            }
+        for (uint8_t i=1; i<3; i++){
+            readDummy = USIDHIGHREV[i];
+            for (uint8_t j=0; j<8; j++){
+            SCK_SetHigh();
+            SDO_LAT = readDummy & 0x01;
+            asm("NOP");
+            SCK_SetLow();
+            readDummy = readDummy >> 1;
+            }
+        }
+        asm("NOP");
+        asm("NOP");
+        SDO_SetHigh();
+        asm("NOP");
+        SDO_SetLow();
+        readDummy = USIDHIGHREV[k];
+        readDummy = readDummy >> 1;
+        for (uint8_t j=0; j<7; j++){
+            SCK_SetHigh();
+            SDO_LAT = readDummy & 0x01;
+            asm("NOP");
+            SCK_SetLow();
+            readDummy = readDummy >> 1;
+            }
+        for (uint8_t i=1; i<3; i++){
+            readDummy = USIDHIGHREV[(k+i)];
             for (uint8_t j=0; j<8; j++){
             SCK_SetHigh();
             SDO_LAT = readDummy & 0x01;
@@ -184,23 +234,27 @@ void main(void) {
 //    MIPIDATA (4);
 //    MIPIDATA (8);
     // MIPI Clock and Data Generation
-    if ((Byte2 == 5) || (Byte3 == 5)){
-        MIPITRANSFER (3); 
+    if ((Byte2 == 5) && (Byte3 == 0)){
+        MIPITRANSFER1 (33);
+        MIPITRANSFER2 (3);
+    }else{      if ((Byte2 == 5) || (Byte3 == 5)){
+        MIPITRANSFER1 (3); 
     }else{      if ((Byte2 == 8) || (Byte3 == 8)){  
-        MIPITRANSFER (6);
+        MIPITRANSFER1 (6);
     }else{      if ((Byte2 == 12) || (Byte3 == 12)){   
-        MIPITRANSFER (9);
+        MIPITRANSFER1 (9);
     }else{      if ((Byte2 == 13) || (Byte3 == 13)){ 
-        MIPITRANSFER (12);
+        MIPITRANSFER1 (12);
     }else{      if ((Byte2 == 20) || (Byte3 == 20)){
-        MIPITRANSFER (15);
+        MIPITRANSFER1 (15);
     }else{      if ((Byte2 == 26) || (Byte3 == 26)){
-        MIPITRANSFER (18);
+        MIPITRANSFER1 (18);
     }else{      if ((Byte2 == 29) || (Byte3 == 29)){ 
-        MIPITRANSFER (21);
+        MIPITRANSFER1 (21);
     }else{
-        MIPITRANSFER (30);
+        MIPITRANSFER1 (30);
     }        
+    }
     }
     }
     }

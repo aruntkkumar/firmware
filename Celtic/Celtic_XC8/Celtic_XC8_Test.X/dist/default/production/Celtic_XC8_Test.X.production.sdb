@@ -7,9 +7,11 @@
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"82 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-[v _MIPITRANSFER MIPITRANSFER `(v  1 e 0 0 ]
-"131
+"83 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+[v _MIPITRANSFER1 MIPITRANSFER1 `(v  1 e 0 0 ]
+"132
+[v _MIPITRANSFER2 MIPITRANSFER2 `(v  1 e 0 0 ]
+"181
 [v _main main `(v  1 e 0 0 ]
 "58 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
 [v _DAC1_Initialize DAC1_Initialize `(v  1 e 0 0 ]
@@ -87,17 +89,19 @@
 "26 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
 [v _DacOutput DacOutput `DCC[4]uc  1 e 4 0 ]
 "28
-[v _USIDLOWREV USIDLOWREV `DCC[33]uc  1 e 33 0 ]
-"72
+[v _USIDLOWREV USIDLOWREV `DCC[36]uc  1 e 36 0 ]
+"40
+[v _USIDHIGHREV USIDHIGHREV `DCC[33]uc  1 e 33 0 ]
+"73
 [v _Byte1 Byte1 `uc  1 e 1 0 ]
 [v _Byte2 Byte2 `uc  1 e 1 0 ]
 [v _Byte3 Byte3 `uc  1 e 1 0 ]
-"73
+"74
 [v _readDummy readDummy `uc  1 e 1 0 ]
-"131
+"181
 [v _main main `(v  1 e 0 0 ]
 {
-"211
+"265
 } 0
 "75 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
@@ -119,26 +123,47 @@
 {
 "63
 } 0
-"82 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-[v _MIPITRANSFER MIPITRANSFER `(v  1 e 0 0 ]
+"132 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
+[v _MIPITRANSFER2 MIPITRANSFER2 `(v  1 e 0 0 ]
 {
-[v MIPITRANSFER@k k `uc  1 a 1 wreg ]
-"121
-[v MIPITRANSFER@j_112 j `uc  1 a 1 7 ]
-"97
-[v MIPITRANSFER@j_109 j `uc  1 a 1 5 ]
-"119
-[v MIPITRANSFER@i_111 i `uc  1 a 1 9 ]
-"112
-[v MIPITRANSFER@j_110 j `uc  1 a 1 6 ]
-"95
-[v MIPITRANSFER@i i `uc  1 a 1 8 ]
-"88
-[v MIPITRANSFER@j j `uc  1 a 1 4 ]
-"82
-[v MIPITRANSFER@k k `uc  1 a 1 wreg ]
-[v MIPITRANSFER@k k `uc  1 a 1 3 ]
-"129
+[v MIPITRANSFER2@k k `uc  1 a 1 wreg ]
+"171
+[v MIPITRANSFER2@j_120 j `uc  1 a 1 7 ]
+"147
+[v MIPITRANSFER2@j_117 j `uc  1 a 1 5 ]
+"169
+[v MIPITRANSFER2@i_119 i `uc  1 a 1 9 ]
+"162
+[v MIPITRANSFER2@j_118 j `uc  1 a 1 6 ]
+"145
+[v MIPITRANSFER2@i i `uc  1 a 1 8 ]
+"138
+[v MIPITRANSFER2@j j `uc  1 a 1 4 ]
+"132
+[v MIPITRANSFER2@k k `uc  1 a 1 wreg ]
+[v MIPITRANSFER2@k k `uc  1 a 1 3 ]
+"179
+} 0
+"83
+[v _MIPITRANSFER1 MIPITRANSFER1 `(v  1 e 0 0 ]
+{
+[v MIPITRANSFER1@k k `uc  1 a 1 wreg ]
+"122
+[v MIPITRANSFER1@j_112 j `uc  1 a 1 7 ]
+"98
+[v MIPITRANSFER1@j_109 j `uc  1 a 1 5 ]
+"120
+[v MIPITRANSFER1@i_111 i `uc  1 a 1 9 ]
+"113
+[v MIPITRANSFER1@j_110 j `uc  1 a 1 6 ]
+"96
+[v MIPITRANSFER1@i i `uc  1 a 1 8 ]
+"89
+[v MIPITRANSFER1@j j `uc  1 a 1 4 ]
+"83
+[v MIPITRANSFER1@k k `uc  1 a 1 wreg ]
+[v MIPITRANSFER1@k k `uc  1 a 1 3 ]
+"130
 } 0
 "65 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
 [v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 0 0 ]

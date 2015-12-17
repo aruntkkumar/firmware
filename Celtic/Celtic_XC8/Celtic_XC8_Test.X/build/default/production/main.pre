@@ -13628,7 +13628,7 @@ void OSCILLATOR_Initialize(void);
 # 26 "main.c"
 const uint8_t DacOutput[4] = {43,72,86,100};
 
-const uint8_t USIDLOWREV[33] = {0x4C, 0x27, 0x40,
+const uint8_t USIDLOWREV[36] = {0x4C, 0x27, 0x40,
 0x4C, 0xB0, 0x41,
 0x4C, 0x30, 0x7F,
 0x4C, 0xB0, 0x00,
@@ -13638,7 +13638,8 @@ const uint8_t USIDLOWREV[33] = {0x4C, 0x27, 0x40,
 0x4C, 0x30, 0x08,
 0x4C, 0x30, 0x10,
 0x4C, 0x30, 0x20,
-0x4C, 0x30, 0x40};
+0x4C, 0x30, 0x40,
+0x4C, 0x30, 0x54};
 const uint8_t USIDHIGHREV[33] = {0x5C, 0x07, 0x40,
 0x5C, 0x90, 0x41,
 0x5C, 0x10, 0x7F,
@@ -13651,12 +13652,12 @@ const uint8_t USIDHIGHREV[33] = {0x5C, 0x07, 0x40,
 0x5C, 0x10, 0x20,
 0x5C, 0x10, 0x40};
 
-# 72
+# 73
 uint8_t Byte1, Byte2, Byte3;
 uint8_t readDummy;
 
-# 82
-void MIPITRANSFER (uint8_t k){
+# 83
+void MIPITRANSFER1 (uint8_t k){
 do { LATB7 = 1; } while(0);
 asm("NOP");
 do { LATB7 = 0; } while(0);
@@ -13695,6 +13696,55 @@ readDummy = readDummy >> 1;
 }
 for (uint8_t i=1; i<3; i++){
 readDummy = USIDLOWREV[(k+i)];
+for (uint8_t j=0; j<8; j++){
+do { LATB6 = 1; } while(0);
+LATB7 = readDummy & 0x01;
+asm("NOP");
+do { LATB6 = 0; } while(0);
+readDummy = readDummy >> 1;
+}
+}
+}
+
+void MIPITRANSFER2 (uint8_t k){
+do { LATB7 = 1; } while(0);
+asm("NOP");
+do { LATB7 = 0; } while(0);
+readDummy = USIDHIGHREV[0];
+readDummy = readDummy >> 1;
+for (uint8_t j=0; j<7; j++){
+do { LATB6 = 1; } while(0);
+LATB7 = readDummy & 0x01;
+asm("NOP");
+do { LATB6 = 0; } while(0);
+readDummy = readDummy >> 1;
+}
+for (uint8_t i=1; i<3; i++){
+readDummy = USIDHIGHREV[i];
+for (uint8_t j=0; j<8; j++){
+do { LATB6 = 1; } while(0);
+LATB7 = readDummy & 0x01;
+asm("NOP");
+do { LATB6 = 0; } while(0);
+readDummy = readDummy >> 1;
+}
+}
+asm("NOP");
+asm("NOP");
+do { LATB7 = 1; } while(0);
+asm("NOP");
+do { LATB7 = 0; } while(0);
+readDummy = USIDHIGHREV[k];
+readDummy = readDummy >> 1;
+for (uint8_t j=0; j<7; j++){
+do { LATB6 = 1; } while(0);
+LATB7 = readDummy & 0x01;
+asm("NOP");
+do { LATB6 = 0; } while(0);
+readDummy = readDummy >> 1;
+}
+for (uint8_t i=1; i<3; i++){
+readDummy = USIDHIGHREV[(k+i)];
 for (uint8_t j=0; j<8; j++){
 do { LATB6 = 1; } while(0);
 LATB7 = readDummy & 0x01;
@@ -13761,22 +13811,26 @@ do { LATA4 = 0; } while(0);
 
 
 
-if ((Byte2 == 5) || (Byte3 == 5)){
-MIPITRANSFER (3);
+if ((Byte2 == 5) && (Byte3 == 0)){
+MIPITRANSFER1 (33);
+MIPITRANSFER2 (3);
+}else{ if ((Byte2 == 5) || (Byte3 == 5)){
+MIPITRANSFER1 (3);
 }else{ if ((Byte2 == 8) || (Byte3 == 8)){
-MIPITRANSFER (6);
+MIPITRANSFER1 (6);
 }else{ if ((Byte2 == 12) || (Byte3 == 12)){
-MIPITRANSFER (9);
+MIPITRANSFER1 (9);
 }else{ if ((Byte2 == 13) || (Byte3 == 13)){
-MIPITRANSFER (12);
+MIPITRANSFER1 (12);
 }else{ if ((Byte2 == 20) || (Byte3 == 20)){
-MIPITRANSFER (15);
+MIPITRANSFER1 (15);
 }else{ if ((Byte2 == 26) || (Byte3 == 26)){
-MIPITRANSFER (18);
+MIPITRANSFER1 (18);
 }else{ if ((Byte2 == 29) || (Byte3 == 29)){
-MIPITRANSFER (21);
+MIPITRANSFER1 (21);
 }else{
-MIPITRANSFER (30);
+MIPITRANSFER1 (30);
+}
 }
 }
 }

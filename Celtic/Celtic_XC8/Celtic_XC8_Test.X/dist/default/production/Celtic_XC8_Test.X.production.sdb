@@ -9,8 +9,6 @@
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
 "83 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
 [v _MIPITRANSFER1 MIPITRANSFER1 `(v  1 e 0 0 ]
-"132
-[v _MIPITRANSFER2 MIPITRANSFER2 `(v  1 e 0 0 ]
 "181
 [v _main main `(v  1 e 0 0 ]
 "58 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\mcc_generated_files/dac1.c
@@ -123,28 +121,7 @@
 {
 "63
 } 0
-"132 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
-[v _MIPITRANSFER2 MIPITRANSFER2 `(v  1 e 0 0 ]
-{
-[v MIPITRANSFER2@k k `uc  1 a 1 wreg ]
-"171
-[v MIPITRANSFER2@j_120 j `uc  1 a 1 7 ]
-"147
-[v MIPITRANSFER2@j_117 j `uc  1 a 1 5 ]
-"169
-[v MIPITRANSFER2@i_119 i `uc  1 a 1 9 ]
-"162
-[v MIPITRANSFER2@j_118 j `uc  1 a 1 6 ]
-"145
-[v MIPITRANSFER2@i i `uc  1 a 1 8 ]
-"138
-[v MIPITRANSFER2@j j `uc  1 a 1 4 ]
-"132
-[v MIPITRANSFER2@k k `uc  1 a 1 wreg ]
-[v MIPITRANSFER2@k k `uc  1 a 1 3 ]
-"179
-} 0
-"83
+"83 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic_XC8\Celtic_XC8_Test.X\main.c
 [v _MIPITRANSFER1 MIPITRANSFER1 `(v  1 e 0 0 ]
 {
 [v MIPITRANSFER1@k k `uc  1 a 1 wreg ]

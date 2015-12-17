@@ -236,7 +236,7 @@ void main(void) {
     // MIPI Clock and Data Generation
     if ((Byte2 == 5) && (Byte3 == 0)){
         MIPITRANSFER1 (33);
-        MIPITRANSFER2 (3);
+//        MIPITRANSFER2 (3);
     }else{      if ((Byte2 == 5) || (Byte3 == 5)){
         MIPITRANSFER1 (3); 
     }else{      if ((Byte2 == 8) || (Byte3 == 8)){  

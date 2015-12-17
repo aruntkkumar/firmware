@@ -13638,7 +13638,7 @@ const uint8_t DATA[65] = {0x00, 0x80, 0x40, 0xC0, 0x20, 0xA0, 0x60, 0xE0, 0x10, 
 0x06};
 
 uint8_t Byte1, Byte2, Byte3;
-uint8_t parity1, parity2;
+uint8_t parity1, parity2, parity3, parity4;
 
 # 132
 void shiftRegister (uint8_t Dummy1, uint8_t Dummy2, uint8_t y){
@@ -13664,9 +13664,11 @@ if (parity) return 0;
 else return 1;
 }
 
-void MIPI (uint8_t x, uint8_t y){
-parity1 = paritycheck(DATA[x]);
-parity2 = paritycheck(DATA[y]);
+void MIPI (uint8_t a, uint8_t b, uint8_t c, uint8_t d){
+parity1 = paritycheck(DATA[a]);
+parity2 = paritycheck(DATA[b]);
+parity3 = paritycheck(DATA[c]);
+parity4 = paritycheck(DATA[d]);
 for (uint8_t i=0; i<2; i++){
 for (uint8_t j=0; j<2; j++){
 do { LATB7 = 1; } while(0);
@@ -13677,11 +13679,23 @@ do { LATB5 = 0; } while(0);
 shiftRegister (SLAVEADD[i],SLAVEADD[i],4);
 shiftRegister (0x02,0x02,3);
 shiftRegister (REGADD[j],REGADD[j],5);
-if (i==0) shiftRegister (0x01,0x01,1);
-else shiftRegister (0x00,0x00,1);
-if (j==0) shiftRegister (0x00,0x00,8);
-else shiftRegister (DATA[x],DATA[y],8);
+if (i==0)
+shiftRegister (0x01,0x01,1);
+else
+shiftRegister (0x00,0x00,1);
+if (j==0){
+shiftRegister (0x00,0x00,8);
+shiftRegister (0x01,0x01,2);
+}
+else{
+if (i==0){
+shiftRegister (DATA[a],DATA[b],8);
 shiftRegister (parity1,parity2,2);
+}else{
+shiftRegister (DATA[c],DATA[d],8);
+shiftRegister (parity3,parity4,2);
+}
+}
 asm("NOP");
 asm("NOP");
 }
@@ -13748,7 +13762,7 @@ do { LATA4 = 0; } while(0);
 
 
 if ((Byte2 == 5) && (Byte3 == 0)) {
-MIPI(10,64);
+MIPI(10,64,0,0);
 
 
 } else {

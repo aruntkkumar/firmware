@@ -70,7 +70,7 @@ const   uint8_t DATA[65]    =  {0x00, 0x80, 0x40, 0xC0, 0x20, 0xA0, 0x60, 0xE0, 
                                 0x06}; //STATE64 (F6&F7 ON)   
 
 uint8_t Byte1, Byte2, Byte3; // First 3 bytes from RFFE
-uint8_t parity1, parity2;
+uint8_t parity1, parity2, parity3, parity4;
 //uint8_t readDummy;
 
 /*void MIPIDATA (uint8_t i){                // Need to enable SPI module to use the same
@@ -152,9 +152,11 @@ uint8_t paritycheck (uint8_t Dummy){
     else        return 1;
 }
 
-void MIPI (uint8_t x, uint8_t y){
-    parity1 = paritycheck(DATA[x]);
-    parity2 = paritycheck(DATA[y]);
+void MIPI (uint8_t a, uint8_t b, uint8_t c, uint8_t d){
+    parity1 = paritycheck(DATA[a]);
+    parity2 = paritycheck(DATA[b]);
+    parity3 = paritycheck(DATA[c]);
+    parity4 = paritycheck(DATA[d]);
     for (uint8_t i=0; i<2; i++){
         for (uint8_t j=0; j<2; j++){            
             SDO1_SetHigh();
@@ -165,11 +167,23 @@ void MIPI (uint8_t x, uint8_t y){
             shiftRegister (SLAVEADD[i],SLAVEADD[i],4);
             shiftRegister (0x02,0x02,3);
             shiftRegister (REGADD[j],REGADD[j],5);
-            if (i==0)   shiftRegister (0x01,0x01,1);     //For USID = 0110, Parity = 1
-            else        shiftRegister (0x00,0x00,1);     //For USID = 0111, Parity = 0
-            if (j==0)   shiftRegister (0x00,0x00,8);
-            else        shiftRegister (DATA[x],DATA[y],8);
-            shiftRegister (parity1,parity2,2);          //Parity + Bus Park
+            if (i==0)   
+                shiftRegister (0x01,0x01,1);     //For USID = 0110, Parity = 1
+            else        
+                shiftRegister (0x00,0x00,1);     //For USID = 0111, Parity = 0
+            if (j==0){   
+                shiftRegister (0x00,0x00,8);    //F1-F7 OFF
+                shiftRegister (0x01,0x01,2);    //Parity + Bus Park
+            }
+            else{        
+                if (i==0){
+                        shiftRegister (DATA[a],DATA[b],8);          //SSC1 & SSC2
+                        shiftRegister (parity1,parity2,2);          //Parity + Bus Park
+                }else{
+                        shiftRegister (DATA[c],DATA[d],8);          //SSC1 & SSC2
+                        shiftRegister (parity3,parity4,2);          //Parity + Bus Park
+                }
+            }
             asm("NOP");
             asm("NOP");
         }
@@ -236,7 +250,7 @@ void main(void) {
         //    MIPIDATA (8);
         // MIPI Clock and Data Generation
         if ((Byte2 == 5) && (Byte3 == 0)) {
-            MIPI(10,64);
+            MIPI(10,64,0,0);
 //            MIPITRANSFER(33);
 //            MIPITRANSFER(3);
         } else {

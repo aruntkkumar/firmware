@@ -13,7 +13,7 @@
 [v _paritycheck paritycheck `(uc  1 e 1 0 ]
 "155
 [v _MIPI MIPI `(v  1 e 0 0 ]
-"179
+"193
 [v _main main `(v  1 e 0 0 ]
 "58 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\mcc_generated_files/dac1.c
 [v _DAC1_Initialize DAC1_Initialize `(v  1 e 0 0 ]
@@ -105,10 +105,12 @@
 "73
 [v _parity1 parity1 `uc  1 e 1 0 ]
 [v _parity2 parity2 `uc  1 e 1 0 ]
-"179
+[v _parity3 parity3 `uc  1 e 1 0 ]
+[v _parity4 parity4 `uc  1 e 1 0 ]
+"193
 [v _main main `(v  1 e 0 0 ]
 {
-"274
+"288
 } 0
 "75 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
@@ -133,16 +135,18 @@
 "155 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\main.c
 [v _MIPI MIPI `(v  1 e 0 0 ]
 {
-[v MIPI@x x `uc  1 a 1 wreg ]
-"159
-[v MIPI@j j `uc  1 a 1 10 ]
-"158
-[v MIPI@i i `uc  1 a 1 9 ]
+[v MIPI@a a `uc  1 a 1 wreg ]
+"161
+[v MIPI@j j `uc  1 a 1 11 ]
+"160
+[v MIPI@i i `uc  1 a 1 12 ]
 "155
-[v MIPI@x x `uc  1 a 1 wreg ]
-[v MIPI@y y `uc  1 p 1 5 ]
-[v MIPI@x x `uc  1 a 1 8 ]
-"177
+[v MIPI@a a `uc  1 a 1 wreg ]
+[v MIPI@b b `uc  1 p 1 5 ]
+[v MIPI@c c `uc  1 p 1 6 ]
+[v MIPI@d d `uc  1 p 1 7 ]
+[v MIPI@a a `uc  1 a 1 10 ]
+"191
 } 0
 "132
 [v _shiftRegister shiftRegister `(v  1 e 0 0 ]

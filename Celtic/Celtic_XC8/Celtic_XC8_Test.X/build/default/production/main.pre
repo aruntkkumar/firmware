@@ -13514,10 +13514,10 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 283 "mcc_generated_files/pin_manager.h"
+# 297 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize(void);
 
-# 295
+# 309
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdint.h"
@@ -13707,14 +13707,14 @@ readDummy = readDummy >> 1;
 }
 
 void MIPITRANSFER2 (uint8_t k){
-do { LATB7 = 1; } while(0);
+do { LATB5 = 1; } while(0);
 asm("NOP");
-do { LATB7 = 0; } while(0);
+do { LATB5 = 0; } while(0);
 readDummy = USIDHIGHREV[0];
 readDummy = readDummy >> 1;
 for (uint8_t j=0; j<7; j++){
 do { LATB6 = 1; } while(0);
-LATB7 = readDummy & 0x01;
+LATB5 = readDummy & 0x01;
 asm("NOP");
 do { LATB6 = 0; } while(0);
 readDummy = readDummy >> 1;
@@ -13723,7 +13723,7 @@ for (uint8_t i=1; i<3; i++){
 readDummy = USIDHIGHREV[i];
 for (uint8_t j=0; j<8; j++){
 do { LATB6 = 1; } while(0);
-LATB7 = readDummy & 0x01;
+LATB5 = readDummy & 0x01;
 asm("NOP");
 do { LATB6 = 0; } while(0);
 readDummy = readDummy >> 1;
@@ -13731,14 +13731,14 @@ readDummy = readDummy >> 1;
 }
 asm("NOP");
 asm("NOP");
-do { LATB7 = 1; } while(0);
+do { LATB5 = 1; } while(0);
 asm("NOP");
-do { LATB7 = 0; } while(0);
+do { LATB5 = 0; } while(0);
 readDummy = USIDHIGHREV[k];
 readDummy = readDummy >> 1;
 for (uint8_t j=0; j<7; j++){
 do { LATB6 = 1; } while(0);
-LATB7 = readDummy & 0x01;
+LATB5 = readDummy & 0x01;
 asm("NOP");
 do { LATB6 = 0; } while(0);
 readDummy = readDummy >> 1;
@@ -13747,7 +13747,7 @@ for (uint8_t i=1; i<3; i++){
 readDummy = USIDHIGHREV[(k+i)];
 for (uint8_t j=0; j<8; j++){
 do { LATB6 = 1; } while(0);
-LATB7 = readDummy & 0x01;
+LATB5 = readDummy & 0x01;
 asm("NOP");
 do { LATB6 = 0; } while(0);
 readDummy = readDummy >> 1;
@@ -13813,7 +13813,7 @@ do { LATA4 = 0; } while(0);
 
 if ((Byte2 == 5) && (Byte3 == 0)){
 MIPITRANSFER1 (33);
-
+MIPITRANSFER2 (3);
 }else{ if ((Byte2 == 5) || (Byte3 == 5)){
 MIPITRANSFER1 (3);
 }else{ if ((Byte2 == 8) || (Byte3 == 8)){

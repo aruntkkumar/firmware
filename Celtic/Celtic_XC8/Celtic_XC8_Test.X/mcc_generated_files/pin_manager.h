@@ -129,6 +129,20 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define AUX_NIC_LDO_EN_SetAnalogMode()   do { ANSB4 = 1; } while(0)
 #define AUX_NIC_LDO_EN_SetDigitalMode()   do { ANSB4 = 0; } while(0)
+// get/set SDO2 aliases
+#define SDO2_TRIS               TRISB5
+#define SDO2_LAT                LATB5
+#define SDO2_PORT               RB5
+#define SDO2_ANS                ANSB5
+#define SDO2_SetHigh()    do { LATB5 = 1; } while(0)
+#define SDO2_SetLow()   do { LATB5 = 0; } while(0)
+#define SDO2_Toggle()   do { LATB5 = ~LATB5; } while(0)
+#define SDO2_GetValue()         RB5
+#define SDO2_SetDigitalInput()    do { TRISB5 = 1; } while(0)
+#define SDO2_SetDigitalOutput()   do { TRISB5 = 0; } while(0)
+
+#define SDO2_SetAnalogMode()   do { ANSB5 = 1; } while(0)
+#define SDO2_SetDigitalMode()   do { ANSB5 = 0; } while(0)
 // get/set SCK aliases
 #define SCK_TRIS               TRISB6
 #define SCK_LAT                LATB6
@@ -143,20 +157,20 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define SCK_SetPullup()    do { WPUB6 = 1; } while(0)
 #define SCK_ResetPullup()   do { WPUB6 = 0; } while(0)
-// get/set SDO aliases
-#define SDO_TRIS               TRISB7
-#define SDO_LAT                LATB7
-#define SDO_PORT               RB7
-#define SDO_WPU                WPUB7
-#define SDO_SetHigh()    do { LATB7 = 1; } while(0)
-#define SDO_SetLow()   do { LATB7 = 0; } while(0)
-#define SDO_Toggle()   do { LATB7 = ~LATB7; } while(0)
-#define SDO_GetValue()         RB7
-#define SDO_SetDigitalInput()    do { TRISB7 = 1; } while(0)
-#define SDO_SetDigitalOutput()   do { TRISB7 = 0; } while(0)
+// get/set SDO1 aliases
+#define SDO1_TRIS               TRISB7
+#define SDO1_LAT                LATB7
+#define SDO1_PORT               RB7
+#define SDO1_WPU                WPUB7
+#define SDO1_SetHigh()    do { LATB7 = 1; } while(0)
+#define SDO1_SetLow()   do { LATB7 = 0; } while(0)
+#define SDO1_Toggle()   do { LATB7 = ~LATB7; } while(0)
+#define SDO1_GetValue()         RB7
+#define SDO1_SetDigitalInput()    do { TRISB7 = 1; } while(0)
+#define SDO1_SetDigitalOutput()   do { TRISB7 = 0; } while(0)
 
-#define SDO_SetPullup()    do { WPUB7 = 1; } while(0)
-#define SDO_ResetPullup()   do { WPUB7 = 0; } while(0)
+#define SDO1_SetPullup()    do { WPUB7 = 1; } while(0)
+#define SDO1_ResetPullup()   do { WPUB7 = 0; } while(0)
 // get/set IO_RC0 aliases
 #define IO_RC0_TRIS               TRISC0
 #define IO_RC0_LAT                LATC0

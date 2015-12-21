@@ -81,14 +81,14 @@ uint8_t readDummy;
 }*/
 
 void MIPITRANSFER1 (uint8_t k){
-        SDO_SetHigh();
+        SDO1_SetHigh();
         asm("NOP");
-        SDO_SetLow();
+        SDO1_SetLow();
         readDummy = USIDLOWREV[0];
         readDummy = readDummy >> 1;
         for (uint8_t j=0; j<7; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO1_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -97,7 +97,7 @@ void MIPITRANSFER1 (uint8_t k){
             readDummy = USIDLOWREV[i];
             for (uint8_t j=0; j<8; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO1_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -105,14 +105,14 @@ void MIPITRANSFER1 (uint8_t k){
         }
         asm("NOP");
         asm("NOP");
-        SDO_SetHigh();
+        SDO1_SetHigh();
         asm("NOP");
-        SDO_SetLow();
+        SDO1_SetLow();
         readDummy = USIDLOWREV[k];
         readDummy = readDummy >> 1;
         for (uint8_t j=0; j<7; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO1_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -121,7 +121,7 @@ void MIPITRANSFER1 (uint8_t k){
             readDummy = USIDLOWREV[(k+i)];
             for (uint8_t j=0; j<8; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO1_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -130,14 +130,14 @@ void MIPITRANSFER1 (uint8_t k){
 }
 
 void MIPITRANSFER2 (uint8_t k){
-        SDO_SetHigh();
+        SDO2_SetHigh();
         asm("NOP");
-        SDO_SetLow();
+        SDO2_SetLow();
         readDummy = USIDHIGHREV[0];
         readDummy = readDummy >> 1;
         for (uint8_t j=0; j<7; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO2_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -146,7 +146,7 @@ void MIPITRANSFER2 (uint8_t k){
             readDummy = USIDHIGHREV[i];
             for (uint8_t j=0; j<8; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO2_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -154,14 +154,14 @@ void MIPITRANSFER2 (uint8_t k){
         }
         asm("NOP");
         asm("NOP");
-        SDO_SetHigh();
+        SDO2_SetHigh();
         asm("NOP");
-        SDO_SetLow();
+        SDO2_SetLow();
         readDummy = USIDHIGHREV[k];
         readDummy = readDummy >> 1;
         for (uint8_t j=0; j<7; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO2_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -170,7 +170,7 @@ void MIPITRANSFER2 (uint8_t k){
             readDummy = USIDHIGHREV[(k+i)];
             for (uint8_t j=0; j<8; j++){
             SCK_SetHigh();
-            SDO_LAT = readDummy & 0x01;
+            SDO2_LAT = readDummy & 0x01;
             asm("NOP");
             SCK_SetLow();
             readDummy = readDummy >> 1;
@@ -236,7 +236,7 @@ void main(void) {
     // MIPI Clock and Data Generation
     if ((Byte2 == 5) && (Byte3 == 0)){
         MIPITRANSFER1 (33);
-//        MIPITRANSFER2 (3);
+        MIPITRANSFER2 (3);
     }else{      if ((Byte2 == 5) || (Byte3 == 5)){
         MIPITRANSFER1 (3); 
     }else{      if ((Byte2 == 8) || (Byte3 == 8)){  

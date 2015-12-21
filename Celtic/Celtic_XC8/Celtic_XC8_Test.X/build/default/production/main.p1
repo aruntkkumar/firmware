@@ -3,12 +3,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATB7 `Vb ~T0 @X0 0 e@2159 ]
 "26810
 [v _LATB6 `Vb ~T0 @X0 0 e@2158 ]
+"26808
+[v _LATB5 `Vb ~T0 @X0 0 e@2157 ]
 [p mainexit ]
 "68 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/dac1.h
 [v _DAC1_Initialize `(v ~T0 @X0 0 ef ]
-"283 mcc_generated_files/pin_manager.h
+"297 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "129 mcc_generated_files/dac1.h
 [v _DAC1_SetOutput `(v ~T0 @X0 0 ef1`uc ]
@@ -9976,8 +9978,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
-[; ;pin_manager.h: 283: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 295: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 297: void PIN_MANAGER_Initialize(void);
+[; ;pin_manager.h: 309: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -10431,21 +10433,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _MIPITRANSFER2 ]
 [v _k `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 133: do { LATB7 = 1; } while(0);
+[; ;main.c: 133: do { LATB5 = 1; } while(0);
 "133
 [e :U 1180 ]
 {
-[e = _LATB7 -> -> 1 `i `b ]
+[e = _LATB5 -> -> 1 `i `b ]
 }
 [e :U 1179 ]
 [; ;main.c: 134: asm("NOP");
 "134
 [; <" NOP ;# ">
-[; ;main.c: 135: do { LATB7 = 0; } while(0);
+[; ;main.c: 135: do { LATB5 = 0; } while(0);
 "135
 [e :U 1183 ]
 {
-[e = _LATB7 -> -> 0 `i `b ]
+[e = _LATB5 -> -> 0 `i `b ]
 }
 [e :U 1182 ]
 [; ;main.c: 136: readDummy = USIDHIGHREV[0];
@@ -10470,9 +10472,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATB6 -> -> 1 `i `b ]
 }
 [e :U 1188 ]
-[; ;main.c: 140: LATB7 = readDummy & 0x01;
+[; ;main.c: 140: LATB5 = readDummy & 0x01;
 "140
-[e = _LATB7 -> & -> _readDummy `i -> 1 `i `b ]
+[e = _LATB5 -> & -> _readDummy `i -> 1 `i `b ]
 [; ;main.c: 141: asm("NOP");
 "141
 [; <" NOP ;# ">
@@ -10523,9 +10525,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATB6 -> -> 1 `i `b ]
 }
 [e :U 1200 ]
-[; ;main.c: 149: LATB7 = readDummy & 0x01;
+[; ;main.c: 149: LATB5 = readDummy & 0x01;
 "149
-[e = _LATB7 -> & -> _readDummy `i -> 1 `i `b ]
+[e = _LATB5 -> & -> _readDummy `i -> 1 `i `b ]
 [; ;main.c: 150: asm("NOP");
 "150
 [; <" NOP ;# ">
@@ -10563,21 +10565,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 156: asm("NOP");
 "156
 [; <" NOP ;# ">
-[; ;main.c: 157: do { LATB7 = 1; } while(0);
+[; ;main.c: 157: do { LATB5 = 1; } while(0);
 "157
 [e :U 1207 ]
 {
-[e = _LATB7 -> -> 1 `i `b ]
+[e = _LATB5 -> -> 1 `i `b ]
 }
 [e :U 1206 ]
 [; ;main.c: 158: asm("NOP");
 "158
 [; <" NOP ;# ">
-[; ;main.c: 159: do { LATB7 = 0; } while(0);
+[; ;main.c: 159: do { LATB5 = 0; } while(0);
 "159
 [e :U 1210 ]
 {
-[e = _LATB7 -> -> 0 `i `b ]
+[e = _LATB5 -> -> 0 `i `b ]
 }
 [e :U 1209 ]
 [; ;main.c: 160: readDummy = USIDHIGHREV[k];
@@ -10602,9 +10604,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATB6 -> -> 1 `i `b ]
 }
 [e :U 1215 ]
-[; ;main.c: 164: LATB7 = readDummy & 0x01;
+[; ;main.c: 164: LATB5 = readDummy & 0x01;
 "164
-[e = _LATB7 -> & -> _readDummy `i -> 1 `i `b ]
+[e = _LATB5 -> & -> _readDummy `i -> 1 `i `b ]
 [; ;main.c: 165: asm("NOP");
 "165
 [; <" NOP ;# ">
@@ -10655,9 +10657,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATB6 -> -> 1 `i `b ]
 }
 [e :U 1227 ]
-[; ;main.c: 173: LATB7 = readDummy & 0x01;
+[; ;main.c: 173: LATB5 = readDummy & 0x01;
 "173
-[e = _LATB7 -> & -> _readDummy `i -> 1 `i `b ]
+[e = _LATB5 -> & -> _readDummy `i -> 1 `i `b ]
 [; ;main.c: 174: asm("NOP");
 "174
 [; <" NOP ;# ">
@@ -10968,6 +10970,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 238: MIPITRANSFER1 (33);
 "238
 [e ( _MIPITRANSFER1 (1 -> -> 33 `i `uc ]
+[; ;main.c: 239: MIPITRANSFER2 (3);
+"239
+[e ( _MIPITRANSFER2 (1 -> -> 3 `i `uc ]
 "240
 }
 [; ;main.c: 240: }else{ if ((Byte2 == 5) || (Byte3 == 5)){

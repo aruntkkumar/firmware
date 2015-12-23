@@ -7,13 +7,15 @@
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"132 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\main.c
+"139 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\main.c
 [v _shiftRegister shiftRegister `(v  1 e 0 0 ]
-"144
+"151
 [v _paritycheck paritycheck `(uc  1 e 1 0 ]
-"155
+"162
 [v _MIPI MIPI `(v  1 e 0 0 ]
-"193
+"200
+[v _ConfigureShiftRegister ConfigureShiftRegister `(v  1 e 0 0 ]
+"284
 [v _main main `(v  1 e 0 0 ]
 "58 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\mcc_generated_files/dac1.c
 [v _DAC1_Initialize DAC1_Initialize `(v  1 e 0 0 ]
@@ -98,19 +100,21 @@
 [v _REGADD REGADD `DCC[2]uc  1 e 2 0 ]
 "66
 [v _DATA DATA `DCC[65]uc  1 e 65 0 ]
-"72
+"71
+[v _ACTIVEBAND ACTIVEBAND `DCC[64]uc  1 e 64 0 ]
+"79
 [v _Byte1 Byte1 `uc  1 e 1 0 ]
 [v _Byte2 Byte2 `uc  1 e 1 0 ]
 [v _Byte3 Byte3 `uc  1 e 1 0 ]
-"73
+"80
 [v _parity1 parity1 `uc  1 e 1 0 ]
 [v _parity2 parity2 `uc  1 e 1 0 ]
 [v _parity3 parity3 `uc  1 e 1 0 ]
 [v _parity4 parity4 `uc  1 e 1 0 ]
-"193
+"284
 [v _main main `(v  1 e 0 0 ]
 {
-"288
+"431
 } 0
 "75 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
@@ -132,45 +136,45 @@
 {
 "63
 } 0
-"155 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\main.c
+"162 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\main.c
 [v _MIPI MIPI `(v  1 e 0 0 ]
 {
 [v MIPI@a a `uc  1 a 1 wreg ]
-"161
+"168
 [v MIPI@j j `uc  1 a 1 11 ]
-"160
+"167
 [v MIPI@i i `uc  1 a 1 12 ]
-"155
+"162
 [v MIPI@a a `uc  1 a 1 wreg ]
 [v MIPI@b b `uc  1 p 1 5 ]
 [v MIPI@c c `uc  1 p 1 6 ]
 [v MIPI@d d `uc  1 p 1 7 ]
 [v MIPI@a a `uc  1 a 1 10 ]
-"191
+"198
 } 0
-"132
+"139
 [v _shiftRegister shiftRegister `(v  1 e 0 0 ]
 {
 [v shiftRegister@Dummy1 Dummy1 `uc  1 a 1 wreg ]
-"133
+"140
 [v shiftRegister@m m `uc  1 a 1 3 ]
-"132
+"139
 [v shiftRegister@Dummy1 Dummy1 `uc  1 a 1 wreg ]
 [v shiftRegister@Dummy2 Dummy2 `uc  1 p 1 0 ]
 [v shiftRegister@y y `uc  1 p 1 1 ]
 [v shiftRegister@Dummy1 Dummy1 `uc  1 a 1 4 ]
-"142
+"149
 } 0
-"144
+"151
 [v _paritycheck paritycheck `(uc  1 e 1 0 ]
 {
 [v paritycheck@Dummy Dummy `uc  1 a 1 wreg ]
-"145
+"152
 [v paritycheck@parity parity `uc  1 a 1 1 ]
-"144
+"151
 [v paritycheck@Dummy Dummy `uc  1 a 1 wreg ]
 [v paritycheck@Dummy Dummy `uc  1 a 1 2 ]
-"153
+"160
 } 0
 "65 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\mcc_generated_files/dac1.c
 [v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 0 0 ]
@@ -179,4 +183,12 @@
 [v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
 [v DAC1_SetOutput@inputData inputData `uc  1 a 1 0 ]
 "67
+} 0
+"200 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celticv1.0\Celticv1.0.X\main.c
+[v _ConfigureShiftRegister ConfigureShiftRegister `(v  1 e 0 0 ]
+{
+"201
+[v ConfigureShiftRegister@ReverseReg ReverseReg `uc  1 a 1 2 ]
+[v ConfigureShiftRegister@i i `uc  1 a 1 1 ]
+"282
 } 0

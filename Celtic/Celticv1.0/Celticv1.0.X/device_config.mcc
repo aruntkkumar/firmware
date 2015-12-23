@@ -5,9 +5,9 @@
             <setting name="package" option="PDIP20"/>
             <setting name="sorting" option="true"/>
             <resource customName="DAC1OUT" digital="false" direction="OUTPUT" function="DAC1OUT" ioc="0" module="DAC1" name="RA0" start="false" type="pin" wpu="false"/>
-            <resource customName="CTLA" digital="true" direction="OUTPUT" function="RA1" ioc="0" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
+            <resource customName="PE_OE" digital="true" direction="OUTPUT" function="RA1" ioc="0" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
             <resource customName="MAIN_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA2" ioc="0" module="GPIO" name="RA2" start="false" type="pin" wpu="false"/>
-            <resource customName="CTLB" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
+            <resource customName="PE_D" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
             <resource customName="AUX_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
             <resource customName="SDO2" digital="true" direction="OUTPUT" function="RB5" ioc="0" module="GPIO" name="RB5" start="false" type="pin" wpu="false"/>
             <resource customName="SCK" digital="true" direction="OUTPUT" function="RB6" ioc="0" module="GPIO" name="RB6" start="false" type="pin" wpu="false"/>
@@ -21,7 +21,7 @@
             <resource customName="IO_RC6" digital="true" direction="INPUT" function="RC6" ioc="0" module="GPIO" name="RC6" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC7" digital="true" direction="INPUT" function="RC7" ioc="0" module="GPIO" name="RC7" start="false" type="pin" wpu="false"/>
             <file checksum="3393163432" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
-            <file checksum="3499892031" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
+            <file checksum="38806346" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
         </manager>
         <manager generated="true" name="System" reloadPin="manual">
             <initializer comment="" name="Initialize">
@@ -81,8 +81,8 @@
             <resource customName="IO_RC5" digital="true" direction="INPUT" function="RC5" ioc="0" module="GPIO" name="RC5" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC6" digital="true" direction="INPUT" function="RC6" ioc="0" module="GPIO" name="RC6" start="false" type="pin" wpu="false"/>
             <resource customName="IO_RC7" digital="true" direction="INPUT" function="RC7" ioc="0" module="GPIO" name="RC7" start="false" type="pin" wpu="false"/>
-            <resource customName="CTLA" digital="true" direction="OUTPUT" function="RA1" ioc="0" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
-            <resource customName="CTLB" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
+            <resource customName="PE_OE" digital="true" direction="OUTPUT" function="RA1" ioc="0" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
+            <resource customName="PE_D" digital="true" direction="OUTPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
             <resource customName="MAIN_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA2" ioc="0" module="GPIO" name="RA2" start="false" type="pin" wpu="false"/>
             <resource customName="AUX_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
             <resource customName="SDO1" digital="true" direction="OUTPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>

@@ -13875,17 +13875,24 @@ DAC1_Initialize();
 PIN_MANAGER_Initialize();
 
 DAC1_SetOutput(0);
+Byte2 = 0x00;
+Byte3 = 0x00;
+do { LATA1 = 1; } while(0);
+ConfigureShiftRegister();
 do { LATA1 = 0; } while(0);
-do { LATA4 = 0; } while(0);
+
+
 do { LATA2 = 0; } while(0);
 do { LATB4 = 0; } while(0);
 while (1) {
 while ((PORTC & 0xC0) != 0xC0){}
 Byte1 = PORTC;
-while ((PORTC & 0xC0) != 0x40){}
-Byte2 = PORTC & 0x3F;
-while ((PORTC & 0xC0) != 0x80){}
-Byte3 = PORTC & 0x3F;
+Byte2 = 0x05;
+Byte3 = 0x00;
+
+
+
+
 if (((Byte1 & 0x10) == 0x10) && ((Byte1 & 0x0C) != 0x00))
 DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);
 else
@@ -13908,7 +13915,7 @@ do { LATB4 = 0; } while(0);
 }
 }
 
-# 350
+# 357
 if (Byte2 == 5){
 SSCtest (Byte3);
 }else{ if (Byte3 == 5){

@@ -1,13 +1,13 @@
 ### HEXMate logfile and output summary ###
 ### Memory Usage ###
  Unused memory ranges:
-  44h - 82Bh
+  44h - 845h
   1098h - 1000Dh
   10014h - 1003Fh
   
- dist/default/production\Celtic_XC8_Test_2.production.hex ranges:
+ dist/default/production\Celtic_Sierra.production.hex ranges:
   0h - 43h
-  82Ch - 1097h
+  846h - 1097h
   1000Eh - 10013h
   
 ### Hex Memory Map ###
@@ -21,11 +21,10 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/default/production\Celtic_XC8_Test_2.production.hex
+  1 = dist/default/production\Celtic_Sierra.production.hex
 00000000: 1111111111111111111111111111111111111111111111111111111111111111
 00000040: 1111------------------------------------------------------------
-00000800: --------------------------------------------11111111111111111111
-00000840: 1111111111111111111111111111111111111111111111111111111111111111
+00000840: ------1111111111111111111111111111111111111111111111111111111111
 00000880: 1111111111111111111111111111111111111111111111111111111111111111
 000008C0: 1111111111111111111111111111111111111111111111111111111111111111
 00000900: 1111111111111111111111111111111111111111111111111111111111111111

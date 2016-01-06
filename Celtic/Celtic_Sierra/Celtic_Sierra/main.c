@@ -298,17 +298,24 @@ void main(void) {
     PIN_MANAGER_Initialize();  
 //    SPI_Initialize();
     DAC1_SetOutput(0);
-    CTLA_SetLow();                                      //RF1 ON
-    CTLB_SetLow();
+    Byte2 = 0x00;
+    Byte3 = 0x00;
+    CTLA_SetHigh();             //To test with EVB01 with has Shift Register
+    ConfigureShiftRegister();
+    CTLA_SetLow();
+//    CTLA_SetLow();                                      //RF1 ON
+//    CTLB_SetLow();
     MAIN_NIC_LDO_EN_SetLow();                           //0: OFF / MCM sleep mode
     AUX_NIC_LDO_EN_SetLow();
     while (1) {
         while ((PORTC & 0xC0) != 0xC0){}
             Byte1 = PORTC;                                //Sequence starts for Bits 7&6=1&1
-        while ((PORTC & 0xC0) != 0x40){}
-            Byte2 = PORTC & 0x3F;                       //Sequence when 7&6 bits toggles (0 1)
-        while ((PORTC & 0xC0) != 0x80){}
-            Byte3 = PORTC & 0x3F;                       //Sequence when 7&6 bits toggles (1 0)
+            Byte2 = 0x05;
+            Byte3 = 0x00;
+    //    while ((PORTC & 0xC0) != 0x40){}
+    //        Byte2 = PORTC & 0x3F;                       //Sequence when 7&6 bits toggles (0 1)
+    //    while ((PORTC & 0xC0) != 0x80){}
+    //        Byte3 = PORTC & 0x3F;                       //Sequence when 7&6 bits toggles (1 0)
         if (((Byte1 & 0x10) == 0x10) && ((Byte1 & 0x0C) != 0x00))   //ANT_SEL=01/11 & TRX_SEL>0 (DAC Stage)
             DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);    //DAC Output
         else

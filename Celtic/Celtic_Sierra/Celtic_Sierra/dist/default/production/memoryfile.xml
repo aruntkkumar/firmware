@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\Celtic_XC8_Test_2.production.hex">
+  <executable name="dist/default/production\Celtic_Sierra.production.hex">
     <memory name="program">
       <units>words</units>
       <length>4096</length>
-      <used>1112</used>
-      <free>2984</free>
+      <used>1099</used>
+      <free>2997</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

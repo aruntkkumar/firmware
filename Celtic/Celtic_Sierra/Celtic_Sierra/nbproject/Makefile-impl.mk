@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Celtic_XC8_Test_2
+PROJECTNAME=Celtic_Sierra
 
 # Active Configuration
 DEFAULTCONF=default

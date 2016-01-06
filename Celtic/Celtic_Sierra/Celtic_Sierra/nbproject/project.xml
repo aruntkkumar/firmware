@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Celtic_XC8_Test_2</name>
+            <name>Celtic_Sierra</name>
             <creation-uuid>812a50dd-ee1f-42d4-9174-64854480fd2e</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

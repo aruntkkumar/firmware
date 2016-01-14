@@ -199,11 +199,11 @@ void MIPI (uint8_t a, uint8_t b, uint8_t c, uint8_t d){
 
 void ConfigureShiftRegister(void){
     uint8_t ReverseReg, i;
-    if ((Byte2 <=64) && (Byte3 <=64))       // SSC1+SSC2 (RF1,RF4)
+    if ((Byte1 & 0x03) == 0x00)             // SSC1+SSC2 (RF1,RF4)
         ReverseReg = 0x30;                  // CTLA1 = L, CTLB1 = L, CTLA2 = H, CTLB2 = H. i.e. RF1,RF4
-    else if ((Byte2 == 65) && (Byte3 <=64)) // SSC1+Passive (RF1,RF3)
+    else if ((Byte1 & 0x03) == 0x01)        // SSC1+Passive (RF1,RF3)
         ReverseReg = 0x10;                  // CTLA1 = L, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF1,RF3
-    else if ((Byte2 == 66) && (Byte3 <=64)) // Passive+SSC2 (RF2,RF4)
+    else if ((Byte1 & 0x03) == 0x02)        // Passive+SSC2 (RF2,RF4)
         ReverseReg = 0xB0;                  // CTLA1 = H, CTLB1 = L, CTLA2 = H, CTLB2 = H. i.e. RF2,RF4
     else                                    // Passive+Passive (RF2,RF3)
         ReverseReg = 0x90;                  // CTLA1 = H, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF2,RF3    
@@ -353,14 +353,14 @@ void main(void) {
         //    MIPIDATA (4);
         //    MIPIDATA (8);
         // MIPI Clock and Data Generation (SSC1,SSC2,SSC3,SSC4)        
-        if ((Byte2 <=64) && (Byte3 <=64))       // SSC1+SSC2 (RF1,RF4)
+        if ((Byte1 & 0x0C) == 0x00)
             MIPI(Byte2,Byte2,Byte3,Byte3);
-        else if ((Byte2 == 65) && (Byte3 <=64)) // SSC1+Passive (RF1,RF3)
-            MIPI(Byte3,Byte3,0,0);
-        else if ((Byte2 == 66) && (Byte3 <=64)) // Passive+SSC2 (RF2,RF4)
-            MIPI(0,0,Byte3,Byte3);
-        else                                    // Passive+Passive (RF2,RF3)
-            MIPI(0,0,0,0);   
+        else if ((Byte1 & 0x0C) == 0x04)
+            MIPI(64,64,Byte3,Byte3);
+        else if ((Byte1 & 0x0C) == 0x08)
+            MIPI(Byte2,Byte2,64,64);
+        else                                //if ((Byte1 & 0x0C) == 0x0C)
+            MIPI(64,64,64,64);   
         /*
         if (Byte2 == 5 && Byte3 == 0)       //RF1,RF2
             MIPI(63,63,63,63);

@@ -169,38 +169,47 @@ void MIPI (uint8_t a, uint8_t b, uint8_t c, uint8_t d){
     //parity2 = paritycheck(DATA[b]);
     //parity3 = paritycheck(DATA[c]);
     //parity4 = paritycheck(DATA[d]);
-    for (uint8_t i=0; i<2; i++){
-        for (uint8_t j=0; j<2; j++){            
-            SDO1_SetHigh();
-            SDO2_SetHigh();
-            asm("NOP");
-            SDO1_SetLow();
-            SDO2_SetLow();
-            shiftRegister (SLAVEADD[i],SLAVEADD[i],4);
-            shiftRegister (0x02,0x02,3);
-            shiftRegister (REGADD[j],REGADD[j],5);
-            if (i==0)   
-                shiftRegister (0x01,0x01,1);     //For USID = 0110, Parity = 1
-            else        
-                shiftRegister (0x00,0x00,1);     //For USID = 0111, Parity = 0
-            if (j==0){   
-                shiftRegister (0x00,0x00,8);    //F1-F7 OFF
-                shiftRegister (0x01,0x01,2);    //Parity + Bus Park
-            }
-            else{        
-                if (i==0){
-                        shiftRegister (DATA[a],DATA[c],8);          //SSC1 & SSC3
-                        //shiftRegister (parity1,parity3,2);          //Parity + Bus Park
-                        shiftRegister (PARITY[a],PARITY[c],2);          //Parity + Bus Park
-                }else{
-                        shiftRegister (DATA[b],DATA[d],8);          //SSC2 & SSC4
-                        //shiftRegister (parity2,parity4,2);          //Parity + Bus Park
-                        shiftRegister (PARITY[b],PARITY[d],2);          //Parity + Bus Park
+    for (uint8_t i=0; i<2; i++){                  
+        SDO1_SetHigh();
+        SDO2_SetHigh();
+        asm("NOP");
+        SDO1_SetLow();
+        SDO2_SetLow();
+        shiftRegister (SLAVEADD[i],SLAVEADD[i],4);
+        shiftRegister (0x02,0x02,3);
+        shiftRegister (REGADD[0],REGADD[0],5);
+        if (i==0)   
+            shiftRegister (0x01,0x01,1);                    //For USID = 0110, Parity = 1
+        else        
+            shiftRegister (0x00,0x00,1);                    //For USID = 0111, Parity = 0   
+        shiftRegister (0x00,0x00,8);                        //Data for Normal Operation
+        shiftRegister (0x01,0x01,2);                        //Parity + Bus Park
+        asm("NOP");
+        asm("NOP");
+                 
+        SDO1_SetHigh();
+        SDO2_SetHigh();
+        asm("NOP");
+        SDO1_SetLow();
+        SDO2_SetLow();
+        shiftRegister (SLAVEADD[i],SLAVEADD[i],4);
+        shiftRegister (0x02,0x02,3);
+        shiftRegister (REGADD[1],REGADD[1],5);
+        if (i==0)   
+            shiftRegister (0x01,0x01,1);                    //For USID = 0110, Parity = 1
+        else        
+            shiftRegister (0x00,0x00,1);                    //For USID = 0111, Parity = 0        
+        if (i==0){
+            shiftRegister (DATA[a],DATA[c],8);              //SSC1 & SSC3
+            //shiftRegister (parity1,parity3,2);            //Parity + Bus Park
+            shiftRegister (PARITY[a],PARITY[c],2);          //Parity + Bus Park
+            }else{
+                shiftRegister (DATA[b],DATA[d],8);          //SSC2 & SSC4
+                //shiftRegister (parity2,parity4,2);        //Parity + Bus Park
+                shiftRegister (PARITY[b],PARITY[d],2);      //Parity + Bus Park
                 }
-            }
             asm("NOP");
             asm("NOP");
-        }
     }
 }
 

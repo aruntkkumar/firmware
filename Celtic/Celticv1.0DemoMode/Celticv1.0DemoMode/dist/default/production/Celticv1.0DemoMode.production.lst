@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Mon Feb 15 11:15:37 2016
+                                                                                               Mon Feb 15 11:39:56 2016
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	16LF1618
@@ -3696,7 +3696,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Mon Feb 15 11:15:37 2016
+Symbol Table                                                                                   Mon Feb 15 11:39:56 2016
 
                      __CFG_CP$OFF 0000                       __CFG_LVP$ON 0000                   _DAC1_Initialize 0511  
                              l221 063D                               l224 063F                               l227 0641  

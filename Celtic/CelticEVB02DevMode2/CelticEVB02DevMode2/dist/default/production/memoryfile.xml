@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\CelticEVB02DevMode2.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>4096</length>
+      <used>844</used>
+      <free>3252</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>512</length>
+      <used>24</used>
+      <free>488</free>
+    </memory>
+  </executable>
+</project>

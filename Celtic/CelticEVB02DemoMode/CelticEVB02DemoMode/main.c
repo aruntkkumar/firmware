@@ -224,16 +224,24 @@ void ConfigureShiftRegister(void){
     else                                    // Passive+Passive (RF2,RF3)
         ReverseReg = 0x90;                  // CTLA1 = H, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF2,RF3   
      */
-    if ((Byte1 & 0xF4) == 0xD4){
-        if ((Byte2 == 2 && Byte3 == 0) || (Byte2 == 5 && Byte3 == 0) || (Byte2 == 2 && Byte3 == 5) || (Byte2 = 4 & Byte3 == 5)) // SSC1+SSC2 (RF1,RF4)
+    if (Byte1 == 0xDC){
+        if ((Byte2 == 2 && Byte3 == 0) || (Byte2 == 12 && Byte3 == 0) || (Byte2 == 13 && Byte3 == 0)|| (Byte2 == 20 && Byte3 == 0))
             ReverseReg = 0x30;                  // CTLA1 = L, CTLB1 = L, CTLA2 = H, CTLB2 = H. i.e. RF1,RF4
-        else if ((Byte2 == 12 & Byte3 == 0) || (Byte2 == 13 && Byte3 == 0) || (Byte2 == 29 && Byte3 ==0))        // SSC1+Passive (RF1,RF3)
-            ReverseReg = 0x10;                  // CTLA1 = L, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF1,RF3
+        //else if ((Byte2 == 12 && Byte3 == 0) || (Byte2 == 13 & Byte3 == 0))
+        //    ReverseReg = 0x10;                 // CTLA1 = L, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF1,RF3
+        else
+            ReverseReg = 0x90;                  // CTLA1 = H, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF2,RF3
     }
-    //else if ((Byte1 & 0x03) == 0x02)        // Passive+SSC2 (RF2,RF4)
-    //    ReverseReg = 0xB0;                  // CTLA1 = H, CTLB1 = L, CTLA2 = H, CTLB2 = H. i.e. RF2,RF4
-    else                                    // Passive+Passive (RF2,RF3)
-        ReverseReg = 0x90;                  // CTLA1 = H, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF2,RF3       
+    else if (Byte1 ==0xD8){
+        if ((Byte2 == 29 && Byte3 == 0) || (Byte2 == 2 && Byte3 == 12) || (Byte2 == 4 && Byte3 == 12) || (Byte2 == 4 && Byte3 == 13))
+            ReverseReg = 0x30;                  // CTLA1 = L, CTLB1 = L, CTLA2 = H, CTLB2 = H. i.e. RF1,RF4
+        //else if (Byte2 == 29 && Byte3 == 0)
+        //    ReverseReg = 0x10;                 // CTLA1 = L, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF1,RF3
+        else
+            ReverseReg = 0x90;                  // CTLA1 = H, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF2,RF3
+    } else{
+            ReverseReg = 0x90;                 // CTLA1 = H, CTLB1 = L, CTLA2 = L, CTLB2 = H. i.e. RF2,RF3 
+    }      
     /*// Pick out RF3 case
     if (Byte2 == 3 && Byte3 == 7){
         ReverseReg = 0x50; // CTL1 = L, CTLB = H
@@ -390,19 +398,19 @@ void main(void) {
         else                                //if ((Byte1 & 0x0C) == 0x0C)
             MIPI(64,64,64,64);*/
         if (Byte2 == 2 && Byte3 == 0)       //Band 2
-            MIPI(7,7,15,15);
-        else if (Byte2 == 2 && Byte3 == 5)  //Band 2+5
-            MIPI(7,7,9,9);
-        else if (Byte2 == 5 && Byte3 == 0)  //Band 5
-            MIPI(11,11,1,1);
-        else if (Byte2 == 4 && Byte3 == 5)  //Band4+5
-            MIPI(7,7,1,1);
-        else if (Byte2 == 12 && Byte3 == 0) //Band 12
-            MIPI(18,18,0,0);
+            MIPI(10,10,32,32);
         else if (Byte2 == 29 && Byte3 == 0) //Band 29
-            MIPI(16,16,0,0);
+            MIPI(48,48,63,63);
+        else if (Byte2 == 12 && Byte3 == 0) //Band 12
+            MIPI(37,37,61,61);
         else if (Byte2 == 13 && Byte3 == 0) //Band 13
-            MIPI(13,13,0,0);
+            MIPI(21,21,32,32);
+        else if (Byte2 == 20 && Byte3 == 0) //Band 20
+            MIPI(9,9,1,1);
+        else if (Byte2 == 2 && Byte3 == 12) //Band 2+12
+            MIPI(24,24,5,5);
+        else if ((Byte2 == 4 && Byte3 == 12) || (Byte2 == 4 && Byte3 == 13)) //Band 13
+            MIPI(17,17,1,1);
         else    MIPI(0,0,0,0);        
         /*
         if (Byte2 == 5 && Byte3 == 0)       //RF1,RF2

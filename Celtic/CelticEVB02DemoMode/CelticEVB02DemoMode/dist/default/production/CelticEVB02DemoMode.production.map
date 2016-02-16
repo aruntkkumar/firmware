@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\CelticEVB02DemoMode.production.sym \
   --cmf=dist/default/production\CelticEVB02DemoMode.production.cmf -z \
-  -Q16LF1618 -oC:\Users\ARUN~1.KUM\AppData\Local\Temp\s5so.6 \
+  -Q16LF1618 -oC:\Users\ARUN~1.KUM\AppData\Local\Temp\s7ho.6 \
   -Mdist/default/production/CelticEVB02DemoMode.production.map -E1 -ver=XC8 \
   -ASTACK=02008h-021efh -pstack=STACK -ACODE=00h-07FFhx2 \
   -ASTRCODE=00h-0FFFh -ASTRING=00h-0FFhx16 -ACONST=00h-0FFhx16 \
@@ -29,7 +29,7 @@ Linker command line:
   -pcinit=CODE -pfunctab=CODE -ACONFIG=08007h-08009h -pconfig=CONFIG \
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5so.obj \
+  C:\Users\ARUN~1.KUM\AppData\Local\Temp\s7ho.obj \
   dist/default/production\CelticEVB02DemoMode.production.obj 
 
 Object code version is 3.11
@@ -39,20 +39,20 @@ Machine type is 16LF1618
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5so.obj
+C:\Users\ARUN~1.KUM\AppData\Local\Temp\s7ho.obj
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        3    1000E       0
 dist/default/production\CelticEVB02DemoMode.production.obj
                 cinit                               7F6      7F6        A      FEC       0
-                text7                               57F      57F       61      AFE       0
-                text6                               559      559       26      AB2       0
+                text7                               554      554       6D      AA8       0
+                text6                               52E      52E       26      A5C       0
                 text5                               6D0      6D0      126      DA0       0
-                text4                               52A      52A        4      A54       0
-                text3                               52E      52E        6      A5C       0
-                text2                               53D      53D       1C      A7A       0
-                text1                               534      534        9      A68       0
-                maintext                            5E0      5E0       F0      BC0       0
+                text4                               4FF      4FF        4      9FE       0
+                text3                               503      503        6      A06       0
+                text2                               512      512       1C      A24       0
+                text1                               509      509        9      A12       0
+                maintext                            5C1      5C1      10F      B82       0
                 cstackBANK0                          25       25        3       20       1
                 cstackCOMMON                         70       70        C       70       1
                 bssBANK0                             20       20        5       20       1
@@ -66,14 +66,14 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                              2        2        2         0
                 cinit                               7F6      7F6        A         0
                 reset_vec                             0        0        2         0
-                text7                               57F      57F       61         0
-                text6                               559      559       26         0
+                text7                               554      554       6D         0
+                text6                               52E      52E       26         0
                 text5                               6D0      6D0      126         0
-                text4                               52A      52A        4         0
-                text3                               52E      52E        6         0
-                text2                               53D      53D       1C         0
-                text1                               534      534        9         0
-                maintext                            5E0      5E0       F0         0
+                text4                               4FF      4FF        4         0
+                text3                               503      503        6         0
+                text2                               512      512       1C         0
+                text1                               509      509        9         0
+                maintext                            5C1      5C1      10F         0
 
         CLASS   STRCODE        
                 stringtext                          800      800       CA         0
@@ -239,13 +239,13 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE        2
                 bssBANK0                       000020  000008  000028        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
-                text4                          00052A  000004  00052E       A54       0  CODE        2
-                text3                          00052E  000006  000534       A5C       0  CODE        2
-                text1                          000534  000009  00053D       A68       0  CODE        2
-                text2                          00053D  00001C  000559       A7A       0  CODE        2
-                text6                          000559  000026  00057F       AB2       0  CODE        2
-                text7                          00057F  000061  0005E0       AFE       0  CODE        2
-                maintext                       0005E0  0000F0  0006D0       BC0       0  CODE        2
+                text4                          0004FF  000004  000503       9FE       0  CODE        2
+                text3                          000503  000006  000509       A06       0  CODE        2
+                text1                          000509  000009  000512       A12       0  CODE        2
+                text2                          000512  00001C  00052E       A24       0  CODE        2
+                text6                          00052E  000026  000554       A5C       0  CODE        2
+                text7                          000554  00006D  0005C1       AA8       0  CODE        2
+                maintext                       0005C1  00010F  0006D0       B82       0  CODE        2
                 text5                          0006D0  000126  0007F6       DA0       0  CODE        2
                 cinit                          0007F6  00000A  000800       FEC       0  CODE        2
                 stringtext                     000800  0000CA  0008CA        10       0  STRCODE     2
@@ -263,11 +263,11 @@ UNUSED ADDRESS RANGES
         BANK5            002A0-002EF              50           1
         BANK6            00320-0032F              10           1
         BIGRAM           02000-021EF             1F0           1
-        CODE             00004-00529             526           2
+        CODE             00004-004FE             4FB           2
                          008CA-00FFF             736
-        CONST            00004-00529             100           2
+        CONST            00004-004FE             100           2
                          008CA-00FFF             100
-        ENTRY            00004-00529             100           2
+        ENTRY            00004-004FE             100           2
                          008CA-00FFF             100
         IDLOC            08000-08003               4           2
         RAM              00028-0006F              48           1
@@ -310,9 +310,9 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
         STACK            02008-021EF             1E8           1
-        STRCODE          00004-00529             526           2
+        STRCODE          00004-004FE             4FB           2
                          008CA-00FFF             736
-        STRING           00004-00529             100           2
+        STRING           00004-004FE             100           2
                          008CA-00FFF             100
 
                                   Symbol Table
@@ -331,10 +331,10 @@ _ANSELC                           (abs)        0018E
 _Byte1                            bssBANK0     00020
 _Byte2                            bssCOMMON    0007C
 _Byte3                            bssCOMMON    0007D
-_ConfigureShiftRegister           text7        0057F
+_ConfigureShiftRegister           text7        00554
 _DAC1CON0                         (abs)        00118
 _DAC1CON1                         (abs)        00119
-_DAC1_Initialize                  text4        0052A
+_DAC1_Initialize                  text4        004FF
 _DATA                             stringtext   00800
 _LATA                             (abs)        0010C
 _LATA1                            (abs)        00861
@@ -350,15 +350,15 @@ _LATC                             (abs)        0010E
 _MIPI                             text5        006D0
 _OPTION_REGbits                   (abs)        00095
 _OSCCON                           (abs)        00099
-_OSCILLATOR_Initialize            text3        0052E
+_OSCILLATOR_Initialize            text3        00503
 _OSCSTAT                          (abs)        0009A
 _OSCTUNE                          (abs)        00098
 _PARITY                           stringtext   00841
-_PIN_MANAGER_Initialize           text2        0053D
+_PIN_MANAGER_Initialize           text2        00512
 _PORTC                            (abs)        0000E
 _REGADD                           stringtext   008C6
 _SLAVEADD                         stringtext   008C8
-_SYSTEM_Initialize                text1        00534
+_SYSTEM_Initialize                text1        00509
 _TRISA                            (abs)        0008C
 _TRISB                            (abs)        0008D
 _TRISC                            (abs)        0008E
@@ -575,34 +575,34 @@ ___int_sp                         stack        00000
 ___latbits                        (abs)        00001
 ___sp                             stack        00000
 __end_of_ACTIVEBAND               stringtext   008C2
-__end_of_ConfigureShiftRegister   text7        005E0
-__end_of_DAC1_Initialize          text4        0052E
+__end_of_ConfigureShiftRegister   text7        005C1
+__end_of_DAC1_Initialize          text4        00503
 __end_of_DATA                     stringtext   00841
 __end_of_DacOutput                stringtext   008C6
 __end_of_MIPI                     text5        007F6
-__end_of_OSCILLATOR_Initialize    text3        00534
+__end_of_OSCILLATOR_Initialize    text3        00509
 __end_of_PARITY                   stringtext   00882
-__end_of_PIN_MANAGER_Initialize   text2        00559
+__end_of_PIN_MANAGER_Initialize   text2        0052E
 __end_of_REGADD                   stringtext   008C8
 __end_of_SLAVEADD                 stringtext   008CA
-__end_of_SYSTEM_Initialize        text1        0053D
+__end_of_SYSTEM_Initialize        text1        00512
 __end_of__initialization          cinit        007FD
 __end_of_main                     maintext     006D0
-__end_of_shiftRegister            text6        0057F
+__end_of_shiftRegister            text6        00554
 __initialization                  cinit        007F6
 __pbssBANK0                       bssBANK0     00020
 __pbssCOMMON                      bssCOMMON    0007C
 __pcstackBANK0                    cstackBANK0  00025
 __pcstackCOMMON                   cstackCOMMON 00070
-__pmaintext                       maintext     005E0
+__pmaintext                       maintext     005C1
 __pstringtext                     stringtext   00800
-__ptext1                          text1        00534
-__ptext2                          text2        0053D
-__ptext3                          text3        0052E
-__ptext4                          text4        0052A
+__ptext1                          text1        00509
+__ptext2                          text2        00512
+__ptext3                          text3        00503
+__ptext4                          text4        004FF
 __ptext5                          text5        006D0
-__ptext6                          text6        00559
-__ptext7                          text7        0057F
+__ptext6                          text6        0052E
+__ptext7                          text7        00554
 __size_of_ConfigureShiftRegister  (abs)        00000
 __size_of_DAC1_Initialize         (abs)        00000
 __size_of_MIPI                    (abs)        00000
@@ -611,8 +611,8 @@ __size_of_PIN_MANAGER_Initialize  (abs)        00000
 __size_of_SYSTEM_Initialize       (abs)        00000
 __size_of_main                    (abs)        00000
 __size_of_shiftRegister           (abs)        00000
-_main                             maintext     005E0
-_shiftRegister                    text6        00559
+_main                             maintext     005C1
+_shiftRegister                    text6        0052E
 btemp                             (abs)        0007E
 end_of_initialization             cinit        007FD
 intlevel0                         functab      00000
@@ -655,7 +655,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 318 in file "main.c"
+		line 326 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -908,7 +908,7 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_In		CODE           	053D	0000	29
+		_PIN_MANAGER_In		CODE           	0512	0000	29
 
 mcc_generated_files/pin_manager.c estimated size: 29
 
@@ -924,21 +924,21 @@ shared
 shared estimated size: 211
 
 mcc_generated_files/mcc.c
-		_OSCILLATOR_Ini		CODE           	052E	0000	7
-		_SYSTEM_Initial		CODE           	0534	0000	10
+		_OSCILLATOR_Ini		CODE           	0503	0000	7
+		_SYSTEM_Initial		CODE           	0509	0000	10
 
 mcc_generated_files/mcc.c estimated size: 17
 
 mcc_generated_files/dac1.c
-		_DAC1_Initializ		CODE           	052A	0000	5
+		_DAC1_Initializ		CODE           	04FF	0000	5
 
 mcc_generated_files/dac1.c estimated size: 5
 
 main.c
 		_MIPI          		CODE           	06D0	0000	295
-		_main          		CODE           	05E0	0000	241
-		_ConfigureShift		CODE           	057F	0000	98
-		_shiftRegister 		CODE           	0559	0000	39
+		_main          		CODE           	05C1	0000	272
+		_ConfigureShift		CODE           	0554	0000	110
+		_shiftRegister 		CODE           	052E	0000	39
 
-main.c estimated size: 673
+main.c estimated size: 716
 

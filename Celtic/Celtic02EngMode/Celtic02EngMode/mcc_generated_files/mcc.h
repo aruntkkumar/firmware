@@ -80,7 +80,7 @@ void SYSTEM_Initialize(void);
  */
 void OSCILLATOR_Initialize(void);
 
-
+void INTERRUPT_ON_CHANGE_Initialize (void);
 
 #endif	/* MCC_H */
 /**

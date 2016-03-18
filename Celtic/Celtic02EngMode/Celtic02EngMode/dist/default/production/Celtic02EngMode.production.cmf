@@ -11,17 +11,18 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
+$C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 3 2
 $dist/default/production\Celtic02EngMode.production.obj
 cinit CODE 0 7F6 7F6 A 2
-text1 CODE 0 76E 76E 9 2
-text2 CODE 0 777 777 1D 2
-text3 CODE 0 768 768 6 2
-text4 CODE 0 764 764 4 2
-maintext CODE 0 794 794 62 2
+text1 CODE 0 762 762 C 2
+text2 CODE 0 76E 76E 1D 2
+text3 CODE 0 755 755 6 2
+text4 CODE 0 75B 75B 7 2
+text5 CODE 0 751 751 4 2
+maintext CODE 0 78B 78B 6B 2
 cstackCOMMON COMMON 1 77 77 1 1
 stringtext STRCODE 0 800 800 CA 2
 bssCOMMON COMMON 1 70 70 7 1
@@ -45,9 +46,9 @@ BANK3 1A0-1EF 1
 BANK4 220-26F 1
 BANK5 2A0-2EF 1
 BANK6 320-32F 1
-CONST 4-763 2
+CONST 4-750 2
 CONST 8CA-FFF 2
-ENTRY 4-763 2
+ENTRY 4-750 2
 ENTRY 8CA-FFF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
@@ -73,7 +74,7 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2000-21EF 1
-CODE 4-763 2
+CODE 4-750 2
 CODE 8CA-FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -87,9 +88,9 @@ SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-21EF 1
 COMMON 78-7D 1
-STRCODE 4-763 2
+STRCODE 4-750 2
 STRCODE 8CA-FFF 2
-STRING 4-763 2
+STRING 4-750 2
 STRING 8CA-FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -105,75 +106,86 @@ STRING 8CA-FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Celtic02EngMode.production.obj
-764 text4 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
-764 text4 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
-766 text4 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
-767 text4 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
-768 text3 CODE >81:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-768 text3 CODE >83:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-76B text3 CODE >85:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-76C text3 CODE >87:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-76D text3 CODE >90:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-76E text1 CODE >75:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-76E text1 CODE >76:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-771 text1 CODE >77:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-774 text1 CODE >78:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-776 text1 CODE >79:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
-777 text2 CODE >50:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-777 text2 CODE >51:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-779 text2 CODE >52:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-77C text2 CODE >53:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-77F text2 CODE >55:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-781 text2 CODE >56:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-784 text2 CODE >57:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-786 text2 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-788 text2 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-78A text2 CODE >61:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-78D text2 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-78F text2 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-791 text2 CODE >65:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-793 text2 CODE >68:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
-794 maintext CODE >150:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-794 maintext CODE >152:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-797 maintext CODE >154:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-79A maintext CODE >161:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-79C maintext CODE >162:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-79D maintext CODE >163:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-79E maintext CODE >164:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-79F maintext CODE >167:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7A7 maintext CODE >169:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7AB maintext CODE >179:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7AF maintext CODE >180:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7B2 maintext CODE >182:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7B9 maintext CODE >183:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7BB maintext CODE >184:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7BC maintext CODE >185:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7C4 maintext CODE >186:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7C7 maintext CODE >188:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7CE maintext CODE >189:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7D0 maintext CODE >190:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7D1 maintext CODE >193:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7D5 maintext CODE >194:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7D7 maintext CODE >196:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7DE maintext CODE >197:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7E1 maintext CODE >199:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7E8 maintext CODE >200:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7EB maintext CODE >202:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7F2 maintext CODE >203:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7F4 maintext CODE >204:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7F5 maintext CODE >166:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
-7F6 cinit CODE >3738:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7F6 cinit CODE >3741:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7F6 cinit CODE >3770:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7F7 cinit CODE >3771:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7F8 cinit CODE >3772:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7F9 cinit CODE >3773:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7FA cinit CODE >3774:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7FB cinit CODE >3775:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7FC cinit CODE >3776:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7FD cinit CODE >3782:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7FD cinit CODE >3783:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
-7FE cinit CODE >3784:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.
+751 text5 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
+751 text5 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
+753 text5 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
+754 text5 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/dac1.c
+755 text3 CODE >82:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+755 text3 CODE >84:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+758 text3 CODE >86:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+759 text3 CODE >88:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+75A text3 CODE >91:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+75B text4 CODE >93:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+75B text4 CODE >95:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+75C text4 CODE >96:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+75D text4 CODE >97:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+75E text4 CODE >98:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+761 text4 CODE >99:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+762 text1 CODE >75:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+762 text1 CODE >76:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+765 text1 CODE >77:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+768 text1 CODE >78:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+76B text1 CODE >79:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+76D text1 CODE >80:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/mcc.c
+76E text2 CODE >50:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+76E text2 CODE >51:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+770 text2 CODE >52:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+773 text2 CODE >53:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+776 text2 CODE >55:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+778 text2 CODE >56:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+77B text2 CODE >57:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+77D text2 CODE >58:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+77F text2 CODE >60:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+781 text2 CODE >61:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+784 text2 CODE >62:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+786 text2 CODE >63:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+788 text2 CODE >65:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+78A text2 CODE >68:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\mcc_generated_files/pin_manager.c
+78B maintext CODE >150:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+78B maintext CODE >151:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+78D maintext CODE >154:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+790 maintext CODE >156:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+793 maintext CODE >163:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+795 maintext CODE >164:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+796 maintext CODE >165:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+797 maintext CODE >166:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+798 maintext CODE >169:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7A0 maintext CODE >171:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7A4 maintext CODE >181:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7A8 maintext CODE >182:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7AB maintext CODE >184:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7B2 maintext CODE >185:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7B4 maintext CODE >186:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7B5 maintext CODE >187:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7BD maintext CODE >188:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7C0 maintext CODE >190:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7C7 maintext CODE >191:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7C9 maintext CODE >192:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7CA maintext CODE >195:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7CE maintext CODE >196:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7D1 maintext CODE >198:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7D8 maintext CODE >199:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7DA maintext CODE >200:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7DB maintext CODE >201:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7E3 maintext CODE >202:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7E6 maintext CODE >204:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7ED maintext CODE >205:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7EF maintext CODE >206:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7F0 maintext CODE >286:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7F4 maintext CODE >287:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7F5 maintext CODE >168:C:\Users\arun.kumar\Desktop\git\Viper\Celtic\Celtic02EngMode\Celtic02EngMode\main.c
+7F6 cinit CODE >3745:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7F6 cinit CODE >3748:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7F6 cinit CODE >3777:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7F7 cinit CODE >3778:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7F8 cinit CODE >3779:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7F9 cinit CODE >3780:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7FA cinit CODE >3781:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7FB cinit CODE >3782:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7FC cinit CODE >3783:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7FD cinit CODE >3789:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7FD cinit CODE >3790:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
+7FE cinit CODE >3791:C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -203,11 +215,11 @@ _LATB 10D 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _LATC 10E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _WPUB 20D 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-_main F28 0 CODE 0 maintext dist/default/production\Celtic02EngMode.production.obj
+___sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+_main F16 0 CODE 0 maintext dist/default/production\Celtic02EngMode.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-start 4 0 CODE 0 init C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
+start 4 0 CODE 0 init C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
 ttemp 7E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
@@ -225,13 +237,14 @@ ttemp2 84 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-intlevel1 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-intlevel2 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-intlevel3 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-intlevel4 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-intlevel5 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
+intlevel0 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+intlevel1 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+intlevel2 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+intlevel3 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+intlevel4 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+intlevel5 0 0 CODE 0 functab C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_INTERRUPT_ON_CHANGE_Initialize EC4 0 CODE 0 text4 dist/default/production\Celtic02EngMode.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 wtemp1 80 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 wtemp2 82 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
@@ -241,21 +254,22 @@ wtemp5 88 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 wtemp6 7F 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_DAC1_Initialize ED0 0 CODE 0 text4 dist/default/production\Celtic02EngMode.production.obj
+__end_of_DAC1_Initialize EAA 0 CODE 0 text5 dist/default/production\Celtic02EngMode.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _ANSELB 18D 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _ANSELC 18E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __CFG_CP$ON 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of_SLAVEADD 1194 0 STRCODE 0 stringtext dist/default/production\Celtic02EngMode.production.obj
-_DAC1_Initialize EC8 0 CODE 0 text4 dist/default/production\Celtic02EngMode.production.obj
+_DAC1_Initialize EA2 0 CODE 0 text5 dist/default/production\Celtic02EngMode.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-_PIN_MANAGER_Initialize EEE 0 CODE 0 text2 dist/default/production\Celtic02EngMode.production.obj
+_PIN_MANAGER_Initialize EDC 0 CODE 0 text2 dist/default/production\Celtic02EngMode.production.obj
 start_initialization FEC 0 CODE 0 cinit dist/default/production\Celtic02EngMode.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __end_of_ACTIVEBAND 1184 0 STRCODE 0 stringtext dist/default/production\Celtic02EngMode.production.obj
-__end_of_SYSTEM_Initialize EEE 0 CODE 0 text1 dist/default/production\Celtic02EngMode.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
+__end_of_SYSTEM_Initialize EDC 0 CODE 0 text1 dist/default/production\Celtic02EngMode.production.obj
+_INTERRUPT_ON_CHANGE_Initialize EB6 0 CODE 0 text4 dist/default/production\Celtic02EngMode.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -354,6 +368,7 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
+_INTCONbits B 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -389,10 +404,10 @@ __S0 800A 0 ABS 0 - -
 __S1 78 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-_SYSTEM_Initialize EDC 0 CODE 0 text1 dist/default/production\Celtic02EngMode.production.obj
+_SYSTEM_Initialize EC4 0 CODE 0 text1 dist/default/production\Celtic02EngMode.production.obj
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-__end_of_PIN_MANAGER_Initialize F28 0 CODE 0 text2 dist/default/production\Celtic02EngMode.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+__end_of_PIN_MANAGER_Initialize F16 0 CODE 0 text2 dist/default/production\Celtic02EngMode.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -415,15 +430,15 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext F28 0 CODE 0 maintext dist/default/production\Celtic02EngMode.production.obj
+__pmaintext F16 0 CODE 0 maintext dist/default/production\Celtic02EngMode.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __end_of_DacOutput 118C 0 STRCODE 0 stringtext dist/default/production\Celtic02EngMode.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-stackhi 21EF 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
-stacklo 2000 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s5m4.obj
+stackhi 21EF 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
+stacklo 2000 0 ABS 0 - C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9g8.obj
 _OSCSTAT 9A 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _OSCTUNE 98 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __Lspace_0 0 0 ABS 0 - -
@@ -441,10 +456,11 @@ __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __CFG_WDTCCS$SWC 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-__ptext1 EDC 0 CODE 0 text1 dist/default/production\Celtic02EngMode.production.obj
-__ptext2 EEE 0 CODE 0 text2 dist/default/production\Celtic02EngMode.production.obj
-__ptext3 ED0 0 CODE 0 text3 dist/default/production\Celtic02EngMode.production.obj
-__ptext4 EC8 0 CODE 0 text4 dist/default/production\Celtic02EngMode.production.obj
+__ptext1 EC4 0 CODE 0 text1 dist/default/production\Celtic02EngMode.production.obj
+__ptext2 EDC 0 CODE 0 text2 dist/default/production\Celtic02EngMode.production.obj
+__ptext3 EAA 0 CODE 0 text3 dist/default/production\Celtic02EngMode.production.obj
+__ptext4 EB6 0 CODE 0 text4 dist/default/production\Celtic02EngMode.production.obj
+__ptext5 EA2 0 CODE 0 text5 dist/default/production\Celtic02EngMode.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __pstringtext 1000 0 STRCODE 0 stringtext dist/default/production\Celtic02EngMode.production.obj
@@ -460,7 +476,10 @@ __pcstackCOMMON 77 0 COMMON 1 cstackCOMMON dist/default/production\Celtic02EngMo
 __Hend_init 8 0 CODE 0 end_init -
 __end_of_DATA 1082 0 STRCODE 0 stringtext dist/default/production\Celtic02EngMode.production.obj
 __end_of_main FEC 0 CODE 0 maintext dist/default/production\Celtic02EngMode.production.obj
+__size_of_INTERRUPT_ON_CHANGE_Initialize 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _Byte1 70 0 COMMON 1 bssCOMMON dist/default/production\Celtic02EngMode.production.obj
+_IOCCF 399 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
+_IOCCP 397 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _LATA4 864 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _LATA5 865 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 _LATB4 86C 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
@@ -472,12 +491,12 @@ _TRISC 8E 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-__end_of_OSCILLATOR_Initialize EDC 0 CODE 0 text3 dist/default/production\Celtic02EngMode.production.obj
+__end_of_OSCILLATOR_Initialize EB6 0 CODE 0 text3 dist/default/production\Celtic02EngMode.production.obj
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
 __initialization FEC 0 CODE 0 cinit dist/default/production\Celtic02EngMode.production.obj
 __Hstringtext 0 0 ABS 0 stringtext -
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Celtic02EngMode.production.obj
-_OSCILLATOR_Initialize ED0 0 CODE 0 text3 dist/default/production\Celtic02EngMode.production.obj
+_OSCILLATOR_Initialize EAA 0 CODE 0 text3 dist/default/production\Celtic02EngMode.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -504,11 +523,12 @@ _OSCILLATOR_Initialize ED0 0 CODE 0 text3 dist/default/production\Celtic02EngMod
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F6 FEC A 2
-text1 0 76E EDC 9 2
-text2 0 777 EEE 1D 2
-text3 0 768 ED0 6 2
-text4 0 764 EC8 4 2
-maintext 0 794 F28 62 2
+text1 0 762 EC4 C 2
+text2 0 76E EDC 1D 2
+text3 0 755 EAA 6 2
+text4 0 75B EB6 7 2
+text5 0 751 EA2 4 2
+maintext 0 78B F16 6B 2
 reset_vec 0 0 0 4 2
 stringtext 0 800 1000 CA 2
 bssCOMMON 1 70 70 8 1

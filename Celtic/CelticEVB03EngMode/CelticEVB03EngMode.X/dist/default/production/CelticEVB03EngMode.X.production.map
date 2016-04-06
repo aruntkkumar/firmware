@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\CelticEVB03EngMode.X.production.sym \
   --cmf=dist/default/production\CelticEVB03EngMode.X.production.cmf -z \
-  -Q18LF23K22 -oC:\Users\ARUN~1.KUM\AppData\Local\Temp\s9jk.6 \
+  -Q18LF23K22 -oC:\Users\ARUN~1.KUM\AppData\Local\Temp\s2vs.6 \
   -Mdist/default/production/CelticEVB03EngMode.X.production.map -E1 \
   -ver=XC8 -ASTACK=060h-01ffh -pstack=STACK -ACODE=00h-01FFFh \
   -ACONST=00h-01FFFh -ASMALLCONST=0200h-02FFhx30 -AMEDIUMCONST=0200h-01FFFh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9jk.obj \
+  C:\Users\ARUN~1.KUM\AppData\Local\Temp\s2vs.obj \
   dist/default/production\CelticEVB03EngMode.X.production.obj 
 
 Object code version is 3.11
@@ -34,17 +34,17 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ARUN~1.KUM\AppData\Local\Temp\s9jk.obj
+C:\Users\ARUN~1.KUM\AppData\Local\Temp\s2vs.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\CelticEVB03EngMode.X.production.obj
                 smallconst                          200      200       CC      100       0
-                text8                               57C      57C        8      166       0
+                text8                               57E      57E        8      166       0
                 text7                               4B8      4B8       40      166       0
                 text6                               40A      40A       AE      166       0
-                text5                               562      562        E      166       0
-                text4                               570      570        C      166       0
+                text5                               570      570        E      166       0
+                text4                               562      562        E      166       0
                 text3                               554      554        E      166       0
                 text2                               4F8      4F8       30      166       0
                 text1                               542      542       12      166       0
@@ -58,11 +58,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text8                               57C      57C        8         0
+                text8                               57E      57E        8         0
                 text7                               4B8      4B8       40         0
                 text6                               40A      40A       AE         0
-                text5                               562      562        E         0
-                text4                               570      570        C         0
+                text5                               570      570        E         0
+                text4                               562      562        E         0
                 text3                               554      554        E         0
                 text2                               4F8      4F8       30         0
                 text1                               542      542       12         0
@@ -109,7 +109,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  00000E  00000F         1       1  COMRAM  
                 smallconst                     000200  0000CC  0002CC       100       0  SMALLCON
-                text0                          0002CC  0002B8  000584       166       0  CODE    
+                text0                          0002CC  0002BA  000586       166       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -121,15 +121,15 @@ UNUSED ADDRESS RANGES
         BANK1            000100-0001FF              100
         BIGRAM           00000F-0001FF              1F1
         CODE             000004-0001FF              1FC
-                         000584-001FFF             1A7C
+                         000586-001FFF             1A7A
         COMRAM           00000F-00005F               51
         CONST            000004-0001FF              1FC
-                         000584-001FFF             1A7C
+                         000586-001FFF             1A7A
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000584-001FFF             1A7C
+        MEDIUMCONST      000586-001FFF             1A7A
         RAM              000060-0001FF               A0
         SFR              000F38-000FFF               28
-        SMALLCONST       000584-001FFF              100
+        SMALLCONST       000586-001FFF              100
         STACK            000060-0001FF              1A0
 
                                   Symbol Table
@@ -148,15 +148,16 @@ _Byte4                                   bssCOMRAM    000004
 _Byte5                                   bssCOMRAM    000005
 _Byte6                                   bssCOMRAM    000006
 _DACCON1                                 (abs)        000F40
-_DAC_Initialize                          text5        000562
-_DAC_SetOutput                           text8        00057C
+_DAC_Initialize                          text5        000570
+_DAC_SetOutput                           text8        00057E
 _DAC_Step                                bssCOMRAM    000007
 _DATA                                    smallconst   000201
 _DacOutput                               smallconst   0002C3
 _Dummy                                   bssCOMRAM    000008
 _INTCON2bits                             (abs)        000FF1
 _INTCONbits                              (abs)        000FF2
-_INTERRUPT_ON_CHANGE_Initialize          text4        000570
+_INTERRUPT_ON_CHANGE_Initialize          text4        000562
+_IOCBbits                                (abs)        000F62
 _LATA                                    (abs)        000F89
 _LATA0                                   (abs)        007C48
 _LATA1                                   (abs)        007C49
@@ -355,11 +356,11 @@ ___sp                                    stack        000000
 __accesstop                              (abs)        000060
 __activetblptr                           (abs)        000001
 __end_of_ACTIVEBAND                      smallconst   0002C3
-__end_of_DAC_Initialize                  text5        000570
-__end_of_DAC_SetOutput                   text8        000584
+__end_of_DAC_Initialize                  text5        00057E
+__end_of_DAC_SetOutput                   text8        000586
 __end_of_DATA                            smallconst   000242
 __end_of_DacOutput                       smallconst   0002C7
-__end_of_INTERRUPT_ON_CHANGE_Initialize  text4        00057C
+__end_of_INTERRUPT_ON_CHANGE_Initialize  text4        000570
 __end_of_MIPI                            text6        0004B8
 __end_of_OSCILLATOR_Initialize           text3        000562
 __end_of_PARITY                          smallconst   000283
@@ -380,11 +381,11 @@ __ptext0                                 text0        0002CC
 __ptext1                                 text1        000542
 __ptext2                                 text2        0004F8
 __ptext3                                 text3        000554
-__ptext4                                 text4        000570
-__ptext5                                 text5        000562
+__ptext4                                 text4        000562
+__ptext5                                 text5        000570
 __ptext6                                 text6        00040A
 __ptext7                                 text7        0004B8
-__ptext8                                 text8        00057C
+__ptext8                                 text8        00057E
 __ramtop                                 ramtop       000200
 __size_of_DAC_Initialize                 (abs)        000000
 __size_of_DAC_SetOutput                  (abs)        000000
@@ -708,15 +709,15 @@ shared
 shared estimated size: 221
 
 mcc_generated_files/mcc.c
-		_INTERRUPT_ON_C		CODE           	0570	0000	13
+		_INTERRUPT_ON_C		CODE           	0562	0000	15
 		_OSCILLATOR_Ini		CODE           	0554	0000	15
 		_SYSTEM_Initial		CODE           	0542	0000	19
 
-mcc_generated_files/mcc.c estimated size: 47
+mcc_generated_files/mcc.c estimated size: 49
 
 mcc_generated_files/dac.c
-		_DAC_Initialize		CODE           	0562	0000	15
-		_DAC_SetOutput 		CODE           	057C	0000	9
+		_DAC_Initialize		CODE           	0570	0000	15
+		_DAC_SetOutput 		CODE           	057E	0000	9
 
 mcc_generated_files/dac.c estimated size: 24
 

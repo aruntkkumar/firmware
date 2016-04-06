@@ -55,6 +55,15 @@
 [v _VREFCON1 VREFCON1 `VEuc  1 e 1 @3905 ]
 "2584
 [v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+[s S190 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IOCB4 1 0 :1:4 
+`uc 1 IOCB5 1 0 :1:5 
+`uc 1 IOCB6 1 0 :1:6 
+`uc 1 IOCB7 1 0 :1:7 
+]
+"2659
+[u S196 . 1 `S190 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES196  1 e 1 @3938 ]
 "6930
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
 "7532
@@ -174,7 +183,7 @@
 "124
 [v _INTERRUPT_ON_CHANGE_Initialize INTERRUPT_ON_CHANGE_Initialize `(v  1 e 0 0 ]
 {
-"132
+"133
 } 0
 "57 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB03EngMode\CelticEVB03EngMode.X\mcc_generated_files/dac.c
 [v _DAC_Initialize DAC_Initialize `(v  1 e 0 0 ]

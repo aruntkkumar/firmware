@@ -76,6 +76,7 @@ void SYSTEM_Initialize(void) {
     OSCILLATOR_Initialize();
     PIN_MANAGER_Initialize();
     DAC1_Initialize();
+    INTERRUPT_ON_CHANGE_Initialize();
 }
 
 void OSCILLATOR_Initialize(void) {
@@ -89,6 +90,13 @@ void OSCILLATOR_Initialize(void) {
 
 }
 
+void INTERRUPT_ON_CHANGE_Initialize (void) {
+    
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.IOCIE = 1;
+    IOCCP = 0x80;
+}
 
 /**
  End of File

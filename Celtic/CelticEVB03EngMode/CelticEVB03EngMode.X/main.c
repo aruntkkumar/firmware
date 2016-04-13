@@ -112,8 +112,9 @@ void MIPI (uint8_t a, uint8_t b){
     //                      Main application
                          
 void main(void) {
-    if (INTCONbits.RBIF)
-        goto reset;
+    INTCONbits.RBIF = 0;
+    //if (INTCONbits.RBIF)
+    //    goto reset;
     // Initialize the device
     SYSTEM_Initialize();
 
@@ -224,7 +225,6 @@ void main(void) {
             CTLB_SW2_SetHigh(); 
         }  
         
-        INTCONbits.RBIF = 0;
         SLEEP();
     }
 }

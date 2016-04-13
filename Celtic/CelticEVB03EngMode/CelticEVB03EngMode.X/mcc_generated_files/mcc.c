@@ -127,7 +127,7 @@ void INTERRUPT_ON_CHANGE_Initialize(void) {
     INTCONbits.PEIE = 1;
     INTCONbits.RBIE = 1;
     INTCONbits.RBIF = 0;
-    INTCON2bits.RBIP = 0;
+    INTCON2bits.RBIP = 1;
     IOCBbits.IOCB7 = 1;
     
 }

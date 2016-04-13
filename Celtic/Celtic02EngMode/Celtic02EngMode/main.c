@@ -148,8 +148,9 @@ void ConfigureShiftRegister(void){
 }*/
 
 void main(void) {
-    if (INTCONbits.IOCIF)
-        goto reset;
+    //if (INTCONbits.IOCIF)
+    //    goto reset;
+    IOCCFbits.IOCCF7 = 0;
     // initialize the device
     SYSTEM_Initialize();
     //DAC1_Initialize();
@@ -283,7 +284,7 @@ void main(void) {
         /*PE_OE_SetHigh();
         ConfigureShiftRegister();
         PE_OE_SetLow();*/
-        IOCCF = IOCCF & (0xFF^IOCCF);
+        //IOCCF = IOCCF & (0xFF^IOCCF);
         SLEEP();
     }
 }

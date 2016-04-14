@@ -43,7 +43,7 @@ const uint8_t ACTIVEBAND[64]=  {0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
                                 0, 0, 0, 0};    // Defined bands 5, 8, 12, 13, 20, 26, 29
 
 uint8_t Byte1, Byte2, Byte3, Byte4, Byte5, Byte6; // First 6 bytes from RFFE
-uint8_t DAC_Step, Dummy;
+uint8_t DAC_Step, Dummy, start = 0;
 
 void shiftRegister (uint8_t Dummy1, uint8_t Dummy2, uint8_t y){
     for (uint8_t m=0; m<y; m++){
@@ -125,7 +125,7 @@ void ConfigureShiftRegister(void){
 void main(void) {
     //if (INTCONbits.IOCIF)
     //goto reset;
-    IOCCFbits.IOCCF7 = 0;
+    if (start == 1) goto reset;
     // initialize the device
     SYSTEM_Initialize();
     DAC1_SetOutput(0);
@@ -135,6 +135,11 @@ void main(void) {
     MAIN_NIC_LDO_EN_SetLow(); //0: OFF / MCM sleep mode
     AUX_NIC_LDO_EN_SetLow();
     reset:
+    start = 1;
+    if (IOCCFbits.IOCCF7 == 0) {     //To enable SLEEP mode after powering up
+        SLEEP();}
+    else    {    
+        IOCCFbits.IOCCF7 = 0;}
     while (1) {
         //First Byte
         while ((PORTC & 0xC0) != 0xC0) {

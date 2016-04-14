@@ -58,8 +58,8 @@
             <setting name="WDTE" option="OFF"/>
             <setting name="WDTCCS" option="SWC"/>
             <setting name="generateConfigBits" option="true"/>
-            <file checksum="839801513" modified="true" name="mcc.c" path="mcc_generated_files/mcc.c"/>
-            <file checksum="4026866018" modified="true" name="mcc.h" path="mcc_generated_files/mcc.h"/>
+            <file checksum="1342268052" modified="true" name="mcc.c" path="mcc_generated_files/mcc.c"/>
+            <file checksum="327358912" modified="true" name="mcc.h" path="mcc_generated_files/mcc.h"/>
         </manager>
     </managers>
     <modules>

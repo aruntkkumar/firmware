@@ -91,9 +91,10 @@ void OSCILLATOR_Initialize(void) {
 }
 
 void INTERRUPT_ON_CHANGE_Initialize (void) {
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+    INTCONbits.IOCIF = 0;
+    IOCCFbits.IOCCF7 = 0;
+    //IOCCF = ((IOCCF^0xFF)&IOCCF);
+    //INTCONbits.GIE = 1;
     INTCONbits.IOCIE = 1;
     IOCCP = 0x80;
 }

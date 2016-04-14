@@ -128,7 +128,7 @@ void main(void) {
     if (start == 1) goto reset;
     // initialize the device
     SYSTEM_Initialize();
-    DAC1_SetOutput(0);
+    //DAC1_SetOutput(0);      //DAC already initialised to ZERO
     PE_OE_SetLow();
     PE_D_SetLow();
     PE_CLK_SetLow();

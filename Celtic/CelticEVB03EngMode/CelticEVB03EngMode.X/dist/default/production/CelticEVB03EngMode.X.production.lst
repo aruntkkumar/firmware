@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Wed Apr 13 17:51:56 2016
+                                                                                               Thu Apr 14 16:23:49 2016
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18LF23K22
@@ -261,7 +261,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    255  0000                     _VREFCON1	set	3905
    256  0000                     _INTCON2bits	set	4081
    257  0000                     _INTCONbits	set	4082
-   258  0000                     _IOCBbits	set	3938
+   258  0000                     _IOCB	set	3938
    259  0000                     _LATA	set	3977
    260  0000                     _LATB	set	3978
    261  0000                     _LATC	set	3979
@@ -287,30 +287,30 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    281  0002CB  00                 	db	0	; dummy byte at the end
    282  0000                     
    283                           	psect	cinit
-   284  000520                     __pcinit:
+   284  00052E                     __pcinit:
    285                           	opt stack 0
-   286  000520                     start_initialization:
+   286  00052E                     start_initialization:
    287                           	opt stack 0
-   288  000520                     __initialization:
+   288  00052E                     __initialization:
    289                           	opt stack 0
    290                           
-   291                           ; Clear objects allocated to COMRAM (8 bytes)
-   292  000520  EE00  F001         	lfsr	0,__pbssCOMRAM
-   293  000524  0E08               	movlw	8
-   294  000526                     clear_0:
-   295  000526  6AEE               	clrf	postinc0,c
-   296  000528  06E8               	decf	wreg,f,c
-   297  00052A  E1FD               	bnz	clear_0
-   298  00052C                     end_of_initialization:
+   291                           ; Clear objects allocated to COMRAM (9 bytes)
+   292  00052E  EE00  F001         	lfsr	0,__pbssCOMRAM
+   293  000532  0E09               	movlw	9
+   294  000534                     clear_0:
+   295  000534  6AEE               	clrf	postinc0,c
+   296  000536  06E8               	decf	wreg,f,c
+   297  000538  E1FD               	bnz	clear_0
+   298  00053A                     end_of_initialization:
    299                           	opt stack 0
-   300  00052C                     __end_of__initialization:
+   300  00053A                     __end_of__initialization:
    301                           	opt stack 0
-   302  00052C  0E00               	movlw	low (__Lsmallconst shr (0+16))
-   303  00052E  6EF8               	movwf	tblptru,c
-   304  000530  0E02               	movlw	high __Lsmallconst
-   305  000532  6EF7               	movwf	tblptrh,c
-   306  000534  0100               	movlb	0
-   307  000536  EF66  F001         	goto	_main	;jump to C main() function
+   302  00053A  0E00               	movlw	low (__Lsmallconst shr (0+16))
+   303  00053C  6EF8               	movwf	tblptru,c
+   304  00053E  0E02               	movlw	high __Lsmallconst
+   305  000540  6EF7               	movwf	tblptrh,c
+   306  000542  0100               	movlb	0
+   307  000544  EF66  F001         	goto	_main	;jump to C main() function
    308                           tblptru	equ	0xFF8
    309                           tblptrh	equ	0xFF7
    310                           postinc0	equ	0xFEE
@@ -343,1040 +343,1040 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    337  000008                     _Dummy:
    338                           	opt stack 0
    339  000008                     	ds	1
-   340                           tblptru	equ	0xFF8
-   341                           tblptrh	equ	0xFF7
-   342                           postinc0	equ	0xFEE
-   343                           wreg	equ	0xFE8
-   344                           
-   345                           	psect	cstackCOMRAM
-   346  000009                     __pcstackCOMRAM:
-   347                           	opt stack 0
-   348  000009                     DAC_SetOutput@inputData:
-   349                           	opt stack 0
-   350  000009                     shiftRegister@Dummy2:
-   351                           	opt stack 0
-   352                           
-   353                           ; 1 bytes @ 0x0
-   354  000009                     	ds	1
-   355  00000A                     shiftRegister@y:
-   356                           	opt stack 0
-   357                           
-   358                           ; 1 bytes @ 0x1
-   359  00000A                     	ds	1
-   360  00000B                     shiftRegister@m:
-   361                           	opt stack 0
-   362                           
-   363                           ; 1 bytes @ 0x2
-   364  00000B                     	ds	1
-   365  00000C                     shiftRegister@Dummy1:
-   366                           	opt stack 0
-   367                           
-   368                           ; 1 bytes @ 0x3
-   369  00000C                     	ds	1
-   370  00000D                     MIPI@b:
-   371                           	opt stack 0
-   372                           
-   373                           ; 1 bytes @ 0x4
-   374  00000D                     	ds	1
-   375  00000E                     MIPI@a:
-   376                           	opt stack 0
-   377                           
-   378                           ; 1 bytes @ 0x5
-   379  00000E                     	ds	1
-   380  00000F                     tblptru	equ	0xFF8
-   381                           tblptrh	equ	0xFF7
-   382                           postinc0	equ	0xFEE
-   383                           wreg	equ	0xFE8
-   384                           
-   385                           ; 0 bytes @ 0x6
-   386 ;;
-   387 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   388 ;;
-   389 ;; *************** function _main *****************
-   390 ;; Defined at:
-   391 ;;		line 114 in file "main.c"
-   392 ;; Parameters:    Size  Location     Type
-   393 ;;		None
-   394 ;; Auto vars:     Size  Location     Type
-   395 ;;		None
-   396 ;; Return value:  Size  Location     Type
-   397 ;;		None               void
-   398 ;; Registers used:
-   399 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
-   400 ;; Tracked objects:
-   401 ;;		On entry : 0/0
-   402 ;;		On exit  : 0/0
-   403 ;;		Unchanged: 0/0
-   404 ;; Data sizes:     COMRAM   BANK0   BANK1
-   405 ;;      Params:         0       0       0
-   406 ;;      Locals:         0       0       0
-   407 ;;      Temps:          0       0       0
-   408 ;;      Totals:         0       0       0
-   409 ;;Total ram usage:        0 bytes
-   410 ;; Hardware stack levels required when called:    2
-   411 ;; This function calls:
-   412 ;;		_DAC_SetOutput
-   413 ;;		_MIPI
-   414 ;;		_SYSTEM_Initialize
-   415 ;; This function is called by:
-   416 ;;		Startup code after reset
-   417 ;; This function uses a non-reentrant model
-   418 ;;
-   419                           
-   420                           	psect	text0
-   421  0002CC                     __ptext0:
-   422                           	opt stack 0
-   423  0002CC                     _main:
-   424                           	opt stack 29
-   425                           
-   426                           ;main.c: 115: INTCONbits.RBIF = 0;
-   427                           
-   428                           ;incstack = 0
-   429  0002CC  90F2               	bcf	intcon,0,c	;volatile
+   340  000009                     _start:
+   341                           	opt stack 0
+   342  000009                     	ds	1
+   343                           tblptru	equ	0xFF8
+   344                           tblptrh	equ	0xFF7
+   345                           postinc0	equ	0xFEE
+   346                           wreg	equ	0xFE8
+   347                           
+   348                           	psect	cstackCOMRAM
+   349  00000A                     __pcstackCOMRAM:
+   350                           	opt stack 0
+   351  00000A                     DAC_SetOutput@inputData:
+   352                           	opt stack 0
+   353  00000A                     shiftRegister@Dummy2:
+   354                           	opt stack 0
+   355                           
+   356                           ; 1 bytes @ 0x0
+   357  00000A                     	ds	1
+   358  00000B                     shiftRegister@y:
+   359                           	opt stack 0
+   360                           
+   361                           ; 1 bytes @ 0x1
+   362  00000B                     	ds	1
+   363  00000C                     shiftRegister@m:
+   364                           	opt stack 0
+   365                           
+   366                           ; 1 bytes @ 0x2
+   367  00000C                     	ds	1
+   368  00000D                     shiftRegister@Dummy1:
+   369                           	opt stack 0
+   370                           
+   371                           ; 1 bytes @ 0x3
+   372  00000D                     	ds	1
+   373  00000E                     MIPI@b:
+   374                           	opt stack 0
+   375                           
+   376                           ; 1 bytes @ 0x4
+   377  00000E                     	ds	1
+   378  00000F                     MIPI@a:
+   379                           	opt stack 0
+   380                           
+   381                           ; 1 bytes @ 0x5
+   382  00000F                     	ds	1
+   383  000010                     tblptru	equ	0xFF8
+   384                           tblptrh	equ	0xFF7
+   385                           postinc0	equ	0xFEE
+   386                           wreg	equ	0xFE8
+   387                           
+   388                           ; 0 bytes @ 0x6
+   389 ;;
+   390 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   391 ;;
+   392 ;; *************** function _main *****************
+   393 ;; Defined at:
+   394 ;;		line 114 in file "main.c"
+   395 ;; Parameters:    Size  Location     Type
+   396 ;;		None
+   397 ;; Auto vars:     Size  Location     Type
+   398 ;;		None
+   399 ;; Return value:  Size  Location     Type
+   400 ;;		None               void
+   401 ;; Registers used:
+   402 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   403 ;; Tracked objects:
+   404 ;;		On entry : 0/0
+   405 ;;		On exit  : 0/0
+   406 ;;		Unchanged: 0/0
+   407 ;; Data sizes:     COMRAM   BANK0   BANK1
+   408 ;;      Params:         0       0       0
+   409 ;;      Locals:         0       0       0
+   410 ;;      Temps:          0       0       0
+   411 ;;      Totals:         0       0       0
+   412 ;;Total ram usage:        0 bytes
+   413 ;; Hardware stack levels required when called:    2
+   414 ;; This function calls:
+   415 ;;		_DAC_SetOutput
+   416 ;;		_MIPI
+   417 ;;		_SYSTEM_Initialize
+   418 ;; This function is called by:
+   419 ;;		Startup code after reset
+   420 ;; This function uses a non-reentrant model
+   421 ;;
+   422                           
+   423                           	psect	text0
+   424  0002CC                     __ptext0:
+   425                           	opt stack 0
+   426  0002CC                     _main:
+   427                           	opt stack 29
+   428                           
+   429                           ;main.c: 118: if (start == 1) goto reset;
    430                           
-   431                           ;main.c: 119: SYSTEM_Initialize();
-   432  0002CE  EC9D  F002         	call	_SYSTEM_Initialize	;wreg free
-   433                           
-   434                           ;main.c: 148: DAC_SetOutput(0);
-   435  0002D2  0E00               	movlw	0
-   436  0002D4  ECBB  F002         	call	_DAC_SetOutput
-   437  0002D8  D000               	goto	l939
-   438  0002DA                     l939:
-   439  0002DA  9089               	bcf	3977,0,c	;volatile
-   440  0002DC  D000               	goto	l941
-   441  0002DE                     l941:
-   442  0002DE  9289               	bcf	3977,1,c	;volatile
-   443  0002E0  D000               	goto	l943
-   444  0002E2                     l943:
-   445  0002E2  9C89               	bcf	3977,6,c	;volatile
-   446  0002E4  D000               	goto	l945
-   447  0002E6                     l945:
-   448  0002E6  9E89               	bcf	3977,7,c	;volatile
-   449  0002E8  D000               	goto	l947
-   450  0002EA                     l947:
-   451  0002EA  908B               	bcf	3979,0,c	;volatile
-   452  0002EC  D000               	goto	l949
-   453  0002EE                     l949:
-   454  0002EE  928B               	bcf	3979,1,c	;volatile
-   455                           
-   456                           ;main.c: 158: while ((PORTC & 0xC0) != 0xC0) {
-   457                           
-   458                           ;main.c: 156: while (1) {
-   459                           
-   460                           ;main.c: 155: reset:
-   461  0002F0  D000               	goto	l951
-   462  0002F2                     l951:
-   463  0002F2  5082               	movf	3970,w,c	;volatile
-   464  0002F4  0BC0               	andlw	192
-   465  0002F6  0AC0               	xorlw	192
-   466  0002F8  A4D8               	btfss	status,2,c
-   467  0002FA  D7FB               	goto	l951
-   468                           
-   469                           ;main.c: 159: }
-   470                           ;main.c: 160: Byte1 = PORTC;
-   471  0002FC  CF82 F001          	movff	3970,_Byte1	;volatile
-   472                           
-   473                           ;main.c: 162: while ((PORTC & 0xC0) != 0x80) {
-   474  000300  D000               	goto	l953
-   475  000302                     l953:
-   476  000302  5082               	movf	3970,w,c	;volatile
-   477  000304  0BC0               	andlw	192
-   478  000306  0A80               	xorlw	128
-   479  000308  A4D8               	btfss	status,2,c
-   480  00030A  D7FB               	goto	l953
-   481                           
-   482                           ;main.c: 163: }
-   483                           ;main.c: 164: Byte3 = PORTC & 0x3F;
-   484  00030C  5082               	movf	3970,w,c	;volatile
-   485  00030E  0B3F               	andlw	63
-   486  000310  6E03               	movwf	_Byte3,c
-   487                           
-   488                           ;main.c: 166: while ((PORTC & 0xC0) != 0x40) {
-   489  000312  D000               	goto	l957
-   490  000314                     l957:
-   491  000314  5082               	movf	3970,w,c	;volatile
-   492  000316  0BC0               	andlw	192
-   493  000318  0A40               	xorlw	64
-   494  00031A  A4D8               	btfss	status,2,c
-   495  00031C  D7FB               	goto	l957
-   496                           
-   497                           ;main.c: 167: }
-   498                           ;main.c: 168: Byte4 = PORTC & 0x3F;
-   499  00031E  5082               	movf	3970,w,c	;volatile
-   500  000320  0B3F               	andlw	63
-   501  000322  6E04               	movwf	_Byte4,c
-   502                           
-   503                           ;main.c: 170: while ((PORTC & 0x80) != 0x80) {
-   504  000324  D000               	goto	l165
-   505  000326                     l165:
-   506  000326  AE82               	btfss	3970,7,c	;volatile
-   507  000328  D7FE               	goto	l165
-   508                           
-   509                           ;main.c: 171: }
-   510                           ;main.c: 172: Byte5 = PORTC & 0x7F;
-   511  00032A  5082               	movf	3970,w,c	;volatile
-   512  00032C  0B7F               	andlw	127
-   513  00032E  6E05               	movwf	_Byte5,c
-   514                           
-   515                           ;main.c: 174: while ((PORTC & 0x80) != 0x00) {
-   516  000330  D000               	goto	l168
-   517  000332                     l168:
-   518  000332  BE82               	btfsc	3970,7,c	;volatile
-   519  000334  D7FE               	goto	l168
-   520                           
-   521                           ;main.c: 175: }
-   522                           ;main.c: 176: Byte6 = PORTC & 0x7F;
-   523  000336  5082               	movf	3970,w,c	;volatile
-   524  000338  0B7F               	andlw	127
-   525  00033A  6E06               	movwf	_Byte6,c
-   526                           
-   527                           ;main.c: 179: DAC_Step = ((Byte4 << 4) & 0xC0);
-   528  00033C  3804               	swapf	_Byte4,w,c
-   529  00033E  0BF0               	andlw	240
-   530  000340  0BC0               	andlw	192
-   531  000342  6E07               	movwf	_DAC_Step,c
-   532                           
-   533                           ;main.c: 180: DAC_Step = (DAC_Step | Byte3);
-   534  000344  5007               	movf	_DAC_Step,w,c
-   535  000346  1003               	iorwf	_Byte3,w,c
-   536  000348  6E07               	movwf	_DAC_Step,c
-   537                           
-   538                           ;main.c: 181: DAC_SetOutput(DAC_Step);
-   539  00034A  5007               	movf	_DAC_Step,w,c
-   540  00034C  ECBB  F002         	call	_DAC_SetOutput
-   541                           
-   542                           ;main.c: 184: if ((Byte4 & 0x02) == 0x02)
-   543  000350  A204               	btfss	_Byte4,1,c
-   544  000352  D002               	goto	l175
-   545                           
-   546                           ;main.c: 185: do { LATA0 = 1; } while(0);
-   547  000354  8089               	bsf	3977,0,c	;volatile
-   548  000356  D002               	goto	l174
-   549  000358                     l175:
-   550  000358  9089               	bcf	3977,0,c	;volatile
-   551  00035A  D000               	goto	l174
-   552  00035C                     l174:
+   431                           ;incstack = 0
+   432  0002CC  0409               	decf	_start,w,c
+   433  0002CE  B4D8               	btfsc	status,2,c
+   434  0002D0  D011               	goto	l962
+   435  0002D2  D001               	goto	l948
+   436  0002D4  D00F               	goto	l962
+   437  0002D6                     l948:
+   438                           
+   439                           ;main.c: 120: SYSTEM_Initialize();
+   440  0002D6  ECA4  F002         	call	_SYSTEM_Initialize	;wreg free
+   441  0002DA  D000               	goto	l950
+   442  0002DC                     l950:
+   443  0002DC  9089               	bcf	3977,0,c	;volatile
+   444  0002DE  D000               	goto	l952
+   445  0002E0                     l952:
+   446  0002E0  9289               	bcf	3977,1,c	;volatile
+   447  0002E2  D000               	goto	l954
+   448  0002E4                     l954:
+   449  0002E4  9C89               	bcf	3977,6,c	;volatile
+   450  0002E6  D000               	goto	l956
+   451  0002E8                     l956:
+   452  0002E8  9E89               	bcf	3977,7,c	;volatile
+   453  0002EA  D000               	goto	l958
+   454  0002EC                     l958:
+   455  0002EC  908B               	bcf	3979,0,c	;volatile
+   456  0002EE  D000               	goto	l960
+   457  0002F0                     l960:
+   458  0002F0  928B               	bcf	3979,1,c	;volatile
+   459  0002F2  D000               	goto	l962
+   460  0002F4                     l962:
+   461                           
+   462                           ;main.c: 157: start = 1;
+   463  0002F4  0E01               	movlw	1
+   464  0002F6  6E09               	movwf	_start,c
+   465                           
+   466                           ;main.c: 158: if (INTCONbits.RBIF == 0) {
+   467  0002F8  A0F2               	btfss	intcon,0,c	;volatile
+   468  0002FA  D086               	goto	l216
+   469                           
+   470                           ;main.c: 160: else {
+   471                           ;main.c: 161: INTCONbits.RBIF = 0;}
+   472  0002FC  90F2               	bcf	intcon,0,c	;volatile
+   473                           
+   474                           ;main.c: 164: while ((PORTC & 0xC0) != 0xC0) {
+   475                           
+   476                           ;main.c: 162: while (1) {
+   477  0002FE  D000               	goto	l968
+   478  000300                     l968:
+   479  000300  5082               	movf	3970,w,c	;volatile
+   480  000302  0BC0               	andlw	192
+   481  000304  0AC0               	xorlw	192
+   482  000306  A4D8               	btfss	status,2,c
+   483  000308  D7FB               	goto	l968
+   484                           
+   485                           ;main.c: 165: }
+   486                           ;main.c: 166: Byte1 = PORTC;
+   487  00030A  CF82 F001          	movff	3970,_Byte1	;volatile
+   488                           
+   489                           ;main.c: 168: while ((PORTC & 0xC0) != 0x80) {
+   490  00030E  D000               	goto	l970
+   491  000310                     l970:
+   492  000310  5082               	movf	3970,w,c	;volatile
+   493  000312  0BC0               	andlw	192
+   494  000314  0A80               	xorlw	128
+   495  000316  A4D8               	btfss	status,2,c
+   496  000318  D7FB               	goto	l970
+   497                           
+   498                           ;main.c: 169: }
+   499                           ;main.c: 170: Byte3 = PORTC & 0x3F;
+   500  00031A  5082               	movf	3970,w,c	;volatile
+   501  00031C  0B3F               	andlw	63
+   502  00031E  6E03               	movwf	_Byte3,c
+   503                           
+   504                           ;main.c: 172: while ((PORTC & 0xC0) != 0x40) {
+   505  000320  D000               	goto	l974
+   506  000322                     l974:
+   507  000322  5082               	movf	3970,w,c	;volatile
+   508  000324  0BC0               	andlw	192
+   509  000326  0A40               	xorlw	64
+   510  000328  A4D8               	btfss	status,2,c
+   511  00032A  D7FB               	goto	l974
+   512                           
+   513                           ;main.c: 173: }
+   514                           ;main.c: 174: Byte4 = PORTC & 0x3F;
+   515  00032C  5082               	movf	3970,w,c	;volatile
+   516  00032E  0B3F               	andlw	63
+   517  000330  6E04               	movwf	_Byte4,c
+   518                           
+   519                           ;main.c: 176: while ((PORTC & 0x80) != 0x80) {
+   520  000332  D000               	goto	l170
+   521  000334                     l170:
+   522  000334  AE82               	btfss	3970,7,c	;volatile
+   523  000336  D7FE               	goto	l170
+   524                           
+   525                           ;main.c: 177: }
+   526                           ;main.c: 178: Byte5 = PORTC & 0x7F;
+   527  000338  5082               	movf	3970,w,c	;volatile
+   528  00033A  0B7F               	andlw	127
+   529  00033C  6E05               	movwf	_Byte5,c
+   530                           
+   531                           ;main.c: 180: while ((PORTC & 0x80) != 0x00) {
+   532  00033E  D000               	goto	l173
+   533  000340                     l173:
+   534  000340  BE82               	btfsc	3970,7,c	;volatile
+   535  000342  D7FE               	goto	l173
+   536                           
+   537                           ;main.c: 181: }
+   538                           ;main.c: 182: Byte6 = PORTC & 0x7F;
+   539  000344  5082               	movf	3970,w,c	;volatile
+   540  000346  0B7F               	andlw	127
+   541  000348  6E06               	movwf	_Byte6,c
+   542                           
+   543                           ;main.c: 185: DAC_Step = ((Byte4 << 4) & 0xC0);
+   544  00034A  3804               	swapf	_Byte4,w,c
+   545  00034C  0BF0               	andlw	240
+   546  00034E  0BC0               	andlw	192
+   547  000350  6E07               	movwf	_DAC_Step,c
+   548                           
+   549                           ;main.c: 186: DAC_Step = (DAC_Step | Byte3);
+   550  000352  5007               	movf	_DAC_Step,w,c
+   551  000354  1003               	iorwf	_Byte3,w,c
+   552  000356  6E07               	movwf	_DAC_Step,c
    553                           
-   554                           ;main.c: 188: if ((Byte4 & 0x01) == 0x01)
-   555  00035C  A004               	btfss	_Byte4,0,c
-   556  00035E  D002               	goto	l181
+   554                           ;main.c: 187: DAC_SetOutput(DAC_Step);
+   555  000358  5007               	movf	_DAC_Step,w,c
+   556  00035A  ECC1  F002         	call	_DAC_SetOutput
    557                           
-   558                           ;main.c: 189: do { LATA1 = 1; } while(0);
-   559  000360  8289               	bsf	3977,1,c	;volatile
-   560  000362  D002               	goto	l969
-   561  000364                     l181:
-   562  000364  9289               	bcf	3977,1,c	;volatile
-   563  000366  D000               	goto	l969
-   564  000368                     l969:
-   565                           
-   566                           ;main.c: 194: MIPI(Byte5, Byte6);
-   567  000368  C006  F00D         	movff	_Byte6,MIPI@b
-   568  00036C  5005               	movf	_Byte5,w,c
-   569  00036E  EC01  F002         	call	_MIPI
-   570                           
-   571                           ;main.c: 198: Dummy = Byte1 & 0x38;
-   572  000372  5001               	movf	_Byte1,w,c
-   573  000374  0B38               	andlw	56
-   574  000376  6E08               	movwf	_Dummy,c
-   575                           
-   576                           ;main.c: 199: if (Dummy == 0x00) {
-   577  000378  5008               	movf	_Dummy,w,c
-   578  00037A  A4D8               	btfss	status,2,c
-   579  00037C  D004               	goto	l975
-   580                           
-   581                           ;main.c: 200: do { LATA6 = 0; } while(0);
-   582  00037E  9C89               	bcf	3977,6,c	;volatile
-   583  000380  D008               	goto	l192
-   584                           
-   585                           ;main.c: 201: do { LATA7 = 0; } while(0);
-   586  000382  D007               	goto	l192
-   587                           
-   588                           ;main.c: 202: } else if (Dummy == 0x20) {
-   589  000384  D018               	goto	l981
-   590  000386                     l975:
-   591  000386  0E20               	movlw	32
-   592  000388  1808               	xorwf	_Dummy,w,c
-   593  00038A  A4D8               	btfss	status,2,c
-   594  00038C  D004               	goto	l977
-   595                           
-   596                           ;main.c: 203: do { LATA6 = 1; } while(0);
-   597  00038E  8C89               	bsf	3977,6,c	;volatile
-   598  000390  D000               	goto	l192
-   599  000392                     l192:
-   600  000392  9E89               	bcf	3977,7,c	;volatile
-   601                           
-   602                           ;main.c: 205: } else if (Dummy == 0x10) {
-   603  000394  D010               	goto	l981
-   604  000396                     l977:
-   605  000396  0E10               	movlw	16
-   606  000398  1808               	xorwf	_Dummy,w,c
-   607  00039A  A4D8               	btfss	status,2,c
-   608  00039C  D004               	goto	l979
-   609                           
-   610                           ;main.c: 206: do { LATA6 = 0; } while(0);
-   611  00039E  9C89               	bcf	3977,6,c	;volatile
-   612  0003A0  D008               	goto	l204
-   613                           
-   614                           ;main.c: 207: do { LATA7 = 1; } while(0);
-   615  0003A2  D007               	goto	l204
-   616                           
-   617                           ;main.c: 208: } else if (Dummy == 0x30) {
-   618  0003A4  D008               	goto	l981
-   619  0003A6                     l979:
-   620  0003A6  0E30               	movlw	48
-   621  0003A8  1808               	xorwf	_Dummy,w,c
-   622  0003AA  A4D8               	btfss	status,2,c
-   623  0003AC  D004               	goto	l981
-   624                           
-   625                           ;main.c: 209: do { LATA6 = 1; } while(0);
-   626  0003AE  8C89               	bsf	3977,6,c	;volatile
-   627  0003B0  D000               	goto	l204
-   628  0003B2                     l204:
-   629  0003B2  8E89               	bsf	3977,7,c	;volatile
-   630  0003B4  D000               	goto	l981
-   631  0003B6                     l981:
+   558                           ;main.c: 190: if ((Byte4 & 0x02) == 0x02)
+   559  00035E  A204               	btfss	_Byte4,1,c
+   560  000360  D002               	goto	l180
+   561                           
+   562                           ;main.c: 191: do { LATA0 = 1; } while(0);
+   563  000362  8089               	bsf	3977,0,c	;volatile
+   564  000364  D002               	goto	l179
+   565  000366                     l180:
+   566  000366  9089               	bcf	3977,0,c	;volatile
+   567  000368  D000               	goto	l179
+   568  00036A                     l179:
+   569                           
+   570                           ;main.c: 194: if ((Byte4 & 0x01) == 0x01)
+   571  00036A  A004               	btfss	_Byte4,0,c
+   572  00036C  D002               	goto	l186
+   573                           
+   574                           ;main.c: 195: do { LATA1 = 1; } while(0);
+   575  00036E  8289               	bsf	3977,1,c	;volatile
+   576  000370  D002               	goto	l986
+   577  000372                     l186:
+   578  000372  9289               	bcf	3977,1,c	;volatile
+   579  000374  D000               	goto	l986
+   580  000376                     l986:
+   581                           
+   582                           ;main.c: 200: MIPI(Byte5, Byte6);
+   583  000376  C006  F00E         	movff	_Byte6,MIPI@b
+   584  00037A  5005               	movf	_Byte5,w,c
+   585  00037C  EC08  F002         	call	_MIPI
+   586                           
+   587                           ;main.c: 204: Dummy = Byte1 & 0x38;
+   588  000380  5001               	movf	_Byte1,w,c
+   589  000382  0B38               	andlw	56
+   590  000384  6E08               	movwf	_Dummy,c
+   591                           
+   592                           ;main.c: 205: if (Dummy == 0x00) {
+   593  000386  5008               	movf	_Dummy,w,c
+   594  000388  A4D8               	btfss	status,2,c
+   595  00038A  D004               	goto	l992
+   596                           
+   597                           ;main.c: 206: do { LATA6 = 0; } while(0);
+   598  00038C  9C89               	bcf	3977,6,c	;volatile
+   599  00038E  D008               	goto	l197
+   600                           
+   601                           ;main.c: 207: do { LATA7 = 0; } while(0);
+   602  000390  D007               	goto	l197
+   603                           
+   604                           ;main.c: 208: } else if (Dummy == 0x20) {
+   605  000392  D018               	goto	l998
+   606  000394                     l992:
+   607  000394  0E20               	movlw	32
+   608  000396  1808               	xorwf	_Dummy,w,c
+   609  000398  A4D8               	btfss	status,2,c
+   610  00039A  D004               	goto	l994
+   611                           
+   612                           ;main.c: 209: do { LATA6 = 1; } while(0);
+   613  00039C  8C89               	bsf	3977,6,c	;volatile
+   614  00039E  D000               	goto	l197
+   615  0003A0                     l197:
+   616  0003A0  9E89               	bcf	3977,7,c	;volatile
+   617                           
+   618                           ;main.c: 211: } else if (Dummy == 0x10) {
+   619  0003A2  D010               	goto	l998
+   620  0003A4                     l994:
+   621  0003A4  0E10               	movlw	16
+   622  0003A6  1808               	xorwf	_Dummy,w,c
+   623  0003A8  A4D8               	btfss	status,2,c
+   624  0003AA  D004               	goto	l996
+   625                           
+   626                           ;main.c: 212: do { LATA6 = 0; } while(0);
+   627  0003AC  9C89               	bcf	3977,6,c	;volatile
+   628  0003AE  D008               	goto	l209
+   629                           
+   630                           ;main.c: 213: do { LATA7 = 1; } while(0);
+   631  0003B0  D007               	goto	l209
    632                           
-   633                           ;main.c: 211: }
-   634                           ;main.c: 213: Dummy = Byte1 & 0x07;
-   635  0003B6  5001               	movf	_Byte1,w,c
-   636  0003B8  0B07               	andlw	7
-   637  0003BA  6E08               	movwf	_Dummy,c
-   638                           
-   639                           ;main.c: 214: if (Dummy == 0x00) {
-   640  0003BC  5008               	movf	_Dummy,w,c
-   641  0003BE  A4D8               	btfss	status,2,c
-   642  0003C0  D004               	goto	l985
-   643                           
-   644                           ;main.c: 215: do { LATC0 = 0; } while(0);
-   645  0003C2  908B               	bcf	3979,0,c	;volatile
-   646  0003C4  D008               	goto	l215
-   647                           
-   648                           ;main.c: 216: do { LATC1 = 0; } while(0);
-   649  0003C6  D007               	goto	l215
-   650                           
-   651                           ;main.c: 217: } else if (Dummy == 0x04) {
-   652  0003C8  D018               	goto	l211
-   653  0003CA                     l985:
-   654  0003CA  0E04               	movlw	4
-   655  0003CC  1808               	xorwf	_Dummy,w,c
-   656  0003CE  A4D8               	btfss	status,2,c
-   657  0003D0  D004               	goto	l987
-   658                           
-   659                           ;main.c: 218: do { LATC0 = 1; } while(0);
-   660  0003D2  808B               	bsf	3979,0,c	;volatile
-   661  0003D4  D000               	goto	l215
-   662  0003D6                     l215:
-   663  0003D6  928B               	bcf	3979,1,c	;volatile
-   664                           
-   665                           ;main.c: 220: } else if (Dummy == 0x02) {
-   666  0003D8  D010               	goto	l211
-   667  0003DA                     l987:
-   668  0003DA  0E02               	movlw	2
-   669  0003DC  1808               	xorwf	_Dummy,w,c
-   670  0003DE  A4D8               	btfss	status,2,c
-   671  0003E0  D004               	goto	l989
-   672                           
-   673                           ;main.c: 221: do { LATC0 = 0; } while(0);
-   674  0003E2  908B               	bcf	3979,0,c	;volatile
-   675  0003E4  D008               	goto	l227
-   676                           
-   677                           ;main.c: 222: do { LATC1 = 1; } while(0);
-   678  0003E6  D007               	goto	l227
-   679                           
-   680                           ;main.c: 223: } else if (Dummy == 0x06) {
-   681  0003E8  D008               	goto	l211
-   682  0003EA                     l989:
-   683  0003EA  0E06               	movlw	6
-   684  0003EC  1808               	xorwf	_Dummy,w,c
-   685  0003EE  A4D8               	btfss	status,2,c
-   686  0003F0  D004               	goto	l211
-   687                           
-   688                           ;main.c: 224: do { LATC0 = 1; } while(0);
-   689  0003F2  808B               	bsf	3979,0,c	;volatile
-   690  0003F4  D000               	goto	l227
-   691  0003F6                     l227:
-   692  0003F6  828B               	bsf	3979,1,c	;volatile
-   693  0003F8  D000               	goto	l211
-   694  0003FA                     l211:
-   695  0003FA  0003               	sleep		;# 
-   696  0003FC  D77A               	goto	l951
-   697  0003FE  EF00  F000         	goto	start
-   698  000402                     __end_of_main:
-   699                           	opt stack 0
-   700                           tblptru	equ	0xFF8
-   701                           tblptrh	equ	0xFF7
-   702                           intcon	equ	0xFF2
-   703                           postinc0	equ	0xFEE
-   704                           wreg	equ	0xFE8
-   705                           status	equ	0xFD8
-   706                           
-   707 ;; *************** function _SYSTEM_Initialize *****************
-   708 ;; Defined at:
-   709 ;;		line 106 in file "mcc_generated_files/mcc.c"
-   710 ;; Parameters:    Size  Location     Type
-   711 ;;		None
-   712 ;; Auto vars:     Size  Location     Type
-   713 ;;		None
-   714 ;; Return value:  Size  Location     Type
-   715 ;;		None               void
-   716 ;; Registers used:
-   717 ;;		wreg, status,2, cstack
-   718 ;; Tracked objects:
-   719 ;;		On entry : 0/0
-   720 ;;		On exit  : 0/0
-   721 ;;		Unchanged: 0/0
-   722 ;; Data sizes:     COMRAM   BANK0   BANK1
-   723 ;;      Params:         0       0       0
-   724 ;;      Locals:         0       0       0
-   725 ;;      Temps:          0       0       0
-   726 ;;      Totals:         0       0       0
-   727 ;;Total ram usage:        0 bytes
-   728 ;; Hardware stack levels used:    1
-   729 ;; Hardware stack levels required when called:    1
-   730 ;; This function calls:
-   731 ;;		_DAC_Initialize
-   732 ;;		_INTERRUPT_ON_CHANGE_Initialize
-   733 ;;		_OSCILLATOR_Initialize
-   734 ;;		_PIN_MANAGER_Initialize
-   735 ;; This function is called by:
-   736 ;;		_main
-   737 ;; This function uses a non-reentrant model
-   738 ;;
-   739                           
-   740                           	psect	text1
-   741  00053A                     __ptext1:
-   742                           	opt stack 0
-   743  00053A                     _SYSTEM_Initialize:
-   744                           	opt stack 29
-   745                           
-   746                           ;mcc.c: 107: OSCILLATOR_Initialize();
-   747                           
-   748                           ;incstack = 0
-   749  00053A  ECA6  F002         	call	_OSCILLATOR_Initialize	;wreg free
-   750                           
-   751                           ;mcc.c: 108: PIN_MANAGER_Initialize();
-   752  00053E  EC78  F002         	call	_PIN_MANAGER_Initialize	;wreg free
-   753                           
-   754                           ;mcc.c: 109: DAC_Initialize();
-   755  000542  ECB4  F002         	call	_DAC_Initialize	;wreg free
-   756                           
-   757                           ;mcc.c: 110: INTERRUPT_ON_CHANGE_Initialize();
-   758  000546  ECAD  F002         	call	_INTERRUPT_ON_CHANGE_Initialize	;wreg free
-   759  00054A  0012               	return		;funcret
-   760  00054C                     __end_of_SYSTEM_Initialize:
-   761                           	opt stack 0
-   762                           tblptru	equ	0xFF8
-   763                           tblptrh	equ	0xFF7
-   764                           intcon	equ	0xFF2
-   765                           postinc0	equ	0xFEE
-   766                           wreg	equ	0xFE8
-   767                           status	equ	0xFD8
-   768                           
-   769 ;; *************** function _PIN_MANAGER_Initialize *****************
-   770 ;; Defined at:
-   771 ;;		line 50 in file "mcc_generated_files/pin_manager.c"
-   772 ;; Parameters:    Size  Location     Type
-   773 ;;		None
-   774 ;; Auto vars:     Size  Location     Type
-   775 ;;		None
-   776 ;; Return value:  Size  Location     Type
-   777 ;;		None               void
-   778 ;; Registers used:
-   779 ;;		wreg, status,2
-   780 ;; Tracked objects:
-   781 ;;		On entry : 0/0
-   782 ;;		On exit  : 0/0
-   783 ;;		Unchanged: 0/0
-   784 ;; Data sizes:     COMRAM   BANK0   BANK1
-   785 ;;      Params:         0       0       0
-   786 ;;      Locals:         0       0       0
-   787 ;;      Temps:          0       0       0
-   788 ;;      Totals:         0       0       0
-   789 ;;Total ram usage:        0 bytes
-   790 ;; Hardware stack levels used:    1
-   791 ;; This function calls:
-   792 ;;		Nothing
-   793 ;; This function is called by:
-   794 ;;		_SYSTEM_Initialize
-   795 ;; This function uses a non-reentrant model
-   796 ;;
-   797                           
-   798                           	psect	text2
-   799  0004F0                     __ptext2:
-   800                           	opt stack 0
-   801  0004F0                     _PIN_MANAGER_Initialize:
-   802                           	opt stack 29
-   803                           
-   804                           ;pin_manager.c: 51: LATA = 0x00;
-   805                           
-   806                           ;incstack = 0
-   807  0004F0  0E00               	movlw	0
-   808  0004F2  6E89               	movwf	3977,c	;volatile
-   809                           
-   810                           ;pin_manager.c: 52: TRISA = 0x00;
-   811  0004F4  0E00               	movlw	0
-   812  0004F6  6E92               	movwf	3986,c	;volatile
+   633                           ;main.c: 214: } else if (Dummy == 0x30) {
+   634  0003B2  D008               	goto	l998
+   635  0003B4                     l996:
+   636  0003B4  0E30               	movlw	48
+   637  0003B6  1808               	xorwf	_Dummy,w,c
+   638  0003B8  A4D8               	btfss	status,2,c
+   639  0003BA  D004               	goto	l998
+   640                           
+   641                           ;main.c: 215: do { LATA6 = 1; } while(0);
+   642  0003BC  8C89               	bsf	3977,6,c	;volatile
+   643  0003BE  D000               	goto	l209
+   644  0003C0                     l209:
+   645  0003C0  8E89               	bsf	3977,7,c	;volatile
+   646  0003C2  D000               	goto	l998
+   647  0003C4                     l998:
+   648                           
+   649                           ;main.c: 217: }
+   650                           ;main.c: 219: Dummy = Byte1 & 0x07;
+   651  0003C4  5001               	movf	_Byte1,w,c
+   652  0003C6  0B07               	andlw	7
+   653  0003C8  6E08               	movwf	_Dummy,c
+   654                           
+   655                           ;main.c: 220: if (Dummy == 0x00) {
+   656  0003CA  5008               	movf	_Dummy,w,c
+   657  0003CC  A4D8               	btfss	status,2,c
+   658  0003CE  D004               	goto	l1002
+   659                           
+   660                           ;main.c: 221: do { LATC0 = 0; } while(0);
+   661  0003D0  908B               	bcf	3979,0,c	;volatile
+   662  0003D2  D008               	goto	l220
+   663                           
+   664                           ;main.c: 222: do { LATC1 = 0; } while(0);
+   665  0003D4  D007               	goto	l220
+   666                           
+   667                           ;main.c: 223: } else if (Dummy == 0x04) {
+   668  0003D6  D018               	goto	l216
+   669  0003D8                     l1002:
+   670  0003D8  0E04               	movlw	4
+   671  0003DA  1808               	xorwf	_Dummy,w,c
+   672  0003DC  A4D8               	btfss	status,2,c
+   673  0003DE  D004               	goto	l1004
+   674                           
+   675                           ;main.c: 224: do { LATC0 = 1; } while(0);
+   676  0003E0  808B               	bsf	3979,0,c	;volatile
+   677  0003E2  D000               	goto	l220
+   678  0003E4                     l220:
+   679  0003E4  928B               	bcf	3979,1,c	;volatile
+   680                           
+   681                           ;main.c: 226: } else if (Dummy == 0x02) {
+   682  0003E6  D010               	goto	l216
+   683  0003E8                     l1004:
+   684  0003E8  0E02               	movlw	2
+   685  0003EA  1808               	xorwf	_Dummy,w,c
+   686  0003EC  A4D8               	btfss	status,2,c
+   687  0003EE  D004               	goto	l1006
+   688                           
+   689                           ;main.c: 227: do { LATC0 = 0; } while(0);
+   690  0003F0  908B               	bcf	3979,0,c	;volatile
+   691  0003F2  D008               	goto	l232
+   692                           
+   693                           ;main.c: 228: do { LATC1 = 1; } while(0);
+   694  0003F4  D007               	goto	l232
+   695                           
+   696                           ;main.c: 229: } else if (Dummy == 0x06) {
+   697  0003F6  D008               	goto	l216
+   698  0003F8                     l1006:
+   699  0003F8  0E06               	movlw	6
+   700  0003FA  1808               	xorwf	_Dummy,w,c
+   701  0003FC  A4D8               	btfss	status,2,c
+   702  0003FE  D004               	goto	l216
+   703                           
+   704                           ;main.c: 230: do { LATC0 = 1; } while(0);
+   705  000400  808B               	bsf	3979,0,c	;volatile
+   706  000402  D000               	goto	l232
+   707  000404                     l232:
+   708  000404  828B               	bsf	3979,1,c	;volatile
+   709  000406  D000               	goto	l216
+   710  000408                     l216:
+   711  000408  0003               	sleep		;# 
+   712  00040A  D77A               	goto	l968
+   713  00040C  EF00  F000         	goto	start
+   714  000410                     __end_of_main:
+   715                           	opt stack 0
+   716                           tblptru	equ	0xFF8
+   717                           tblptrh	equ	0xFF7
+   718                           intcon	equ	0xFF2
+   719                           postinc0	equ	0xFEE
+   720                           wreg	equ	0xFE8
+   721                           status	equ	0xFD8
+   722                           
+   723 ;; *************** function _SYSTEM_Initialize *****************
+   724 ;; Defined at:
+   725 ;;		line 106 in file "mcc_generated_files/mcc.c"
+   726 ;; Parameters:    Size  Location     Type
+   727 ;;		None
+   728 ;; Auto vars:     Size  Location     Type
+   729 ;;		None
+   730 ;; Return value:  Size  Location     Type
+   731 ;;		None               void
+   732 ;; Registers used:
+   733 ;;		wreg, status,2, cstack
+   734 ;; Tracked objects:
+   735 ;;		On entry : 0/0
+   736 ;;		On exit  : 0/0
+   737 ;;		Unchanged: 0/0
+   738 ;; Data sizes:     COMRAM   BANK0   BANK1
+   739 ;;      Params:         0       0       0
+   740 ;;      Locals:         0       0       0
+   741 ;;      Temps:          0       0       0
+   742 ;;      Totals:         0       0       0
+   743 ;;Total ram usage:        0 bytes
+   744 ;; Hardware stack levels used:    1
+   745 ;; Hardware stack levels required when called:    1
+   746 ;; This function calls:
+   747 ;;		_DAC_Initialize
+   748 ;;		_INTERRUPT_ON_CHANGE_Initialize
+   749 ;;		_OSCILLATOR_Initialize
+   750 ;;		_PIN_MANAGER_Initialize
+   751 ;; This function is called by:
+   752 ;;		_main
+   753 ;; This function uses a non-reentrant model
+   754 ;;
+   755                           
+   756                           	psect	text1
+   757  000548                     __ptext1:
+   758                           	opt stack 0
+   759  000548                     _SYSTEM_Initialize:
+   760                           	opt stack 29
+   761                           
+   762                           ;mcc.c: 107: OSCILLATOR_Initialize();
+   763                           
+   764                           ;incstack = 0
+   765  000548  ECAD  F002         	call	_OSCILLATOR_Initialize	;wreg free
+   766                           
+   767                           ;mcc.c: 108: PIN_MANAGER_Initialize();
+   768  00054C  EC7F  F002         	call	_PIN_MANAGER_Initialize	;wreg free
+   769                           
+   770                           ;mcc.c: 109: DAC_Initialize();
+   771  000550  ECB4  F002         	call	_DAC_Initialize	;wreg free
+   772                           
+   773                           ;mcc.c: 110: INTERRUPT_ON_CHANGE_Initialize();
+   774  000554  ECBB  F002         	call	_INTERRUPT_ON_CHANGE_Initialize	;wreg free
+   775  000558  0012               	return		;funcret
+   776  00055A                     __end_of_SYSTEM_Initialize:
+   777                           	opt stack 0
+   778                           tblptru	equ	0xFF8
+   779                           tblptrh	equ	0xFF7
+   780                           intcon	equ	0xFF2
+   781                           postinc0	equ	0xFEE
+   782                           wreg	equ	0xFE8
+   783                           status	equ	0xFD8
+   784                           
+   785 ;; *************** function _PIN_MANAGER_Initialize *****************
+   786 ;; Defined at:
+   787 ;;		line 50 in file "mcc_generated_files/pin_manager.c"
+   788 ;; Parameters:    Size  Location     Type
+   789 ;;		None
+   790 ;; Auto vars:     Size  Location     Type
+   791 ;;		None
+   792 ;; Return value:  Size  Location     Type
+   793 ;;		None               void
+   794 ;; Registers used:
+   795 ;;		wreg, status,2
+   796 ;; Tracked objects:
+   797 ;;		On entry : 0/0
+   798 ;;		On exit  : 0/0
+   799 ;;		Unchanged: 0/0
+   800 ;; Data sizes:     COMRAM   BANK0   BANK1
+   801 ;;      Params:         0       0       0
+   802 ;;      Locals:         0       0       0
+   803 ;;      Temps:          0       0       0
+   804 ;;      Totals:         0       0       0
+   805 ;;Total ram usage:        0 bytes
+   806 ;; Hardware stack levels used:    1
+   807 ;; This function calls:
+   808 ;;		Nothing
+   809 ;; This function is called by:
+   810 ;;		_SYSTEM_Initialize
+   811 ;; This function uses a non-reentrant model
+   812 ;;
    813                           
-   814                           ;pin_manager.c: 53: ANSELA = 0x04;
-   815  0004F8  0E04               	movlw	4
-   816  0004FA  010F               	movlb	15	; () banked
-   817  0004FC  6F38               	movwf	56,b	;volatile
-   818                           
-   819                           ;pin_manager.c: 55: LATB = 0x00;
-   820  0004FE  0E00               	movlw	0
-   821  000500  6E8A               	movwf	3978,c	;volatile
-   822                           
-   823                           ; BSR set to: 15
-   824                           ;pin_manager.c: 56: TRISB = 0xFF;
-   825  000502  6893               	setf	3987,c	;volatile
-   826                           
-   827                           ;pin_manager.c: 57: ANSELB = 0x00;
-   828  000504  0E00               	movlw	0
-   829  000506  010F               	movlb	15	; () banked
-   830  000508  6F39               	movwf	57,b	;volatile
-   831                           
-   832                           ;pin_manager.c: 58: WPUB = 0x00;
-   833  00050A  0E00               	movlw	0
-   834  00050C  6E61               	movwf	3937,c	;volatile
-   835                           
-   836                           ;pin_manager.c: 60: LATC = 0x00;
-   837  00050E  0E00               	movlw	0
-   838  000510  6E8B               	movwf	3979,c	;volatile
-   839                           
-   840                           ;pin_manager.c: 61: TRISC = 0xFC;
-   841  000512  0EFC               	movlw	252
-   842  000514  6E94               	movwf	3988,c	;volatile
-   843                           
-   844                           ;pin_manager.c: 62: ANSELC = 0xFC;
-   845  000516  0EFC               	movlw	252
-   846  000518  010F               	movlb	15	; () banked
-   847  00051A  6F3A               	movwf	58,b	;volatile
-   848                           
-   849                           ; BSR set to: 15
-   850                           ;pin_manager.c: 64: INTCON2bits.nRBPU = 0x01;
-   851  00051C  8EF1               	bsf	intcon2,7,c	;volatile
-   852                           
-   853                           ; BSR set to: 15
-   854  00051E  0012               	return		;funcret
-   855  000520                     __end_of_PIN_MANAGER_Initialize:
-   856                           	opt stack 0
-   857                           tblptru	equ	0xFF8
-   858                           tblptrh	equ	0xFF7
-   859                           intcon	equ	0xFF2
-   860                           intcon2	equ	0xFF1
-   861                           postinc0	equ	0xFEE
-   862                           wreg	equ	0xFE8
-   863                           status	equ	0xFD8
+   814                           	psect	text2
+   815  0004FE                     __ptext2:
+   816                           	opt stack 0
+   817  0004FE                     _PIN_MANAGER_Initialize:
+   818                           	opt stack 29
+   819                           
+   820                           ;pin_manager.c: 51: LATA = 0x00;
+   821                           
+   822                           ;incstack = 0
+   823  0004FE  0E00               	movlw	0
+   824  000500  6E89               	movwf	3977,c	;volatile
+   825                           
+   826                           ;pin_manager.c: 52: TRISA = 0x00;
+   827  000502  0E00               	movlw	0
+   828  000504  6E92               	movwf	3986,c	;volatile
+   829                           
+   830                           ;pin_manager.c: 53: ANSELA = 0x04;
+   831  000506  0E04               	movlw	4
+   832  000508  010F               	movlb	15	; () banked
+   833  00050A  6F38               	movwf	56,b	;volatile
+   834                           
+   835                           ;pin_manager.c: 55: LATB = 0x00;
+   836  00050C  0E00               	movlw	0
+   837  00050E  6E8A               	movwf	3978,c	;volatile
+   838                           
+   839                           ; BSR set to: 15
+   840                           ;pin_manager.c: 56: TRISB = 0xFF;
+   841  000510  6893               	setf	3987,c	;volatile
+   842                           
+   843                           ;pin_manager.c: 57: ANSELB = 0x00;
+   844  000512  0E00               	movlw	0
+   845  000514  010F               	movlb	15	; () banked
+   846  000516  6F39               	movwf	57,b	;volatile
+   847                           
+   848                           ;pin_manager.c: 58: WPUB = 0x00;
+   849  000518  0E00               	movlw	0
+   850  00051A  6E61               	movwf	3937,c	;volatile
+   851                           
+   852                           ;pin_manager.c: 60: LATC = 0x00;
+   853  00051C  0E00               	movlw	0
+   854  00051E  6E8B               	movwf	3979,c	;volatile
+   855                           
+   856                           ;pin_manager.c: 61: TRISC = 0xFC;
+   857  000520  0EFC               	movlw	252
+   858  000522  6E94               	movwf	3988,c	;volatile
+   859                           
+   860                           ;pin_manager.c: 62: ANSELC = 0xFC;
+   861  000524  0EFC               	movlw	252
+   862  000526  010F               	movlb	15	; () banked
+   863  000528  6F3A               	movwf	58,b	;volatile
    864                           
-   865 ;; *************** function _OSCILLATOR_Initialize *****************
-   866 ;; Defined at:
-   867 ;;		line 113 in file "mcc_generated_files/mcc.c"
-   868 ;; Parameters:    Size  Location     Type
-   869 ;;		None
-   870 ;; Auto vars:     Size  Location     Type
-   871 ;;		None
-   872 ;; Return value:  Size  Location     Type
-   873 ;;		None               void
-   874 ;; Registers used:
-   875 ;;		wreg, status,2
-   876 ;; Tracked objects:
-   877 ;;		On entry : 0/0
-   878 ;;		On exit  : 0/0
-   879 ;;		Unchanged: 0/0
-   880 ;; Data sizes:     COMRAM   BANK0   BANK1
-   881 ;;      Params:         0       0       0
-   882 ;;      Locals:         0       0       0
-   883 ;;      Temps:          0       0       0
-   884 ;;      Totals:         0       0       0
-   885 ;;Total ram usage:        0 bytes
-   886 ;; Hardware stack levels used:    1
-   887 ;; This function calls:
-   888 ;;		Nothing
-   889 ;; This function is called by:
-   890 ;;		_SYSTEM_Initialize
-   891 ;; This function uses a non-reentrant model
-   892 ;;
-   893                           
-   894                           	psect	text3
-   895  00054C                     __ptext3:
-   896                           	opt stack 0
-   897  00054C                     _OSCILLATOR_Initialize:
-   898                           	opt stack 29
-   899                           
-   900                           ;mcc.c: 115: OSCCON = 0x70;
-   901                           
-   902                           ; BSR set to: 15
-   903                           ;incstack = 0
-   904  00054C  0E70               	movlw	112
-   905  00054E  6ED3               	movwf	4051,c	;volatile
-   906                           
-   907                           ;mcc.c: 117: OSCCON2 = 0x04;
-   908  000550  0E04               	movlw	4
-   909  000552  6ED2               	movwf	4050,c	;volatile
-   910                           
-   911                           ;mcc.c: 119: OSCTUNE = 0x40;
-   912  000554  0E40               	movlw	64
-   913  000556  6E9B               	movwf	3995,c	;volatile
-   914  000558  0012               	return		;funcret
-   915  00055A                     __end_of_OSCILLATOR_Initialize:
-   916                           	opt stack 0
-   917                           tblptru	equ	0xFF8
-   918                           tblptrh	equ	0xFF7
-   919                           intcon	equ	0xFF2
-   920                           intcon2	equ	0xFF1
-   921                           postinc0	equ	0xFEE
-   922                           wreg	equ	0xFE8
-   923                           status	equ	0xFD8
-   924                           
-   925 ;; *************** function _INTERRUPT_ON_CHANGE_Initialize *****************
-   926 ;; Defined at:
-   927 ;;		line 124 in file "mcc_generated_files/mcc.c"
-   928 ;; Parameters:    Size  Location     Type
-   929 ;;		None
-   930 ;; Auto vars:     Size  Location     Type
-   931 ;;		None
-   932 ;; Return value:  Size  Location     Type
-   933 ;;		None               void
-   934 ;; Registers used:
-   935 ;;		None
-   936 ;; Tracked objects:
-   937 ;;		On entry : 0/0
-   938 ;;		On exit  : 0/0
-   939 ;;		Unchanged: 0/0
-   940 ;; Data sizes:     COMRAM   BANK0   BANK1
-   941 ;;      Params:         0       0       0
-   942 ;;      Locals:         0       0       0
-   943 ;;      Temps:          0       0       0
-   944 ;;      Totals:         0       0       0
-   945 ;;Total ram usage:        0 bytes
-   946 ;; Hardware stack levels used:    1
-   947 ;; This function calls:
-   948 ;;		Nothing
-   949 ;; This function is called by:
-   950 ;;		_SYSTEM_Initialize
-   951 ;; This function uses a non-reentrant model
-   952 ;;
-   953                           
-   954                           	psect	text4
-   955  00055A                     __ptext4:
-   956                           	opt stack 0
-   957  00055A                     _INTERRUPT_ON_CHANGE_Initialize:
-   958                           	opt stack 29
-   959                           
-   960                           ;mcc.c: 126: INTCONbits.GIE = 1;
-   961                           
-   962                           ;incstack = 0
-   963  00055A  8EF2               	bsf	intcon,7,c	;volatile
-   964                           
-   965                           ;mcc.c: 127: INTCONbits.PEIE = 1;
-   966  00055C  8CF2               	bsf	intcon,6,c	;volatile
-   967                           
-   968                           ;mcc.c: 128: INTCONbits.RBIE = 1;
-   969  00055E  86F2               	bsf	intcon,3,c	;volatile
-   970                           
-   971                           ;mcc.c: 129: INTCONbits.RBIF = 0;
-   972  000560  90F2               	bcf	intcon,0,c	;volatile
-   973                           
-   974                           ;mcc.c: 130: INTCON2bits.RBIP = 1;
-   975  000562  80F1               	bsf	intcon2,0,c	;volatile
-   976                           
-   977                           ;mcc.c: 131: IOCBbits.IOCB7 = 1;
-   978  000564  8E62               	bsf	3938,7,c	;volatile
-   979  000566  0012               	return		;funcret
-   980  000568                     __end_of_INTERRUPT_ON_CHANGE_Initialize:
-   981                           	opt stack 0
-   982                           tblptru	equ	0xFF8
-   983                           tblptrh	equ	0xFF7
-   984                           intcon	equ	0xFF2
-   985                           intcon2	equ	0xFF1
-   986                           postinc0	equ	0xFEE
-   987                           wreg	equ	0xFE8
-   988                           status	equ	0xFD8
-   989                           
-   990 ;; *************** function _DAC_Initialize *****************
-   991 ;; Defined at:
-   992 ;;		line 57 in file "mcc_generated_files/dac.c"
-   993 ;; Parameters:    Size  Location     Type
-   994 ;;		None
-   995 ;; Auto vars:     Size  Location     Type
-   996 ;;		None
-   997 ;; Return value:  Size  Location     Type
-   998 ;;		None               void
-   999 ;; Registers used:
-  1000 ;;		wreg, status,2
-  1001 ;; Tracked objects:
-  1002 ;;		On entry : 0/0
-  1003 ;;		On exit  : 0/0
-  1004 ;;		Unchanged: 0/0
-  1005 ;; Data sizes:     COMRAM   BANK0   BANK1
-  1006 ;;      Params:         0       0       0
-  1007 ;;      Locals:         0       0       0
-  1008 ;;      Temps:          0       0       0
-  1009 ;;      Totals:         0       0       0
-  1010 ;;Total ram usage:        0 bytes
-  1011 ;; Hardware stack levels used:    1
-  1012 ;; This function calls:
-  1013 ;;		Nothing
-  1014 ;; This function is called by:
-  1015 ;;		_SYSTEM_Initialize
-  1016 ;; This function uses a non-reentrant model
-  1017 ;;
-  1018                           
-  1019                           	psect	text5
-  1020  000568                     __ptext5:
-  1021                           	opt stack 0
-  1022  000568                     _DAC_Initialize:
-  1023                           	opt stack 29
-  1024                           
-  1025                           ;dac.c: 59: VREFCON1 = 0xA0;
-  1026                           
-  1027                           ;incstack = 0
-  1028  000568  0EA0               	movlw	160
-  1029  00056A  010F               	movlb	15	; () banked
-  1030  00056C  6F41               	movwf	65,b	;volatile
-  1031                           
-  1032                           ;dac.c: 61: DACCON1 = 0x00;
-  1033  00056E  0E00               	movlw	0
-  1034  000570  010F               	movlb	15	; () banked
-  1035  000572  6F40               	movwf	64,b	;volatile
-  1036                           
-  1037                           ; BSR set to: 15
-  1038  000574  0012               	return		;funcret
-  1039  000576                     __end_of_DAC_Initialize:
-  1040                           	opt stack 0
-  1041                           tblptru	equ	0xFF8
-  1042                           tblptrh	equ	0xFF7
-  1043                           intcon	equ	0xFF2
-  1044                           intcon2	equ	0xFF1
-  1045                           postinc0	equ	0xFEE
-  1046                           wreg	equ	0xFE8
-  1047                           status	equ	0xFD8
-  1048                           
-  1049 ;; *************** function _MIPI *****************
-  1050 ;; Defined at:
-  1051 ;;		line 95 in file "main.c"
-  1052 ;; Parameters:    Size  Location     Type
-  1053 ;;  a               1    wreg     unsigned char 
-  1054 ;;  b               1    4[COMRAM] unsigned char 
-  1055 ;; Auto vars:     Size  Location     Type
-  1056 ;;  a               1    5[COMRAM] unsigned char 
-  1057 ;; Return value:  Size  Location     Type
-  1058 ;;		None               void
-  1059 ;; Registers used:
-  1060 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
-  1061 ;; Tracked objects:
-  1062 ;;		On entry : 0/0
-  1063 ;;		On exit  : 0/0
-  1064 ;;		Unchanged: 0/0
-  1065 ;; Data sizes:     COMRAM   BANK0   BANK1
-  1066 ;;      Params:         1       0       0
-  1067 ;;      Locals:         1       0       0
-  1068 ;;      Temps:          0       0       0
-  1069 ;;      Totals:         2       0       0
-  1070 ;;Total ram usage:        2 bytes
-  1071 ;; Hardware stack levels used:    1
-  1072 ;; Hardware stack levels required when called:    1
-  1073 ;; This function calls:
-  1074 ;;		_shiftRegister
-  1075 ;; This function is called by:
-  1076 ;;		_main
-  1077 ;; This function uses a non-reentrant model
-  1078 ;;
-  1079                           
-  1080                           	psect	text6
-  1081  000402                     __ptext6:
-  1082                           	opt stack 0
-  1083  000402                     _MIPI:
-  1084                           	opt stack 29
-  1085                           
-  1086                           ; BSR set to: 15
-  1087                           ;incstack = 0
-  1088                           ;MIPI@a stored from wreg
-  1089  000402  6E0E               	movwf	MIPI@a,c
+   865                           ; BSR set to: 15
+   866                           ;pin_manager.c: 64: INTCON2bits.nRBPU = 0x01;
+   867  00052A  8EF1               	bsf	intcon2,7,c	;volatile
+   868                           
+   869                           ; BSR set to: 15
+   870  00052C  0012               	return		;funcret
+   871  00052E                     __end_of_PIN_MANAGER_Initialize:
+   872                           	opt stack 0
+   873                           tblptru	equ	0xFF8
+   874                           tblptrh	equ	0xFF7
+   875                           intcon	equ	0xFF2
+   876                           intcon2	equ	0xFF1
+   877                           postinc0	equ	0xFEE
+   878                           wreg	equ	0xFE8
+   879                           status	equ	0xFD8
+   880                           
+   881 ;; *************** function _OSCILLATOR_Initialize *****************
+   882 ;; Defined at:
+   883 ;;		line 113 in file "mcc_generated_files/mcc.c"
+   884 ;; Parameters:    Size  Location     Type
+   885 ;;		None
+   886 ;; Auto vars:     Size  Location     Type
+   887 ;;		None
+   888 ;; Return value:  Size  Location     Type
+   889 ;;		None               void
+   890 ;; Registers used:
+   891 ;;		wreg, status,2
+   892 ;; Tracked objects:
+   893 ;;		On entry : 0/0
+   894 ;;		On exit  : 0/0
+   895 ;;		Unchanged: 0/0
+   896 ;; Data sizes:     COMRAM   BANK0   BANK1
+   897 ;;      Params:         0       0       0
+   898 ;;      Locals:         0       0       0
+   899 ;;      Temps:          0       0       0
+   900 ;;      Totals:         0       0       0
+   901 ;;Total ram usage:        0 bytes
+   902 ;; Hardware stack levels used:    1
+   903 ;; This function calls:
+   904 ;;		Nothing
+   905 ;; This function is called by:
+   906 ;;		_SYSTEM_Initialize
+   907 ;; This function uses a non-reentrant model
+   908 ;;
+   909                           
+   910                           	psect	text3
+   911  00055A                     __ptext3:
+   912                           	opt stack 0
+   913  00055A                     _OSCILLATOR_Initialize:
+   914                           	opt stack 29
+   915                           
+   916                           ;mcc.c: 115: OSCCON = 0x70;
+   917                           
+   918                           ; BSR set to: 15
+   919                           ;incstack = 0
+   920  00055A  0E70               	movlw	112
+   921  00055C  6ED3               	movwf	4051,c	;volatile
+   922                           
+   923                           ;mcc.c: 117: OSCCON2 = 0x04;
+   924  00055E  0E04               	movlw	4
+   925  000560  6ED2               	movwf	4050,c	;volatile
+   926                           
+   927                           ;mcc.c: 119: OSCTUNE = 0x40;
+   928  000562  0E40               	movlw	64
+   929  000564  6E9B               	movwf	3995,c	;volatile
+   930  000566  0012               	return		;funcret
+   931  000568                     __end_of_OSCILLATOR_Initialize:
+   932                           	opt stack 0
+   933                           tblptru	equ	0xFF8
+   934                           tblptrh	equ	0xFF7
+   935                           intcon	equ	0xFF2
+   936                           intcon2	equ	0xFF1
+   937                           postinc0	equ	0xFEE
+   938                           wreg	equ	0xFE8
+   939                           status	equ	0xFD8
+   940                           
+   941 ;; *************** function _INTERRUPT_ON_CHANGE_Initialize *****************
+   942 ;; Defined at:
+   943 ;;		line 124 in file "mcc_generated_files/mcc.c"
+   944 ;; Parameters:    Size  Location     Type
+   945 ;;		None
+   946 ;; Auto vars:     Size  Location     Type
+   947 ;;		None
+   948 ;; Return value:  Size  Location     Type
+   949 ;;		None               void
+   950 ;; Registers used:
+   951 ;;		wreg, status,2
+   952 ;; Tracked objects:
+   953 ;;		On entry : 0/0
+   954 ;;		On exit  : 0/0
+   955 ;;		Unchanged: 0/0
+   956 ;; Data sizes:     COMRAM   BANK0   BANK1
+   957 ;;      Params:         0       0       0
+   958 ;;      Locals:         0       0       0
+   959 ;;      Temps:          0       0       0
+   960 ;;      Totals:         0       0       0
+   961 ;;Total ram usage:        0 bytes
+   962 ;; Hardware stack levels used:    1
+   963 ;; This function calls:
+   964 ;;		Nothing
+   965 ;; This function is called by:
+   966 ;;		_SYSTEM_Initialize
+   967 ;; This function uses a non-reentrant model
+   968 ;;
+   969                           
+   970                           	psect	text4
+   971  000576                     __ptext4:
+   972                           	opt stack 0
+   973  000576                     _INTERRUPT_ON_CHANGE_Initialize:
+   974                           	opt stack 29
+   975                           
+   976                           ;mcc.c: 128: INTCONbits.RBIE = 1;
+   977                           
+   978                           ;incstack = 0
+   979  000576  86F2               	bsf	intcon,3,c	;volatile
+   980                           
+   981                           ;mcc.c: 129: INTCONbits.RBIF = 0;
+   982  000578  90F2               	bcf	intcon,0,c	;volatile
+   983                           
+   984                           ;mcc.c: 130: INTCON2bits.RBIP = 1;
+   985  00057A  80F1               	bsf	intcon2,0,c	;volatile
+   986                           
+   987                           ;mcc.c: 131: IOCB = 0x80;
+   988  00057C  0E80               	movlw	128
+   989  00057E  6E62               	movwf	3938,c	;volatile
+   990  000580  0012               	return		;funcret
+   991  000582                     __end_of_INTERRUPT_ON_CHANGE_Initialize:
+   992                           	opt stack 0
+   993                           tblptru	equ	0xFF8
+   994                           tblptrh	equ	0xFF7
+   995                           intcon	equ	0xFF2
+   996                           intcon2	equ	0xFF1
+   997                           postinc0	equ	0xFEE
+   998                           wreg	equ	0xFE8
+   999                           status	equ	0xFD8
+  1000                           
+  1001 ;; *************** function _DAC_Initialize *****************
+  1002 ;; Defined at:
+  1003 ;;		line 57 in file "mcc_generated_files/dac.c"
+  1004 ;; Parameters:    Size  Location     Type
+  1005 ;;		None
+  1006 ;; Auto vars:     Size  Location     Type
+  1007 ;;		None
+  1008 ;; Return value:  Size  Location     Type
+  1009 ;;		None               void
+  1010 ;; Registers used:
+  1011 ;;		wreg, status,2
+  1012 ;; Tracked objects:
+  1013 ;;		On entry : 0/0
+  1014 ;;		On exit  : 0/0
+  1015 ;;		Unchanged: 0/0
+  1016 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1017 ;;      Params:         0       0       0
+  1018 ;;      Locals:         0       0       0
+  1019 ;;      Temps:          0       0       0
+  1020 ;;      Totals:         0       0       0
+  1021 ;;Total ram usage:        0 bytes
+  1022 ;; Hardware stack levels used:    1
+  1023 ;; This function calls:
+  1024 ;;		Nothing
+  1025 ;; This function is called by:
+  1026 ;;		_SYSTEM_Initialize
+  1027 ;; This function uses a non-reentrant model
+  1028 ;;
+  1029                           
+  1030                           	psect	text5
+  1031  000568                     __ptext5:
+  1032                           	opt stack 0
+  1033  000568                     _DAC_Initialize:
+  1034                           	opt stack 29
+  1035                           
+  1036                           ;dac.c: 59: VREFCON1 = 0xA0;
+  1037                           
+  1038                           ;incstack = 0
+  1039  000568  0EA0               	movlw	160
+  1040  00056A  010F               	movlb	15	; () banked
+  1041  00056C  6F41               	movwf	65,b	;volatile
+  1042                           
+  1043                           ;dac.c: 61: DACCON1 = 0x00;
+  1044  00056E  0E00               	movlw	0
+  1045  000570  010F               	movlb	15	; () banked
+  1046  000572  6F40               	movwf	64,b	;volatile
+  1047                           
+  1048                           ; BSR set to: 15
+  1049  000574  0012               	return		;funcret
+  1050  000576                     __end_of_DAC_Initialize:
+  1051                           	opt stack 0
+  1052                           tblptru	equ	0xFF8
+  1053                           tblptrh	equ	0xFF7
+  1054                           intcon	equ	0xFF2
+  1055                           intcon2	equ	0xFF1
+  1056                           postinc0	equ	0xFEE
+  1057                           wreg	equ	0xFE8
+  1058                           status	equ	0xFD8
+  1059                           
+  1060 ;; *************** function _MIPI *****************
+  1061 ;; Defined at:
+  1062 ;;		line 95 in file "main.c"
+  1063 ;; Parameters:    Size  Location     Type
+  1064 ;;  a               1    wreg     unsigned char 
+  1065 ;;  b               1    4[COMRAM] unsigned char 
+  1066 ;; Auto vars:     Size  Location     Type
+  1067 ;;  a               1    5[COMRAM] unsigned char 
+  1068 ;; Return value:  Size  Location     Type
+  1069 ;;		None               void
+  1070 ;; Registers used:
+  1071 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+  1072 ;; Tracked objects:
+  1073 ;;		On entry : 0/0
+  1074 ;;		On exit  : 0/0
+  1075 ;;		Unchanged: 0/0
+  1076 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1077 ;;      Params:         1       0       0
+  1078 ;;      Locals:         1       0       0
+  1079 ;;      Temps:          0       0       0
+  1080 ;;      Totals:         2       0       0
+  1081 ;;Total ram usage:        2 bytes
+  1082 ;; Hardware stack levels used:    1
+  1083 ;; Hardware stack levels required when called:    1
+  1084 ;; This function calls:
+  1085 ;;		_shiftRegister
+  1086 ;; This function is called by:
+  1087 ;;		_main
+  1088 ;; This function uses a non-reentrant model
+  1089 ;;
   1090                           
-  1091                           ;main.c: 96: do { LATA3 = 1; } while(0);
-  1092  000404  8689               	bsf	3977,3,c	;volatile
-  1093  000406  D000               	goto	l133
-  1094  000408                     l133:
-  1095  000408  8889               	bsf	3977,4,c	;volatile
-  1096  00040A  D000               	goto	l135
-  1097  00040C                     l135:
-  1098  00040C  9689               	bcf	3977,3,c	;volatile
-  1099  00040E  D000               	goto	l137
-  1100  000410                     l137:
-  1101  000410  9889               	bcf	3977,4,c	;volatile
-  1102  000412  D000               	goto	l923
-  1103  000414                     l923:
-  1104                           
-  1105                           ;main.c: 104: shiftRegister (SLAVEADD[0],SLAVEADD[0],4);
-  1106  000414  0EC9               	movlw	low _SLAVEADD
-  1107  000416  6EF6               	movwf	tblptrl,c
-  1108  000418                     	if	0	;There is only one active tblptr byte
-  1109  000418                     	endif
-  1110  000418                     	if	0	;There are less than 3 active tblptr bytes
-  1111  000418                     	endif
-  1112  000418  0008               	tblrd		*
-  1113  00041A  CFF5 F009          	movff	tablat,shiftRegister@Dummy2
-  1114  00041E  0E04               	movlw	4
-  1115  000420  6E0A               	movwf	shiftRegister@y,c
-  1116  000422  0EC9               	movlw	low _SLAVEADD
-  1117  000424  6EF6               	movwf	tblptrl,c
-  1118  000426                     	if	0	;There is only one active tblptr byte
-  1119  000426                     	endif
-  1120  000426                     	if	0	;There are less than 3 active tblptr bytes
-  1121  000426                     	endif
-  1122  000426  0008               	tblrd		*
-  1123  000428  50F5               	movf	tablat,w,c
-  1124  00042A  EC58  F002         	call	_shiftRegister
-  1125                           
-  1126                           ;main.c: 105: shiftRegister (0x82,0x82,8);
-  1127  00042E  0E82               	movlw	130
-  1128  000430  6E09               	movwf	shiftRegister@Dummy2,c
-  1129  000432  0E08               	movlw	8
-  1130  000434  6E0A               	movwf	shiftRegister@y,c
-  1131  000436  0E82               	movlw	130
-  1132  000438  EC58  F002         	call	_shiftRegister
-  1133                           
-  1134                           ;main.c: 106: shiftRegister (0x01,0x01,1);
-  1135  00043C  0E01               	movlw	1
-  1136  00043E  6E09               	movwf	shiftRegister@Dummy2,c
-  1137  000440  0E01               	movlw	1
-  1138  000442  6E0A               	movwf	shiftRegister@y,c
-  1139  000444  0E01               	movlw	1
-  1140  000446  EC58  F002         	call	_shiftRegister
-  1141                           
-  1142                           ;main.c: 107: shiftRegister (DATA[a],DATA[b],8);
-  1143  00044A  500D               	movf	MIPI@b,w,c
-  1144  00044C  0D01               	mullw	1
-  1145  00044E  0E01               	movlw	low _DATA
-  1146  000450  24F3               	addwf	prodl,w,c
-  1147  000452  6EF6               	movwf	tblptrl,c
-  1148  000454  0E02               	movlw	high _DATA
-  1149  000456  20F4               	addwfc	prodh,w,c
-  1150  000458  6EF7               	movwf	tblptrh,c
-  1151  00045A                     	if	0	;There are less than 3 active tblptr bytes
-  1152  00045A                     	endif
-  1153  00045A  0008               	tblrd		*
-  1154  00045C  CFF5 F009          	movff	tablat,shiftRegister@Dummy2
-  1155  000460  0E08               	movlw	8
-  1156  000462  6E0A               	movwf	shiftRegister@y,c
-  1157  000464  500E               	movf	MIPI@a,w,c
-  1158  000466  0D01               	mullw	1
-  1159  000468  0E01               	movlw	low _DATA
-  1160  00046A  24F3               	addwf	prodl,w,c
-  1161  00046C  6EF6               	movwf	tblptrl,c
-  1162  00046E  0E02               	movlw	high _DATA
-  1163  000470  20F4               	addwfc	prodh,w,c
-  1164  000472  6EF7               	movwf	tblptrh,c
-  1165  000474                     	if	0	;There are less than 3 active tblptr bytes
-  1166  000474                     	endif
-  1167  000474  0008               	tblrd		*
-  1168  000476  50F5               	movf	tablat,w,c
-  1169  000478  EC58  F002         	call	_shiftRegister
-  1170                           
-  1171                           ;main.c: 108: shiftRegister (PARITY[a],PARITY[b],2);
-  1172  00047C  500D               	movf	MIPI@b,w,c
-  1173  00047E  0D01               	mullw	1
-  1174  000480  0E42               	movlw	low _PARITY
-  1175  000482  24F3               	addwf	prodl,w,c
-  1176  000484  6EF6               	movwf	tblptrl,c
-  1177  000486  0E02               	movlw	high _PARITY
-  1178  000488  20F4               	addwfc	prodh,w,c
-  1179  00048A  6EF7               	movwf	tblptrh,c
-  1180  00048C                     	if	0	;There are less than 3 active tblptr bytes
-  1181  00048C                     	endif
-  1182  00048C  0008               	tblrd		*
-  1183  00048E  CFF5 F009          	movff	tablat,shiftRegister@Dummy2
-  1184  000492  0E02               	movlw	2
-  1185  000494  6E0A               	movwf	shiftRegister@y,c
-  1186  000496  500E               	movf	MIPI@a,w,c
-  1187  000498  0D01               	mullw	1
-  1188  00049A  0E42               	movlw	low _PARITY
-  1189  00049C  24F3               	addwf	prodl,w,c
-  1190  00049E  6EF6               	movwf	tblptrl,c
-  1191  0004A0  0E02               	movlw	high _PARITY
-  1192  0004A2  20F4               	addwfc	prodh,w,c
-  1193  0004A4  6EF7               	movwf	tblptrh,c
-  1194  0004A6                     	if	0	;There are less than 3 active tblptr bytes
-  1195  0004A6                     	endif
-  1196  0004A6  0008               	tblrd		*
-  1197  0004A8  50F5               	movf	tablat,w,c
-  1198  0004AA  EC58  F002         	call	_shiftRegister
-  1199  0004AE  0012               	return		;funcret
-  1200  0004B0                     __end_of_MIPI:
-  1201                           	opt stack 0
-  1202                           tblptru	equ	0xFF8
-  1203                           tblptrh	equ	0xFF7
-  1204                           tblptrl	equ	0xFF6
-  1205                           tablat	equ	0xFF5
-  1206                           prodh	equ	0xFF4
-  1207                           prodl	equ	0xFF3
-  1208                           intcon	equ	0xFF2
-  1209                           intcon2	equ	0xFF1
-  1210                           postinc0	equ	0xFEE
-  1211                           wreg	equ	0xFE8
-  1212                           status	equ	0xFD8
-  1213                           
-  1214 ;; *************** function _shiftRegister *****************
-  1215 ;; Defined at:
-  1216 ;;		line 80 in file "main.c"
-  1217 ;; Parameters:    Size  Location     Type
-  1218 ;;  Dummy1          1    wreg     unsigned char 
-  1219 ;;  Dummy2          1    0[COMRAM] unsigned char 
-  1220 ;;  y               1    1[COMRAM] unsigned char 
-  1221 ;; Auto vars:     Size  Location     Type
-  1222 ;;  Dummy1          1    3[COMRAM] unsigned char 
-  1223 ;;  m               1    2[COMRAM] unsigned char 
-  1224 ;; Return value:  Size  Location     Type
-  1225 ;;		None               void
-  1226 ;; Registers used:
-  1227 ;;		wreg, status,2, status,0
-  1228 ;; Tracked objects:
-  1229 ;;		On entry : 0/0
-  1230 ;;		On exit  : 0/0
-  1231 ;;		Unchanged: 0/0
-  1232 ;; Data sizes:     COMRAM   BANK0   BANK1
-  1233 ;;      Params:         2       0       0
-  1234 ;;      Locals:         2       0       0
-  1235 ;;      Temps:          0       0       0
-  1236 ;;      Totals:         4       0       0
-  1237 ;;Total ram usage:        4 bytes
-  1238 ;; Hardware stack levels used:    1
-  1239 ;; This function calls:
-  1240 ;;		Nothing
-  1241 ;; This function is called by:
-  1242 ;;		_MIPI
-  1243 ;; This function uses a non-reentrant model
-  1244 ;;
-  1245                           
-  1246                           	psect	text7
-  1247  0004B0                     __ptext7:
-  1248                           	opt stack 0
-  1249  0004B0                     _shiftRegister:
-  1250                           	opt stack 29
-  1251                           
-  1252                           ;incstack = 0
-  1253                           ;shiftRegister@Dummy1 stored from wreg
-  1254  0004B0  6E0C               	movwf	shiftRegister@Dummy1,c
-  1255                           
-  1256                           ;main.c: 81: for (uint8_t m=0; m<y; m++){
-  1257  0004B2  0E00               	movlw	0
-  1258  0004B4  6E0B               	movwf	shiftRegister@m,c
-  1259  0004B6  D017               	goto	l921
-  1260  0004B8                     l123:
-  1261  0004B8  8A89               	bsf	3977,5,c	;volatile
-  1262  0004BA  D000               	goto	l913
-  1263  0004BC                     l913:
-  1264                           
-  1265                           ;main.c: 83: LATA3 = Dummy1 & 0x01;
-  1266  0004BC  B00C               	btfsc	shiftRegister@Dummy1,0,c
-  1267  0004BE  D002               	bra	u195
-  1268  0004C0  9689               	bcf	3977,3,c	;volatile
-  1269  0004C2  D001               	bra	u196
-  1270  0004C4                     u195:
-  1271  0004C4  8689               	bsf	3977,3,c	;volatile
-  1272  0004C6                     u196:
-  1273                           
-  1274                           ;main.c: 84: LATA4 = Dummy2 & 0x01;
-  1275  0004C6  B009               	btfsc	shiftRegister@Dummy2,0,c
-  1276  0004C8  D002               	bra	u205
-  1277  0004CA  9889               	bcf	3977,4,c	;volatile
-  1278  0004CC  D001               	bra	u206
-  1279  0004CE                     u205:
-  1280  0004CE  8889               	bsf	3977,4,c	;volatile
-  1281  0004D0                     u206:
-  1282  0004D0  D000               	goto	l917
-  1283  0004D2                     l917:
-  1284  0004D2  9A89               	bcf	3977,5,c	;volatile
-  1285  0004D4  D000               	goto	l919
-  1286  0004D6                     l919:
-  1287                           
-  1288                           ;main.c: 88: Dummy1 = Dummy1 >> 1;
-  1289  0004D6  90D8               	bcf	status,0,c
-  1290  0004D8  300C               	rrcf	shiftRegister@Dummy1,w,c
-  1291  0004DA  6E0C               	movwf	shiftRegister@Dummy1,c
-  1292                           
-  1293                           ;main.c: 89: Dummy2 = Dummy2 >> 1;
-  1294  0004DC  90D8               	bcf	status,0,c
-  1295  0004DE  3009               	rrcf	shiftRegister@Dummy2,w,c
-  1296  0004E0  6E09               	movwf	shiftRegister@Dummy2,c
-  1297  0004E2  2A0B               	incf	shiftRegister@m,f,c
-  1298  0004E4  D000               	goto	l921
-  1299  0004E6                     l921:
-  1300  0004E6  500A               	movf	shiftRegister@y,w,c
-  1301  0004E8  5C0B               	subwf	shiftRegister@m,w,c
-  1302  0004EA  A0D8               	btfss	status,0,c
-  1303  0004EC  D7E5               	goto	l123
-  1304  0004EE  0012               	return		;funcret
-  1305  0004F0                     __end_of_shiftRegister:
-  1306                           	opt stack 0
-  1307                           tblptru	equ	0xFF8
-  1308                           tblptrh	equ	0xFF7
-  1309                           tblptrl	equ	0xFF6
-  1310                           tablat	equ	0xFF5
-  1311                           prodh	equ	0xFF4
-  1312                           prodl	equ	0xFF3
-  1313                           intcon	equ	0xFF2
-  1314                           intcon2	equ	0xFF1
-  1315                           postinc0	equ	0xFEE
-  1316                           wreg	equ	0xFE8
-  1317                           status	equ	0xFD8
-  1318                           
-  1319 ;; *************** function _DAC_SetOutput *****************
-  1320 ;; Defined at:
-  1321 ;;		line 64 in file "mcc_generated_files/dac.c"
-  1322 ;; Parameters:    Size  Location     Type
-  1323 ;;  inputData       1    wreg     unsigned char 
-  1324 ;; Auto vars:     Size  Location     Type
-  1325 ;;  inputData       1    0[COMRAM] unsigned char 
-  1326 ;; Return value:  Size  Location     Type
-  1327 ;;		None               void
-  1328 ;; Registers used:
-  1329 ;;		wreg
-  1330 ;; Tracked objects:
-  1331 ;;		On entry : 0/0
-  1332 ;;		On exit  : 0/0
-  1333 ;;		Unchanged: 0/0
-  1334 ;; Data sizes:     COMRAM   BANK0   BANK1
-  1335 ;;      Params:         0       0       0
-  1336 ;;      Locals:         1       0       0
-  1337 ;;      Temps:          0       0       0
-  1338 ;;      Totals:         1       0       0
-  1339 ;;Total ram usage:        1 bytes
-  1340 ;; Hardware stack levels used:    1
-  1341 ;; This function calls:
-  1342 ;;		Nothing
-  1343 ;; This function is called by:
-  1344 ;;		_main
-  1345 ;; This function uses a non-reentrant model
-  1346 ;;
-  1347                           
-  1348                           	psect	text8
-  1349  000576                     __ptext8:
-  1350                           	opt stack 0
-  1351  000576                     _DAC_SetOutput:
-  1352                           	opt stack 30
-  1353                           
-  1354                           ;incstack = 0
-  1355                           ;DAC_SetOutput@inputData stored from wreg
-  1356  000576  6E09               	movwf	DAC_SetOutput@inputData,c
-  1357                           
-  1358                           ;dac.c: 65: DACCON1 = inputData;
-  1359  000578  C009  FF40         	movff	DAC_SetOutput@inputData,3904	;volatile
-  1360  00057C  0012               	return		;funcret
-  1361  00057E                     __end_of_DAC_SetOutput:
-  1362                           	opt stack 0
-  1363                           tblptru	equ	0xFF8
-  1364                           tblptrh	equ	0xFF7
-  1365                           tblptrl	equ	0xFF6
-  1366                           tablat	equ	0xFF5
-  1367                           prodh	equ	0xFF4
-  1368                           prodl	equ	0xFF3
-  1369                           intcon	equ	0xFF2
-  1370                           intcon2	equ	0xFF1
-  1371                           postinc0	equ	0xFEE
-  1372                           wreg	equ	0xFE8
-  1373                           status	equ	0xFD8
+  1091                           	psect	text6
+  1092  000410                     __ptext6:
+  1093                           	opt stack 0
+  1094  000410                     _MIPI:
+  1095                           	opt stack 29
+  1096                           
+  1097                           ; BSR set to: 15
+  1098                           ;incstack = 0
+  1099                           ;MIPI@a stored from wreg
+  1100  000410  6E0F               	movwf	MIPI@a,c
+  1101                           
+  1102                           ;main.c: 96: do { LATA3 = 1; } while(0);
+  1103  000412  8689               	bsf	3977,3,c	;volatile
+  1104  000414  D000               	goto	l135
+  1105  000416                     l135:
+  1106  000416  8889               	bsf	3977,4,c	;volatile
+  1107  000418  D000               	goto	l137
+  1108  00041A                     l137:
+  1109  00041A  9689               	bcf	3977,3,c	;volatile
+  1110  00041C  D000               	goto	l139
+  1111  00041E                     l139:
+  1112  00041E  9889               	bcf	3977,4,c	;volatile
+  1113  000420  D000               	goto	l934
+  1114  000422                     l934:
+  1115                           
+  1116                           ;main.c: 104: shiftRegister (SLAVEADD[0],SLAVEADD[0],4);
+  1117  000422  0EC9               	movlw	low _SLAVEADD
+  1118  000424  6EF6               	movwf	tblptrl,c
+  1119  000426                     	if	0	;There is only one active tblptr byte
+  1120  000426                     	endif
+  1121  000426                     	if	0	;There are less than 3 active tblptr bytes
+  1122  000426                     	endif
+  1123  000426  0008               	tblrd		*
+  1124  000428  CFF5 F00A          	movff	tablat,shiftRegister@Dummy2
+  1125  00042C  0E04               	movlw	4
+  1126  00042E  6E0B               	movwf	shiftRegister@y,c
+  1127  000430  0EC9               	movlw	low _SLAVEADD
+  1128  000432  6EF6               	movwf	tblptrl,c
+  1129  000434                     	if	0	;There is only one active tblptr byte
+  1130  000434                     	endif
+  1131  000434                     	if	0	;There are less than 3 active tblptr bytes
+  1132  000434                     	endif
+  1133  000434  0008               	tblrd		*
+  1134  000436  50F5               	movf	tablat,w,c
+  1135  000438  EC5F  F002         	call	_shiftRegister
+  1136                           
+  1137                           ;main.c: 105: shiftRegister (0x82,0x82,8);
+  1138  00043C  0E82               	movlw	130
+  1139  00043E  6E0A               	movwf	shiftRegister@Dummy2,c
+  1140  000440  0E08               	movlw	8
+  1141  000442  6E0B               	movwf	shiftRegister@y,c
+  1142  000444  0E82               	movlw	130
+  1143  000446  EC5F  F002         	call	_shiftRegister
+  1144                           
+  1145                           ;main.c: 106: shiftRegister (0x01,0x01,1);
+  1146  00044A  0E01               	movlw	1
+  1147  00044C  6E0A               	movwf	shiftRegister@Dummy2,c
+  1148  00044E  0E01               	movlw	1
+  1149  000450  6E0B               	movwf	shiftRegister@y,c
+  1150  000452  0E01               	movlw	1
+  1151  000454  EC5F  F002         	call	_shiftRegister
+  1152                           
+  1153                           ;main.c: 107: shiftRegister (DATA[a],DATA[b],8);
+  1154  000458  500E               	movf	MIPI@b,w,c
+  1155  00045A  0D01               	mullw	1
+  1156  00045C  0E01               	movlw	low _DATA
+  1157  00045E  24F3               	addwf	prodl,w,c
+  1158  000460  6EF6               	movwf	tblptrl,c
+  1159  000462  0E02               	movlw	high _DATA
+  1160  000464  20F4               	addwfc	prodh,w,c
+  1161  000466  6EF7               	movwf	tblptrh,c
+  1162  000468                     	if	0	;There are less than 3 active tblptr bytes
+  1163  000468                     	endif
+  1164  000468  0008               	tblrd		*
+  1165  00046A  CFF5 F00A          	movff	tablat,shiftRegister@Dummy2
+  1166  00046E  0E08               	movlw	8
+  1167  000470  6E0B               	movwf	shiftRegister@y,c
+  1168  000472  500F               	movf	MIPI@a,w,c
+  1169  000474  0D01               	mullw	1
+  1170  000476  0E01               	movlw	low _DATA
+  1171  000478  24F3               	addwf	prodl,w,c
+  1172  00047A  6EF6               	movwf	tblptrl,c
+  1173  00047C  0E02               	movlw	high _DATA
+  1174  00047E  20F4               	addwfc	prodh,w,c
+  1175  000480  6EF7               	movwf	tblptrh,c
+  1176  000482                     	if	0	;There are less than 3 active tblptr bytes
+  1177  000482                     	endif
+  1178  000482  0008               	tblrd		*
+  1179  000484  50F5               	movf	tablat,w,c
+  1180  000486  EC5F  F002         	call	_shiftRegister
+  1181                           
+  1182                           ;main.c: 108: shiftRegister (PARITY[a],PARITY[b],2);
+  1183  00048A  500E               	movf	MIPI@b,w,c
+  1184  00048C  0D01               	mullw	1
+  1185  00048E  0E42               	movlw	low _PARITY
+  1186  000490  24F3               	addwf	prodl,w,c
+  1187  000492  6EF6               	movwf	tblptrl,c
+  1188  000494  0E02               	movlw	high _PARITY
+  1189  000496  20F4               	addwfc	prodh,w,c
+  1190  000498  6EF7               	movwf	tblptrh,c
+  1191  00049A                     	if	0	;There are less than 3 active tblptr bytes
+  1192  00049A                     	endif
+  1193  00049A  0008               	tblrd		*
+  1194  00049C  CFF5 F00A          	movff	tablat,shiftRegister@Dummy2
+  1195  0004A0  0E02               	movlw	2
+  1196  0004A2  6E0B               	movwf	shiftRegister@y,c
+  1197  0004A4  500F               	movf	MIPI@a,w,c
+  1198  0004A6  0D01               	mullw	1
+  1199  0004A8  0E42               	movlw	low _PARITY
+  1200  0004AA  24F3               	addwf	prodl,w,c
+  1201  0004AC  6EF6               	movwf	tblptrl,c
+  1202  0004AE  0E02               	movlw	high _PARITY
+  1203  0004B0  20F4               	addwfc	prodh,w,c
+  1204  0004B2  6EF7               	movwf	tblptrh,c
+  1205  0004B4                     	if	0	;There are less than 3 active tblptr bytes
+  1206  0004B4                     	endif
+  1207  0004B4  0008               	tblrd		*
+  1208  0004B6  50F5               	movf	tablat,w,c
+  1209  0004B8  EC5F  F002         	call	_shiftRegister
+  1210  0004BC  0012               	return		;funcret
+  1211  0004BE                     __end_of_MIPI:
+  1212                           	opt stack 0
+  1213                           tblptru	equ	0xFF8
+  1214                           tblptrh	equ	0xFF7
+  1215                           tblptrl	equ	0xFF6
+  1216                           tablat	equ	0xFF5
+  1217                           prodh	equ	0xFF4
+  1218                           prodl	equ	0xFF3
+  1219                           intcon	equ	0xFF2
+  1220                           intcon2	equ	0xFF1
+  1221                           postinc0	equ	0xFEE
+  1222                           wreg	equ	0xFE8
+  1223                           status	equ	0xFD8
+  1224                           
+  1225 ;; *************** function _shiftRegister *****************
+  1226 ;; Defined at:
+  1227 ;;		line 80 in file "main.c"
+  1228 ;; Parameters:    Size  Location     Type
+  1229 ;;  Dummy1          1    wreg     unsigned char 
+  1230 ;;  Dummy2          1    0[COMRAM] unsigned char 
+  1231 ;;  y               1    1[COMRAM] unsigned char 
+  1232 ;; Auto vars:     Size  Location     Type
+  1233 ;;  Dummy1          1    3[COMRAM] unsigned char 
+  1234 ;;  m               1    2[COMRAM] unsigned char 
+  1235 ;; Return value:  Size  Location     Type
+  1236 ;;		None               void
+  1237 ;; Registers used:
+  1238 ;;		wreg, status,2, status,0
+  1239 ;; Tracked objects:
+  1240 ;;		On entry : 0/0
+  1241 ;;		On exit  : 0/0
+  1242 ;;		Unchanged: 0/0
+  1243 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1244 ;;      Params:         2       0       0
+  1245 ;;      Locals:         2       0       0
+  1246 ;;      Temps:          0       0       0
+  1247 ;;      Totals:         4       0       0
+  1248 ;;Total ram usage:        4 bytes
+  1249 ;; Hardware stack levels used:    1
+  1250 ;; This function calls:
+  1251 ;;		Nothing
+  1252 ;; This function is called by:
+  1253 ;;		_MIPI
+  1254 ;; This function uses a non-reentrant model
+  1255 ;;
+  1256                           
+  1257                           	psect	text7
+  1258  0004BE                     __ptext7:
+  1259                           	opt stack 0
+  1260  0004BE                     _shiftRegister:
+  1261                           	opt stack 29
+  1262                           
+  1263                           ;incstack = 0
+  1264                           ;shiftRegister@Dummy1 stored from wreg
+  1265  0004BE  6E0D               	movwf	shiftRegister@Dummy1,c
+  1266                           
+  1267                           ;main.c: 81: for (uint8_t m=0; m<y; m++){
+  1268  0004C0  0E00               	movlw	0
+  1269  0004C2  6E0C               	movwf	shiftRegister@m,c
+  1270  0004C4  D017               	goto	l932
+  1271  0004C6                     l125:
+  1272  0004C6  8A89               	bsf	3977,5,c	;volatile
+  1273  0004C8  D000               	goto	l924
+  1274  0004CA                     l924:
+  1275                           
+  1276                           ;main.c: 83: LATA3 = Dummy1 & 0x01;
+  1277  0004CA  B00D               	btfsc	shiftRegister@Dummy1,0,c
+  1278  0004CC  D002               	bra	u215
+  1279  0004CE  9689               	bcf	3977,3,c	;volatile
+  1280  0004D0  D001               	bra	u216
+  1281  0004D2                     u215:
+  1282  0004D2  8689               	bsf	3977,3,c	;volatile
+  1283  0004D4                     u216:
+  1284                           
+  1285                           ;main.c: 84: LATA4 = Dummy2 & 0x01;
+  1286  0004D4  B00A               	btfsc	shiftRegister@Dummy2,0,c
+  1287  0004D6  D002               	bra	u225
+  1288  0004D8  9889               	bcf	3977,4,c	;volatile
+  1289  0004DA  D001               	bra	u226
+  1290  0004DC                     u225:
+  1291  0004DC  8889               	bsf	3977,4,c	;volatile
+  1292  0004DE                     u226:
+  1293  0004DE  D000               	goto	l928
+  1294  0004E0                     l928:
+  1295  0004E0  9A89               	bcf	3977,5,c	;volatile
+  1296  0004E2  D000               	goto	l930
+  1297  0004E4                     l930:
+  1298                           
+  1299                           ;main.c: 88: Dummy1 = Dummy1 >> 1;
+  1300  0004E4  90D8               	bcf	status,0,c
+  1301  0004E6  300D               	rrcf	shiftRegister@Dummy1,w,c
+  1302  0004E8  6E0D               	movwf	shiftRegister@Dummy1,c
+  1303                           
+  1304                           ;main.c: 89: Dummy2 = Dummy2 >> 1;
+  1305  0004EA  90D8               	bcf	status,0,c
+  1306  0004EC  300A               	rrcf	shiftRegister@Dummy2,w,c
+  1307  0004EE  6E0A               	movwf	shiftRegister@Dummy2,c
+  1308  0004F0  2A0C               	incf	shiftRegister@m,f,c
+  1309  0004F2  D000               	goto	l932
+  1310  0004F4                     l932:
+  1311  0004F4  500B               	movf	shiftRegister@y,w,c
+  1312  0004F6  5C0C               	subwf	shiftRegister@m,w,c
+  1313  0004F8  A0D8               	btfss	status,0,c
+  1314  0004FA  D7E5               	goto	l125
+  1315  0004FC  0012               	return		;funcret
+  1316  0004FE                     __end_of_shiftRegister:
+  1317                           	opt stack 0
+  1318                           tblptru	equ	0xFF8
+  1319                           tblptrh	equ	0xFF7
+  1320                           tblptrl	equ	0xFF6
+  1321                           tablat	equ	0xFF5
+  1322                           prodh	equ	0xFF4
+  1323                           prodl	equ	0xFF3
+  1324                           intcon	equ	0xFF2
+  1325                           intcon2	equ	0xFF1
+  1326                           postinc0	equ	0xFEE
+  1327                           wreg	equ	0xFE8
+  1328                           status	equ	0xFD8
+  1329                           
+  1330 ;; *************** function _DAC_SetOutput *****************
+  1331 ;; Defined at:
+  1332 ;;		line 64 in file "mcc_generated_files/dac.c"
+  1333 ;; Parameters:    Size  Location     Type
+  1334 ;;  inputData       1    wreg     unsigned char 
+  1335 ;; Auto vars:     Size  Location     Type
+  1336 ;;  inputData       1    0[COMRAM] unsigned char 
+  1337 ;; Return value:  Size  Location     Type
+  1338 ;;		None               void
+  1339 ;; Registers used:
+  1340 ;;		wreg
+  1341 ;; Tracked objects:
+  1342 ;;		On entry : 0/0
+  1343 ;;		On exit  : 0/0
+  1344 ;;		Unchanged: 0/0
+  1345 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1346 ;;      Params:         0       0       0
+  1347 ;;      Locals:         1       0       0
+  1348 ;;      Temps:          0       0       0
+  1349 ;;      Totals:         1       0       0
+  1350 ;;Total ram usage:        1 bytes
+  1351 ;; Hardware stack levels used:    1
+  1352 ;; This function calls:
+  1353 ;;		Nothing
+  1354 ;; This function is called by:
+  1355 ;;		_main
+  1356 ;; This function uses a non-reentrant model
+  1357 ;;
+  1358                           
+  1359                           	psect	text8
+  1360  000582                     __ptext8:
+  1361                           	opt stack 0
+  1362  000582                     _DAC_SetOutput:
+  1363                           	opt stack 30
+  1364                           
+  1365                           ;incstack = 0
+  1366                           ;DAC_SetOutput@inputData stored from wreg
+  1367  000582  6E0A               	movwf	DAC_SetOutput@inputData,c
+  1368                           
+  1369                           ;dac.c: 65: DACCON1 = inputData;
+  1370  000584  C00A  FF40         	movff	DAC_SetOutput@inputData,3904	;volatile
+  1371  000588  0012               	return		;funcret
+  1372  00058A                     __end_of_DAC_SetOutput:
+  1373                           	opt stack 0
   1374                           tblptru	equ	0xFF8
   1375                           tblptrh	equ	0xFF7
   1376                           tblptrl	equ	0xFF6
@@ -1388,32 +1388,43 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1382                           postinc0	equ	0xFEE
   1383                           wreg	equ	0xFE8
   1384                           status	equ	0xFD8
-  1385                           
-  1386                           	psect	rparam
-  1387  0000                     tblptru	equ	0xFF8
-  1388                           tblptrh	equ	0xFF7
-  1389                           tblptrl	equ	0xFF6
-  1390                           tablat	equ	0xFF5
-  1391                           prodh	equ	0xFF4
-  1392                           prodl	equ	0xFF3
-  1393                           intcon	equ	0xFF2
-  1394                           intcon2	equ	0xFF1
-  1395                           postinc0	equ	0xFEE
-  1396                           wreg	equ	0xFE8
-  1397                           status	equ	0xFD8
+  1385                           tblptru	equ	0xFF8
+  1386                           tblptrh	equ	0xFF7
+  1387                           tblptrl	equ	0xFF6
+  1388                           tablat	equ	0xFF5
+  1389                           prodh	equ	0xFF4
+  1390                           prodl	equ	0xFF3
+  1391                           intcon	equ	0xFF2
+  1392                           intcon2	equ	0xFF1
+  1393                           postinc0	equ	0xFEE
+  1394                           wreg	equ	0xFE8
+  1395                           status	equ	0xFD8
+  1396                           
+  1397                           	psect	rparam
+  1398  0000                     tblptru	equ	0xFF8
+  1399                           tblptrh	equ	0xFF7
+  1400                           tblptrl	equ	0xFF6
+  1401                           tablat	equ	0xFF5
+  1402                           prodh	equ	0xFF4
+  1403                           prodl	equ	0xFF3
+  1404                           intcon	equ	0xFF2
+  1405                           intcon2	equ	0xFF1
+  1406                           postinc0	equ	0xFEE
+  1407                           wreg	equ	0xFE8
+  1408                           status	equ	0xFD8
 
 
 Data Sizes:
     Strings     0
     Constant    202
     Data        0
-    BSS         8
+    BSS         9
     Persistent  0
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM           95      6      14
+    COMRAM           95      6      15
     BANK0           160      0       0
     BANK1           256      0       0
 
@@ -1492,125 +1503,126 @@ BANK1              100      0       0       5        0.0%
 BITBANK0            A0      0       0       3        0.0%
 BANK0               A0      0       0       4        0.0%
 BITCOMRAM           5F      0       0       0        0.0%
-COMRAM              5F      6       E       1       14.7%
+COMRAM              5F      6       F       1       15.8%
 BITSFR_1             0      0       0      40        0.0%
 SFR_1                0      0       0      40        0.0%
 BITSFR               0      0       0      40        0.0%
 SFR                  0      0       0      40        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0       E       6        0.0%
-DATA                 0      0       E       9        0.0%
+ABS                  0      0       F       6        0.0%
+DATA                 0      0       F       9        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Wed Apr 13 17:51:56 2016
+Symbol Table                                                                                   Thu Apr 14 16:23:49 2016
 
                             __CFG_CP0$ON 000000                              __CFG_CP1$ON 000000  
                             __CFG_CPB$ON 000000                              __CFG_CPD$ON 000000  
-                            __CFG_LVP$ON 000000                                      l123 04B8  
-                                    l211 03FA                                      l204 03B2  
-                                    l133 0408                                      l135 040C  
-                                    l215 03D6                                      l137 0410  
-                                    l227 03F6                                      l181 0364  
-                                    l165 0326                                      l174 035C  
-                                    l175 0358                                      l192 0392  
-                                    l168 0332                                      l913 04BC  
-                                    l921 04E6                                      l923 0414  
-                                    l917 04D2                                      l941 02DE  
-                                    l919 04D6                                      l951 02F2  
-                                    l943 02E2                                      l953 0302  
-                                    l945 02E6                                      l947 02EA  
-                                    l939 02DA                                      l981 03B6  
-                                    l957 0314                                      l949 02EE  
-                                    l975 0386                                      l985 03CA  
-                                    l977 0396                                      l969 0368  
-                                    l987 03DA                                      l979 03A6  
-                                    l989 03EA                                      u205 04CE  
-                                    u206 04D0                                      u195 04C4  
-                                    u196 04C6                                      wreg 000FE8  
-                                   _DATA 0201                                     _LATA 000F89  
-                                   _LATB 000F8A                                     _LATC 000F8B  
-                                   _MIPI 0402                                     _WPUB 000F61  
-                                   _main 02CC                            __CFG_BORV$190 000000  
-                                   prodh 000FF4                                     prodl 000FF3  
-                                   start 0000                            __CFG_IESO$OFF 000000  
-                           ___param_bank 000010                                    ?_MIPI 000D  
-                                  MIPI@a 000E                                    MIPI@b 000D  
-         __size_of_OSCILLATOR_Initialize 000E            __end_of_OSCILLATOR_Initialize 055A  
-                                  ?_main 0009                                    _LATA0 007C48  
-                                  _LATA1 007C49                                    _LATA3 007C4B  
-                                  _LATC0 007C58                                    _LATA4 007C4C  
-                                  _LATC1 007C59                                    _LATA5 007C4D  
-                                  _LATA6 007C4E                                    _LATA7 007C4F  
-                         __CFG_DEBUG$OFF 000000                                    _PORTC 000F82  
-                                  _TRISA 000F92                                    _TRISB 000F93  
-                                  _TRISC 000F94                         __end_of_SLAVEADD 02CB  
-                          __CFG_WRT0$OFF 000000                            __CFG_WRT1$OFF 000000  
-                                  _Byte1 0001                                    _Byte2 0002  
-                                  _Byte3 0003                                    _Byte4 0004  
-                                  _Byte5 0005                                    _Byte6 0006  
-                                  _Dummy 0008                           __CFG_EBTR0$OFF 000000  
-                         __CFG_FCMEN$OFF 000000                           __CFG_EBTR1$OFF 000000  
-                          __CFG_WRTB$OFF 000000                            __CFG_WRTC$OFF 000000  
-                          __CFG_WRTD$OFF 000000                           __CFG_EBTRB$OFF 000000  
-                     __CFG_MCLRE$EXTMCLR 000000                           __CFG_BOREN$OFF 000000  
+                            __CFG_LVP$ON 000000                                      l220 03E4  
+                                    l125 04C6                                      l135 0416  
+                                    l232 0404                                      l216 0408  
+                                    l137 041A                                      l209 03C0  
+                                    l170 0334                                      l139 041E  
+                                    l180 0366                                      l173 0340  
+                                    l186 0372                                      l179 036A  
+                                    l197 03A0                                      l930 04E4  
+                                    l924 04CA                                      l932 04F4  
+                                    l934 0422                                      l950 02DC  
+                                    l928 04E0                                      l960 02F0  
+                                    l952 02E0                                      l970 0310  
+                                    l954 02E4                                      l962 02F4  
+                                    l956 02E8                                      l948 02D6  
+                                    l974 0322                                      l958 02EC  
+                                    l992 0394                                      l968 0300  
+                                    l994 03A4                                      l986 0376  
+                                    l996 03B4                                      l998 03C4  
+                                    u215 04D2                                      u216 04D4  
+                                    u225 04DC                                      u226 04DE  
+                                    wreg 000FE8                                     l1002 03D8  
+                                   l1004 03E8                                     l1006 03F8  
+                                   _DATA 0201                                     _IOCB 000F62  
+                                   _LATA 000F89                                     _LATB 000F8A  
+                                   _LATC 000F8B                                     _MIPI 0410  
+                                   _WPUB 000F61                                     _main 02CC  
+                          __CFG_BORV$190 000000                                     prodh 000FF4  
+                                   prodl 000FF3                                     start 0000  
+                          __CFG_IESO$OFF 000000                             ___param_bank 000010  
+                                  ?_MIPI 000E                                    MIPI@a 000F  
+                                  MIPI@b 000E           __size_of_OSCILLATOR_Initialize 000E  
+          __end_of_OSCILLATOR_Initialize 0568                                    ?_main 000A  
+                                  _LATA0 007C48                                    _LATA1 007C49  
+                                  _LATA3 007C4B                                    _LATC0 007C58  
+                                  _LATA4 007C4C                                    _LATC1 007C59  
+                                  _LATA5 007C4D                                    _LATA6 007C4E  
+                                  _LATA7 007C4F                           __CFG_DEBUG$OFF 000000  
+                                  _PORTC 000F82                                    _TRISA 000F92  
+                                  _TRISB 000F93                                    _TRISC 000F94  
+                       __end_of_SLAVEADD 02CB                            __CFG_WRT0$OFF 000000  
+                          __CFG_WRT1$OFF 000000                                    _Byte1 0001  
+                                  _Byte2 0002                                    _Byte3 0003  
+                                  _Byte4 0004                                    _Byte5 0005  
+                                  _Byte6 0006                                    _Dummy 0008  
+                         __CFG_EBTR0$OFF 000000                           __CFG_FCMEN$OFF 000000  
+                         __CFG_EBTR1$OFF 000000                            __CFG_WRTB$OFF 000000  
+                          __CFG_WRTC$OFF 000000                            __CFG_WRTD$OFF 000000  
+                         __CFG_EBTRB$OFF 000000                       __CFG_MCLRE$EXTMCLR 000000  
+                                  _start 0009                           __CFG_BOREN$OFF 000000  
                                   tablat 000FF5                                    status 000FD8  
                          __CFG_HFOFST$ON 000000                             __end_of_DATA 0242  
-                           __end_of_MIPI 04B0                         ??_DAC_Initialize 0009  
-                        __initialization 0520                             __end_of_main 0402  
-                                 ??_MIPI 000E                                   ??_main 000F  
+                           __end_of_MIPI 04BE                         ??_DAC_Initialize 000A  
+                        __initialization 052E                             __end_of_main 0410  
+                                 ??_MIPI 000F                                   ??_main 0010  
                           __activetblptr 000001                           __CFG_PLLCFG$ON 000000  
                                  _ANSELA 000F38                                   _ANSELB 000F39  
                                  _ANSELC 000F3A                           __CFG_WDTEN$OFF 000000  
                                  _REGADD 02C7                                   _PARITY 0242  
                                  _OSCCON 000FD3                           __CFG_XINST$OFF 000000  
-                                 clear_0 0526                       __end_of_ACTIVEBAND 02C3  
-                      __end_of_DacOutput 02C7                    __end_of_shiftRegister 04F0  
+                                 clear_0 0534                       __end_of_ACTIVEBAND 02C3  
+                      __end_of_DacOutput 02C7                    __end_of_shiftRegister 04FE  
                            __mediumconst 0000                                   tblptrh 000FF7  
                                  tblptrl 000FF6                                   tblptru 000FF8  
-                      _SYSTEM_Initialize 053A                               __accesstop 0060  
-                __end_of__initialization 052C                          __CFG_PBADEN$OFF 000000  
-                     ?_SYSTEM_Initialize 0009                            ___rparam_used 000001  
-                 DAC_SetOutput@inputData 0009                           __pcstackCOMRAM 0009  
-                    ??_SYSTEM_Initialize 0009                   __size_of_DAC_SetOutput 0008  
-              __end_of_SYSTEM_Initialize 054C                           shiftRegister@m 000B  
-                         shiftRegister@y 000A                       __CFG_CCP2MX$PORTC1 000000  
+                      _SYSTEM_Initialize 0548                               __accesstop 0060  
+                __end_of__initialization 053A                          __CFG_PBADEN$OFF 000000  
+                     ?_SYSTEM_Initialize 000A                            ___rparam_used 000001  
+                 DAC_SetOutput@inputData 000A                           __pcstackCOMRAM 000A  
+                    ??_SYSTEM_Initialize 000A                   __size_of_DAC_SetOutput 0008  
+              __end_of_SYSTEM_Initialize 055A                           shiftRegister@m 000C  
+                         shiftRegister@y 000B                       __CFG_CCP2MX$PORTC1 000000  
                      __CFG_CCP3MX$PORTB5 000000                                  _DACCON1 000F40  
                                 _OSCCON2 000FD2                                  _OSCTUNE 000F9B  
-                        __CFG_PWRTEN$OFF 000000                      shiftRegister@Dummy1 000C  
-                    shiftRegister@Dummy2 0009                                  __Hparam 0000  
-                                __Lparam 0000                            _DAC_SetOutput 0576  
-                           __psmallconst 0200   __end_of_INTERRUPT_ON_CHANGE_Initialize 0568  
-__size_of_INTERRUPT_ON_CHANGE_Initialize 000E           _INTERRUPT_ON_CHANGE_Initialize 055A  
-                        __CFG_STVREN$OFF 000000                                  __pcinit 0520  
+                        __CFG_PWRTEN$OFF 000000                      shiftRegister@Dummy1 000D  
+                    shiftRegister@Dummy2 000A                                  __Hparam 0000  
+                                __Lparam 0000                            _DAC_SetOutput 0582  
+                           __psmallconst 0200   __end_of_INTERRUPT_ON_CHANGE_Initialize 0582  
+__size_of_INTERRUPT_ON_CHANGE_Initialize 000C           _INTERRUPT_ON_CHANGE_Initialize 0576  
+                        __CFG_STVREN$OFF 000000                                  __pcinit 052E  
                                 __ramtop 0200                                  __ptext0 02CC  
-                                __ptext1 053A                                  __ptext2 04F0  
-                                __ptext3 054C                                  __ptext4 055A  
-                                __ptext5 0568                                  __ptext6 0402  
-                                __ptext7 04B0                                  __ptext8 0576  
-                  _OSCILLATOR_Initialize 054C                 ??_PIN_MANAGER_Initialize 0009  
-             __size_of_SYSTEM_Initialize 0012                     end_of_initialization 052C  
-                         ?_DAC_SetOutput 0009                                  postinc0 000FEE  
+                                __ptext1 0548                                  __ptext2 04FE  
+                                __ptext3 055A                                  __ptext4 0576  
+                                __ptext5 0568                                  __ptext6 0410  
+                                __ptext7 04BE                                  __ptext8 0582  
+                  _OSCILLATOR_Initialize 055A                 ??_PIN_MANAGER_Initialize 000A  
+             __size_of_SYSTEM_Initialize 0012                     end_of_initialization 053A  
+                         ?_DAC_SetOutput 000A                                  postinc0 000FEE  
                               _DacOutput 02C3                           __end_of_REGADD 02C9  
-                         __end_of_PARITY 0283                   ?_OSCILLATOR_Initialize 0009  
-                __size_of_DAC_Initialize 000E                      start_initialization 0520  
-        __size_of_PIN_MANAGER_Initialize 0030                          ??_DAC_SetOutput 0009  
+                         __end_of_PARITY 0283                   ?_OSCILLATOR_Initialize 000A  
+                __size_of_DAC_Initialize 000E                      start_initialization 052E  
+        __size_of_PIN_MANAGER_Initialize 0030                          ??_DAC_SetOutput 000A  
                  __size_of_shiftRegister 0040                              __pbssCOMRAM 0001  
-                 _PIN_MANAGER_Initialize 04F0                         __CFG_PRICLKEN$ON 000000  
-                            __smallconst 0200                            _shiftRegister 04B0  
-                               _DAC_Step 0007         ??_INTERRUPT_ON_CHANGE_Initialize 0009  
-        ?_INTERRUPT_ON_CHANGE_Initialize 0009                                 _IOCBbits 000F62  
-                               _SLAVEADD 02C9                         __CFG_WDTPS$32768 000000  
-                               _VREFCON1 000F41                           _DAC_Initialize 0568  
-                         ?_shiftRegister 0009                              _INTCON2bits 000FF1  
-                             _ACTIVEBAND 0283                                 __Hrparam 0000  
-                               __Lrparam 0000                             __Lsmallconst 0200  
-                      __CFG_P2BMX$PORTB5 000000                  ??_OSCILLATOR_Initialize 0009  
-                 __end_of_DAC_Initialize 0576                            __size_of_MIPI 00AE  
-                          __size_of_main 0136                          ?_DAC_Initialize 0009  
-                        ??_shiftRegister 000B                               _INTCONbits 000FF2  
-                ?_PIN_MANAGER_Initialize 0009                    __end_of_DAC_SetOutput 057E  
-                      __CFG_T3CMX$PORTC0 000000           __end_of_PIN_MANAGER_Initialize 0520  
-                      __CFG_FOSC$INTIO67 000000  
+                 _PIN_MANAGER_Initialize 04FE                         __CFG_PRICLKEN$ON 000000  
+                            __smallconst 0200                            _shiftRegister 04BE  
+                               _DAC_Step 0007         ??_INTERRUPT_ON_CHANGE_Initialize 000A  
+        ?_INTERRUPT_ON_CHANGE_Initialize 000A                                 _SLAVEADD 02C9  
+                       __CFG_WDTPS$32768 000000                                 _VREFCON1 000F41  
+                         _DAC_Initialize 0568                           ?_shiftRegister 000A  
+                            _INTCON2bits 000FF1                               _ACTIVEBAND 0283  
+                               __Hrparam 0000                                 __Lrparam 0000  
+                           __Lsmallconst 0200                        __CFG_P2BMX$PORTB5 000000  
+                ??_OSCILLATOR_Initialize 000A                   __end_of_DAC_Initialize 0576  
+                          __size_of_MIPI 00AE                            __size_of_main 0144  
+                        ?_DAC_Initialize 000A                          ??_shiftRegister 000C  
+                             _INTCONbits 000FF2                  ?_PIN_MANAGER_Initialize 000A  
+                  __end_of_DAC_SetOutput 058A                        __CFG_T3CMX$PORTC0 000000  
+         __end_of_PIN_MANAGER_Initialize 052E                        __CFG_FOSC$INTIO67 000000  

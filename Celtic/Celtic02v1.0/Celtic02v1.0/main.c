@@ -39,7 +39,7 @@ const uint8_t ACTIVEBAND[64]=  {0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
                                 0, 0, 0, 0};    // Defined bands 5, 8, 12, 13, 20, 26, 29
 
 uint8_t Byte1, Byte2, Byte3; // First 3 bytes from RFFE
-uint8_t parity1, parity2, parity3, parity4;
+uint8_t parity1, parity2, parity3, parity4, start = 0;
 
 uint8_t paritycheck (uint8_t Dummy){
     bool parity = 0;
@@ -148,12 +148,13 @@ void ConfigureShiftRegister(void){
 }*/
 
 void main(void) {
-    IOCCFbits.IOCCF7 = 0;
+    //IOCCFbits.IOCCF7 = 0;
     // initialize the device
+    if (start == 1) goto reset;
     SYSTEM_Initialize();
     //DAC1_Initialize();
     PIN_MANAGER_Initialize();
-    //DAC1_SetOutput(0);
+    //DAC1_SetOutput(0);        //DAC already initialised to ZERO
     //PE_OE_SetLow();
     //PE_D_SetLow();
     //PE_CLK_SetLow();
@@ -164,6 +165,11 @@ void main(void) {
     CTLA2_SetLow();
     CTLB2_SetLow();
     reset:
+    start = 1;
+    if (IOCCFbits.IOCCF7 == 0) {     //To enable SLEEP mode after powering up
+        SLEEP();}
+    else    {    
+        IOCCFbits.IOCCF7 = 0;}
     while (1) {
         while ((PORTC & 0xC0) != 0xC0) {
         }

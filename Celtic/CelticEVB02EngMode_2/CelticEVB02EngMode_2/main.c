@@ -89,17 +89,17 @@ void MIPI (uint8_t a, uint8_t b){
 */
 
 void MIPISPI (uint8_t a, uint8_t b){
-    RB7PPS = 0x00; // RB7->LATB7                                        //First SCC should have UID as Low            
+    RB6PPS = 0x00; // RB6->LATB6                                        //First SCC should have UID as Low            
     SDO_SetHigh();
     SDO_SetLow();
-    RB7PPS = 0x11; // RB7->MSSP:SDO
+    RB6PPS = 0x11; // RB6->MSSP:SDO
     SPI_Exchange8bit(SLAVEWRITEADD[0]);
     SPI_Exchange8bit(ADDRESSDATA[a]);
     SPI_Exchange8bit(DATABUSPARK[a]);
-    RB7PPS = 0x00; // RB7->LATB7                                        //Second SCC should have UID as High              
+    RB6PPS = 0x00; // RB6->LATB6                                        //Second SCC should have UID as High              
     SDO_SetHigh();
     SDO_SetLow();
-    RB7PPS = 0x11; // RB7->MSSP:SDO
+    RB6PPS = 0x11; // RB6->MSSP:SDO
     SPI_Exchange8bit(SLAVEWRITEADD[1]);
     SPI_Exchange8bit(ADDRESSDATA[b]);
     SPI_Exchange8bit(DATABUSPARK[b]);    

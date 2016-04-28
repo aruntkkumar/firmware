@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Thu Apr 28 16:10:54 2016
+                                                                                               Thu Apr 28 18:39:04 2016
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	16LF1618
@@ -2572,31 +2572,31 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2566  0079                     ??_SPI_Initialize:	
   2567                           ; 0 bytes @ 0x0
   2568                           
-  2569  0079                     ??_SPI_Exchange8bit:	
+  2569  0079                     ?_DAC1_Initialize:	
   2570                           ; 0 bytes @ 0x0
   2571                           
-  2572  0079                     ?_DAC1_Initialize:	
+  2572  0079                     ??_DAC1_Initialize:	
   2573                           ; 0 bytes @ 0x0
   2574                           
-  2575  0079                     ??_DAC1_Initialize:	
+  2575  0079                     ?_DAC1_SetOutput:	
   2576                           ; 0 bytes @ 0x0
   2577                           
-  2578  0079                     ?_DAC1_SetOutput:	
+  2578  0079                     ??_DAC1_SetOutput:	
   2579                           ; 0 bytes @ 0x0
   2580                           
-  2581  0079                     ??_DAC1_SetOutput:	
+  2581  0079                     ?_PIN_MANAGER_Initialize:	
   2582                           ; 0 bytes @ 0x0
   2583                           
-  2584  0079                     ?_PIN_MANAGER_Initialize:	
+  2584  0079                     ??_PIN_MANAGER_Initialize:	
   2585                           ; 0 bytes @ 0x0
   2586                           
-  2587  0079                     ??_PIN_MANAGER_Initialize:	
+  2587  0079                     ?_SYSTEM_Initialize:	
   2588                           ; 0 bytes @ 0x0
   2589                           
-  2590  0079                     ?_SYSTEM_Initialize:	
+  2590  0079                     ??_SYSTEM_Initialize:	
   2591                           ; 0 bytes @ 0x0
   2592                           
-  2593  0079                     ??_SYSTEM_Initialize:	
+  2593  0079                     ??_SPI_Exchange8bit:	
   2594                           ; 0 bytes @ 0x0
   2595                           
   2596  0079                     ?_ConfigureShiftRegister:	
@@ -2723,10 +2723,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2717                           ;main.c: 168: if (IOCCFbits.IOCCF7 == 0) {
   2718  078A  0027               	movlb	7	; select bank7
   2719  078B  1B99               	btfsc	25,7	;volatile
-  2720  078C  2F8F               	goto	l191
+  2720  078C  2F8F               	goto	l236
   2721  078D  0063               	sleep	;# 
   2722  078E  2F90               	goto	l916
-  2723  078F                     l191:	
+  2723  078F                     l236:	
   2724                           
   2725                           ;main.c: 170: else {
   2726                           ;main.c: 171: IOCCFbits.IOCCF7 = 0;}
@@ -2787,11 +2787,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2781  07B1  00FC               	movwf	??_main
   2782  07B2  087C               	movf	??_main,w
   2783  07B3  00F3               	movwf	_Byte4
-  2784  07B4                     l203:	
+  2784  07B4                     l248:	
   2785                           ;main.c: 186: while ((PORTC & 0x80) != 0x80) {
   2786                           
   2787  07B4  1F8E               	btfss	14,7	;volatile
-  2788  07B5  2FB4               	goto	l203
+  2788  07B5  2FB4               	goto	l248
   2789                           
   2790                           ;main.c: 187: }
   2791                           ;main.c: 188: Byte5 = PORTC & 0x7F;
@@ -2800,11 +2800,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2794  07B8  00FC               	movwf	??_main
   2795  07B9  087C               	movf	??_main,w
   2796  07BA  00F4               	movwf	_Byte5
-  2797  07BB                     l206:	
+  2797  07BB                     l251:	
   2798                           ;main.c: 190: while ((PORTC & 0x80) != 0x00) {
   2799                           
   2800  07BB  1B8E               	btfsc	14,7	;volatile
-  2801  07BC  2FBB               	goto	l206
+  2801  07BC  2FBB               	goto	l251
   2802                           
   2803                           ;main.c: 191: }
   2804                           ;main.c: 192: Byte6 = PORTC & 0x7F;
@@ -2842,28 +2842,28 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2836                           
   2837                           ;main.c: 200: if ((Byte4 & 0x02) == 0x02)
   2838  07D7  1CF3               	btfss	_Byte4,1
-  2839  07D8  2FDC               	goto	l213
+  2839  07D8  2FDC               	goto	l258
   2840                           
   2841                           ;main.c: 201: do { LATA2 = 1; } while(0);
   2842  07D9  0022               	movlb	2	; select bank2
   2843  07DA  150C               	bsf	12,2	;volatile
-  2844  07DB  2FDE               	goto	l212
-  2845  07DC                     l213:	
+  2844  07DB  2FDE               	goto	l257
+  2845  07DC                     l258:	
   2846                           ;main.c: 202: else
   2847                           ;main.c: 203: do { LATA2 = 0; } while(0);
   2848                           
   2849  07DC  0022               	movlb	2	; select bank2
   2850  07DD  110C               	bcf	12,2	;volatile
-  2851  07DE                     l212:	
+  2851  07DE                     l257:	
   2852                           
   2853                           ;main.c: 204: if ((Byte4 & 0x01) == 0x01)
   2854  07DE  1C73               	btfss	_Byte4,0
-  2855  07DF  2FE2               	goto	l219
+  2855  07DF  2FE2               	goto	l264
   2856                           
   2857                           ;main.c: 205: do { LATB4 = 1; } while(0);
   2858  07E0  160D               	bsf	13,4	;volatile
   2859  07E1  2FE3               	goto	l940
-  2860  07E2                     l219:	
+  2860  07E2                     l264:	
   2861                           ;main.c: 206: else
   2862                           ;main.c: 207: do { LATB4 = 0; } while(0);
   2863                           
@@ -3306,9 +3306,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3300                           ;MIPISPI@a stored from wreg
   3301  06CE  00FB               	movwf	MIPISPI@a
   3302                           
-  3303                           ;main.c: 92: RB7PPS = 0x00;
+  3303                           ;main.c: 92: RB6PPS = 0x00;
   3304  06CF  003D               	movlb	29	; select bank29
-  3305  06D0  019F               	clrf	31	;volatile
+  3305  06D0  019E               	clrf	30	;volatile
   3306                           
   3307                           ;main.c: 93: do { LATB6 = 1; } while(0);
   3308  06D1  0022               	movlb	2	; select bank2
@@ -3317,10 +3317,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3311                           ;main.c: 94: do { LATB6 = 0; } while(0);
   3312  06D3  130D               	bcf	13,6	;volatile
   3313                           
-  3314                           ;main.c: 95: RB7PPS = 0x11;
+  3314                           ;main.c: 95: RB6PPS = 0x11;
   3315  06D4  3011               	movlw	17
   3316  06D5  003D               	movlb	29	; select bank29
-  3317  06D6  009F               	movwf	31	;volatile
+  3317  06D6  009E               	movwf	30	;volatile
   3318                           
   3319                           ;main.c: 96: SPI_Exchange8bit(SLAVEWRITEADD[0]);
   3320  06D7  304C               	movlw	low (_SLAVEWRITEADD| (0+32768))
@@ -3352,9 +3352,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3346  06F1  0800               	movf	0,w	;code access
   3347  06F2  3186  268F  3186   	fcall	_SPI_Exchange8bit
   3348                           
-  3349                           ;main.c: 99: RB7PPS = 0x00;
+  3349                           ;main.c: 99: RB6PPS = 0x00;
   3350  06F5  003D               	movlb	29	; select bank29
-  3351  06F6  019F               	clrf	31	;volatile
+  3351  06F6  019E               	clrf	30	;volatile
   3352                           
   3353                           ;main.c: 100: do { LATB6 = 1; } while(0);
   3354  06F7  0022               	movlb	2	; select bank2
@@ -3363,10 +3363,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3357                           ;main.c: 101: do { LATB6 = 0; } while(0);
   3358  06F9  130D               	bcf	13,6	;volatile
   3359                           
-  3360                           ;main.c: 102: RB7PPS = 0x11;
+  3360                           ;main.c: 102: RB6PPS = 0x11;
   3361  06FA  3011               	movlw	17
   3362  06FB  003D               	movlb	29	; select bank29
-  3363  06FC  009F               	movwf	31	;volatile
+  3363  06FC  009E               	movwf	30	;volatile
   3364                           
   3365                           ;main.c: 103: SPI_Exchange8bit(SLAVEWRITEADD[1]);
   3366  06FD  304D               	movlw	low ((_SLAVEWRITEADD+1)| (0+32768))
@@ -3448,11 +3448,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3442                           ;spi.c: 81: SSPBUF = data;
   3443  0692  0879               	movf	SPI_Exchange8bit@data,w
   3444  0693  0091               	movwf	17	;volatile
-  3445  0694                     l245:	
+  3445  0694                     l92:	
   3446                           ;spi.c: 83: while (SSP1STATbits.BF == 0x0) {
   3447                           
   3448  0694  1C14               	btfss	20,0	;volatile
-  3449  0695  2E94               	goto	l245
+  3449  0695  2E94               	goto	l92
   3450                           
   3451                           ;spi.c: 84: }
   3452                           ;spi.c: 86: return (SSPBUF);
@@ -3660,19 +3660,19 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3654  075B  3008               	movlw	8
   3655  075C  027A               	subwf	ConfigureShiftRegister@i,w
   3656  075D  1803               	btfsc	3,0
-  3657  075E  2F76               	goto	l167
-  3658  075F                     l166:	
+  3657  075E  2F76               	goto	l212
+  3658  075F                     l211:	
   3659                           
   3660                           ;main.c: 139: LATA4 = ReverseReg & 0x01;
   3661  075F  1C7B               	btfss	ConfigureShiftRegister@ReverseReg,0
   3662  0760  2F64               	goto	u110
   3663  0761  0022               	movlb	2	; select bank2
   3664  0762  160C               	bsf	12,4	;volatile
-  3665  0763  2F66               	goto	l168
+  3665  0763  2F66               	goto	l213
   3666  0764                     u110:	
   3667  0764  0022               	movlb	2	; select bank2
   3668  0765  120C               	bcf	12,4	;volatile
-  3669  0766                     l168:	
+  3669  0766                     l213:	
   3670                           ;main.c: 140: do { LATA5 = 1; } while(0);
   3671                           
   3672  0766  168C               	bsf	12,5	;volatile
@@ -3694,8 +3694,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3688  0772  3008               	movlw	8
   3689  0773  027A               	subwf	ConfigureShiftRegister@i,w
   3690  0774  1C03               	skipc
-  3691  0775  2F5F               	goto	l166
-  3692  0776                     l167:	
+  3691  0775  2F5F               	goto	l211
+  3692  0776                     l212:	
   3693                           
   3694                           ;main.c: 144: }
   3695                           ;main.c: 147: LATA4 = 0;
@@ -3939,15 +3939,15 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Thu Apr 28 16:10:54 2016
+Symbol Table                                                                                   Thu Apr 28 18:39:04 2016
 
                          _SPI_Initialize 0682                              __CFG_CP$OFF 0000  
-                            __CFG_LVP$ON 0000                          _DAC1_Initialize 0677  
-                                    l203 07B4                                      l212 07DE  
-                                    l213 07DC                                      l206 07BB  
-                                    l219 07E2                                      l245 0694  
-                                    l166 075F                                      l167 0776  
-                                    l191 078F                                      l168 0766  
+                                     l92 0694                              __CFG_LVP$ON 0000  
+                        _DAC1_Initialize 0677                                      l211 075F  
+                                    l212 0776                                      l213 0766  
+                                    l251 07BB                                      l236 078F  
+                                    l264 07E2                                      l248 07B4  
+                                    l257 07DE                                      l258 07DC  
                                     l742 0730                                      l910 0788  
                                     l760 074C                                      l920 079C  
                                     l738 072A                                      l746 0738  

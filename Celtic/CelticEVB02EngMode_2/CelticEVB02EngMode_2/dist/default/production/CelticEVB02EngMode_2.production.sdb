@@ -1,0 +1,250 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF1618 ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"91 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\main.c
+[v _MIPISPI MIPISPI `(v  1 e 0 0 ]
+"108
+[v _ConfigureShiftRegister ConfigureShiftRegister `(v  1 e 0 0 ]
+"154
+[v _main main `(v  1 e 0 0 ]
+"58 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 0 0 ]
+"65
+[v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 0 0 ]
+"75 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+"83
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+"94
+[v _INTERRUPT_ON_CHANGE_Initialize INTERRUPT_ON_CHANGE_Initialize `(v  1 e 0 0 ]
+"51 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+"64 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 0 0 ]
+"77
+[v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
+[s S94 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"360 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16lf1618.h
+[s S103 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S108 . 1 `S94 1 . 1 0 `S103 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES108  1 e 1 @11 ]
+"501
+[v _PORTC PORTC `VEuc  1 e 1 @14 ]
+"1562
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1611
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1649
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S35 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1999
+[s S42 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S49 . 1 `S35 1 . 1 0 `S42 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES49  1 e 1 @149 ]
+"2119
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2176
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2247
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @154 ]
+"2532
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2581
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2619
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"3056
+[v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @280 ]
+"3105
+[v _DAC1CON1 DAC1CON1 `VEuc  1 e 1 @281 ]
+"3219
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3265
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3303
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"4417
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4455
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"4529
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"4777
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"5283
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+[s S255 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"5305
+[u S264 . 1 `S255 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES264  1 e 1 @532 ]
+"5404
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S228 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"5437
+[s S234 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S239 . 1 `S228 1 . 1 0 `S234 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES239  1 e 1 @533 ]
+"7377
+[v _IOCCP IOCCP `VEuc  1 e 1 @919 ]
+[s S126 . 1 `uc 1 IOCCF0 1 0 :1:0 
+`uc 1 IOCCF1 1 0 :1:1 
+`uc 1 IOCCF2 1 0 :1:2 
+`uc 1 IOCCF3 1 0 :1:3 
+`uc 1 IOCCF4 1 0 :1:4 
+`uc 1 IOCCF5 1 0 :1:5 
+`uc 1 IOCCF6 1 0 :1:6 
+`uc 1 IOCCF7 1 0 :1:7 
+]
+"7516
+[u S135 . 1 `S126 1 . 1 0 ]
+[v _IOCCFbits IOCCFbits `VES135  1 e 1 @921 ]
+"21402
+[v _SSPCLKPPS SSPCLKPPS `VEuc  1 e 1 @3616 ]
+"22348
+[v _RB6PPS RB6PPS `VEuc  1 e 1 @3742 ]
+"22391
+[v _RB7PPS RB7PPS `VEuc  1 e 1 @3743 ]
+"26796
+[v _LATA1 LATA1 `VEb  1 e 0 @2145 ]
+"26798
+[v _LATA2 LATA2 `VEb  1 e 0 @2146 ]
+"26802
+[v _LATA4 LATA4 `VEb  1 e 0 @2148 ]
+"26804
+[v _LATA5 LATA5 `VEb  1 e 0 @2149 ]
+"26806
+[v _LATB4 LATB4 `VEb  1 e 0 @2156 ]
+"26810
+[v _LATB6 LATB6 `VEb  1 e 0 @2158 ]
+"44 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\main.c
+[v _SLAVEWRITEADD SLAVEWRITEADD `DCC[2]uc  1 e 2 0 ]
+"45
+[v _ADDRESSDATA ADDRESSDATA `DCC[65]uc  1 e 65 0 ]
+"50
+[v _DATABUSPARK DATABUSPARK `DCC[65]uc  1 e 65 0 ]
+"56
+[v _Byte1 Byte1 `uc  1 e 1 0 ]
+[v _Byte3 Byte3 `uc  1 e 1 0 ]
+[v _Byte4 Byte4 `uc  1 e 1 0 ]
+[v _Byte5 Byte5 `uc  1 e 1 0 ]
+[v _Byte6 Byte6 `uc  1 e 1 0 ]
+"57
+[v _DAC_Step DAC_Step `uc  1 e 1 0 ]
+[v _Dummy Dummy `uc  1 e 1 0 ]
+[v _start start `uc  1 e 1 0 ]
+"154
+[v _main main `(v  1 e 0 0 ]
+{
+"220
+} 0
+"75 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+{
+"81
+} 0
+"64 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 0 0 ]
+{
+"75
+} 0
+"51 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+{
+"82
+} 0
+"83 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+{
+"92
+} 0
+"94
+[v _INTERRUPT_ON_CHANGE_Initialize INTERRUPT_ON_CHANGE_Initialize `(v  1 e 0 0 ]
+{
+"101
+} 0
+"58 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 0 0 ]
+{
+"63
+} 0
+"91 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\main.c
+[v _MIPISPI MIPISPI `(v  1 e 0 0 ]
+{
+[v MIPISPI@a a `uc  1 a 1 wreg ]
+[v MIPISPI@a a `uc  1 a 1 wreg ]
+[v MIPISPI@b b `uc  1 p 1 1 ]
+[v MIPISPI@a a `uc  1 a 1 2 ]
+"106
+} 0
+"77 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/spi.c
+[v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
+{
+[v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
+[v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
+"79
+[v SPI_Exchange8bit@data data `uc  1 a 1 0 ]
+"87
+} 0
+"65 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/dac1.c
+[v _DAC1_SetOutput DAC1_SetOutput `(v  1 e 0 0 ]
+{
+[v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+[v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
+[v DAC1_SetOutput@inputData inputData `uc  1 a 1 0 ]
+"67
+} 0
+"108 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\main.c
+[v _ConfigureShiftRegister ConfigureShiftRegister `(v  1 e 0 0 ]
+{
+"109
+[v ConfigureShiftRegister@ReverseReg ReverseReg `uc  1 a 1 2 ]
+[v ConfigureShiftRegister@i i `uc  1 a 1 1 ]
+"152
+} 0

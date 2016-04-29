@@ -9,8 +9,6 @@
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
 "91 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\main.c
 [v _MIPISPI MIPISPI `(v  1 e 0 0 ]
-"108
-[v _ConfigureShiftRegister ConfigureShiftRegister `(v  1 e 0 0 ]
 "154
 [v _main main `(v  1 e 0 0 ]
 "58 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/dac1.c
@@ -161,6 +159,8 @@
 [v _LATA5 LATA5 `VEb  1 e 0 @2149 ]
 "26806
 [v _LATB4 LATB4 `VEb  1 e 0 @2156 ]
+"26808
+[v _LATB5 LATB5 `VEb  1 e 0 @2157 ]
 "26810
 [v _LATB6 LATB6 `VEb  1 e 0 @2158 ]
 "44 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\main.c
@@ -177,12 +177,11 @@
 [v _Byte6 Byte6 `uc  1 e 1 0 ]
 "57
 [v _DAC_Step DAC_Step `uc  1 e 1 0 ]
-[v _Dummy Dummy `uc  1 e 1 0 ]
 [v _start start `uc  1 e 1 0 ]
 "154
 [v _main main `(v  1 e 0 0 ]
 {
-"220
+"266
 } 0
 "75 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
@@ -239,12 +238,4 @@
 [v DAC1_SetOutput@inputData inputData `uc  1 a 1 wreg ]
 [v DAC1_SetOutput@inputData inputData `uc  1 a 1 0 ]
 "67
-} 0
-"108 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB02EngMode_2\CelticEVB02EngMode_2\main.c
-[v _ConfigureShiftRegister ConfigureShiftRegister `(v  1 e 0 0 ]
-{
-"109
-[v ConfigureShiftRegister@ReverseReg ReverseReg `uc  1 a 1 2 ]
-[v ConfigureShiftRegister@i i `uc  1 a 1 1 ]
-"152
 } 0

@@ -73,20 +73,20 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define DAC1OUT_SetAnalogMode()   do { ANSA0 = 1; } while(0)
 #define DAC1OUT_SetDigitalMode()   do { ANSA0 = 0; } while(0)
-// get/set PE_OE aliases
-#define PE_OE_TRIS               TRISA1
-#define PE_OE_LAT                LATA1
-#define PE_OE_PORT               RA1
-#define PE_OE_ANS                ANSA1
-#define PE_OE_SetHigh()    do { LATA1 = 1; } while(0)
-#define PE_OE_SetLow()   do { LATA1 = 0; } while(0)
-#define PE_OE_Toggle()   do { LATA1 = ~LATA1; } while(0)
-#define PE_OE_GetValue()         RA1
-#define PE_OE_SetDigitalInput()    do { TRISA1 = 1; } while(0)
-#define PE_OE_SetDigitalOutput()   do { TRISA1 = 0; } while(0)
+// get/set CTLA_SW1 aliases
+#define CTLA_SW1_TRIS               TRISA1
+#define CTLA_SW1_LAT                LATA1
+#define CTLA_SW1_PORT               RA1
+#define CTLA_SW1_ANS                ANSA1
+#define CTLA_SW1_SetHigh()    do { LATA1 = 1; } while(0)
+#define CTLA_SW1_SetLow()   do { LATA1 = 0; } while(0)
+#define CTLA_SW1_Toggle()   do { LATA1 = ~LATA1; } while(0)
+#define CTLA_SW1_GetValue()         RA1
+#define CTLA_SW1_SetDigitalInput()    do { TRISA1 = 1; } while(0)
+#define CTLA_SW1_SetDigitalOutput()   do { TRISA1 = 0; } while(0)
 
-#define PE_OE_SetAnalogMode()   do { ANSA1 = 1; } while(0)
-#define PE_OE_SetDigitalMode()   do { ANSA1 = 0; } while(0)
+#define CTLA_SW1_SetAnalogMode()   do { ANSA1 = 1; } while(0)
+#define CTLA_SW1_SetDigitalMode()   do { ANSA1 = 0; } while(0)
 // get/set MAIN_NIC_LDO_EN aliases
 #define MAIN_NIC_LDO_EN_TRIS               TRISA2
 #define MAIN_NIC_LDO_EN_LAT                LATA2
@@ -101,30 +101,30 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define MAIN_NIC_LDO_EN_SetAnalogMode()   do { ANSA2 = 1; } while(0)
 #define MAIN_NIC_LDO_EN_SetDigitalMode()   do { ANSA2 = 0; } while(0)
-// get/set PE_D aliases
-#define PE_D_TRIS               TRISA4
-#define PE_D_LAT                LATA4
-#define PE_D_PORT               RA4
-#define PE_D_ANS                ANSA4
-#define PE_D_SetHigh()    do { LATA4 = 1; } while(0)
-#define PE_D_SetLow()   do { LATA4 = 0; } while(0)
-#define PE_D_Toggle()   do { LATA4 = ~LATA4; } while(0)
-#define PE_D_GetValue()         RA4
-#define PE_D_SetDigitalInput()    do { TRISA4 = 1; } while(0)
-#define PE_D_SetDigitalOutput()   do { TRISA4 = 0; } while(0)
+// get/set CTLB_SW1 aliases
+#define CTLB_SW1_TRIS               TRISA4
+#define CTLB_SW1_LAT                LATA4
+#define CTLB_SW1_PORT               RA4
+#define CTLB_SW1_ANS                ANSA4
+#define CTLB_SW1_SetHigh()    do { LATA4 = 1; } while(0)
+#define CTLB_SW1_SetLow()   do { LATA4 = 0; } while(0)
+#define CTLB_SW1_Toggle()   do { LATA4 = ~LATA4; } while(0)
+#define CTLB_SW1_GetValue()         RA4
+#define CTLB_SW1_SetDigitalInput()    do { TRISA4 = 1; } while(0)
+#define CTLB_SW1_SetDigitalOutput()   do { TRISA4 = 0; } while(0)
 
-#define PE_D_SetAnalogMode()   do { ANSA4 = 1; } while(0)
-#define PE_D_SetDigitalMode()   do { ANSA4 = 0; } while(0)
-// get/set PE_CLK aliases
-#define PE_CLK_TRIS               TRISA5
-#define PE_CLK_LAT                LATA5
-#define PE_CLK_PORT               RA5
-#define PE_CLK_SetHigh()    do { LATA5 = 1; } while(0)
-#define PE_CLK_SetLow()   do { LATA5 = 0; } while(0)
-#define PE_CLK_Toggle()   do { LATA5 = ~LATA5; } while(0)
-#define PE_CLK_GetValue()         RA5
-#define PE_CLK_SetDigitalInput()    do { TRISA5 = 1; } while(0)
-#define PE_CLK_SetDigitalOutput()   do { TRISA5 = 0; } while(0)
+#define CTLB_SW1_SetAnalogMode()   do { ANSA4 = 1; } while(0)
+#define CTLB_SW1_SetDigitalMode()   do { ANSA4 = 0; } while(0)
+// get/set CTLA_SW2 aliases
+#define CTLA_SW2_TRIS               TRISA5
+#define CTLA_SW2_LAT                LATA5
+#define CTLA_SW2_PORT               RA5
+#define CTLA_SW2_SetHigh()    do { LATA5 = 1; } while(0)
+#define CTLA_SW2_SetLow()   do { LATA5 = 0; } while(0)
+#define CTLA_SW2_Toggle()   do { LATA5 = ~LATA5; } while(0)
+#define CTLA_SW2_GetValue()         RA5
+#define CTLA_SW2_SetDigitalInput()    do { TRISA5 = 1; } while(0)
+#define CTLA_SW2_SetDigitalOutput()   do { TRISA5 = 0; } while(0)
 
 // get/set AUX_NIC_LDO_EN aliases
 #define AUX_NIC_LDO_EN_TRIS               TRISB4
@@ -140,6 +140,20 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define AUX_NIC_LDO_EN_SetAnalogMode()   do { ANSB4 = 1; } while(0)
 #define AUX_NIC_LDO_EN_SetDigitalMode()   do { ANSB4 = 0; } while(0)
+// get/set CTLB_SW2 aliases
+#define CTLB_SW2_TRIS               TRISB5
+#define CTLB_SW2_LAT                LATB5
+#define CTLB_SW2_PORT               RB5
+#define CTLB_SW2_ANS                ANSB5
+#define CTLB_SW2_SetHigh()    do { LATB5 = 1; } while(0)
+#define CTLB_SW2_SetLow()   do { LATB5 = 0; } while(0)
+#define CTLB_SW2_Toggle()   do { LATB5 = ~LATB5; } while(0)
+#define CTLB_SW2_GetValue()         RB5
+#define CTLB_SW2_SetDigitalInput()    do { TRISB5 = 1; } while(0)
+#define CTLB_SW2_SetDigitalOutput()   do { TRISB5 = 0; } while(0)
+
+#define CTLB_SW2_SetAnalogMode()   do { ANSB5 = 1; } while(0)
+#define CTLB_SW2_SetDigitalMode()   do { ANSB5 = 0; } while(0)
 // get/set SDO aliases
 #define SDO_TRIS               TRISB6
 #define SDO_LAT                LATB6

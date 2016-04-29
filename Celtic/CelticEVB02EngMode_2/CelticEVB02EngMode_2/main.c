@@ -51,7 +51,7 @@ const uint8_t DATABUSPARK[65]= {0x04, 0x08, 0x10, 0x1C, 0x20, 0x2C, 0x34, 0x38, 
                                 0x80, 0x8C, 0x94, 0x98, 0xA4, 0xA8, 0xB0, 0xBC, 0xC4, 0xC8, 0xD0, 0xDC, 0xE0, 0xEC, 0xF4, 0xF8,
                                 0x00, 0x0C, 0x14, 0x18, 0x24, 0x28, 0x30, 0x3C, 0x44, 0x48, 0x50, 0x5C, 0x60, 0x6C, 0x74, 0x78,
                                 0x84, 0x88, 0x90, 0x9C, 0xA0, 0xAC, 0xB4, 0xB8, 0xC0, 0xCC, 0xD4, 0xD8, 0xE4, 0xE8, 0xF0, 0xFC,
-                                0x04};          // D4 D3 D2 D1 D0 
+                                0x04};          // D4 D3 D2 D1 D0 P B 0
 
 uint8_t Byte1, Byte2, Byte3, Byte4, Byte5, Byte6; // First 6 bytes from RFFE
 uint8_t DAC_Step, Dummy, start = 0;
@@ -104,7 +104,7 @@ void MIPISPI (uint8_t a, uint8_t b){
     SPI_Exchange8bit(ADDRESSDATA[b]);
     SPI_Exchange8bit(DATABUSPARK[b]);    
 }
-
+/*
 void ConfigureShiftRegister(void){
     uint8_t ReverseReg = 0x00, i;   
     
@@ -150,7 +150,7 @@ void ConfigureShiftRegister(void){
     PE_CLK_SetLow();             
 
 }
-
+*/
 void main(void) {
     //if (INTCONbits.IOCIF)
     //goto reset;
@@ -158,11 +158,15 @@ void main(void) {
     // initialize the device
     SYSTEM_Initialize();
     //DAC1_SetOutput(0);      //DAC already initialised to ZERO
-    PE_OE_SetLow();
-    PE_D_SetLow();
-    PE_CLK_SetLow();
+    //PE_OE_SetLow();
+    //PE_D_SetLow();
+    //PE_CLK_SetLow();
     MAIN_NIC_LDO_EN_SetLow(); //0: OFF / MCM sleep mode
     AUX_NIC_LDO_EN_SetLow();
+    CTLA_SW1_SetLow();
+    CTLB_SW1_SetLow();
+    CTLA_SW2_SetLow();
+    CTLB_SW2_SetLow();
     reset:
     start = 1;
     if (IOCCFbits.IOCCF7 == 0) {     //To enable SLEEP mode after powering up
@@ -211,9 +215,51 @@ void main(void) {
         MIPISPI(Byte5, Byte6);
         
         // RF Switch Selection Sequence
-        PE_OE_SetHigh();
+        /*PE_OE_SetHigh();
         ConfigureShiftRegister();
-        PE_OE_SetLow();
+        PE_OE_SetLow();*/
+        // RF SW1
+        switch ((Byte1 & 0x38)){
+            case 0x00:
+                CTLA_SW1_SetLow();
+                CTLB_SW1_SetLow();
+                break;
+            case 0x20:
+                CTLA_SW1_SetHigh();
+                CTLB_SW1_SetLow();
+                break;
+            case 0x10:
+                CTLA_SW1_SetLow();
+                CTLB_SW1_SetHigh();
+                break;
+            case 0x30:
+                CTLA_SW1_SetHigh();
+                CTLB_SW1_SetHigh();
+                break;
+            default:
+                break;
+        }         
+        // RF SW2
+        switch ((Byte1 & 0x07)){
+            case 0x00:
+                CTLA_SW2_SetLow();
+                CTLB_SW2_SetLow();
+                break;
+            case 0x04:
+                CTLA_SW2_SetHigh();
+                CTLB_SW2_SetLow(); 
+                break;
+            case 0x02:
+                CTLA_SW2_SetLow();
+                CTLB_SW2_SetHigh();
+                break;
+            case 0x06:
+                CTLA_SW2_SetHigh();
+                CTLB_SW2_SetHigh();
+                break;
+            default:
+                break;
+        }
         
         SLEEP();
     }

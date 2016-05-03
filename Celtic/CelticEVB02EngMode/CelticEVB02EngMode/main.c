@@ -81,23 +81,23 @@ void ConfigureShiftRegister(void){
     
     // RF SW1
     Dummy = Byte1 & 0x38;
-    if (Dummy == 0x00)
+    if (Dummy == 0x08)
         ReverseReg |= 0x00;
-    else if (Dummy == 0x20)
-        ReverseReg |= 0x80;
     else if (Dummy == 0x10)
+        ReverseReg |= 0x80;
+    else if (Dummy == 0x18)
         ReverseReg |= 0x40;
-    else if (Dummy == 0x30)
+    else if (Dummy == 0x20)
         ReverseReg |= 0xC0;
     // RF SW2
     Dummy = Byte1 & 0x07;
-    if (Dummy == 0x00)
+    if (Dummy == 0x01)
         ReverseReg |= 0x00;
-    else if (Dummy == 0x04)
-        ReverseReg |= 0x20;
     else if (Dummy == 0x02)
+        ReverseReg |= 0x20;
+    else if (Dummy == 0x03)
         ReverseReg |= 0x10; 
-    else if (Dummy == 0x06)
+    else if (Dummy == 0x04)
         ReverseReg |= 0x30;    
     
     // Start with additional clock cycle

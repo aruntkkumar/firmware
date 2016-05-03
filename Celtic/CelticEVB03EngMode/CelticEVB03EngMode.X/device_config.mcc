@@ -19,10 +19,12 @@
             <resource customName="GPO7" digital="true" direction="INPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>
             <resource customName="CTLA_SW2" digital="true" direction="OUTPUT" function="RC0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
             <resource customName="CTLB_SW2" digital="true" direction="OUTPUT" function="RC1" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW1" digital="true" direction="OUTPUT" function="RC2" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
             <resource customName="SCK1" digital="true" direction="OUTPUT" function="SCK1" module="MSSP1" name="RC3" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW2" digital="true" direction="OUTPUT" function="RC4" module="GPIO" name="RC4" start="false" type="pin" wpu="false"/>
             <resource customName="SDO1" digital="true" direction="OUTPUT" function="SDO1" module="MSSP1" name="RC5" start="false" type="pin" wpu="false"/>
-            <file checksum="983731246" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
-            <file checksum="3419567870" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
+            <file checksum="933792804" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
+            <file checksum="1809119150" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
         </manager>
         <manager generated="true" name="System" reloadPin="manual">
             <initializer comment="" name="Initialize">
@@ -102,8 +104,10 @@
             <resource customName="AUX_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA1" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
             <resource customName="CTLA_SW1" digital="true" direction="OUTPUT" function="RA6" module="GPIO" name="RA6" start="false" type="pin" wpu="false"/>
             <resource customName="CTLB_SW1" digital="true" direction="OUTPUT" function="RA7" module="GPIO" name="RA7" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW1" digital="true" direction="OUTPUT" function="RC2" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
             <resource customName="CTLA_SW2" digital="true" direction="OUTPUT" function="RC0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
             <resource customName="CTLB_SW2" digital="true" direction="OUTPUT" function="RC1" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW2" digital="true" direction="OUTPUT" function="RC4" module="GPIO" name="RC4" start="false" type="pin" wpu="false"/>
         </module>
         <module generated="true" mode="SPI Master" name="MSSP1" order="2" reloadPin="manual" type="mssp">
             <initializer comment="" name="Initialize">

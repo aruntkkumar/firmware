@@ -275,6 +275,20 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #define CTLB_SW2_SetDigitalInput()    do { TRISC1 = 1; } while(0)
 #define CTLB_SW2_SetDigitalOutput()   do { TRISC1 = 0; } while(0)
 
+// get/set CTLC_SW1 aliases
+#define CTLC_SW1_TRIS               TRISC2
+#define CTLC_SW1_LAT                LATC2
+#define CTLC_SW1_PORT               PORTCbits.RC2
+#define CTLC_SW1_ANS                ANSC2
+#define CTLC_SW1_SetHigh()    do { LATC2 = 1; } while(0)
+#define CTLC_SW1_SetLow()   do { LATC2 = 0; } while(0)
+#define CTLC_SW1_Toggle()   do { LATC2 = ~LATC2; } while(0)
+#define CTLC_SW1_GetValue()         PORTCbits.RC2
+#define CTLC_SW1_SetDigitalInput()    do { TRISC2 = 1; } while(0)
+#define CTLC_SW1_SetDigitalOutput()   do { TRISC2 = 0; } while(0)
+
+#define CTLC_SW1_SetAnalogMode()   do { ANSC2 = 1; } while(0)
+#define CTLC_SW1_SetDigitalMode()   do { ANSC2 = 0; } while(0)
 // get/set SCK1 aliases
 #define SCK1_TRIS               TRISC3
 #define SCK1_LAT                LATC3
@@ -289,6 +303,20 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define SCK1_SetAnalogMode()   do { ANSC3 = 1; } while(0)
 #define SCK1_SetDigitalMode()   do { ANSC3 = 0; } while(0)
+// get/set CTLC_SW2 aliases
+#define CTLC_SW2_TRIS               TRISC4
+#define CTLC_SW2_LAT                LATC4
+#define CTLC_SW2_PORT               PORTCbits.RC4
+#define CTLC_SW2_ANS                ANSC4
+#define CTLC_SW2_SetHigh()    do { LATC4 = 1; } while(0)
+#define CTLC_SW2_SetLow()   do { LATC4 = 0; } while(0)
+#define CTLC_SW2_Toggle()   do { LATC4 = ~LATC4; } while(0)
+#define CTLC_SW2_GetValue()         PORTCbits.RC4
+#define CTLC_SW2_SetDigitalInput()    do { TRISC4 = 1; } while(0)
+#define CTLC_SW2_SetDigitalOutput()   do { TRISC4 = 0; } while(0)
+
+#define CTLC_SW2_SetAnalogMode()   do { ANSC4 = 1; } while(0)
+#define CTLC_SW2_SetDigitalMode()   do { ANSC4 = 0; } while(0)
 // get/set SDO1 aliases
 #define SDO1_TRIS               TRISC5
 #define SDO1_LAT                LATC5

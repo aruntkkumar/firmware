@@ -58,8 +58,8 @@ void PIN_MANAGER_Initialize(void) {
     WPUB = 0x00;
 
     LATC = 0x00;
-    TRISC = 0xD4;
-    ANSELC = 0xD4;
+    TRISC = 0xC0;
+    ANSELC = 0xC0;
 
     INTCON2bits.nRBPU = 0x01;
 

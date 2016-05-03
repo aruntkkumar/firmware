@@ -73,10 +73,21 @@ const uint8_t ACTIVEBAND[64]=  {0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
                                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                 0, 0, 0, 0};    // Defined bands 5, 8, 12, 13, 20, 26, 29
+const uint8_t SLAVEWRITEADD[2] = {0x64, 0x74};    // USID LOW/HIGH and C2 C1 C0 A4 (Refer SSC Datasheet)
+const uint8_t ADDRESSDATA[65]= {0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18,
+                                0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18,
+                                0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19,
+                                0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19,
+                                0x1A};          // A3=0 A2=0 A1=0 A0=1 P=1 D7=0 D6 D5
+const uint8_t DATABUSPARK[65]= {0x04, 0x08, 0x10, 0x1C, 0x20, 0x2C, 0x34, 0x38, 0x40, 0x4C, 0x54, 0x58, 0x64, 0x68, 0x70, 0x7C,
+                                0x80, 0x8C, 0x94, 0x98, 0xA4, 0xA8, 0xB0, 0xBC, 0xC4, 0xC8, 0xD0, 0xDC, 0xE0, 0xEC, 0xF4, 0xF8,
+                                0x00, 0x0C, 0x14, 0x18, 0x24, 0x28, 0x30, 0x3C, 0x44, 0x48, 0x50, 0x5C, 0x60, 0x6C, 0x74, 0x78,
+                                0x84, 0x88, 0x90, 0x9C, 0xA0, 0xAC, 0xB4, 0xB8, 0xC0, 0xCC, 0xD4, 0xD8, 0xE4, 0xE8, 0xF0, 0xFC,
+                                0x04};          // D4 D3 D2 D1 D0 P B 0
 
 uint8_t Byte1, Byte2, Byte3, Byte4, Byte5, Byte6; // First 6 bytes from RFFE
 uint8_t DAC_Step, Dummy, start = 0;
-
+/*
 void shiftRegister (uint8_t Dummy1, uint8_t Dummy2, uint8_t y){
     for (uint8_t m=0; m<y; m++){
         SCLK_MIPI_SetHigh();
@@ -107,7 +118,23 @@ void MIPI (uint8_t a, uint8_t b){
     shiftRegister (DATA[a],DATA[b],8);                                  //SSC1 & SSC2
     shiftRegister (PARITY[a],PARITY[b],2);                              //Parity + Bus Park
 }
-
+*/
+void MIPISPI (uint8_t a, uint8_t b){
+    //RB6PPS = 0x00; // RB6->LATB6                                        //First SCC should have UID as Low            
+    SDO1_SetHigh();
+    SDO1_SetLow();
+    //RB6PPS = 0x11; // RB6->MSSP:SDO
+    SPI1_Exchange8bit(SLAVEWRITEADD[0]);
+    SPI1_Exchange8bit(ADDRESSDATA[a]);
+    SPI1_Exchange8bit(DATABUSPARK[a]);
+    //RB6PPS = 0x00; // RB6->LATB6                                        //Second SCC should have UID as High              
+    SDO1_SetHigh();
+    SDO1_SetLow();
+    //RB6PPS = 0x11; // RB6->MSSP:SDO
+    SPI1_Exchange8bit(SLAVEWRITEADD[1]);
+    SPI1_Exchange8bit(ADDRESSDATA[b]);
+    SPI1_Exchange8bit(DATABUSPARK[b]);    
+}
 
     //                      Main application
                          
@@ -197,38 +224,51 @@ void main(void) {
             AUX_NIC_LDO_EN_SetLow();
         
         // MIPI Clock and Data Generation (SSC1,SSC2), Add more SSC values to function in case of more SSCs        
-        MIPI(Byte5, Byte6);
+        // MIPI(Byte5, Byte6);
+        MIPISPI(Byte5, Byte6);
         
         // RF Switch Selection Sequence
         // RF SW1
-        Dummy = Byte1 & 0x38;
-        if (Dummy == 0x00) {
-            CTLA_SW1_SetLow();
-            CTLB_SW1_SetLow();
-        } else if (Dummy == 0x20) {
-            CTLA_SW1_SetHigh();
-            CTLB_SW1_SetLow(); 
-        } else if (Dummy == 0x10) {
-            CTLA_SW1_SetLow();
-            CTLB_SW1_SetHigh(); 
-        } else if (Dummy == 0x30) {
-            CTLA_SW1_SetHigh();
-            CTLB_SW1_SetHigh(); 
-        }            
+        switch ((Byte1 & 0x38)){
+            case 0x00:
+                CTLA_SW1_SetLow();
+                CTLB_SW1_SetLow();
+                break;
+            case 0x20:
+                CTLA_SW1_SetHigh();
+                CTLB_SW1_SetLow();
+                break;
+            case 0x10:
+                CTLA_SW1_SetLow();
+                CTLB_SW1_SetHigh();
+                break;
+            case 0x30:
+                CTLA_SW1_SetHigh();
+                CTLB_SW1_SetHigh();
+                break;
+            default:
+                break;
+        }         
         // RF SW2
-        Dummy = Byte1 & 0x07;
-        if (Dummy == 0x00) {
-            CTLA_SW2_SetLow();
-            CTLB_SW2_SetLow();
-        } else if (Dummy == 0x04) {
-            CTLA_SW2_SetHigh();
-            CTLB_SW2_SetLow(); 
-        } else if (Dummy == 0x02) {
-            CTLA_SW2_SetLow();
-            CTLB_SW2_SetHigh(); 
-        } else if (Dummy == 0x06) {
-            CTLA_SW2_SetHigh();
-            CTLB_SW2_SetHigh(); 
+        switch ((Byte1 & 0x07)){
+            case 0x00:
+                CTLA_SW2_SetLow();
+                CTLB_SW2_SetLow();
+                break;
+            case 0x04:
+                CTLA_SW2_SetHigh();
+                CTLB_SW2_SetLow(); 
+                break;
+            case 0x02:
+                CTLA_SW2_SetLow();
+                CTLB_SW2_SetHigh();
+                break;
+            case 0x06:
+                CTLA_SW2_SetHigh();
+                CTLB_SW2_SetHigh();
+                break;
+            default:
+                break;
         }  
         
         SLEEP();

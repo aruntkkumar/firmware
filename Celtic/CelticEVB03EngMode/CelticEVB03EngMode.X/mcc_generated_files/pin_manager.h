@@ -101,45 +101,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define DACOUT_SetAnalogMode()   do { ANSA2 = 1; } while(0)
 #define DACOUT_SetDigitalMode()   do { ANSA2 = 0; } while(0)
-// get/set SDATA1_MIPI aliases
-#define SDATA1_MIPI_TRIS               TRISA3
-#define SDATA1_MIPI_LAT                LATA3
-#define SDATA1_MIPI_PORT               PORTAbits.RA3
-#define SDATA1_MIPI_ANS                ANSA3
-#define SDATA1_MIPI_SetHigh()    do { LATA3 = 1; } while(0)
-#define SDATA1_MIPI_SetLow()   do { LATA3 = 0; } while(0)
-#define SDATA1_MIPI_Toggle()   do { LATA3 = ~LATA3; } while(0)
-#define SDATA1_MIPI_GetValue()         PORTAbits.RA3
-#define SDATA1_MIPI_SetDigitalInput()    do { TRISA3 = 1; } while(0)
-#define SDATA1_MIPI_SetDigitalOutput()   do { TRISA3 = 0; } while(0)
-
-#define SDATA1_MIPI_SetAnalogMode()   do { ANSA3 = 1; } while(0)
-#define SDATA1_MIPI_SetDigitalMode()   do { ANSA3 = 0; } while(0)
-// get/set SDATA2_MIPI aliases
-#define SDATA2_MIPI_TRIS               TRISA4
-#define SDATA2_MIPI_LAT                LATA4
-#define SDATA2_MIPI_PORT               PORTAbits.RA4
-#define SDATA2_MIPI_SetHigh()    do { LATA4 = 1; } while(0)
-#define SDATA2_MIPI_SetLow()   do { LATA4 = 0; } while(0)
-#define SDATA2_MIPI_Toggle()   do { LATA4 = ~LATA4; } while(0)
-#define SDATA2_MIPI_GetValue()         PORTAbits.RA4
-#define SDATA2_MIPI_SetDigitalInput()    do { TRISA4 = 1; } while(0)
-#define SDATA2_MIPI_SetDigitalOutput()   do { TRISA4 = 0; } while(0)
-
-// get/set SCLK_MIPI aliases
-#define SCLK_MIPI_TRIS               TRISA5
-#define SCLK_MIPI_LAT                LATA5
-#define SCLK_MIPI_PORT               PORTAbits.RA5
-#define SCLK_MIPI_ANS                ANSA5
-#define SCLK_MIPI_SetHigh()    do { LATA5 = 1; } while(0)
-#define SCLK_MIPI_SetLow()   do { LATA5 = 0; } while(0)
-#define SCLK_MIPI_Toggle()   do { LATA5 = ~LATA5; } while(0)
-#define SCLK_MIPI_GetValue()         PORTAbits.RA5
-#define SCLK_MIPI_SetDigitalInput()    do { TRISA5 = 1; } while(0)
-#define SCLK_MIPI_SetDigitalOutput()   do { TRISA5 = 0; } while(0)
-
-#define SCLK_MIPI_SetAnalogMode()   do { ANSA5 = 1; } while(0)
-#define SCLK_MIPI_SetDigitalMode()   do { ANSA5 = 0; } while(0)
 // get/set CTLA_SW1 aliases
 #define CTLA_SW1_TRIS               TRISA6
 #define CTLA_SW1_LAT                LATA6
@@ -314,6 +275,34 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #define CTLB_SW2_SetDigitalInput()    do { TRISC1 = 1; } while(0)
 #define CTLB_SW2_SetDigitalOutput()   do { TRISC1 = 0; } while(0)
 
+// get/set SCK1 aliases
+#define SCK1_TRIS               TRISC3
+#define SCK1_LAT                LATC3
+#define SCK1_PORT               PORTCbits.RC3
+#define SCK1_ANS                ANSC3
+#define SCK1_SetHigh()    do { LATC3 = 1; } while(0)
+#define SCK1_SetLow()   do { LATC3 = 0; } while(0)
+#define SCK1_Toggle()   do { LATC3 = ~LATC3; } while(0)
+#define SCK1_GetValue()         PORTCbits.RC3
+#define SCK1_SetDigitalInput()    do { TRISC3 = 1; } while(0)
+#define SCK1_SetDigitalOutput()   do { TRISC3 = 0; } while(0)
+
+#define SCK1_SetAnalogMode()   do { ANSC3 = 1; } while(0)
+#define SCK1_SetDigitalMode()   do { ANSC3 = 0; } while(0)
+// get/set SDO1 aliases
+#define SDO1_TRIS               TRISC5
+#define SDO1_LAT                LATC5
+#define SDO1_PORT               PORTCbits.RC5
+#define SDO1_ANS                ANSC5
+#define SDO1_SetHigh()    do { LATC5 = 1; } while(0)
+#define SDO1_SetLow()   do { LATC5 = 0; } while(0)
+#define SDO1_Toggle()   do { LATC5 = ~LATC5; } while(0)
+#define SDO1_GetValue()         PORTCbits.RC5
+#define SDO1_SetDigitalInput()    do { TRISC5 = 1; } while(0)
+#define SDO1_SetDigitalOutput()   do { TRISC5 = 0; } while(0)
+
+#define SDO1_SetAnalogMode()   do { ANSC5 = 1; } while(0)
+#define SDO1_SetDigitalMode()   do { ANSC5 = 0; } while(0)
 
 /**
  * @Param

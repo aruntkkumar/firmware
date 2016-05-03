@@ -220,19 +220,19 @@ void main(void) {
         PE_OE_SetLow();*/
         // RF SW1
         switch ((Byte1 & 0x38)){
-            case 0x00:
+            case 0x08:
                 CTLA_SW1_SetLow();
-                CTLB_SW1_SetLow();
-                break;
-            case 0x20:
-                CTLA_SW1_SetHigh();
                 CTLB_SW1_SetLow();
                 break;
             case 0x10:
+                CTLA_SW1_SetHigh();
+                CTLB_SW1_SetLow();
+                break;
+            case 0x18:
                 CTLA_SW1_SetLow();
                 CTLB_SW1_SetHigh();
                 break;
-            case 0x30:
+            case 0x20:
                 CTLA_SW1_SetHigh();
                 CTLB_SW1_SetHigh();
                 break;
@@ -241,19 +241,19 @@ void main(void) {
         }         
         // RF SW2
         switch ((Byte1 & 0x07)){
-            case 0x00:
+            case 0x01:
                 CTLA_SW2_SetLow();
                 CTLB_SW2_SetLow();
                 break;
-            case 0x04:
+            case 0x02:
                 CTLA_SW2_SetHigh();
                 CTLB_SW2_SetLow(); 
                 break;
-            case 0x02:
+            case 0x03:
                 CTLA_SW2_SetLow();
                 CTLB_SW2_SetHigh();
                 break;
-            case 0x06:
+            case 0x04:
                 CTLA_SW2_SetHigh();
                 CTLB_SW2_SetHigh();
                 break;

@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Fri Apr 29 09:36:51 2016
+                                                                                               Tue May 03 13:52:25 2016
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	16LF1618
@@ -2873,7 +2873,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2867  07A7                     l241:	
   2868                           ;main.c: 224: do { LATA1 = 0; } while(0);
   2869                           
-  2870                           ;main.c: 223: case 0x00:
+  2870                           ;main.c: 223: case 0x08:
   2871                           
   2872  07A7  0022               	movlb	2	; select bank2
   2873  07A8  108C               	bcf	12,1	;volatile
@@ -2881,7 +2881,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2875  07AA                     l247:	
   2876                           ;main.c: 228: do { LATA1 = 1; } while(0);
   2877                           
-  2878                           ;main.c: 227: case 0x20:
+  2878                           ;main.c: 227: case 0x10:
   2879                           
   2880                           ;main.c: 226: break;
   2881                           
@@ -2899,7 +2899,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2893  07AE                     l252:	
   2894                           ;main.c: 232: do { LATA1 = 0; } while(0);
   2895                           
-  2896                           ;main.c: 231: case 0x10:
+  2896                           ;main.c: 231: case 0x18:
   2897                           
   2898  07AE  0022               	movlb	2	; select bank2
   2899  07AF  108C               	bcf	12,1	;volatile
@@ -2907,7 +2907,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2901  07B1                     l257:	
   2902                           ;main.c: 236: do { LATA1 = 1; } while(0);
   2903                           
-  2904                           ;main.c: 235: case 0x30:
+  2904                           ;main.c: 235: case 0x20:
   2905                           
   2906                           ;main.c: 234: break;
   2907                           
@@ -2952,24 +2952,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2945  07BE                     l1057:	
   2946                           
   2947                           ; Switch size 1, requested type "space"
-  2948                           ; Number of cases is 4, Range of values is 0 to 48
+  2948                           ; Number of cases is 4, Range of values is 8 to 32
   2949                           ; switch strategies available:
   2950                           ; Name         Instructions Cycles
   2951                           ; simple_byte           13     7 (average)
-  2952                           ; direct_byte          104     6 (fixed)
-  2953                           ; jumptable            260     6 (fixed)
+  2952                           ; direct_byte           59     9 (fixed)
+  2953                           ; jumptable            263     9 (fixed)
   2954                           ;	Chosen strategy is simple_byte
   2955  07BE  087C               	movf	??_main,w
-  2956  07BF  3A00               	xorlw	0	; case 0
+  2956  07BF  3A08               	xorlw	8	; case 8
   2957  07C0  1903               	skipnz
   2958  07C1  2FA7               	goto	l241
-  2959  07C2  3A10               	xorlw	16	; case 16
+  2959  07C2  3A18               	xorlw	24	; case 16
   2960  07C3  1903               	skipnz
-  2961  07C4  2FAE               	goto	l252
-  2962  07C5  3A30               	xorlw	48	; case 32
+  2961  07C4  2FAA               	goto	l247
+  2962  07C5  3A08               	xorlw	8	; case 24
   2963  07C6  1903               	skipnz
-  2964  07C7  2FAA               	goto	l247
-  2965  07C8  3A10               	xorlw	16	; case 48
+  2964  07C7  2FAE               	goto	l252
+  2965  07C8  3A38               	xorlw	56	; case 32
   2966  07C9  1903               	skipnz
   2967  07CA  2FB1               	goto	l257
   2968  07CB  2FDB               	goto	l983
@@ -2979,7 +2979,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2972  07CD                     l264:	
   2973                           ;main.c: 245: do { LATA5 = 0; } while(0);
   2974                           
-  2975                           ;main.c: 244: case 0x00:
+  2975                           ;main.c: 244: case 0x01:
   2976                           
   2977  07CD  0022               	movlb	2	; select bank2
   2978  07CE  128C               	bcf	12,5	;volatile
@@ -2987,7 +2987,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2980  07D0                     l270:	
   2981                           ;main.c: 249: do { LATA5 = 1; } while(0);
   2982                           
-  2983                           ;main.c: 248: case 0x04:
+  2983                           ;main.c: 248: case 0x02:
   2984                           
   2985                           ;main.c: 247: break;
   2986                           
@@ -3005,7 +3005,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2998  07D4                     l275:	
   2999                           ;main.c: 253: do { LATA5 = 0; } while(0);
   3000                           
-  3001                           ;main.c: 252: case 0x02:
+  3001                           ;main.c: 252: case 0x03:
   3002                           
   3003  07D4  0022               	movlb	2	; select bank2
   3004  07D5  128C               	bcf	12,5	;volatile
@@ -3013,7 +3013,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3006  07D7                     l280:	
   3007                           ;main.c: 257: do { LATA5 = 1; } while(0);
   3008                           
-  3009                           ;main.c: 256: case 0x06:
+  3009                           ;main.c: 256: case 0x04:
   3010                           
   3011                           ;main.c: 255: break;
   3012                           
@@ -3058,24 +3058,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3050  07E4                     l1059:	
   3051                           
   3052                           ; Switch size 1, requested type "space"
-  3053                           ; Number of cases is 4, Range of values is 0 to 6
+  3053                           ; Number of cases is 4, Range of values is 1 to 4
   3054                           ; switch strategies available:
   3055                           ; Name         Instructions Cycles
   3056                           ; simple_byte           13     7 (average)
-  3057                           ; direct_byte           20     6 (fixed)
-  3058                           ; jumptable            260     6 (fixed)
+  3057                           ; direct_byte           17     9 (fixed)
+  3058                           ; jumptable            263     9 (fixed)
   3059                           ;	Chosen strategy is simple_byte
   3060  07E4  087C               	movf	??_main,w
-  3061  07E5  3A00               	xorlw	0	; case 0
+  3061  07E5  3A01               	xorlw	1	; case 1
   3062  07E6  1903               	skipnz
   3063  07E7  2FCD               	goto	l264
-  3064  07E8  3A02               	xorlw	2	; case 2
+  3064  07E8  3A03               	xorlw	3	; case 2
   3065  07E9  1903               	skipnz
-  3066  07EA  2FD4               	goto	l275
-  3067  07EB  3A06               	xorlw	6	; case 4
+  3066  07EA  2FD0               	goto	l270
+  3067  07EB  3A01               	xorlw	1	; case 3
   3068  07EC  1903               	skipnz
-  3069  07ED  2FD0               	goto	l270
-  3070  07EE  3A02               	xorlw	2	; case 6
+  3069  07ED  2FD4               	goto	l275
+  3070  07EE  3A07               	xorlw	7	; case 4
   3071  07EF  1903               	skipnz
   3072  07F0  2FD7               	goto	l280
   3073  07F1  2FF2               	goto	l268
@@ -3919,7 +3919,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Fri Apr 29 09:36:51 2016
+Symbol Table                                                                                   Tue May 03 13:52:25 2016
 
                          _SPI_Initialize 069F                              __CFG_CP$OFF 0000  
                                      l92 06B1                              __CFG_LVP$ON 0000  

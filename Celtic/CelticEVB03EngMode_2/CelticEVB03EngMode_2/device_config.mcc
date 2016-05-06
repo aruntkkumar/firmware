@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration device="PIC18LF23K22" mcc_version="v2.25.2">
+    <managers>
+        <manager generated="true" name="Pin Manager" reloadPin="manual">
+            <setting name="package" option="UQFN28"/>
+            <setting name="sorting" option="true"/>
+            <resource customName="MAIN_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA0" module="GPIO" name="RA0" start="false" type="pin" wpu="false"/>
+            <resource customName="AUX_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA1" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
+            <resource customName="DACOUT" digital="false" direction="OUTPUT" function="DACOUT" module="DAC" name="RA2" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLA_SW1" digital="true" direction="OUTPUT" function="RA6" module="GPIO" name="RA6" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLB_SW1" digital="true" direction="OUTPUT" function="RA7" module="GPIO" name="RA7" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO0" digital="true" direction="INPUT" function="RB0" module="GPIO" name="RB0" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO1" digital="true" direction="INPUT" function="RB1" module="GPIO" name="RB1" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO2" digital="true" direction="INPUT" function="RB2" module="GPIO" name="RB2" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO3" digital="true" direction="INPUT" function="RB3" module="GPIO" name="RB3" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO4" digital="true" direction="INPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO5" digital="true" direction="INPUT" function="RB5" ioc="0" module="GPIO" name="RB5" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO6" digital="true" direction="INPUT" function="RB6" ioc="0" module="GPIO" name="RB6" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO7" digital="true" direction="INPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLA_SW2" digital="true" direction="OUTPUT" function="RC0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLB_SW2" digital="true" direction="OUTPUT" function="RC1" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW1" digital="true" direction="OUTPUT" function="RC2" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
+            <resource customName="SCK1" digital="true" direction="OUTPUT" function="SCK1" module="MSSP1" name="RC3" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW2" digital="true" direction="OUTPUT" function="RC4" module="GPIO" name="RC4" start="false" type="pin" wpu="false"/>
+            <resource customName="SDO1" digital="true" direction="OUTPUT" function="SDO1" module="MSSP1" name="RC5" start="false" type="pin" wpu="false"/>
+            <file checksum="933792804" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
+            <file checksum="1809119150" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
+        </manager>
+        <manager generated="true" name="System" reloadPin="manual">
+            <initializer comment="" name="Initialize">
+                <setting name="SCS" option="FOSC" register="OSCCON"/>
+                <setting name="IRCF" option="16MHz_HFINTOSC/4" register="OSCCON"/>
+                <setting name="IDLEN" option="disabled" register="OSCCON"/>
+                <setting name="PRISD" option="enabled" register="OSCCON2"/>
+                <setting name="SOSCGO" option="disabled" register="OSCCON2"/>
+                <setting name="MFIOSEL" option="disabled" register="OSCCON2"/>
+                <setting name="INTSRC" option="disabled" register="OSCTUNE"/>
+                <setting name="PLLEN" option="enabled" register="OSCTUNE"/>
+                <setting name="TUN" option="0x00" register="OSCTUNE"/>
+                <additionalSetting name="pllMultiplier" option=""/>
+                <additionalSetting name="extclk" option="1.0 MHz"/>
+            </initializer>
+            <setting name="PLLCFG" option="ON"/>
+            <setting name="FCMEN" option="OFF"/>
+            <setting name="PRICLKEN" option="ON"/>
+            <setting name="FOSC" option="INTIO67"/>
+            <setting name="IESO" option="OFF"/>
+            <setting name="PWRTEN" option="OFF"/>
+            <setting name="BOREN" option="OFF"/>
+            <setting name="BORV" option="190"/>
+            <setting name="WDTPS" option="32768"/>
+            <setting name="WDTEN" option="OFF"/>
+            <setting name="CCP2MX" option="PORTC1"/>
+            <setting name="P2BMX" option="PORTB5"/>
+            <setting name="MCLRE" option="EXTMCLR"/>
+            <setting name="CCP3MX" option="PORTB5"/>
+            <setting name="T3CMX" option="PORTC0"/>
+            <setting name="PBADEN" option="OFF"/>
+            <setting name="HFOFST" option="ON"/>
+            <setting name="XINST" option="OFF"/>
+            <setting name="LVP" option="ON"/>
+            <setting name="STVREN" option="OFF"/>
+            <setting name="DEBUG" option="OFF"/>
+            <setting name="CP0" option="ON"/>
+            <setting name="CP1" option="ON"/>
+            <setting name="CPB" option="ON"/>
+            <setting name="CPD" option="ON"/>
+            <setting name="WRT1" option="OFF"/>
+            <setting name="WRT0" option="OFF"/>
+            <setting name="WRTB" option="OFF"/>
+            <setting name="WRTC" option="OFF"/>
+            <setting name="WRTD" option="OFF"/>
+            <setting name="EBTR1" option="OFF"/>
+            <setting name="EBTR0" option="OFF"/>
+            <setting name="EBTRB" option="OFF"/>
+            <setting name="generateConfigBits" option="true"/>
+            <file checksum="3991178289" modified="true" name="mcc.c" path="mcc_generated_files/mcc.c"/>
+            <file checksum="3203473135" modified="true" name="mcc.h" path="mcc_generated_files/mcc.h"/>
+        </manager>
+    </managers>
+    <modules>
+        <module generated="true" mode="DAC" name="DAC" order="0" reloadPin="auto" type="dac_5bit">
+            <initializer comment="" name="Initialize">
+                <setting name="DACOE" option="enabled" register="VREFCON1"/>
+                <setting name="DACEN" option="enabled" register="VREFCON1"/>
+                <setting name="DACLPS" option="neg_ref" register="VREFCON1"/>
+                <setting name="DACNSS" option="VSS" register="VREFCON1"/>
+                <setting name="DACPSS" option="VDD" register="VREFCON1"/>
+                <setting name="DACR" option="0x0" register="DACCON1"/>
+            </initializer>
+            <file checksum="1385993659" modified="false" name="dac.c" path="mcc_generated_files/dac.c"/>
+            <file checksum="2600391653" modified="false" name="dac.h" path="mcc_generated_files/dac.h"/>
+        </module>
+        <module generated="true" mode="GPIO" name="GPIO" order="1" reloadPin="manual" type="GPIO">
+            <resource customName="GPO0" digital="true" direction="INPUT" function="RB0" module="GPIO" name="RB0" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO1" digital="true" direction="INPUT" function="RB1" module="GPIO" name="RB1" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO2" digital="true" direction="INPUT" function="RB2" module="GPIO" name="RB2" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO3" digital="true" direction="INPUT" function="RB3" module="GPIO" name="RB3" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO4" digital="true" direction="INPUT" function="RB4" ioc="0" module="GPIO" name="RB4" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO5" digital="true" direction="INPUT" function="RB5" ioc="0" module="GPIO" name="RB5" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO6" digital="true" direction="INPUT" function="RB6" ioc="0" module="GPIO" name="RB6" start="false" type="pin" wpu="false"/>
+            <resource customName="GPO7" digital="true" direction="INPUT" function="RB7" ioc="0" module="GPIO" name="RB7" start="false" type="pin" wpu="false"/>
+            <resource customName="MAIN_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA0" module="GPIO" name="RA0" start="false" type="pin" wpu="false"/>
+            <resource customName="AUX_NIC_LDO_EN" digital="true" direction="OUTPUT" function="RA1" module="GPIO" name="RA1" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLA_SW1" digital="true" direction="OUTPUT" function="RA6" module="GPIO" name="RA6" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLB_SW1" digital="true" direction="OUTPUT" function="RA7" module="GPIO" name="RA7" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW1" digital="true" direction="OUTPUT" function="RC2" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLA_SW2" digital="true" direction="OUTPUT" function="RC0" module="GPIO" name="RC0" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLB_SW2" digital="true" direction="OUTPUT" function="RC1" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
+            <resource customName="CTLC_SW2" digital="true" direction="OUTPUT" function="RC4" module="GPIO" name="RC4" start="false" type="pin" wpu="false"/>
+        </module>
+        <module generated="true" mode="SPI Master" name="MSSP1" order="2" reloadPin="manual" type="mssp">
+            <initializer comment="" name="Initialize">
+                <setting name="R_nW" option="write_noTX" register="SSP1STAT"/>
+                <setting name="P" option="stopbit_notdetected" register="SSP1STAT"/>
+                <setting name="S" option="startbit_notdetected" register="SSP1STAT"/>
+                <setting name="BF" option="RCinprocess_TXcomplete" register="SSP1STAT"/>
+                <setting name="SMP" option="Sample At Middle" register="SSP1STAT"/>
+                <setting name="UA" option="dontupdate" register="SSP1STAT"/>
+                <setting name="CKE" option="Idle to Active" register="SSP1STAT"/>
+                <setting name="D_nA" option="lastbyte_address" register="SSP1STAT"/>
+                <setting name="SSPEN" option="enabled" register="SSP1CON1"/>
+                <setting name="WCOL" option="no_collision" register="SSP1CON1"/>
+                <setting name="CKP" option="Idle:Low, Active:High" register="SSP1CON1"/>
+                <setting name="SSPM" option="FOSC/4" register="SSP1CON1"/>
+                <setting name="SSPOV" option="no_overflow" register="SSP1CON1"/>
+                <setting name="SSP1ADD" option="0" register="SSP1ADD"/>
+                <additionalSetting name="frequency" option="16.0 MHz"/>
+            </initializer>
+            <setting name="mode" option="false"/>
+            <setting name="SSPI" option="false"/>
+            <setting name="BCLI" option="false"/>
+            <setting name="WriteBufferSize" option="8"/>
+            <setting name="ReadBufferSize" option="8"/>
+            <file checksum="3291043362" modified="false" name="spi1.c" path="mcc_generated_files/spi1.c"/>
+            <file checksum="20367019" modified="false" name="spi1.h" path="mcc_generated_files/spi1.h"/>
+        </module>
+    </modules>
+</configuration>

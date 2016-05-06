@@ -3,6 +3,8 @@
 [d edition pro ]
 [d chip 18LF23K22 ]
 [d frameptr 4065 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 3 0 ]
 "88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
@@ -312,6 +314,19 @@
 [v _main main `(v  1 e 0 0 ]
 {
 "328
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"42
 } 0
 "106 C:\Users\arun.kumar\Desktop\git\Viper\Celtic\CelticEVB03EngMode_2\CelticEVB03EngMode_2\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]

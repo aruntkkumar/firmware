@@ -215,7 +215,7 @@ void main(void) {
         // DAC Output Selection Sequence
         DAC_Step = ((Byte4 << 4) & 0xC0);
         DAC_Step = (DAC_Step | Byte3);
-        DAC_SetOutput(DAC_Step);
+        DAC_SetOutput((DAC_Step/8));
         
         // Main NIC LDO & Aux NIC LDO Power Enable Sequence
         if ((Byte4 & 0x02) == 0x02)

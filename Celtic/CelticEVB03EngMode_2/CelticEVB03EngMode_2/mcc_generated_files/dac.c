@@ -55,8 +55,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
   Section: DAC APIs
  */
 void DAC_Initialize(void) {
-    // DACOE enabled; DACEN enabled; DACLPS neg_ref; DACNSS VSS; DACPSS VDD; 
-    VREFCON1 = 0xA0;
+    // DACOE enabled; DACEN enabled; DACLPS pos_ref; DACNSS VSS; DACPSS VDD; 
+    VREFCON1 = 0xE0;
     // DACR 0x0; 
     DACCON1 = 0x00;
 }

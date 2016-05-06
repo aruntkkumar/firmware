@@ -87,7 +87,7 @@ const uint8_t DATABUSPARK[65]= {0x04, 0x08, 0x10, 0x1C, 0x20, 0x2C, 0x34, 0x38, 
 
 uint8_t Byte1, Byte2, Byte3, Byte4, Byte5, Byte6; // First 6 bytes from RFFE
 uint8_t DAC_Step, Dummy, start = 0;
-/*
+
 void shiftRegister (uint8_t Dummy1, uint8_t Dummy2, uint8_t y){
     for (uint8_t m=0; m<y; m++){
         SCLK_MIPI_SetHigh();
@@ -118,24 +118,28 @@ void MIPI (uint8_t a, uint8_t b){
     shiftRegister (DATA[a],DATA[b],8);                                  //SSC1 & SSC2
     shiftRegister (PARITY[a],PARITY[b],2);                              //Parity + Bus Park
 }
-*/
+/*
 void MIPISPI (uint8_t a, uint8_t b){
-    //RB6PPS = 0x00; // RB6->LATB6                                        //First SCC should have UID as Low            
+    //RB6PPS = 0x00; // RB6->LATB6                                        //First SCC should have UID as Low
+    SSP1CON1bits.SSPEN1 = 0;
     SDO1_SetHigh();
     SDO1_SetLow();
+    SSP1CON1bits.SSPEN1 = 1;
     //RB6PPS = 0x11; // RB6->MSSP:SDO
     SPI1_Exchange8bit(SLAVEWRITEADD[0]);
     SPI1_Exchange8bit(ADDRESSDATA[a]);
     SPI1_Exchange8bit(DATABUSPARK[a]);
     //RB6PPS = 0x00; // RB6->LATB6                                        //Second SCC should have UID as High              
+    SSP1CON1bits.SSPEN1 = 0;
     SDO1_SetHigh();
     SDO1_SetLow();
+    SSP1CON1bits.SSPEN1 = 1;
     //RB6PPS = 0x11; // RB6->MSSP:SDO
     SPI1_Exchange8bit(SLAVEWRITEADD[1]);
     SPI1_Exchange8bit(ADDRESSDATA[b]);
     SPI1_Exchange8bit(DATABUSPARK[b]);    
 }
-
+*/
     //                      Main application
                          
 void main(void) {
@@ -188,25 +192,25 @@ void main(void) {
         INTCONbits.RBIF = 0;}
     while (1) {
         //First Byte
-        while ((PORTC & 0xC0) != 0xC0) {
+        while ((PORTB & 0xC0) != 0xC0) {
         }
-        Byte1 = PORTC;                                              //Sequence starts for Bits 7&6=1&1       
+        Byte1 = PORTB;                                              //Sequence starts for Bits 7&6=1&1       
         //Third Byte (Ignores the second byte, which is for SW3 & SW4)
-        while ((PORTC & 0xC0) != 0x80) {
+        while ((PORTB & 0xC0) != 0x80) {
         }
-        Byte3 = PORTC & 0x3F;                                       //Sequence when 7&6 bits toggles (1 0). DAC(Last 6 bits)
+        Byte3 = PORTB & 0x3F;                                       //Sequence when 7&6 bits toggles (1 0). DAC(Last 6 bits)
         //Fourth Byte
-        while ((PORTC & 0xC0) != 0x40) {
+        while ((PORTB & 0xC0) != 0x40) {
         }
-        Byte4 = PORTC & 0x3F;                                       //Sequence when 7&6 bits toggles (0 1). X X DAC(First 2 bits) MAIN_NIC_LDO_EN AUX_NIC_LDO_EN
+        Byte4 = PORTB & 0x3F;                                       //Sequence when 7&6 bits toggles (0 1). X X DAC(First 2 bits) MAIN_NIC_LDO_EN AUX_NIC_LDO_EN
         //Fifth Byte
-        while ((PORTC & 0x80) != 0x80) {
+        while ((PORTB & 0x80) != 0x80) {
         }
-        Byte5 = PORTC & 0x7F;                                         //Sequence when Bit 7 toggles (1). SSC1 (7 bits; in case of state 64: 1000000)
+        Byte5 = PORTB & 0x7F;                                         //Sequence when Bit 7 toggles (1). SSC1 (7 bits; in case of state 64: 1000000)
         //Sixth Byte
-        while ((PORTC & 0x80) != 0x00) {
+        while ((PORTB & 0x80) != 0x00) {
         }
-        Byte6 = PORTC & 0x7F;                                         //Sequence when Bit 7 toggles (0). SSC2
+        Byte6 = PORTB & 0x7F;                                         //Sequence when Bit 7 toggles (0). SSC2
         
         // DAC Output Selection Sequence
         DAC_Step = ((Byte4 << 4) & 0xC0);
@@ -224,8 +228,8 @@ void main(void) {
             AUX_NIC_LDO_EN_SetLow();
         
         // MIPI Clock and Data Generation (SSC1,SSC2), Add more SSC values to function in case of more SSCs        
-        // MIPI(Byte5, Byte6);
-        MIPISPI(Byte5, Byte6);
+        MIPI(Byte5, Byte6);
+        // MIPISPI(Byte5, Byte6);
         
         // RF Switch Selection Sequence
         // RF SW1

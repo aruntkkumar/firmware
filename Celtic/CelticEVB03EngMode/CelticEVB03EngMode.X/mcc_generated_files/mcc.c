@@ -107,7 +107,7 @@ void SYSTEM_Initialize(void) {
     OSCILLATOR_Initialize();
     PIN_MANAGER_Initialize();
     DAC_Initialize();
-    SPI1_Initialize();
+    //SPI1_Initialize();
     INTERRUPT_ON_CHANGE_Initialize();
 }
 

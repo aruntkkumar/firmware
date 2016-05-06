@@ -84,12 +84,12 @@
             <initializer comment="" name="Initialize">
                 <setting name="DACOE" option="enabled" register="VREFCON1"/>
                 <setting name="DACEN" option="enabled" register="VREFCON1"/>
-                <setting name="DACLPS" option="neg_ref" register="VREFCON1"/>
+                <setting name="DACLPS" option="pos_ref" register="VREFCON1"/>
                 <setting name="DACNSS" option="VSS" register="VREFCON1"/>
                 <setting name="DACPSS" option="VDD" register="VREFCON1"/>
                 <setting name="DACR" option="0x0" register="DACCON1"/>
             </initializer>
-            <file checksum="1385993659" modified="false" name="dac.c" path="mcc_generated_files/dac.c"/>
+            <file checksum="1740805591" modified="false" name="dac.c" path="mcc_generated_files/dac.c"/>
             <file checksum="2600391653" modified="false" name="dac.h" path="mcc_generated_files/dac.h"/>
         </module>
         <module generated="true" mode="GPIO" name="GPIO" order="1" reloadPin="manual" type="GPIO">

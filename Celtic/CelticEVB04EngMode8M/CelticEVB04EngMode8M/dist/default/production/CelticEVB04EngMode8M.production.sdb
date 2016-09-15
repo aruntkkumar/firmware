@@ -1,0 +1,169 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF1618 ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"50 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\main.c
+[v _shiftRegister shiftRegister `(v  1 e 0 0 ]
+"65
+[v _MIPI MIPI `(v  1 e 0 0 ]
+"159
+[v _main main `(v  1 e 0 0 ]
+"75 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+"81
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+"92
+[v _INTERRUPT_ON_CHANGE_Initialize INTERRUPT_ON_CHANGE_Initialize `(v  1 e 0 0 ]
+"50 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+[s S81 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"360 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16lf1618.h
+[s S90 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S95 . 1 `S81 1 . 1 0 `S90 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES95  1 e 1 @11 ]
+"501
+[v _PORTC PORTC `VEuc  1 e 1 @14 ]
+"1562
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1611
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1649
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S30 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1999
+[s S37 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S44 . 1 `S30 1 . 1 0 `S37 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES44  1 e 1 @149 ]
+"2119
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2176
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2247
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @154 ]
+"2532
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2581
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2619
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"3219
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3265
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3303
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"4417
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4455
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"7177
+[v _IOCCP IOCCP `VEuc  1 e 1 @919 ]
+[s S113 . 1 `uc 1 IOCCF0 1 0 :1:0 
+`uc 1 IOCCF1 1 0 :1:1 
+`uc 1 IOCCF2 1 0 :1:2 
+`uc 1 IOCCF3 1 0 :1:3 
+`uc 1 IOCCF4 1 0 :1:4 
+`uc 1 IOCCF5 1 0 :1:5 
+`uc 1 IOCCF6 1 0 :1:6 
+`uc 1 IOCCF7 1 0 :1:7 
+]
+"7316
+[u S122 . 1 `S113 1 . 1 0 ]
+[v _IOCCFbits IOCCFbits `VES122  1 e 1 @921 ]
+"26598
+[v _LATA2 LATA2 `VEb  1 e 0 @2146 ]
+"26602
+[v _LATA4 LATA4 `VEb  1 e 0 @2148 ]
+"26606
+[v _LATB4 LATB4 `VEb  1 e 0 @2156 ]
+"26608
+[v _LATB5 LATB5 `VEb  1 e 0 @2157 ]
+"26612
+[v _LATB7 LATB7 `VEb  1 e 0 @2159 ]
+"27 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\main.c
+[v _SLAVEADD SLAVEADD `DCC[2]uc  1 e 2 0 ]
+"29
+[v _DATA DATA `DCC[65]uc  1 e 65 0 ]
+"34
+[v _PARITY PARITY `DCC[65]uc  1 e 65 0 ]
+"47
+[v _Byte1 Byte1 `uc  1 e 1 0 ]
+[v _Byte3 Byte3 `uc  1 e 1 0 ]
+[v _Byte4 Byte4 `uc  1 e 1 0 ]
+[v _Byte5 Byte5 `uc  1 e 1 0 ]
+"48
+[v _start start `uc  1 e 1 0 ]
+"159
+[v _main main `(v  1 e 0 0 ]
+{
+"254
+} 0
+"75 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+{
+"79
+} 0
+"50 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+{
+"68
+} 0
+"81 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+{
+"90
+} 0
+"92
+[v _INTERRUPT_ON_CHANGE_Initialize INTERRUPT_ON_CHANGE_Initialize `(v  1 e 0 0 ]
+{
+"99
+} 0
+"65 C:\Users\arun.kumar\Desktop\git_show\firmware\Celtic\CelticEVB04EngMode8M\CelticEVB04EngMode8M\main.c
+[v _MIPI MIPI `(v  1 e 0 0 ]
+{
+[v MIPI@a a `uc  1 a 1 wreg ]
+[v MIPI@a a `uc  1 a 1 wreg ]
+[v MIPI@a a `uc  1 a 1 5 ]
+"79
+} 0
+"50
+[v _shiftRegister shiftRegister `(v  1 e 0 0 ]
+{
+[v shiftRegister@Dummy1 Dummy1 `uc  1 a 1 wreg ]
+"51
+[v shiftRegister@m m `uc  1 a 1 2 ]
+"50
+[v shiftRegister@Dummy1 Dummy1 `uc  1 a 1 wreg ]
+[v shiftRegister@y y `uc  1 p 1 0 ]
+[v shiftRegister@Dummy1 Dummy1 `uc  1 a 1 3 ]
+"63
+} 0

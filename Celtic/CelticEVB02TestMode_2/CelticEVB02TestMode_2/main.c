@@ -53,30 +53,31 @@ const uint8_t DATABUSPARK[65]= {0x04, 0x08, 0x10, 0x1C, 0x20, 0x2C, 0x34, 0x38, 
                                 0x84, 0x88, 0x90, 0x9C, 0xA0, 0xAC, 0xB4, 0xB8, 0xC0, 0xCC, 0xD4, 0xD8, 0xE4, 0xE8, 0xF0, 0xFC,
                                 0x04};          // D4 D3 D2 D1 D0 P B 0
 
-uint8_t Byte1, Byte2, Byte3, Byte4, Byte5, Byte6; // First 6 bytes from RFFE
+uint8_t Byte1, Byte2, Byte3, Byte4, Byte5, Byte6, Byte7, Byte8; // First 6 bytes from RFFE
 uint8_t DAC_Step, Dummy, start = 0;
 /*
 asm("global _my_isr");
 void my_isr(void) @ 0x0004
 {
+    IOCCFbits.IOCCF7 = 0;
+    //IOCCFbits.IOCCF6 = 0;
+    //INTCONbits.GIE = 1;
+    if ((RC7==1) && (RC6==1)){
     asm("pagesel foobar");
     asm("goto foobar");
+    }else
+        return;
 }
 */
+
 void interrupt ISR (void);
 void interrupt ISR (void) {    //GIE and PIE bits are enabled at the start of the main()
     if (RC7 == 1 && RC6==1) {
-        for(int i=0; i<4; i++){
-            MAIN_NIC_LDO_EN_SetHigh(); //0: OFF / MCM sleep mode
-            AUX_NIC_LDO_EN_SetHigh();
-            MAIN_NIC_LDO_EN_SetLow(); //0: OFF / MCM sleep mode
-            AUX_NIC_LDO_EN_SetLow();        
-        }
-        IOCCFbits.IOCCF7 = 0;
-        IOCCFbits.IOCCF6 = 0;
+        asm("pagesel foobar");
+        asm("goto foobar");
     }
     else
-        SLEEP();
+        return;
 }
 /*
 void shiftRegister (uint8_t Dummy1, uint8_t Dummy2, uint8_t y){
@@ -177,7 +178,7 @@ void ConfigureShiftRegister(void){
 void main(void) {
     //if (INTCONbits.IOCIF)
     //goto reset;
-    if (start == 1) goto reset;
+    //if (start == 1) goto reset;
     // initialize the device
     SYSTEM_Initialize();
     DAC1_SetOutput(0);      //DAC already initialised to ZERO
@@ -190,25 +191,33 @@ void main(void) {
     CTLB_SW1_SetLow();
     CTLA_SW2_SetLow();
     CTLB_SW2_SetLow();
-    SLEEP();
-    reset:
-    start = 1;
-    //if (IOCCFbits.IOCCF7 == 0) {     //To enable SLEEP mode after powering up
-    //    SLEEP();}
-    //else    {    
-    //    IOCCFbits.IOCCF7 = 0;}
-    //asm("foobar:");
+    //reset:
+    //start = 1;
+    //SLEEP();
+    if (IOCCFbits.IOCCF7 == 0) {     //To enable SLEEP mode after powering up
+        SLEEP();}
+    else    {    
+        IOCCFbits.IOCCF7 = 0;}
+    asm("foobar:");
+    /*
+    MAIN_NIC_LDO_EN_SetHigh();
+    asm("NOP");
+    MAIN_NIC_LDO_EN_SetLow();
     IOCCFbits.IOCCF7 = 0;
     IOCCFbits.IOCCF6 = 0;
+    INTCONbits.GIE = 1;
     while(1){
     SLEEP();
-    }
-    //INTCONbits.GIE = 1;
+    }*/
+    //
     while (1) {
+        //INTCONbits.GIE = 1;
+        //INTCONbits.IOCIE = 0;
         //First Byte
         while ((PORTC & 0xC0) != 0xC0) {
         }
-        Byte1 = PORTC & 0x3F;                                              //Sequence starts for Bits 7&6=1&1       
+        Byte1 = PORTC & 0x3F;                                              //Sequence starts for Bits 7&6=1&1
+        //IOCCFbits.IOCCF7 = 0;
         //Second Byte
         while ((PORTC & 0xC0) != 0x40) {
         }
@@ -217,6 +226,7 @@ void main(void) {
         while ((PORTC & 0xC0) != 0x80) {
         }
         Byte3 = PORTC & 0x3F;                                       //Sequence when 7&6 bits toggles (1 0). DAC(Last 6 bits)
+        //IOCCFbits.IOCCF7 = 0;
         //Fourth Byte
         while ((PORTC & 0xC0) != 0x40) {
         }
@@ -225,16 +235,28 @@ void main(void) {
         while ((PORTC & 0xC0) != 0x80) {
         }
         Byte5 = PORTC & 0x3F;                                       //Sequence when Bit 7 toggles (1). SSC1 (7 bits; in case of state 64: 1000000)
+        //IOCCFbits.IOCCF7 = 0;
         //Sixth Byte
-        //while ((PORTC & 0x80) != 0x00) {
-        //}
-        //Byte6 = PORTC & 0x7F;                                       //Sequence when Bit 7 toggles (0). SSC2
-        
+        while ((PORTC & 0xC0) != 0x40) {
+        }
+        Byte6 = PORTC & 0x3F;                                       //Sequence when Bit 7 toggles (0). SSC2
+        //Seventh Byte
+        while ((PORTC & 0xC0) != 0x80) {
+        }
+        Byte7 = PORTC & 0x3F;                                       //Sequence when Bit 7 toggles (1). SSC1 (7 bits; in case of state 64: 1000000)
+        //Eighth Byte
+        while ((PORTC & 0xC0) != 0x40) {
+        }
+        Byte8 = PORTC & 0x3F;                                       //Sequence when Bit 7 toggles (0). SSC2
+        //INTCONbits.IOCIE = 1;
+        IOCCFbits.IOCCF7 = 0;
+        //IOCCFbits.IOCCF6 = 0;
+        INTCONbits.GIE = 1;
         // DAC Output Selection Sequence
-        if (((Byte1 & 0x30) != 0x00) && ((Byte1 & 0x0C) != 0x00))   //ANT_SEL>0 & TRX_SEL>0 (DAC Stage)
-            DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);
-        else
-            DAC1_SetOutput(0);
+        if (((Byte1 & 0x30) != 0x00) && ((Byte1 & 0x0C) != 0x00)){   //ANT_SEL>0 & TRX_SEL>0 (DAC Stage)
+            DAC1_SetOutput(DacOutput[(Byte1 & 0x03)]);}
+        else{
+            DAC1_SetOutput(0);}
         
         // Main NIC LDO & Aux NIC LDO Power Enable Sequence
         if ((Byte1 & 0x3C) == 0x20) {
@@ -303,7 +325,9 @@ void main(void) {
             default:
                 break;
         }
-        //INTCONbits.GIE = 0;
+        INTCONbits.GIE = 0;
+        IOCCFbits.IOCCF7 = 0;
+        //IOCCFbits.IOCCF6 = 0;        
         SLEEP();
     }
 }

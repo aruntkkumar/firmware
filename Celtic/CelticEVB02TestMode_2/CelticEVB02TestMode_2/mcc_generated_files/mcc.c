@@ -96,9 +96,9 @@ void INTERRUPT_ON_CHANGE_Initialize (void) {
     IOCCFbits.IOCCF7 = 0;
     IOCCFbits.IOCCF6 = 0;
     //IOCCF = ((IOCCF^0xFF)&IOCCF);
-    INTCONbits.GIE = 1;
+    //INTCONbits.GIE = 1;
     INTCONbits.IOCIE = 1;
-    IOCCP = 0xC0;
+    IOCCP = 0x80;
 }
 
 /**

@@ -1,0 +1,216 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F23K22 ]
+[d frameptr 4065 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"51 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\main.c
+[v _switchstate switchstate `(v  1 e 0 0 ]
+"77
+[v _main main `(v  1 e 0 0 ]
+"56 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 0 0 ]
+"76
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"91
+[v _EUSART1_Write EUSART1_Write `(v  1 e 0 0 ]
+"106 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+"112
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+"50 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"93
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"142
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+"2584
+[v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+"7532
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"7664
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"7796
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"7928
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"8149
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"8370
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"8611
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S131 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"9057
+[s S139 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S144 . 1 `S131 1 . 1 0 `S139 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES144  1 e 1 @3998 ]
+"9904
+[v _RC1STA RC1STA `VEuc  1 e 1 @4011 ]
+[s S161 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"10247
+[s S170 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S173 . 1 `uc 1 RX9D1 1 0 :1:0 
+`uc 1 OERR1 1 0 :1:1 
+`uc 1 FERR1 1 0 :1:2 
+`uc 1 ADDEN1 1 0 :1:3 
+`uc 1 CREN1 1 0 :1:4 
+`uc 1 SREN1 1 0 :1:5 
+`uc 1 RX91 1 0 :1:6 
+`uc 1 SPEN1 1 0 :1:7 
+]
+[s S182 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S185 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S188 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[s S190 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[u S193 . 1 `S161 1 . 1 0 `S170 1 . 1 0 `S173 1 . 1 0 `S182 1 . 1 0 `S185 1 . 1 0 `S188 1 . 1 0 `S190 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES193  1 e 1 @4011 ]
+"10365
+[v _TX1STA TX1STA `VEuc  1 e 1 @4012 ]
+"10736
+[v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
+"10813
+[v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
+"10890
+[v _SPBRG1 SPBRG1 `VEuc  1 e 1 @4015 ]
+"10967
+[v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @4016 ]
+"11938
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @4024 ]
+"15899
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"15955
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S31 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"16765
+[s S34 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S43 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S46 . 1 `S31 1 . 1 0 `S34 1 . 1 0 `S43 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES46  1 e 1 @4081 ]
+"49 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\main.c
+[v _avgrssi avgrssi `[9]uc  1 e 9 0 ]
+[v _avgquality avgquality `[9]uc  1 e 9 0 ]
+[v _rssimax rssimax `uc  1 e 1 0 ]
+[v _qualitymax qualitymax `uc  1 e 1 0 ]
+[v _rssiindex rssiindex `[9]uc  1 e 9 0 ]
+[v _qualityindex qualityindex `[9]uc  1 e 9 0 ]
+[v _index index `uc  1 e 1 0 ]
+"77
+[v _main main `(v  1 e 0 0 ]
+{
+"166
+[v main@j_125 j `uc  1 a 1 4 ]
+"115
+[v main@j j `uc  1 a 1 3 ]
+"165
+[v main@i_124 i `uc  1 a 1 6 ]
+"147
+[v main@i_123 i `uc  1 a 1 8 ]
+"127
+[v main@i_122 i `uc  1 a 1 7 ]
+"114
+[v main@i i `uc  1 a 1 5 ]
+"180
+} 0
+"51
+[v _switchstate switchstate `(v  1 e 0 0 ]
+{
+[v switchstate@a a `uc  1 a 1 wreg ]
+[v switchstate@a a `uc  1 a 1 wreg ]
+[v switchstate@a a `uc  1 a 1 0 ]
+"75
+} 0
+"106 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+{
+"110
+} 0
+"50 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+{
+"67
+} 0
+"112 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+{
+"121
+} 0
+"56 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 0 0 ]
+{
+"74
+} 0
+"91
+[v _EUSART1_Write EUSART1_Write `(v  1 e 0 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 0 ]
+"96
+} 0
+"76
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+{
+"89
+} 0

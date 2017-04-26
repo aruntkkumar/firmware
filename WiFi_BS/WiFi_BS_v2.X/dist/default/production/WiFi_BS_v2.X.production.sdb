@@ -26,6 +26,8 @@
 "51 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\main.c
 [v _switchstate switchstate `(v  1 e 0 0 ]
 "77
+[v _getvalues getvalues `(v  1 e 0 0 ]
+"85
 [v _main main `(v  1 e 0 0 ]
 "56 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 0 0 ]
@@ -149,29 +151,27 @@
 [u S46 . 1 `S31 1 . 1 0 `S34 1 . 1 0 `S43 1 . 1 0 ]
 [v _INTCON2bits INTCON2bits `VES46  1 e 1 @4081 ]
 "49 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\main.c
-[v _avgrssi avgrssi `[9]uc  1 e 9 0 ]
-[v _avgquality avgquality `[9]uc  1 e 9 0 ]
+[v _rssi rssi `[9]uc  1 e 9 0 ]
+[v _quality quality `[9]uc  1 e 9 0 ]
 [v _rssimax rssimax `uc  1 e 1 0 ]
 [v _qualitymax qualitymax `uc  1 e 1 0 ]
 [v _rssiindex rssiindex `[9]uc  1 e 9 0 ]
 [v _qualityindex qualityindex `[9]uc  1 e 9 0 ]
 [v _index index `uc  1 e 1 0 ]
-"77
+"85
 [v _main main `(v  1 e 0 0 ]
 {
-"166
-[v main@j_125 j `uc  1 a 1 4 ]
-"115
-[v main@j j `uc  1 a 1 3 ]
-"165
-[v main@i_124 i `uc  1 a 1 6 ]
-"147
+"199
+[v main@j j `uc  1 a 1 6 ]
+"198
+[v main@i_124 i `uc  1 a 1 9 ]
+"179
 [v main@i_123 i `uc  1 a 1 8 ]
-"127
+"158
 [v main@i_122 i `uc  1 a 1 7 ]
-"114
+"132
 [v main@i i `uc  1 a 1 5 ]
-"180
+"213
 } 0
 "51
 [v _switchstate switchstate `(v  1 e 0 0 ]
@@ -180,6 +180,27 @@
 [v switchstate@a a `uc  1 a 1 wreg ]
 [v switchstate@a a `uc  1 a 1 0 ]
 "75
+} 0
+"77
+[v _getvalues getvalues `(v  1 e 0 0 ]
+{
+[v getvalues@b b `uc  1 a 1 wreg ]
+[v getvalues@b b `uc  1 a 1 wreg ]
+[v getvalues@b b `uc  1 a 1 2 ]
+"83
+} 0
+"91 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Write EUSART1_Write `(v  1 e 0 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 0 ]
+"96
+} 0
+"76
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+{
+"89
 } 0
 "106 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
@@ -200,17 +221,4 @@
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 0 0 ]
 {
 "74
-} 0
-"91
-[v _EUSART1_Write EUSART1_Write `(v  1 e 0 0 ]
-{
-[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART1_Write@txData txData `uc  1 a 1 0 ]
-"96
-} 0
-"76
-[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
-{
-"89
 } 0

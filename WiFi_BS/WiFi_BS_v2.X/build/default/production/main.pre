@@ -9051,7 +9051,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 
 # 49 "main.c"
-uint8_t rssi[10], quality[10], avgrssi[9], avgquality[9], rssimax, qualitymax, rssiindex[9] = {0,0,0,0,0,0,0,0,0}, qualityindex[9] = {0,0,0,0,0,0,0,0,0}, index;
+uint8_t rssi[9], quality[9], rssimax, qualitymax, rssiindex[9] = {0,0,0,0,0,0,0,0,0}, qualityindex[9] = {0,0,0,0,0,0,0,0,0}, index;
 
 void switchstate(uint8_t a) {
 switch (a) {
@@ -9079,69 +9079,88 @@ break;
 return;
 }
 
+void getvalues (uint8_t b) {
+EUSART1_Write(0x52);
+rssi[b] += EUSART1_Read();
+EUSART1_Write(0x4c);
+quality[b] += EUSART1_Read();
+return;
+}
+
 void main(void) {
 
 SYSTEM_Initialize();
 
-# 109
+# 117
 while (1) {
 start:
 while (EUSART1_Read() != 0xFF) {
 
 }
-for (uint8_t i=0; i<9; i++) {
-for (uint8_t j=0; j<10; j++) {
-switchstate(i+1);
-EUSART1_Write(0x52);
 
-avgrssi[i] += EUSART1_Read();
-EUSART1_Write(0x4c);
+# 132
+for (uint8_t i=0; i<5; i++) {
+switch (i) {
+case 0:
+switchstate(5);
+break;
+case 1:
+switchstate(4);
+break;
+case 2:
+switchstate(6);
+break;
+case 3:
+switchstate(2);
+break;
+case 4:
+switchstate(8);
+break;
+default:
+break;
+}
+_delay((unsigned long)((25)*(64000000/4000000.0)));
+getvalues(i);
+}
 
-avgquality[i] += EUSART1_Read();
-}
-}
-rssimax = avgrssi[0];
+rssimax = rssi[0];
 index = 0;
-for (uint8_t i=0; i<9; i++) {
-if (avgrssi[i] < rssimax) {
+for (uint8_t i=0; i<5; i++) {
+if (rssi[i] < rssimax) {
 
 rssiindex[0] = i+1;
 rssiindex[1] = 0;
 rssiindex[2] = 0;
 rssiindex[3] = 0;
 rssiindex[4] = 0;
-rssiindex[5] = 0;
-rssiindex[6] = 0;
-rssiindex[7] = 0;
-rssiindex[8] = 0;
-rssimax = avgrssi[i];
-} else if (avgrssi[i] == rssimax) {
+
+# 171
+} else if (rssi[i] == rssimax) {
 rssiindex[index] = i+1;
 index++;
 }
 }
-qualitymax = avgquality[0];
+
+qualitymax = quality[0];
 index = 0;
-for (uint8_t i=0; i<9; i++) {
-if (avgquality[i] > qualitymax) {
+for (uint8_t i=0; i<5; i++) {
+if (quality[i] > qualitymax) {
 
 qualityindex[0] = i+1;
 qualityindex[1] = 0;
 qualityindex[2] = 0;
 qualityindex[3] = 0;
 qualityindex[4] = 0;
-qualityindex[5] = 0;
-qualityindex[6] = 0;
-qualityindex[7] = 0;
-qualityindex[8] = 0;
-qualitymax = avgquality[i];
-} else if (avgquality[i] == qualitymax) {
+
+# 192
+} else if (quality[i] == qualitymax) {
 qualityindex[index] = i+1;
 index++;
 }
 }
-for (uint8_t i=0; i<9; i++) {
-for (uint8_t j=0; j<9; j++) {
+
+for (uint8_t i=0; i<5; i++) {
+for (uint8_t j=0; j<5; j++) {
 if ((rssiindex[i] == qualityindex[j]) && (rssiindex[i] !=0) && (qualityindex[j] !=0)) {
 switchstate(i);
 EUSART1_Write(0x53);

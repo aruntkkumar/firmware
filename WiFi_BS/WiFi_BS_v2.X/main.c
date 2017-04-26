@@ -46,7 +46,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include "mcc_generated_files/mcc.h"
 
-uint8_t rssi[10], quality[10], avgrssi[9], avgquality[9], rssimax, qualitymax, rssiindex[9] = {0,0,0,0,0,0,0,0,0}, qualityindex[9] = {0,0,0,0,0,0,0,0,0}, index;
+uint8_t rssi[9], quality[9], rssimax, qualitymax, rssiindex[9] = {0,0,0,0,0,0,0,0,0}, qualityindex[9] = {0,0,0,0,0,0,0,0,0}, index;
 
 void switchstate(uint8_t a) {
     switch (a) {
@@ -74,10 +74,18 @@ void switchstate(uint8_t a) {
     return;
 }
 
+void getvalues (uint8_t b) {
+        EUSART1_Write(0x52);
+        rssi[b] += EUSART1_Read();
+        EUSART1_Write(0x4c);
+        quality[b] += EUSART1_Read();
+        return;
+}
+
 void main(void) {
     // Initialize the device
     SYSTEM_Initialize();
-
+    
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
     // Use the following macros to:
@@ -107,63 +115,88 @@ void main(void) {
     //INTERRUPT_PeripheralInterruptDisable();
 
     while (1) {
-        start:
+    start:
         while (EUSART1_Read() != 0xFF) {
             //DO NOTHING. WAITING FOR THE TRIGGER TO START
         }
-        for (uint8_t i=0; i<9; i++) {
-            for (uint8_t j=0; j<10; j++) {   //j represents the repetition count
-                switchstate(i+1);
-                EUSART1_Write(0x52);
-                //rssi[j] = EUSART1_Read();
-                avgrssi[i] += EUSART1_Read();
-                EUSART1_Write(0x4c);
-                //quality[j] = EUSART1_Read();
-                avgquality[i] += EUSART1_Read();
+        //for (uint8_t i=0; i<9; i++) {
+        //    for (uint8_t j=0; j<10; j++) {   //j represents the repetition count
+        //        switchstate(i+1);
+        //        __delay_us(5);
+        //        EUSART1_Write(0x52);
+        //        rssi[i] += EUSART1_Read();
+        //        EUSART1_Write(0x4c);
+        //        quality[i] += EUSART1_Read();
+        //    }
+        //}
+        for (uint8_t i=0; i<5; i++) {
+            switch (i) {
+                case 0:
+                    switchstate(5);
+                    break;
+                case 1:
+                    switchstate(4);
+                    break;
+                case 2:
+                    switchstate(6);
+                    break;
+                case 3:
+                    switchstate(2);
+                    break;
+                case 4:
+                    switchstate(8);
+                    break;
+                default:
+                    break;
             }
+            __delay_us(25);
+            getvalues(i);            
         }
-        rssimax = avgrssi[0];
+
+        rssimax = rssi[0];
         index = 0;
-        for (uint8_t i=0; i<9; i++) {
-            if (avgrssi[i] < rssimax) {
+        for (uint8_t i=0; i<5; i++) {
+            if (rssi[i] < rssimax) {
                 //rssiindex[9] = {0,0,0,0,0,0,0,0,0};
                 rssiindex[0] = i+1;
                 rssiindex[1] = 0;
                 rssiindex[2] = 0;
                 rssiindex[3] = 0;
                 rssiindex[4] = 0;
-                rssiindex[5] = 0;
-                rssiindex[6] = 0;
-                rssiindex[7] = 0;
-                rssiindex[8] = 0;
-                rssimax = avgrssi[i];
-            } else if (avgrssi[i] == rssimax) {
+                //rssiindex[5] = 0;
+                //rssiindex[6] = 0;
+                //rssiindex[7] = 0;
+                //rssiindex[8] = 0;
+                //rssimax = rssi[i];
+            } else if (rssi[i] == rssimax) {
                 rssiindex[index] = i+1;
                 index++;
             }
         }
-        qualitymax = avgquality[0];
+        
+        qualitymax = quality[0];
         index = 0;
-        for (uint8_t i=0; i<9; i++) {
-            if (avgquality[i] > qualitymax) {
+        for (uint8_t i=0; i<5; i++) {
+            if (quality[i] > qualitymax) {
                 //qualityindex[9] = {0,0,0,0,0,0,0,0,0};
                 qualityindex[0] = i+1;
                 qualityindex[1] = 0;
                 qualityindex[2] = 0;
                 qualityindex[3] = 0;
                 qualityindex[4] = 0;
-                qualityindex[5] = 0;
-                qualityindex[6] = 0;
-                qualityindex[7] = 0;
-                qualityindex[8] = 0;
-                qualitymax = avgquality[i];
-            } else if (avgquality[i] == qualitymax) {
+                //qualityindex[5] = 0;
+                //qualityindex[6] = 0;
+                //qualityindex[7] = 0;
+                //qualityindex[8] = 0;
+                //qualitymax = quality[i];
+            } else if (quality[i] == qualitymax) {
                 qualityindex[index] = i+1;
                 index++;
             }
         }
-        for (uint8_t i=0; i<9; i++) {
-            for (uint8_t j=0; j<9; j++) {
+        
+        for (uint8_t i=0; i<5; i++) {
+            for (uint8_t j=0; j<5; j++) {
                 if ((rssiindex[i] == qualityindex[j]) && (rssiindex[i] !=0) && (qualityindex[j] !=0)) {
                     switchstate(i);
                     EUSART1_Write(0x53);

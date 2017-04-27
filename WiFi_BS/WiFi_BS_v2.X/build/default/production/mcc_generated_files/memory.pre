@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/memory.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -8936,11 +8936,8 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 191 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize(void);
-
-# 203
-void PIN_MANAGER_IOC(void);
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdbool.h"
+typedef unsigned char bool;
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
 typedef signed char int8_t;
@@ -9032,18 +9029,6 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdbool.h"
-typedef unsigned char bool;
-
-# 95 "mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-
-# 115
-uint8_t EUSART1_Read(void);
-
-# 135
-void EUSART1_Write(uint8_t txData);
-
 # 99 "mcc_generated_files/memory.h"
 uint8_t FLASH_ReadByte(uint32_t flashAddr);
 
@@ -9065,170 +9050,128 @@ void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
 # 275
 uint8_t DATAEE_ReadByte(uint8_t bAdd);
 
-# 69 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
+# 58 "mcc_generated_files/memory.c"
+uint8_t FLASH_ReadByte(uint32_t flashAddr) {
+TBLPTRU = (uint8_t) ((flashAddr & 0x00FF0000) >> 16);
+TBLPTRH = (uint8_t) ((flashAddr & 0x0000FF00) >> 8);
+TBLPTRL = (uint8_t) (flashAddr & 0x000000FF);
 
-# 82
-void OSCILLATOR_Initialize(void);
+asm("TBLRD");
 
-# 49 "main.c"
-uint8_t rssi[9], quality[9], rssimax, qualitymax, rssiindex[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0}, qualityindex[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0}, index;
-
-void switchstate(uint8_t a) {
-switch (a) {
-case 1:
-index = 1;
-break;
-case 2:
-index = 2;
-break;
-case 3:
-index = 3;
-break;
-case 4:
-index = 4;
-break;
-case 5:
-index = 5;
-break;
-case 6:
-index = 6;
-break;
-case 7:
-index = 7;
-break;
-case 8:
-index = 8;
-break;
-case 9:
-index = 9;
-break;
-default:
-break;
-}
-return;
+return (TABLAT);
 }
 
-void getvalues(uint8_t b) {
-while (EUSART1_Read() != 0x52) {
-
+uint16_t FLASH_ReadWord(uint32_t flashAddr) {
+return ((((uint16_t) FLASH_ReadByte(flashAddr + 1)) << 8) | (FLASH_ReadByte(flashAddr)));
 }
 
-rssi[b] = EUSART1_Read();
-while (EUSART1_Read() != 0x4c) {
+void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte) {
+uint32_t blockStartAddr = (uint32_t) (flashAddr & ((8192 - 1) ^ (64 - 1)));
+uint8_t offset = (uint8_t) (flashAddr & (64 - 1));
+uint8_t i;
 
+
+for (i = 0; i < 64; i++) {
+flashRdBufPtr[i] = FLASH_ReadByte((blockStartAddr + i));
 }
 
-quality[b] = EUSART1_Read();
-return;
+
+flashRdBufPtr[offset] = byte;
+
+
+FLASH_WriteBlock(blockStartAddr, flashRdBufPtr);
 }
 
-void normaloperation(uint8_t c) {
-switch (c) {
-case 0:
-switchstate(5);
-break;
-case 1:
-switchstate(4);
-break;
-case 2:
-switchstate(6);
-break;
-case 3:
-switchstate(2);
-break;
-case 4:
-switchstate(8);
-break;
-default:
-break;
-}
-return;
+int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr) {
+uint32_t blockStartAddr = (uint32_t) (writeAddr & ((8192 - 1) ^ (64 - 1)));
+uint8_t GIEBitValue = INTCONbits.GIE;
+uint8_t i;
+
+
+if (writeAddr != blockStartAddr) {
+return -1;
 }
 
-void main(void) {
 
-SYSTEM_Initialize();
-if ((DATAEE_ReadByte(0x00) != 0xFF) || (DATAEE_ReadByte(0x00) != 0x00)) {
-switchstate(DATAEE_ReadByte(0x00));
+FLASH_EraseBlock(writeAddr);
+
+
+TBLPTRU = (uint8_t) ((writeAddr & 0x00FF0000) >> 16);
+TBLPTRH = (uint8_t) ((writeAddr & 0x0000FF00) >> 8);
+TBLPTRL = (uint8_t) (writeAddr & 0x000000FF);
+
+
+for (i = 0; i < 64; i++) {
+TABLAT = flashWrBufPtr[i];
+
+if (i == (64 - 1)) {
+asm("TBLWT");
 } else {
-switchstate(5);
-}
-
-# 159
-while (1) {
-start:
-while (EUSART1_Read() != 0xFF) {
-
-}
-while (1) {
-if (EUSART1_Read() == 0x4E) {
-
-# 176
-for (uint8_t i = 0; i < 5; i++) {
-normaloperation(i);
-_delay((unsigned long)((25)*(64000000/4000000.0)));
-getvalues(i);
-}
-
-rssimax = rssi[0];
-index = 0;
-for (uint8_t i = 0; i < 5; i++) {
-if (rssi[i] < rssimax) {
-rssiindex[0] = i + 1;
-rssiindex[1] = 0;
-rssiindex[2] = 0;
-rssiindex[3] = 0;
-rssiindex[4] = 0;
-
-# 196
-} else if (rssi[i] == rssimax) {
-rssiindex[index] = i + 1;
-index++;
+asm("TBLWTPOSTINC");
 }
 }
 
-qualitymax = quality[0];
-index = 0;
-for (uint8_t i = 0; i < 5; i++) {
-if (quality[i] > qualitymax) {
-qualityindex[0] = i + 1;
-qualityindex[1] = 0;
-qualityindex[2] = 0;
-qualityindex[3] = 0;
-qualityindex[4] = 0;
+EECON1bits.EEPGD = 1;
+EECON1bits.CFGS = 0;
+EECON1bits.WREN = 1;
+INTCONbits.GIE = 0;
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
 
-# 216
-} else if (quality[i] == qualitymax) {
-qualityindex[index] = i + 1;
-index++;
-}
+EECON1bits.WREN = 0;
+INTCONbits.GIE = GIEBitValue;
+
+return 0;
 }
 
-for (uint8_t i = 0; i < 5; i++) {
-for (uint8_t j = 0; j < 5; j++) {
-if ((rssiindex[i] == qualityindex[j]) && (rssiindex[i] != 0) && (qualityindex[j] != 0)) {
-normaloperation((rssiindex[i] - 1));
-EUSART1_Write(0x53);
-_delay((unsigned long)((25)*(64000000/4000000.0)));
-EUSART1_Write(index);
-_delay((unsigned long)((25)*(64000000/4000000.0)));
-goto flash;
-}
-}
-}
-flash:
-DATAEE_WriteByte(0x00, index);
-goto start;
-} else if (EUSART1_Read() == 0x73) {
-while ((EUSART1_Read() != 0x01) || (EUSART1_Read() != 0x02) || (EUSART1_Read() != 0x03) || (EUSART1_Read() != 0x04) || (EUSART1_Read() != 0x05) || (EUSART1_Read() != 0x06) || (EUSART1_Read() != 0x07) || (EUSART1_Read() != 0x08) || (EUSART1_Read() != 0x09)) {
+void FLASH_EraseBlock(uint32_t baseAddr) {
+uint8_t GIEBitValue = INTCONbits.GIE;
 
+TBLPTRU = (uint8_t) ((baseAddr & 0x00FF0000) >> 16);
+TBLPTRH = (uint8_t) ((baseAddr & 0x0000FF00) >> 8);
+TBLPTRL = (uint8_t) (baseAddr & 0x000000FF);
+
+EECON1bits.EEPGD = 1;
+EECON1bits.CFGS = 0;
+EECON1bits.WREN = 1;
+EECON1bits.FREE = 1;
+INTCONbits.GIE = 0;
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+INTCONbits.GIE = GIEBitValue;
 }
-switchstate(RCREG1);
-DATAEE_WriteByte(0x00, index);
-goto start;
+
+# 154
+void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData) {
+uint8_t GIEBitValue = INTCONbits.GIE;
+
+EEADR = (bAdd & 0xFF);
+EEDATA = bData;
+EECON1bits.EEPGD = 0;
+EECON1bits.CFGS = 0;
+EECON1bits.WREN = 1;
+INTCONbits.GIE = 0;
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+
+while (EECON1bits.WR) {
 }
+
+EECON1bits.WREN = 0;
+INTCONbits.GIE = GIEBitValue;
 }
-}
+
+uint8_t DATAEE_ReadByte(uint8_t bAdd) {
+EEADR = (bAdd & 0xFF);
+EECON1bits.CFGS = 0;
+EECON1bits.EEPGD = 0;
+EECON1bits.RD = 1;
+__nop();
+__nop();
+
+return (EEDATA);
 }
 

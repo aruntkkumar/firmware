@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\WiFi_BS_v2.X.production.sym \
   --cmf=dist/default/production\WiFi_BS_v2.X.production.cmf -z -Q18F23K22 \
-  -oC:\Users\ARUN~1.KUM\AppData\Local\Temp\sd4g.2 \
+  -oC:\Users\ARUN~1.KUM\AppData\Local\Temp\sjm0.2 \
   -Mdist/default/production/WiFi_BS_v2.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-01ffh -pstack=STACK -ACODE=00h-01FFFh -ACONST=00h-01FFFh \
   -ASMALLCONST=0200h-02FFhx30 -AMEDIUMCONST=0200h-01FFFh -ACOMRAM=01h-05Fh \
@@ -20,7 +20,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ARUN~1.KUM\AppData\Local\Temp\sd4g.obj \
+  C:\Users\ARUN~1.KUM\AppData\Local\Temp\sjm0.obj \
   dist/default/production\WiFi_BS_v2.X.production.obj 
 
 Object code version is 3.11
@@ -33,39 +33,45 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ARUN~1.KUM\AppData\Local\Temp\sd4g.obj
+C:\Users\ARUN~1.KUM\AppData\Local\Temp\sjm0.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\WiFi_BS_v2.X.production.obj
-                text8                              1D26     1D26       16      E93       0
-                text7                              1CFA     1CFA        E      E7D       0
-                text6                              1D52     1D52       30      EA9       0
-                text5                              1D08     1D08        E      E84       0
-                text4                              1D16     1D16       10      E8B       0
-                text3                              1CEE     1CEE        C      E77       0
-                text2                              1DBA     1DBA       44      EDD       0
-                text1                              1D82     1D82       38      EC1       0
-                text0                              1DFE     1DFE      202      EFF       0
+                text11                             1BD8     1BD8       14      DEC       0
+                text10                             1C48     1C48       36      E24       0
+                text9                              1BA0     1BA0        C      DD0       0
+                text8                              1BEC     1BEC       16      DF6       0
+                text7                              1BAC     1BAC        E      DD6       0
+                text6                              1C18     1C18       30      E0C       0
+                text5                              1BBA     1BBA        E      DDD       0
+                text4                              1BC8     1BC8       10      DE4       0
+                text3                              1C7E     1C7E       44      E3F       0
+                text2                              1D10     1D10       74      E88       0
+                text1                              1CC2     1CC2       4E      E61       0
+                text0                              1D84     1D84      27C      EC2       0
                 cstackCOMRAM                         28       28        A        1       1
                 bssCOMRAM                             1        1       27        1       1
-                cinit                              1D3C     1D3C       16      E9E       0
+                cinit                              1C02     1C02       16      E01       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text8                              1D26     1D26       16         0
-                text7                              1CFA     1CFA        E         0
-                text6                              1D52     1D52       30         0
-                text5                              1D08     1D08        E         0
-                text4                              1D16     1D16       10         0
-                text3                              1CEE     1CEE        C         0
-                text2                              1DBA     1DBA       44         0
-                text1                              1D82     1D82       38         0
-                text0                              1DFE     1DFE      202         0
-                cinit                              1D3C     1D3C       16         0
+                text11                             1BD8     1BD8       14         0
+                text10                             1C48     1C48       36         0
+                text9                              1BA0     1BA0        C         0
+                text8                              1BEC     1BEC       16         0
+                text7                              1BAC     1BAC        E         0
+                text6                              1C18     1C18       30         0
+                text5                              1BBA     1BBA        E         0
+                text4                              1BC8     1BC8       10         0
+                text3                              1C7E     1C7E       44         0
+                text2                              1D10     1D10       74         0
+                text1                              1CC2     1CC2       4E         0
+                text0                              1D84     1D84      27C         0
+                cinit                              1C02     1C02       16         0
 
         CLASS   CONST          
 
@@ -105,16 +111,19 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  000031  000032         1       1  COMRAM  
-                text3                          001CEE  00000C  001CFA       E77       0  CODE    
-                text7                          001CFA  00000E  001D08       E7D       0  CODE    
-                text5                          001D08  00000E  001D16       E84       0  CODE    
-                text4                          001D16  000010  001D26       E8B       0  CODE    
-                text8                          001D26  000016  001D3C       E93       0  CODE    
-                cinit                          001D3C  000016  001D52       E9E       0  CODE    
-                text6                          001D52  000030  001D82       EA9       0  CODE    
-                text1                          001D82  000038  001DBA       EC1       0  CODE    
-                text2                          001DBA  000044  001DFE       EDD       0  CODE    
-                text0                          001DFE  000202  002000       EFF       0  CODE    
+                text9                          001BA0  00000C  001BAC       DD0       0  CODE    
+                text7                          001BAC  00000E  001BBA       DD6       0  CODE    
+                text5                          001BBA  00000E  001BC8       DDD       0  CODE    
+                text4                          001BC8  000010  001BD8       DE4       0  CODE    
+                text11                         001BD8  000014  001BEC       DEC       0  CODE    
+                text8                          001BEC  000016  001C02       DF6       0  CODE    
+                cinit                          001C02  000016  001C18       E01       0  CODE    
+                text6                          001C18  000030  001C48       E0C       0  CODE    
+                text10                         001C48  000036  001C7E       E24       0  CODE    
+                text3                          001C7E  000044  001CC2       E3F       0  CODE    
+                text1                          001CC2  00004E  001D10       E61       0  CODE    
+                text2                          001D10  000074  001D84       E88       0  CODE    
+                text0                          001D84  00027C  002000       EC2       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -125,42 +134,57 @@ UNUSED ADDRESS RANGES
         BANK0            000060-0000FF               A0
         BANK1            000100-0001FF              100
         BIGRAM           000032-0001FF              1CE
-        CODE             000004-001CED             1CEA
+        CODE             000004-001B9F             1B9C
         COMRAM           000032-00005F               2E
-        CONST            000004-001CED             1CEA
+        CONST            000004-001B9F             1B9C
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000200-001CED             1AEE
+        MEDIUMCONST      000200-001B9F             19A0
         RAM              000060-0001FF               A0
         SFR              000F38-000FFF               28
-        SMALLCONST       000200-001CED              100
+        SMALLCONST       000200-001B9F              100
         STACK            000060-0001FF              1A0
 
                                   Symbol Table
 
+DATAEE_ReadByte@bAdd             cstackCOMRAM 000028
+DATAEE_WriteByte@GIEBitValue     cstackCOMRAM 00002A
+DATAEE_WriteByte@bAdd            cstackCOMRAM 000029
+DATAEE_WriteByte@bData           cstackCOMRAM 000028
 EUSART1_Write@txData             cstackCOMRAM 000028
 _ANSELA                          (abs)        000F38
 _ANSELB                          (abs)        000F39
 _ANSELC                          (abs)        000F3A
 _BAUD1CON                        (abs)        000FB8
-_EUSART1_Initialize              text8        001D26
-_EUSART1_Read                    text4        001D16
-_EUSART1_Write                   text3        001CEE
+_DATAEE_ReadByte                 text11       001BD8
+_DATAEE_WriteByte                text10       001C48
+_EEADR                           (abs)        000FA9
+_EECON1bits                      (abs)        000FA6
+_EECON2                          (abs)        000FA7
+_EEDATA                          (abs)        000FA8
+_EUSART1_Initialize              text8        001BEC
+_EUSART1_Read                    text4        001BC8
+_EUSART1_Write                   text9        001BA0
 _INTCON2bits                     (abs)        000FF1
+_INTCONbits                      (abs)        000FF2
 _LATA                            (abs)        000F89
 _LATB                            (abs)        000F8A
 _LATC                            (abs)        000F8B
 _OSCCON                          (abs)        000FD3
 _OSCCON2                         (abs)        000FD2
-_OSCILLATOR_Initialize           text7        001CFA
+_OSCILLATOR_Initialize           text7        001BAC
 _OSCTUNE                         (abs)        000F9B
-_PIN_MANAGER_Initialize          text6        001D52
+_PIN_MANAGER_Initialize          text6        001C18
 _PIR1bits                        (abs)        000F9E
 _RC1STA                          (abs)        000FAB
 _RC1STAbits                      (abs)        000FAB
 _RCREG1                          (abs)        000FAE
 _SPBRG1                          (abs)        000FAF
 _SPBRGH1                         (abs)        000FB0
-_SYSTEM_Initialize               text5        001D08
+_SYSTEM_Initialize               text5        001BBA
+_TABLAT                          (abs)        000FF5
+_TBLPTRH                         (abs)        000FF7
+_TBLPTRL                         (abs)        000FF6
+_TBLPTRU                         (abs)        000FF8
 _TRISA                           (abs)        000F92
 _TRISB                           (abs)        000F93
 _TRISC                           (abs)        000F94
@@ -256,6 +280,8 @@ __Htemp                          temp         000000
 __Htext                          text         000000
 __Htext0                         text0        000000
 __Htext1                         text1        000000
+__Htext10                        text10       000000
+__Htext11                        text11       000000
 __Htext2                         text2        000000
 __Htext3                         text3        000000
 __Htext4                         text4        000000
@@ -263,6 +289,7 @@ __Htext5                         text5        000000
 __Htext6                         text6        000000
 __Htext7                         text7        000000
 __Htext8                         text8        000000
+__Htext9                         text9        000000
 __LRAM                           (abs)        000001
 __Labs1                          abs1         000000
 __Lbank0                         bank0        000000
@@ -319,6 +346,8 @@ __Ltemp                          temp         000000
 __Ltext                          text         000000
 __Ltext0                         text0        000000
 __Ltext1                         text1        000000
+__Ltext10                        text10       000000
+__Ltext11                        text11       000000
 __Ltext2                         text2        000000
 __Ltext3                         text3        000000
 __Ltext4                         text4        000000
@@ -326,6 +355,7 @@ __Ltext5                         text5        000000
 __Ltext6                         text6        000000
 __Ltext7                         text7        000000
 __Ltext8                         text8        000000
+__Ltext9                         text9        000000
 __S0                             (abs)        30000E
 __S1                             (abs)        000032
 __S2                             (abs)        000000
@@ -336,31 +366,39 @@ ___rparam_used                   (abs)        000001
 ___sp                            stack        000000
 __accesstop                      (abs)        000060
 __activetblptr                   (abs)        000002
-__end_of_EUSART1_Initialize      text8        001D3C
-__end_of_EUSART1_Read            text4        001D26
-__end_of_EUSART1_Write           text3        001CFA
-__end_of_OSCILLATOR_Initialize   text7        001D08
-__end_of_PIN_MANAGER_Initialize  text6        001D82
-__end_of_SYSTEM_Initialize       text5        001D16
-__end_of__initialization         cinit        001D48
-__end_of_getvalues               text2        001DFE
+__end_of_DATAEE_ReadByte         text11       001BEC
+__end_of_DATAEE_WriteByte        text10       001C7E
+__end_of_EUSART1_Initialize      text8        001C02
+__end_of_EUSART1_Read            text4        001BD8
+__end_of_EUSART1_Write           text9        001BAC
+__end_of_OSCILLATOR_Initialize   text7        001BBA
+__end_of_PIN_MANAGER_Initialize  text6        001C48
+__end_of_SYSTEM_Initialize       text5        001BC8
+__end_of__initialization         cinit        001C0E
+__end_of_getvalues               text3        001CC2
 __end_of_main                    text0        002000
-__end_of_switchstate             text1        001DBA
-__initialization                 cinit        001D3C
+__end_of_normaloperation         text1        001D10
+__end_of_switchstate             text2        001D84
+__initialization                 cinit        001C02
 __mediumconst                    mediumconst  000000
 __pbssCOMRAM                     bssCOMRAM    000001
-__pcinit                         cinit        001D3C
+__pcinit                         cinit        001C02
 __pcstackCOMRAM                  cstackCOMRAM 000028
-__ptext0                         text0        001DFE
-__ptext1                         text1        001D82
-__ptext2                         text2        001DBA
-__ptext3                         text3        001CEE
-__ptext4                         text4        001D16
-__ptext5                         text5        001D08
-__ptext6                         text6        001D52
-__ptext7                         text7        001CFA
-__ptext8                         text8        001D26
+__ptext0                         text0        001D84
+__ptext1                         text1        001CC2
+__ptext10                        text10       001C48
+__ptext11                        text11       001BD8
+__ptext2                         text2        001D10
+__ptext3                         text3        001C7E
+__ptext4                         text4        001BC8
+__ptext5                         text5        001BBA
+__ptext6                         text6        001C18
+__ptext7                         text7        001BAC
+__ptext8                         text8        001BEC
+__ptext9                         text9        001BA0
 __ramtop                         ramtop       000200
+__size_of_DATAEE_ReadByte        (abs)        000000
+__size_of_DATAEE_WriteByte       (abs)        000000
 __size_of_EUSART1_Initialize     (abs)        000000
 __size_of_EUSART1_Read           (abs)        000000
 __size_of_EUSART1_Write          (abs)        000000
@@ -369,33 +407,36 @@ __size_of_PIN_MANAGER_Initialize (abs)        000000
 __size_of_SYSTEM_Initialize      (abs)        000000
 __size_of_getvalues              (abs)        000000
 __size_of_main                   (abs)        000000
+__size_of_normaloperation        (abs)        000000
 __size_of_switchstate            (abs)        000000
 __smallconst                     smallconst   000000
-_getvalues                       text2        001DBA
+_getvalues                       text3        001C7E
 _index                           bssCOMRAM    000025
-_main                            text0        001DFE
+_main                            text0        001D84
+_normaloperation                 text1        001CC2
 _quality                         bssCOMRAM    000001
 _qualityindex                    bssCOMRAM    00000A
 _qualitymax                      bssCOMRAM    000026
 _rssi                            bssCOMRAM    000013
 _rssiindex                       bssCOMRAM    00001C
 _rssimax                         bssCOMRAM    000027
-_switchstate                     text1        001D82
-end_of_initialization            cinit        001D48
-getvalues@b                      cstackCOMRAM 00002A
+_switchstate                     text2        001D10
+end_of_initialization            cinit        001C0E
+getvalues@b                      cstackCOMRAM 000028
 intlevel0                        text         000000
 intlevel1                        text         000000
 intlevel2                        text         000000
 intlevel3                        text         000000
 main@i                           cstackCOMRAM 00002D
-main@i_122                       cstackCOMRAM 00002F
-main@i_123                       cstackCOMRAM 000030
-main@i_124                       cstackCOMRAM 000031
+main@i_137                       cstackCOMRAM 000030
+main@i_138                       cstackCOMRAM 000031
+main@i_139                       cstackCOMRAM 00002F
 main@j                           cstackCOMRAM 00002E
+normaloperation@c                cstackCOMRAM 000029
 stackhi                          (abs)        0001FF
 stacklo                          (abs)        000060
 start                            init         000000
-start_initialization             cinit        001D3C
+start_initialization             cinit        001C02
 switchstate@a                    cstackCOMRAM 000028
 
 
@@ -403,14 +444,14 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 85 in file "main.c"
+		line 123 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
   j               1    6[COMRAM] unsigned char 
+  i               1    7[COMRAM] unsigned char 
   i               1    9[COMRAM] unsigned char 
   i               1    8[COMRAM] unsigned char 
-  i               1    7[COMRAM] unsigned char 
   i               1    5[COMRAM] unsigned char 
  Return value:  Size  Location     Type
 		None               void
@@ -428,13 +469,46 @@ FUNCTION INFORMATION:
 Total ram usage:        7 bytes
  Hardware stack levels required when called:    2
  This function calls:
+		_DATAEE_ReadByte
+		_DATAEE_WriteByte
 		_EUSART1_Read
 		_EUSART1_Write
 		_SYSTEM_Initialize
 		_getvalues
+		_normaloperation
 		_switchstate
  This function is called by:
 		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _normaloperation *****************
+ Defined at:
+		line 100 in file "main.c"
+ Parameters:    Size  Location     Type
+  c               1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  c               1    1[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         1       0       0
+      Temps:          0       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_switchstate
+ This function is called by:
+		_main
  This function uses a non-reentrant model
 
 
@@ -463,17 +537,18 @@ Total ram usage:        1 bytes
  This function calls:
 		Nothing
  This function is called by:
+		_normaloperation
 		_main
  This function uses a non-reentrant model
 
 
  *************** function _getvalues *****************
  Defined at:
-		line 77 in file "main.c"
+		line 86 in file "main.c"
  Parameters:    Size  Location     Type
   b               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  b               1    2[COMRAM] unsigned char 
+  b               1    0[COMRAM] unsigned char 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -485,45 +560,14 @@ Total ram usage:        1 bytes
  Data sizes:     COMRAM   BANK0   BANK1
       Params:         0       0       0
       Locals:         1       0       0
-      Temps:          1       0       0
-      Totals:         2       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		_EUSART1_Read
-		_EUSART1_Write
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_Write *****************
- Defined at:
-		line 91 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  txData          1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  txData          1    0[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1
-      Params:         0       0       0
-      Locals:         1       0       0
       Temps:          0       0       0
       Totals:         1       0       0
 Total ram usage:        1 bytes
  Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
  This function calls:
-		Nothing
+		_EUSART1_Read
  This function is called by:
-		_getvalues
 		_main
  This function uses a non-reentrant model
 
@@ -677,37 +721,133 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _EUSART1_Write *****************
+ Defined at:
+		line 91 in file "mcc_generated_files/eusart1.c"
+ Parameters:    Size  Location     Type
+  txData          1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  txData          1    0[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         1       0       0
+      Temps:          0       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _DATAEE_WriteByte *****************
+ Defined at:
+		line 154 in file "mcc_generated_files/memory.c"
+ Parameters:    Size  Location     Type
+  bAdd            1    wreg     unsigned char 
+  bData           1    0[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  bAdd            1    1[COMRAM] unsigned char 
+  GIEBitValue     1    2[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         1       0       0
+      Locals:         2       0       0
+      Temps:          0       0       0
+      Totals:         3       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _DATAEE_ReadByte *****************
+ Defined at:
+		line 174 in file "mcc_generated_files/memory.c"
+ Parameters:    Size  Location     Type
+  bAdd            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  bAdd            1    0[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1
+      Params:         0       0       0
+      Locals:         1       0       0
+      Temps:          0       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	1D52	0000	49
+		_PIN_MANAGER_Initialize		CODE           	1C18	0000	49
 
 mcc_generated_files/pin_manager.c estimated size: 49
 
 shared
-		__initialization		CODE           	1D3C	0000	13
+		__initialization		CODE           	1C02	0000	13
 
 shared estimated size: 13
 
 mcc_generated_files/eusart1.c
-		_EUSART1_Initialize		CODE           	1D26	0000	23
-		_EUSART1_Read  		CODE           	1D16	0000	17
-		_EUSART1_Write 		CODE           	1CEE	0000	13
+		_EUSART1_Initialize		CODE           	1BEC	0000	23
+		_EUSART1_Read  		CODE           	1BC8	0000	17
+		_EUSART1_Write 		CODE           	1BA0	0000	13
 
 mcc_generated_files/eusart1.c estimated size: 53
 
 mcc_generated_files/mcc.c
-		_OSCILLATOR_Initialize		CODE           	1CFA	0000	15
-		_SYSTEM_Initialize		CODE           	1D08	0000	15
+		_OSCILLATOR_Initialize		CODE           	1BAC	0000	15
+		_SYSTEM_Initialize		CODE           	1BBA	0000	15
 
 mcc_generated_files/mcc.c estimated size: 30
 
-main.c
-		_main          		CODE           	1DFE	0000	515
-		_switchstate   		CODE           	1D82	0000	57
-		_getvalues     		CODE           	1DBA	0000	69
+mcc_generated_files/memory.c
+		_DATAEE_WriteByte		CODE           	1C48	0000	55
+		_DATAEE_ReadByte		CODE           	1BD8	0000	21
 
-main.c estimated size: 641
+mcc_generated_files/memory.c estimated size: 76
+
+main.c
+		_main          		CODE           	1D84	0000	637
+		_switchstate   		CODE           	1D10	0000	117
+		_normaloperation		CODE           	1CC2	0000	79
+		_getvalues     		CODE           	1C7E	0000	69
+
+main.c estimated size: 902
 

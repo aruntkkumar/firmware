@@ -64,7 +64,7 @@
             <setting name="EBTRB" option="OFF"/>
             <setting name="generateConfigBits" option="true"/>
             <file checksum="1955416975" modified="false" name="mcc.c" path="mcc_generated_files/mcc.c"/>
-            <file checksum="956959813" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
+            <file checksum="2439451382" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
         </manager>
     </managers>
     <modules>
@@ -116,6 +116,11 @@
             <setting name="stdio" option="false"/>
             <file checksum="472093054" modified="false" name="eusart1.c" path="mcc_generated_files/eusart1.c"/>
             <file checksum="4036847796" modified="false" name="eusart1.h" path="mcc_generated_files/eusart1.h"/>
+        </module>
+        <module generated="true" mode="Memory" name="MEMORY" order="2" reloadPin="manual" type="pfm_control">
+            <setting name="useEE" option="true"/>
+            <file checksum="2660656813" modified="false" name="memory.c" path="mcc_generated_files/memory.c"/>
+            <file checksum="4238568633" modified="false" name="memory.h" path="mcc_generated_files/memory.h"/>
         </module>
     </modules>
 </configuration>

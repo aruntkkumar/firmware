@@ -25,11 +25,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "51 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\main.c
 [v _switchstate switchstate `(v  1 e 0 0 ]
-"86
+"167
 [v _getvalues getvalues `(v  1 e 0 0 ]
-"100
+"181
 [v _normaloperation normaloperation `(v  1 e 0 0 ]
-"123
+"204
 [v _main main `(v  1 e 0 0 ]
 "56 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 0 0 ]
@@ -75,7 +75,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "8611
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S146 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S95 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -84,14 +84,14 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "9057
-[s S154 . 1 `uc 1 . 1 0 :3:0 
+[s S103 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S159 . 1 `S146 1 . 1 0 `S154 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES159  1 e 1 @3998 ]
-[s S362 . 1 `uc 1 RD 1 0 :1:0 
+[u S108 . 1 `S95 1 . 1 0 `S103 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES108  1 e 1 @3998 ]
+[s S311 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -101,11 +101,11 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "9744
-[s S371 . 1 `uc 1 . 1 0 :6:0 
+[s S320 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S374 . 1 `S362 1 . 1 0 `S371 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES374  1 e 1 @4006 ]
+[u S323 . 1 `S311 1 . 1 0 `S320 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES323  1 e 1 @4006 ]
 "9788
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "9807
@@ -114,7 +114,7 @@
 [v _EEADR EEADR `VEuc  1 e 1 @4009 ]
 "9904
 [v _RC1STA RC1STA `VEuc  1 e 1 @4011 ]
-[s S176 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S125 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -124,10 +124,10 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "10247
-[s S185 . 1 `uc 1 . 1 0 :3:0 
+[s S134 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S188 . 1 `uc 1 RX9D1 1 0 :1:0 
+[s S137 . 1 `uc 1 RX9D1 1 0 :1:0 
 `uc 1 OERR1 1 0 :1:1 
 `uc 1 FERR1 1 0 :1:2 
 `uc 1 ADDEN1 1 0 :1:3 
@@ -136,19 +136,19 @@
 `uc 1 RX91 1 0 :1:6 
 `uc 1 SPEN1 1 0 :1:7 
 ]
-[s S197 . 1 `uc 1 . 1 0 :6:0 
+[s S146 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S200 . 1 `uc 1 . 1 0 :6:0 
+[s S149 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S203 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S152 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[s S205 . 1 `uc 1 . 1 0 :5:0 
+[s S154 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S208 . 1 `S176 1 . 1 0 `S185 1 . 1 0 `S188 1 . 1 0 `S197 1 . 1 0 `S200 1 . 1 0 `S203 1 . 1 0 `S205 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES208  1 e 1 @4011 ]
+[u S157 . 1 `S125 1 . 1 0 `S134 1 . 1 0 `S137 1 . 1 0 `S146 1 . 1 0 `S149 1 . 1 0 `S152 1 . 1 0 `S154 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES157  1 e 1 @4011 ]
 "10365
 [v _TX1STA TX1STA `VEuc  1 e 1 @4012 ]
 "10736
@@ -183,7 +183,7 @@
 ]
 [u S46 . 1 `S31 1 . 1 0 `S34 1 . 1 0 `S43 1 . 1 0 ]
 [v _INTCON2bits INTCON2bits `VES46  1 e 1 @4081 ]
-[s S280 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S229 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -193,7 +193,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "16856
-[s S289 . 1 `uc 1 . 1 0 :1:0 
+[s S238 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -202,12 +202,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S298 . 1 `uc 1 . 1 0 :6:0 
+[s S247 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S315 . 1 `S280 1 . 1 0 `S289 1 . 1 0 `S298 1 . 1 0 `S289 1 . 1 0 `S298 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES315  1 e 1 @4082 ]
+[u S264 . 1 `S229 1 . 1 0 `S238 1 . 1 0 `S247 1 . 1 0 `S238 1 . 1 0 `S247 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES264  1 e 1 @4082 ]
 "16984
 [v _TABLAT TABLAT `VEuc  1 e 1 @4085 ]
 "17011
@@ -216,6 +216,22 @@
 [v _TBLPTRH TBLPTRH `VEuc  1 e 1 @4087 ]
 "17049
 [v _TBLPTRU TBLPTRU `VEuc  1 e 1 @4088 ]
+"18153
+[v _LATB0 LATB0 `VEb  1 e 0 @31824 ]
+"18155
+[v _LATB1 LATB1 `VEb  1 e 0 @31825 ]
+"18157
+[v _LATB2 LATB2 `VEb  1 e 0 @31826 ]
+"18159
+[v _LATB3 LATB3 `VEb  1 e 0 @31827 ]
+"18169
+[v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
+"18171
+[v _LATC1 LATC1 `VEb  1 e 0 @31833 ]
+"18173
+[v _LATC2 LATC2 `VEb  1 e 0 @31834 ]
+"18175
+[v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
 "49 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\main.c
 [v _rssi rssi `[9]uc  1 e 9 0 ]
 [v _quality quality `[9]uc  1 e 9 0 ]
@@ -224,28 +240,28 @@
 [v _rssiindex rssiindex `[9]uc  1 e 9 0 ]
 [v _qualityindex qualityindex `[9]uc  1 e 9 0 ]
 [v _index index `uc  1 e 1 0 ]
-"123
+"204
 [v _main main `(v  1 e 0 0 ]
 {
-"223
+"304
 [v main@j j `uc  1 a 1 6 ]
-"222
-[v main@i_139 i `uc  1 a 1 7 ]
-"204
-[v main@i_138 i `uc  1 a 1 9 ]
-"184
-[v main@i_137 i `uc  1 a 1 8 ]
-"176
+"303
+[v main@i_432 i `uc  1 a 1 7 ]
+"285
+[v main@i_431 i `uc  1 a 1 9 ]
+"265
+[v main@i_430 i `uc  1 a 1 8 ]
+"257
 [v main@i i `uc  1 a 1 5 ]
-"247
+"328
 } 0
-"100
+"181
 [v _normaloperation normaloperation `(v  1 e 0 0 ]
 {
 [v normaloperation@c c `uc  1 a 1 wreg ]
 [v normaloperation@c c `uc  1 a 1 wreg ]
 [v normaloperation@c c `uc  1 a 1 1 ]
-"121
+"202
 } 0
 "51
 [v _switchstate switchstate `(v  1 e 0 0 ]
@@ -253,15 +269,15 @@
 [v switchstate@a a `uc  1 a 1 wreg ]
 [v switchstate@a a `uc  1 a 1 wreg ]
 [v switchstate@a a `uc  1 a 1 0 ]
-"84
+"165
 } 0
-"86
+"167
 [v _getvalues getvalues `(v  1 e 0 0 ]
 {
 [v getvalues@b b `uc  1 a 1 wreg ]
 [v getvalues@b b `uc  1 a 1 wreg ]
 [v getvalues@b b `uc  1 a 1 0 ]
-"98
+"179
 } 0
 "76 C:\Users\arun.kumar\Desktop\git_show\firmware\WiFi_BS\WiFi_BS_v2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]

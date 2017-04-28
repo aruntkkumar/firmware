@@ -9077,33 +9077,114 @@ uint8_t rssi[9], quality[9], rssimax, qualitymax, rssiindex[9] = {0, 0, 0, 0, 0,
 void switchstate(uint8_t a) {
 switch (a) {
 case 1:
+do { LATB3 = 0; } while(0);
+do { LATB0 = 1; } while(0);
+do { LATB2 = 0; } while(0);
+do { LATB1 = 0; } while(0);
+do { LATC3 = 0; } while(0);
+do { LATC0 = 1; } while(0);
+do { LATC2 = 0; } while(0);
+do { LATC1 = 0; } while(0);
 index = 1;
 break;
 case 2:
+do { LATB3 = 0; } while(0);
+do { LATB0 = 1; } while(0);
+do { LATB2 = 0; } while(0);
+do { LATB1 = 0; } while(0);
+do { LATC3 = 1; } while(0);
+do { LATC0 = 0; } while(0);
+do { LATC2 = 1; } while(0);
+do { LATC1 = 1; } while(0);
 index = 2;
 break;
 case 3:
+do { LATB3 = 0; } while(0);
+do { LATB0 = 1; } while(0);
+do { LATB2 = 0; } while(0);
+do { LATB1 = 0; } while(0);
+do { LATC3 = 0; } while(0);
+do { LATC0 = 1; } while(0);
+do { LATC2 = 1; } while(0);
+do { LATC1 = 0; } while(0);
 index = 3;
 break;
 case 4:
+do { LATB3 = 1; } while(0);
+do { LATB0 = 0; } while(0);
+do { LATB2 = 0; } while(0);
+do { LATB1 = 1; } while(0);
+do { LATC3 = 0; } while(0);
+do { LATC0 = 1; } while(0);
+do { LATC2 = 0; } while(0);
+do { LATC1 = 0; } while(0);
 index = 4;
 break;
 case 5:
+do { LATB3 = 1; } while(0);
+do { LATB0 = 0; } while(0);
+do { LATB2 = 0; } while(0);
+do { LATB1 = 1; } while(0);
+do { LATC3 = 1; } while(0);
+do { LATC0 = 0; } while(0);
+do { LATC2 = 1; } while(0);
+do { LATC1 = 1; } while(0);
 index = 5;
 break;
 case 6:
+do { LATB3 = 1; } while(0);
+do { LATB0 = 0; } while(0);
+do { LATB2 = 0; } while(0);
+do { LATB1 = 1; } while(0);
+do { LATC3 = 0; } while(0);
+do { LATC0 = 1; } while(0);
+do { LATC2 = 1; } while(0);
+do { LATC1 = 0; } while(0);
 index = 6;
 break;
 case 7:
+do { LATB3 = 0; } while(0);
+do { LATB0 = 1; } while(0);
+do { LATB2 = 1; } while(0);
+do { LATB1 = 0; } while(0);
+do { LATC3 = 0; } while(0);
+do { LATC0 = 1; } while(0);
+do { LATC2 = 0; } while(0);
+do { LATC1 = 0; } while(0);
 index = 7;
 break;
 case 8:
+do { LATB3 = 0; } while(0);
+do { LATB0 = 1; } while(0);
+do { LATB2 = 1; } while(0);
+do { LATB1 = 0; } while(0);
+do { LATC3 = 1; } while(0);
+do { LATC0 = 0; } while(0);
+do { LATC2 = 1; } while(0);
+do { LATC1 = 1; } while(0);
 index = 8;
 break;
 case 9:
+do { LATB3 = 0; } while(0);
+do { LATB0 = 1; } while(0);
+do { LATB2 = 1; } while(0);
+do { LATB1 = 0; } while(0);
+do { LATC3 = 0; } while(0);
+do { LATC0 = 1; } while(0);
+do { LATC2 = 1; } while(0);
+do { LATC1 = 0; } while(0);
 index = 9;
 break;
 default:
+do { LATB3 = 1; } while(0);
+do { LATB0 = 0; } while(0);
+do { LATB2 = 0; } while(0);
+do { LATB1 = 1; } while(0);
+do { LATC3 = 1; } while(0);
+do { LATC0 = 0; } while(0);
+do { LATC2 = 1; } while(0);
+do { LATC1 = 1; } while(0);
+index = 5;
 break;
 }
 return;
@@ -9155,7 +9236,7 @@ switchstate(DATAEE_ReadByte(0x00));
 switchstate(5);
 }
 
-# 159
+# 240
 while (1) {
 start:
 while (EUSART1_Read() != 0xFF) {
@@ -9164,7 +9245,7 @@ while (EUSART1_Read() != 0xFF) {
 while (1) {
 if (EUSART1_Read() == 0x4E) {
 
-# 176
+# 257
 for (uint8_t i = 0; i < 5; i++) {
 normaloperation(i);
 _delay((unsigned long)((25)*(64000000/4000000.0)));
@@ -9181,7 +9262,7 @@ rssiindex[2] = 0;
 rssiindex[3] = 0;
 rssiindex[4] = 0;
 
-# 196
+# 277
 } else if (rssi[i] == rssimax) {
 rssiindex[index] = i + 1;
 index++;
@@ -9198,7 +9279,7 @@ qualityindex[2] = 0;
 qualityindex[3] = 0;
 qualityindex[4] = 0;
 
-# 216
+# 297
 } else if (quality[i] == qualitymax) {
 qualityindex[index] = i + 1;
 index++;

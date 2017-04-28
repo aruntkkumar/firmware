@@ -1,4 +1,4 @@
-/**
+/* WiFi Beamsteering v2.0 with PIC18F23K22
   Generated Main Source File
 
   Company:
@@ -51,33 +51,114 @@ uint8_t rssi[9], quality[9], rssimax, qualitymax, rssiindex[9] = {0, 0, 0, 0, 0,
 void switchstate(uint8_t a) {
     switch (a) {
         case 1:
+            L_SP2TL_VC_SetLow();
+            L_SP2TR_VC_SetHigh();
+            L_SP4T_VC1_SetLow();
+            L_SP4T_VC2_SetLow();
+            R_SP2TL_VC_SetLow();
+            R_SP2TR_VC_SetHigh();
+            R_SP4T_VC1_SetLow();
+            R_SP4T_VC2_SetLow();
             index = 1;
             break;
         case 2:
+            L_SP2TL_VC_SetLow();
+            L_SP2TR_VC_SetHigh();
+            L_SP4T_VC1_SetLow();
+            L_SP4T_VC2_SetLow();
+            R_SP2TL_VC_SetHigh();
+            R_SP2TR_VC_SetLow();
+            R_SP4T_VC1_SetHigh();
+            R_SP4T_VC2_SetHigh();
             index = 2;
             break;
         case 3:
+            L_SP2TL_VC_SetLow();
+            L_SP2TR_VC_SetHigh();
+            L_SP4T_VC1_SetLow();
+            L_SP4T_VC2_SetLow();
+            R_SP2TL_VC_SetLow();
+            R_SP2TR_VC_SetHigh();
+            R_SP4T_VC1_SetHigh();
+            R_SP4T_VC2_SetLow();            
             index = 3;
             break;
         case 4:
+            L_SP2TL_VC_SetHigh();
+            L_SP2TR_VC_SetLow();
+            L_SP4T_VC1_SetLow();
+            L_SP4T_VC2_SetHigh();
+            R_SP2TL_VC_SetLow();
+            R_SP2TR_VC_SetHigh();
+            R_SP4T_VC1_SetLow();
+            R_SP4T_VC2_SetLow();            
             index = 4;
             break;
         case 5:
+            L_SP2TL_VC_SetHigh();
+            L_SP2TR_VC_SetLow();
+            L_SP4T_VC1_SetLow();
+            L_SP4T_VC2_SetHigh();
+            R_SP2TL_VC_SetHigh();
+            R_SP2TR_VC_SetLow();
+            R_SP4T_VC1_SetHigh();
+            R_SP4T_VC2_SetHigh();              
             index = 5;
             break;
         case 6:
+            L_SP2TL_VC_SetHigh();
+            L_SP2TR_VC_SetLow();
+            L_SP4T_VC1_SetLow();
+            L_SP4T_VC2_SetHigh();
+            R_SP2TL_VC_SetLow();
+            R_SP2TR_VC_SetHigh();
+            R_SP4T_VC1_SetHigh();
+            R_SP4T_VC2_SetLow();              
             index = 6;
             break;
         case 7:
+            L_SP2TL_VC_SetLow();
+            L_SP2TR_VC_SetHigh();
+            L_SP4T_VC1_SetHigh();
+            L_SP4T_VC2_SetLow();
+            R_SP2TL_VC_SetLow();
+            R_SP2TR_VC_SetHigh();
+            R_SP4T_VC1_SetLow();
+            R_SP4T_VC2_SetLow();              
             index = 7;
             break;
         case 8:
+            L_SP2TL_VC_SetLow();
+            L_SP2TR_VC_SetHigh();
+            L_SP4T_VC1_SetHigh();
+            L_SP4T_VC2_SetLow();
+            R_SP2TL_VC_SetHigh();
+            R_SP2TR_VC_SetLow();
+            R_SP4T_VC1_SetHigh();
+            R_SP4T_VC2_SetHigh();     
             index = 8;
             break;
         case 9:
+            L_SP2TL_VC_SetLow();
+            L_SP2TR_VC_SetHigh();
+            L_SP4T_VC1_SetHigh();
+            L_SP4T_VC2_SetLow();
+            R_SP2TL_VC_SetLow();
+            R_SP2TR_VC_SetHigh();
+            R_SP4T_VC1_SetHigh();
+            R_SP4T_VC2_SetLow();     
             index = 9;
             break;
         default:
+            L_SP2TL_VC_SetHigh();
+            L_SP2TR_VC_SetLow();
+            L_SP4T_VC1_SetLow();
+            L_SP4T_VC2_SetHigh();
+            R_SP2TL_VC_SetHigh();
+            R_SP2TR_VC_SetLow();
+            R_SP4T_VC1_SetHigh();
+            R_SP4T_VC2_SetHigh();              
+            index = 5;            
             break;
     }
     return;

@@ -1,4 +1,4 @@
-/* WiFi Beamsteering v2.0 with PIC18F23K22
+/**
   Generated Pin Manager File
 
   Company:

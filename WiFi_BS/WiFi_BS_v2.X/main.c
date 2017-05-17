@@ -80,7 +80,7 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetLow();
             R_SP2TR_VC_SetHigh();
             R_SP4T_VC1_SetHigh();
-            R_SP4T_VC2_SetLow();            
+            R_SP4T_VC2_SetLow();
             index = 3;
             break;
         case 4:
@@ -91,7 +91,7 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetLow();
             R_SP2TR_VC_SetHigh();
             R_SP4T_VC1_SetLow();
-            R_SP4T_VC2_SetLow();            
+            R_SP4T_VC2_SetLow();
             index = 4;
             break;
         case 5:
@@ -102,7 +102,7 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetHigh();
             R_SP2TR_VC_SetLow();
             R_SP4T_VC1_SetHigh();
-            R_SP4T_VC2_SetHigh();              
+            R_SP4T_VC2_SetHigh();
             index = 5;
             break;
         case 6:
@@ -113,7 +113,7 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetLow();
             R_SP2TR_VC_SetHigh();
             R_SP4T_VC1_SetHigh();
-            R_SP4T_VC2_SetLow();              
+            R_SP4T_VC2_SetLow();
             index = 6;
             break;
         case 7:
@@ -124,7 +124,7 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetLow();
             R_SP2TR_VC_SetHigh();
             R_SP4T_VC1_SetLow();
-            R_SP4T_VC2_SetLow();              
+            R_SP4T_VC2_SetLow();
             index = 7;
             break;
         case 8:
@@ -135,7 +135,7 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetHigh();
             R_SP2TR_VC_SetLow();
             R_SP4T_VC1_SetHigh();
-            R_SP4T_VC2_SetHigh();     
+            R_SP4T_VC2_SetHigh();
             index = 8;
             break;
         case 9:
@@ -146,7 +146,7 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetLow();
             R_SP2TR_VC_SetHigh();
             R_SP4T_VC1_SetHigh();
-            R_SP4T_VC2_SetLow();     
+            R_SP4T_VC2_SetLow();
             index = 9;
             break;
         default:
@@ -157,24 +157,32 @@ void switchstate(uint8_t a) {
             R_SP2TL_VC_SetHigh();
             R_SP2TR_VC_SetLow();
             R_SP4T_VC1_SetHigh();
-            R_SP4T_VC2_SetHigh();              
-            index = 5;            
+            R_SP4T_VC2_SetHigh();
+            index = 5;
             break;
     }
     return;
 }
 
 void getvalues(uint8_t b) {
-    while (EUSART1_Read() != 0x52) {    //Hex value for char 'R'
-            //DO NOTHING.
-        }
+    while (EUSART1_Read() != 0x52) { //Hex value for char 'R'
+        //DO NOTHING.
+    }
     //EUSART1_Write(0x52); 
+    __delay_ms(10);
     rssi[b] = EUSART1_Read();
-    while (EUSART1_Read() != 0x4c) {    //Hex value for char 'L'
-            //DO NOTHING.
-        }    
+    __delay_ms(10);
+    //EUSART1_Write(rssi[b]); 
+   //__delay_ms(10);
+    while (EUSART1_Read() != 0x4C) { //Hex value for char 'L'
+        //DO NOTHING.
+    }
     //EUSART1_Write(0x4c);
+    __delay_ms(10);
     quality[b] = EUSART1_Read();
+    __delay_ms(10);
+    //EUSART1_Write(quality[b]); 
+    //__delay_ms(10);
     return;
 }
 
@@ -195,6 +203,9 @@ void normaloperation(uint8_t c) {
         case 4:
             switchstate(8);
             break;
+        case 5:
+            switchstate(3);
+            break;
         default:
             break;
     }
@@ -204,6 +215,14 @@ void normaloperation(uint8_t c) {
 void main(void) {
     // Initialize the device
     SYSTEM_Initialize();
+    //ANSELC = 0x00;
+    //PIE1bits.RC1IE = 1;
+    //INTCONbits.PEIE = 1;
+    //INTCONbits.GIEL = 1;
+    //INTCONbits.PEIE_GIEL = 1;
+    //INTCONbits.GIE = 1;
+    //INTCONbits.GIEH = 1;
+    //INTCONbits.GIE_GIEH = 1;
     if ((DATAEE_ReadByte(0x00) != 0xFF) || (DATAEE_ReadByte(0x00) != 0x00)) {
         switchstate(DATAEE_ReadByte(0x00));
     } else {
@@ -237,92 +256,122 @@ void main(void) {
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
+    //while (1) {
+    //for (uint8_t i=1; i<255; i++) {
+    //index = EUSART1_Read();
+    //__delay_us(1000);
+    __delay_ms(10);
+    //EUSART1_Write(index);
+    //__delay_us(1000);
+    //__delay_ms(10);
+    //switchstate(i);
+    //}
+    //}
     while (1) {
 start:
         while (EUSART1_Read() != 0xFF) {
             //DO NOTHING. WAITING FOR THE TRIGGER TO START
         }
-        while (1) {
-            if (EUSART1_Read() == 0x4E) { //Hex value for char 'N'
-                //for (uint8_t i=0; i<9; i++) {
-                //    for (uint8_t j=0; j<10; j++) {   //j represents the repetition count
-                //        switchstate(i+1);
-                //        __delay_us(5);
-                //        EUSART1_Write(0x52);
-                //        rssi[i] += EUSART1_Read();
-                //        EUSART1_Write(0x4c);
-                //        quality[i] += EUSART1_Read();
-                //    }
-                //}
-                for (uint8_t i = 0; i < 5; i++) {
-                    normaloperation(i);
-                    __delay_us(25);
-                    getvalues(i);
-                }
-
-                rssimax = rssi[0];
-                index = 0;
-                for (uint8_t i = 0; i < 5; i++) {
-                    if (rssi[i] < rssimax) {
-                        rssiindex[0] = i + 1;
-                        rssiindex[1] = 0;
-                        rssiindex[2] = 0;
-                        rssiindex[3] = 0;
-                        rssiindex[4] = 0;
-                        //rssiindex[5] = 0;
-                        //rssiindex[6] = 0;
-                        //rssiindex[7] = 0;
-                        //rssiindex[8] = 0;
-                        //rssimax = rssi[i];
-                    } else if (rssi[i] == rssimax) {
-                        rssiindex[index] = i + 1;
-                        index++;
-                    }
-                }
-
-                qualitymax = quality[0];
-                index = 0;
-                for (uint8_t i = 0; i < 5; i++) {
-                    if (quality[i] > qualitymax) {
-                        qualityindex[0] = i + 1;
-                        qualityindex[1] = 0;
-                        qualityindex[2] = 0;
-                        qualityindex[3] = 0;
-                        qualityindex[4] = 0;
-                        //qualityindex[5] = 0;
-                        //qualityindex[6] = 0;
-                        //qualityindex[7] = 0;
-                        //qualityindex[8] = 0;
-                        //qualitymax = quality[i];
-                    } else if (quality[i] == qualitymax) {
-                        qualityindex[index] = i + 1;
-                        index++;
-                    }
-                }
-
-                for (uint8_t i = 0; i < 5; i++) {
-                    for (uint8_t j = 0; j < 5; j++) {
-                        if ((rssiindex[i] == qualityindex[j]) && (rssiindex[i] != 0) && (qualityindex[j] != 0)) {
-                            normaloperation((rssiindex[i] - 1));
-                            EUSART1_Write(0x53); //Hex value for char 'S'
-                            __delay_us(25);
-                            EUSART1_Write(index);
-                            __delay_us(25);
-                            goto flash;
-                        }
-                    }
-                }
-flash:
-                DATAEE_WriteByte(0x00, index);
-                goto start;
-            } else if (EUSART1_Read() == 0x73) { //Hex value for char 's'
-                while ((EUSART1_Read() != 0x01) || (EUSART1_Read() != 0x02) || (EUSART1_Read() != 0x03) || (EUSART1_Read() != 0x04) || (EUSART1_Read() != 0x05) || (EUSART1_Read() != 0x06) || (EUSART1_Read() != 0x07) || (EUSART1_Read() != 0x08) || (EUSART1_Read() != 0x09)) {
-                    //DO NOTHING
-                }
-                switchstate(RCREG1);
-                DATAEE_WriteByte(0x00, index);
-                goto start;
+        //__delay_ms(10);
+        //EUSART1_Write(RCREG1);
+        __delay_ms(10);
+        index = EUSART1_Read();
+        __delay_ms(10);
+        while (!((index == 0x4E) || (index == 0x73))) {
+            index = EUSART1_Read(); //DO NOTHING. WAITING FOR THE TRIGGER TO START
+            __delay_ms(10);
+        }
+        //index = RCREG1;
+        if (index == 0x4E) { //Hex value for char 'N'
+            //for (uint8_t i=0; i<9; i++) {
+            //    for (uint8_t j=0; j<10; j++) {   //j represents the repetition count
+            //        switchstate(i+1);
+            //        __delay_us(5);
+            //        EUSART1_Write(0x52);
+            //        rssi[i] += EUSART1_Read();
+            //        EUSART1_Write(0x4c);
+            //        quality[i] += EUSART1_Read();
+            //    }
+            //}
+            //EUSART1_Write(index);
+            //__delay_ms(10);
+            for (uint8_t i = 0; i < 6; i++) {
+                normaloperation(i);
+                __delay_ms(10);
+                getvalues(i);
             }
+
+            rssimax = rssi[0];
+            index = 0;
+            for (uint8_t i = 0; i < 6; i++) {
+                if (rssi[i] < rssimax) {
+                    rssiindex[0] = i + 1;
+                    rssiindex[1] = 0;
+                    rssiindex[2] = 0;
+                    rssiindex[3] = 0;
+                    rssiindex[4] = 0;
+                    rssiindex[5] = 0;
+                    //rssiindex[6] = 0;
+                    //rssiindex[7] = 0;
+                    //rssiindex[8] = 0;
+                    rssimax = rssi[i];
+                } else if (rssi[i] == rssimax) {
+                    rssiindex[index] = i + 1;
+                    index++;
+                }
+            }
+
+            qualitymax = quality[0];
+            index = 0;
+            for (uint8_t i = 0; i < 6; i++) {
+                if (quality[i] > qualitymax) {
+                    qualityindex[0] = i + 1;
+                    qualityindex[1] = 0;
+                    qualityindex[2] = 0;
+                    qualityindex[3] = 0;
+                    qualityindex[4] = 0;
+                    qualityindex[5] = 0;
+                    //qualityindex[6] = 0;
+                    //qualityindex[7] = 0;
+                    //qualityindex[8] = 0;
+                    qualitymax = quality[i];
+                } else if (quality[i] == qualitymax) {
+                    qualityindex[index] = i + 1;
+                    index++;
+                }
+            }
+
+            for (uint8_t i = 0; i < 6; i++) {
+                for (uint8_t j = 0; j < 6; j++) {
+                    if ((rssiindex[i] == qualityindex[j]) && (rssiindex[i] != 0) && (qualityindex[j] != 0)) {
+                        normaloperation((rssiindex[i] - 1));
+                        EUSART1_Write(0x53); //Hex value for char 'S'
+                        __delay_ms(10);
+                        EUSART1_Write(index);
+                        __delay_ms(10);
+                        goto flash;
+                    }
+                }
+            }
+flash:
+            DATAEE_WriteByte(0x00, index);
+            goto start;
+        } else if (index == 0x73) { //Hex value for char 's'
+            //__delay_ms(10);
+            //EUSART1_Write(index);
+            //__delay_ms(10);
+            index = EUSART1_Read();
+            __delay_ms(10);
+            while (!((index == 0x01) || (index == 0x02) || (index == 0x03) || (index == 0x04) || (index == 0x05) || (index == 0x06) || (index == 0x07) || (index == 0x08) || (index == 0x09))) {
+                index = EUSART1_Read(); //DO NOTHING. WAITING FOR THE TRIGGER TO START
+                __delay_ms(10);
+            }
+            switchstate(index);
+            DATAEE_WriteByte(0x00, index);
+            __delay_ms(10);
+            //EUSART1_Write(index);
+            //__delay_ms(10);
+            goto start;
         }
     }
 }

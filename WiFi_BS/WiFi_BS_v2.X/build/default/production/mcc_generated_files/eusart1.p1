@@ -46,8 +46,51 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S590 . . . . . . . . ]
 "10247
 [v _RC1STAbits `VS590 ~T0 @X0 0 e@4011 ]
+"9910
+[s S575 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S575 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"9920
+[s S576 :3 `uc 1 :1 `uc 1 ]
+[n S576 . . ADEN ]
+"9924
+[s S577 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S577 . RX9D1 OERR1 FERR1 ADDEN1 CREN1 SREN1 RX91 SPEN1 ]
+"9934
+[s S578 :6 `uc 1 :1 `uc 1 ]
+[n S578 . . RC8_9 ]
+"9938
+[s S579 :6 `uc 1 :1 `uc 1 ]
+[n S579 . . RC9 ]
+"9942
+[s S580 :1 `uc 1 ]
+[n S580 . RCD8 ]
+"9945
+[s S581 :5 `uc 1 :1 `uc 1 ]
+[n S581 . . SRENA ]
+"9909
+[u S574 `S575 1 `S576 1 `S577 1 `S578 1 `S579 1 `S580 1 `S581 1 ]
+[n S574 . . . . . . . . ]
+"9950
+[v _RCSTA1bits `VS574 ~T0 @X0 0 e@4011 ]
 "10813
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
+"10371
+[s S599 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S599 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"10381
+[s S600 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S600 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
+"10391
+[s S601 :6 `uc 1 :1 `uc 1 ]
+[n S601 . . TX8_9 ]
+"10395
+[s S602 :1 `uc 1 ]
+[n S602 . TXD8 ]
+"10370
+[u S598 `S599 1 `S600 1 `S601 1 `S602 1 ]
+[n S598 . . . . . ]
+"10399
+[v _TXSTA1bits `VS598 ~T0 @X0 0 e@4012 ]
 "10736
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -7219,12 +7262,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.c: 56: void EUSART1_Initialize(void) {
 [e :U _EUSART1_Initialize ]
 [f ]
-[; ;eusart1.c: 60: BAUD1CON = 0x49;
+[; ;eusart1.c: 60: BAUD1CON = 0x48;
 "60
-[e = _BAUD1CON -> -> 73 `i `uc ]
-[; ;eusart1.c: 63: RC1STA = 0x80;
+[e = _BAUD1CON -> -> 72 `i `uc ]
+[; ;eusart1.c: 63: RC1STA = 0x90;
 "63
-[e = _RC1STA -> -> 128 `i `uc ]
+[e = _RC1STA -> -> 144 `i `uc ]
 [; ;eusart1.c: 66: TX1STA = 0x26;
 "66
 [e = _TX1STA -> -> 38 `i `uc ]
@@ -7244,7 +7287,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.c: 76: uint8_t EUSART1_Read(void) {
 [e :U _EUSART1_Read ]
 [f ]
-[; ;eusart1.c: 78: while (!PIR1bits.RC1IF) {
+[; ;eusart1.c: 78: while (PIR1bits.RC1IF == 0) {
 "78
 [e $U 1107  ]
 [e :U 1108 ]
@@ -7253,19 +7296,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1107 ]
 "78
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 1108  ]
+[e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 1108  ]
 [e :U 1109 ]
 [; ;eusart1.c: 79: }
-[; ;eusart1.c: 81: if (1 == RC1STAbits.OERR) {
+[; ;eusart1.c: 81: if (RC1STAbits.OERR == 1) {
 "81
-[e $ ! == -> 1 `i -> . . _RC1STAbits 0 1 `i 1110  ]
+[e $ ! == -> . . _RC1STAbits 0 1 `i -> 1 `i 1110  ]
 {
-[; ;eusart1.c: 84: RC1STAbits.CREN = 0;
+[; ;eusart1.c: 83: RCSTA1bits.OERR = 0;
+"83
+[e = . . _RCSTA1bits 0 1 -> -> 0 `i `uc ]
+[; ;eusart1.c: 84: RCSTA1bits.CREN = 0;
 "84
-[e = . . _RC1STAbits 0 4 -> -> 0 `i `uc ]
-[; ;eusart1.c: 85: RC1STAbits.CREN = 1;
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;eusart1.c: 85: RCSTA1bits.CREN = 1;
 "85
-[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
 "86
 }
 [e :U 1110 ]
@@ -7285,22 +7331,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _EUSART1_Write ]
 [v _txData `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;eusart1.c: 92: while (0 == PIR1bits.TX1IF) {
-"92
+[; ;eusart1.c: 94: while (TXSTA1bits.TRMT == 0) {
+"94
 [e $U 1112  ]
 [e :U 1113 ]
 {
-"93
+"95
 }
 [e :U 1112 ]
-"92
-[e $ == -> 0 `i -> . . _PIR1bits 0 4 `i 1113  ]
+"94
+[e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 1113  ]
 [e :U 1114 ]
-[; ;eusart1.c: 93: }
-[; ;eusart1.c: 95: TXREG1 = txData;
-"95
+[; ;eusart1.c: 95: }
+[; ;eusart1.c: 97: TXREG1 = txData;
+"97
 [e = _TXREG1 _txData ]
-[; ;eusart1.c: 96: }
-"96
+[; ;eusart1.c: 98: }
+"98
 [e :UE 1111 ]
 }

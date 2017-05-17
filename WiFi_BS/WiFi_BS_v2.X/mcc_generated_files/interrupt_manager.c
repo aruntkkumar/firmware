@@ -1,17 +1,19 @@
 /**
-  Generated Pin Manager File
+  @Generated Interrupt Manager File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    pin_manager.c
+  @File Name:
+    interrupt_manager.c
 
-  Summary:
-    This is the Pin Manager file generated using MPLAB® Code Configurator
+  @Summary:
+    This is the Interrupt Manager file generated using MPLAB® Code Configurator
 
-  Description:
-    This header file provides implementations for pin APIs for all pins selected in the GUI.
+  @Description:
+    This header file provides implementations for global interrupt handling.
+    For individual peripheral handlers please see the peripheral driver for
+    all modules selected in the GUI.
     Generation Information :
         Product Revision  :  MPLAB® Code Configurator - v2.25.2
         Device            :  PIC18F23K22
@@ -44,29 +46,32 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
  */
 
-#include <xc.h>
-#include "pin_manager.h"
+#include "interrupt_manager.h"
+#include "mcc.h"
 
-void PIN_MANAGER_Initialize(void) {
-    LATA = 0x00;
-    TRISA = 0xFF;
-    ANSELA = 0x2F;
+void INTERRUPT_Initialize(void) {
+    // Disable Interrupt Priority Vectors (16CXXX Compatibility Mode)
+    RCONbits.IPEN = 0;
 
-    LATB = 0x00;
-    TRISB = 0xF0;
-    ANSELB = 0x30;
-    WPUB = 0x00;
+    // Clear peripheral interrupt priority bits (default reset value)
 
-    LATC = 0x00;
-    //TRISC = 0xF0;
-    TRISC = 0xB0;
-    //ANSELC = 0x30;
-    ANSELC = 0x00;
-
-    INTCON2bits.nRBPU = 0x01;
-
-
+    // RCI
+    IPR1bits.RC1IP = 0;
+    // TXI
+    IPR1bits.TX1IP = 0;
 }
+
+void interrupt INTERRUPT_InterruptManager(void) {
+    // interrupt handler
+    if (PIE1bits.RC1IE == 1 && PIR1bits.RC1IF == 1) {
+        EUSART1_Receive_ISR();
+    } else if (PIE1bits.TX1IE == 1 && PIR1bits.TX1IF == 1) {
+        EUSART1_Transmit_ISR();
+    } else {
+        //Unhandled Interrupt
+    }
+}
+
 /**
  End of File
  */

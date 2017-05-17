@@ -1,61 +1,5 @@
 
-# 1 "mcc_generated_files/mcc.c"
-
-
-# 50
-#pragma config PLLCFG = ON
-#pragma config FCMEN = OFF
-#pragma config PRICLKEN = ON
-#pragma config FOSC = INTIO67
-#pragma config IESO = OFF
-
-
-#pragma config PWRTEN = OFF
-#pragma config BOREN = SBORDIS
-#pragma config BORV = 190
-
-
-#pragma config WDTPS = 32768
-#pragma config WDTEN = OFF
-
-
-#pragma config CCP2MX = PORTC1
-#pragma config P2BMX = PORTB5
-#pragma config MCLRE = EXTMCLR
-#pragma config CCP3MX = PORTB5
-#pragma config T3CMX = PORTC0
-#pragma config PBADEN = OFF
-#pragma config HFOFST = ON
-
-
-#pragma config XINST = OFF
-#pragma config LVP = ON
-#pragma config STVREN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config CP0 = ON
-#pragma config CP1 = ON
-
-
-#pragma config CPB = ON
-#pragma config CPD = ON
-
-
-#pragma config WRT1 = OFF
-#pragma config WRT0 = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR1 = OFF
-#pragma config EBTR0 = OFF
-
-
-#pragma config EBTRB = OFF
+# 1 "main.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -67,7 +11,7 @@ extern double __fpnormalize(double);
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h"
+# 49 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18lf23k22.h"
 extern volatile unsigned char ANSELA @ 0xF38;
 
 asm("ANSELA equ 0F38h");
@@ -8992,156 +8936,176 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 219 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize(void);
-
-# 231
-void PIN_MANAGER_IOC(void);
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
+# 17 "main.c"
+char Hello[5]={'H','E','L','L','O'};
 
 
 
 
-typedef uint32_t uintmax_t;
+void InterruptHandlerHigh () {
 
+if(PIR1bits.RC1IF)
+{
+Serial_echo();
 
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdbool.h"
-typedef unsigned char bool;
-
-# 95 "mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-
-# 115
-uint8_t EUSART1_Read(void);
-
-# 135
-void EUSART1_Write(uint8_t txData);
-
-# 99 "mcc_generated_files/memory.h"
-uint8_t FLASH_ReadByte(uint32_t flashAddr);
-
-# 125
-uint16_t FLASH_ReadWord(uint32_t flashAddr);
-
-# 157
-void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
-
-# 193
-int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
-
-# 218
-void FLASH_EraseBlock(uint32_t baseAddr);
-
-# 249
-void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-
-# 275
-uint8_t DATAEE_ReadByte(uint8_t bAdd);
-
-# 69 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 82
-void OSCILLATOR_Initialize(void);
-
-# 106 "mcc_generated_files/mcc.c"
-void SYSTEM_Initialize(void) {
-OSCILLATOR_Initialize();
-PIN_MANAGER_Initialize();
-EUSART1_Initialize();
+}
 }
 
-void OSCILLATOR_Initialize(void) {
+void Serial_Init(void)
+{
 
-OSCCON = 0x70;
+TRISCbits.TRISC6=1;
+TRISCbits.TRISC7=1;
+ANSELC=0x00;
 
-OSCCON2 = 0x04;
+RCSTA1 = 0b10010000;
+TXSTA1=0b00100010;
 
-OSCTUNE = 0x40;
+BAUDCON1=0x00;
+SPBRG1=25;
 
+INTCONbits.GIEH=1;
+INTCONbits.PEIE_GIEL=1;
+INTCON=0xC0;
+
+PIE1bits.RC1IE = 1;
 
 }
 
+
+void Serial_Putchar(unsigned char cD)
+{
+RCSTA1bits.CREN=0;
+while(!PIR1bits.TX1IF);
+TXREG1=cD;
+while(!TXSTA1bits.TRMT);
+RCSTA1bits.CREN=1;
+}
+
+
+
+void Serial_Putchar_parity(unsigned char cD)
+{
+
+TXSTAbits.TX9D=Check_Parity(cD);
+TXREG=cD;
+while(!TXSTAbits.TRMT);
+
+}
+
+
+char Serial_Getchar(void)
+{
+unsigned char cData;
+
+cData=RCREG1;
+RCSTA1bits.CREN=0;
+PIR1bits.RC1IF=0;
+RCSTA1bits.CREN=1;
+return cData;
+
+}
+
+char Serial_Getchar_with_parity(void)
+{
+unsigned char cData;
+BIT parity;
+cData=RCREG;
+parity=RCSTAbits.RX9D;
+
+PIR1bits.RCIF=0;
+RCSTAbits.CREN=1;
+return cData;
+}
+
+
+void Serial_SendBuff( char* pc_Buff, char s_length)
+{
+char i;
+for(i=0;i<s_length;i++)
+{
+Serial_Putchar(pc_Buff[i]);
+}
+}
+
+void Serial_echo(void)
+{
+Serial_Putchar(Serial_Getchar());
+
+RCSTAbits.CREN=1;
+}
+
+
+BIT Check_Parity(char n)
+
+{
+BIT parity = 0;
+while (n)
+{
+parity = !parity;
+n = n & (n - 1);
+}
+return parity;
+}
+
+void Serial_SendBuff_Parity(char* pc_Buff, char s_length)
+{char i;
+PIE1bits.RCIE = 0;
+
+for(i=0;i<s_length;i++)
+{
+Serial_Putchar_parity(pc_Buff[i]);
+}
+PIE1bits.RCIE = 1;
+}
+
+void Activate_RC(void)
+{
+
+INTCONbits.PEIE=1;
+PIE1bits.RCIE = 1;
+RCSTAbits.CREN=1;
+}
+
+void Deactivate_RC(void)
+{
+
+INTCONbits.PEIE=0;
+PIE1bits.RCIE = 0;
+RCSTAbits.CREN=0;
+}
+
+void Stop_echo(void)
+{
+Deactivate_RC();
+Delay10KTCYx(2000);
+Activate_RC();
+}
+
+
+void init_main()
+{
+
+# 173
+OSCCON=0x70;
+OSCCON2=0;
+
+Serial_Init();
+}
+
+# 183
+void main(void)
+{
+init_main();
+
+Serial_SendBuff(Hello,5);
+
+while(1)
+{
+
+
+_delay((unsigned long)((1000)*(_XTAL_FREQ/4000000.0)));
+Serial_Getchar();
+}
+
+}

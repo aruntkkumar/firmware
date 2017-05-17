@@ -9043,10 +9043,10 @@ void EUSART1_Initialize(void) {
 
 
 
-BAUD1CON = 0x49;
+BAUD1CON = 0x48;
 
 
-RC1STA = 0x80;
+RC1STA = 0x90;
 
 
 TX1STA = 0x26;
@@ -9061,21 +9061,23 @@ SPBRGH1 = 0x06;
 
 uint8_t EUSART1_Read(void) {
 
-while (!PIR1bits.RC1IF) {
+while (PIR1bits.RC1IF == 0) {
 }
 
-if (1 == RC1STAbits.OERR) {
+if (RC1STAbits.OERR == 1) {
 
-
-RC1STAbits.CREN = 0;
-RC1STAbits.CREN = 1;
+RCSTA1bits.OERR = 0;
+RCSTA1bits.CREN = 0;
+RCSTA1bits.CREN = 1;
 }
 
 return RCREG1;
 }
 
 void EUSART1_Write(uint8_t txData) {
-while (0 == PIR1bits.TX1IF) {
+
+
+while (TXSTA1bits.TRMT == 0) {
 }
 
 TXREG1 = txData;

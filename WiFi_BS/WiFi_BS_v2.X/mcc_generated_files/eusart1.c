@@ -56,11 +56,11 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 void EUSART1_Initialize(void) {
     // Set the EUSART1 module to the options selected in the user interface.
 
-    // ABDOVF no_overflow; RCIDL idle; BRG16 16bit_generator; WUE disabled; CKTXP async_noninverted_sync_fallingedge; ABDEN enabled; DTRXP not_inverted; 
-    BAUD1CON = 0x49;
+    // ABDOVF no_overflow; RCIDL idle; BRG16 16bit_generator; WUE disabled; CKTXP async_noninverted_sync_fallingedge; ABDEN disabled; DTRXP not_inverted; 
+    BAUD1CON = 0x48;
 
-    // SPEN enabled; OERR no_error; RX9 8-bit; RX9D 0x0; CREN disabled; ADDEN disabled; SREN disabled; FERR no_error; 
-    RC1STA = 0x80;
+    // SPEN enabled; OERR no_error; RX9 8-bit; RX9D 0x0; CREN enabled; ADDEN disabled; SREN disabled; FERR no_error; 
+    RC1STA = 0x90;
 
     // TRMT TSR_empty; TX9 8-bit; TX9D 0x0; SENDB sync_break_complete; TXEN enabled; SYNC asynchronous; BRGH hi_speed; CSRC slave_mode; 
     TX1STA = 0x26;
@@ -75,21 +75,23 @@ void EUSART1_Initialize(void) {
 
 uint8_t EUSART1_Read(void) {
 
-    while (!PIR1bits.RC1IF) {
+    while (PIR1bits.RC1IF == 0) {
     }
 
-    if (1 == RC1STAbits.OERR) {
+    if (RC1STAbits.OERR == 1) {
         // EUSART1 error - restart
-
-        RC1STAbits.CREN = 0;
-        RC1STAbits.CREN = 1;
+        RCSTA1bits.OERR = 0;
+        RCSTA1bits.CREN = 0;
+        RCSTA1bits.CREN = 1;
     }
 
     return RCREG1;
 }
 
 void EUSART1_Write(uint8_t txData) {
-    while (0 == PIR1bits.TX1IF) {
+    //while (0 == PIR1bits.TX1IF) {
+    //}
+    while (TXSTA1bits.TRMT == 0) {
     }
 
     TXREG1 = txData; // Write the data byte to the USART.

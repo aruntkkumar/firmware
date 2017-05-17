@@ -12,8 +12,10 @@
             <resource customName="R_SP4T_VC2" digital="true" direction="OUTPUT" function="RC1" module="GPIO" name="RC1" start="false" type="pin" wpu="false"/>
             <resource customName="R_SP4T_VC1" digital="true" direction="OUTPUT" function="RC2" module="GPIO" name="RC2" start="false" type="pin" wpu="false"/>
             <resource customName="R_SP2TL_VC" digital="true" direction="OUTPUT" function="RC3" module="GPIO" name="RC3" start="false" type="pin" wpu="false"/>
-            <file checksum="2751826927" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
-            <file checksum="175543796" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
+            <resource customName="TX1" digital="true" direction="INPUT" function="TX1" module="EUSART1" name="RC6" start="false" type="pin" wpu="false"/>
+            <resource customName="RX1" digital="true" direction="INPUT" function="RX1" module="EUSART1" name="RC7" start="false" type="pin" wpu="false"/>
+            <file checksum="2668399580" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
+            <file checksum="1894313866" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
         </manager>
         <manager generated="true" name="System" reloadPin="manual">
             <initializer comment="" name="Initialize">
@@ -85,13 +87,13 @@
                 <setting name="BRG16" option="16bit_generator" register="BAUD1CON"/>
                 <setting name="WUE" option="disabled" register="BAUD1CON"/>
                 <setting name="CKTXP" option="async_noninverted_sync_fallingedge" register="BAUD1CON"/>
-                <setting name="ABDEN" option="enabled" register="BAUD1CON"/>
+                <setting name="ABDEN" option="disabled" register="BAUD1CON"/>
                 <setting name="DTRXP" option="not_inverted" register="BAUD1CON"/>
                 <setting name="SPEN" option="enabled" register="RC1STA"/>
                 <setting name="OERR" option="no_error" register="RC1STA"/>
                 <setting name="RX9" option="8-bit" register="RC1STA"/>
                 <setting name="RX9D" option="0x0" register="RC1STA"/>
-                <setting name="CREN" option="disabled" register="RC1STA"/>
+                <setting name="CREN" option="enabled" register="RC1STA"/>
                 <setting name="ADDEN" option="disabled" register="RC1STA"/>
                 <setting name="SREN" option="disabled" register="RC1STA"/>
                 <setting name="FERR" option="no_error" register="RC1STA"/>
@@ -114,7 +116,7 @@
             <setting name="inputBuffer" option="8"/>
             <setting name="outputBuffer" option="8"/>
             <setting name="stdio" option="false"/>
-            <file checksum="472093054" modified="false" name="eusart1.c" path="mcc_generated_files/eusart1.c"/>
+            <file checksum="655205463" modified="true" name="eusart1.c" path="mcc_generated_files/eusart1.c"/>
             <file checksum="4036847796" modified="false" name="eusart1.h" path="mcc_generated_files/eusart1.h"/>
         </module>
         <module generated="true" mode="Memory" name="MEMORY" order="2" reloadPin="manual" type="pfm_control">

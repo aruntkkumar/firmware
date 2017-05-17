@@ -7164,8 +7164,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 152: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 154: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 156: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 191: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 203: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 219: void PIN_MANAGER_Initialize(void);
+[; ;pin_manager.h: 231: void PIN_MANAGER_IOC(void);
 "50 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
 {
@@ -7196,16 +7196,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 60: LATC = 0x00;
 "60
 [e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 61: TRISC = 0xF0;
-"61
-[e = _TRISC -> -> 240 `i `uc ]
-[; ;pin_manager.c: 62: ANSELC = 0xF0;
+[; ;pin_manager.c: 62: TRISC = 0xB0;
 "62
-[e = _ANSELC -> -> 240 `i `uc ]
-[; ;pin_manager.c: 64: INTCON2bits.nRBPU = 0x01;
+[e = _TRISC -> -> 176 `i `uc ]
+[; ;pin_manager.c: 64: ANSELC = 0x00;
 "64
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;pin_manager.c: 66: INTCON2bits.nRBPU = 0x01;
+"66
 [e = . . _INTCON2bits 1 7 -> -> 1 `i `uc ]
-[; ;pin_manager.c: 67: }
-"67
+[; ;pin_manager.c: 69: }
+"69
 [e :UE 1105 ]
 }

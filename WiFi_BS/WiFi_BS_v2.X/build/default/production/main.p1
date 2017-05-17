@@ -17,21 +17,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATC1 `Vb ~T0 @X0 0 e@31833 ]
 "115 mcc_generated_files/eusart1.h
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+[v F7486 `(v ~T0 @X0 1 tf1`ul ]
+"152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v __delay `JF7486 ~T0 @X0 0 e ]
+[p i __delay ]
 [p mainexit ]
 "69 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "275 mcc_generated_files/memory.h
 [v _DATAEE_ReadByte `(uc ~T0 @X0 0 ef1`uc ]
-[v F7486 `(v ~T0 @X0 1 tf1`ul ]
-"152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
-[v __delay `JF7486 ~T0 @X0 0 e ]
-[p i __delay ]
 "135 mcc_generated_files/eusart1.h
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 "249 mcc_generated_files/memory.h
 [v _DATAEE_WriteByte `(v ~T0 @X0 0 ef2`uc`uc ]
-"10813 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
-[v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7163,8 +7161,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 152: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 154: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 156: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 191: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 203: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 219: void PIN_MANAGER_Initialize(void);
+[; ;pin_manager.h: 231: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -7946,438 +7944,506 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ != -> ( _EUSART1_Read ..  `i -> 82 `i 1360  ]
 [e :U 1361 ]
 [; ;main.c: 170: }
-[; ;main.c: 172: rssi[b] = EUSART1_Read();
+[; ;main.c: 172: _delay((unsigned long)((10)*(64000000/4000.0)));
 "172
-[e = *U + &U _rssi * -> _b `ux -> -> # *U &U _rssi `ui `ux ( _EUSART1_Read ..  ]
-[; ;main.c: 173: while (EUSART1_Read() != 0x4c) {
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 173: rssi[b] = EUSART1_Read();
 "173
+[e = *U + &U _rssi * -> _b `ux -> -> # *U &U _rssi `ui `ux ( _EUSART1_Read ..  ]
+[; ;main.c: 174: _delay((unsigned long)((10)*(64000000/4000.0)));
+"174
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 177: while (EUSART1_Read() != 0x4C) {
+"177
 [e $U 1362  ]
 [e :U 1363 ]
 {
-"175
+"179
 }
 [e :U 1362 ]
-"173
+"177
 [e $ != -> ( _EUSART1_Read ..  `i -> 76 `i 1363  ]
 [e :U 1364 ]
-[; ;main.c: 175: }
-[; ;main.c: 177: quality[b] = EUSART1_Read();
-"177
-[e = *U + &U _quality * -> _b `ux -> -> # *U &U _quality `ui `ux ( _EUSART1_Read ..  ]
-[; ;main.c: 178: return;
-"178
-[e $UE 1358  ]
 [; ;main.c: 179: }
-"179
+[; ;main.c: 181: _delay((unsigned long)((10)*(64000000/4000.0)));
+"181
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 182: quality[b] = EUSART1_Read();
+"182
+[e = *U + &U _quality * -> _b `ux -> -> # *U &U _quality `ui `ux ( _EUSART1_Read ..  ]
+[; ;main.c: 183: _delay((unsigned long)((10)*(64000000/4000.0)));
+"183
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 186: return;
+"186
+[e $UE 1358  ]
+[; ;main.c: 187: }
+"187
 [e :UE 1358 ]
 }
-"181
+"189
 [v _normaloperation `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 181: void normaloperation(uint8_t c) {
+[; ;main.c: 189: void normaloperation(uint8_t c) {
 [e :U _normaloperation ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 182: switch (c) {
-"182
+[; ;main.c: 190: switch (c) {
+"190
 [e $U 1367  ]
 {
-[; ;main.c: 183: case 0:
-"183
-[e :U 1368 ]
-[; ;main.c: 184: switchstate(5);
-"184
-[e ( _switchstate (1 -> -> 5 `i `uc ]
-[; ;main.c: 185: break;
-"185
-[e $U 1366  ]
-[; ;main.c: 186: case 1:
-"186
-[e :U 1369 ]
-[; ;main.c: 187: switchstate(4);
-"187
-[e ( _switchstate (1 -> -> 4 `i `uc ]
-[; ;main.c: 188: break;
-"188
-[e $U 1366  ]
-[; ;main.c: 189: case 2:
-"189
-[e :U 1370 ]
-[; ;main.c: 190: switchstate(6);
-"190
-[e ( _switchstate (1 -> -> 6 `i `uc ]
-[; ;main.c: 191: break;
+[; ;main.c: 191: case 0:
 "191
-[e $U 1366  ]
-[; ;main.c: 192: case 3:
+[e :U 1368 ]
+[; ;main.c: 192: switchstate(5);
 "192
-[e :U 1371 ]
-[; ;main.c: 193: switchstate(2);
+[e ( _switchstate (1 -> -> 5 `i `uc ]
+[; ;main.c: 193: break;
 "193
-[e ( _switchstate (1 -> -> 2 `i `uc ]
-[; ;main.c: 194: break;
+[e $U 1366  ]
+[; ;main.c: 194: case 1:
 "194
-[e $U 1366  ]
-[; ;main.c: 195: case 4:
+[e :U 1369 ]
+[; ;main.c: 195: switchstate(4);
 "195
-[e :U 1372 ]
-[; ;main.c: 196: switchstate(8);
+[e ( _switchstate (1 -> -> 4 `i `uc ]
+[; ;main.c: 196: break;
 "196
-[e ( _switchstate (1 -> -> 8 `i `uc ]
-[; ;main.c: 197: break;
-"197
 [e $U 1366  ]
-[; ;main.c: 198: default:
+[; ;main.c: 197: case 2:
+"197
+[e :U 1370 ]
+[; ;main.c: 198: switchstate(6);
 "198
-[e :U 1373 ]
+[e ( _switchstate (1 -> -> 6 `i `uc ]
 [; ;main.c: 199: break;
 "199
 [e $U 1366  ]
+[; ;main.c: 200: case 3:
 "200
-}
-[; ;main.c: 200: }
+[e :U 1371 ]
+[; ;main.c: 201: switchstate(2);
+"201
+[e ( _switchstate (1 -> -> 2 `i `uc ]
+[; ;main.c: 202: break;
+"202
 [e $U 1366  ]
-"182
+[; ;main.c: 203: case 4:
+"203
+[e :U 1372 ]
+[; ;main.c: 204: switchstate(8);
+"204
+[e ( _switchstate (1 -> -> 8 `i `uc ]
+[; ;main.c: 205: break;
+"205
+[e $U 1366  ]
+[; ;main.c: 206: case 5:
+"206
+[e :U 1373 ]
+[; ;main.c: 207: switchstate(3);
+"207
+[e ( _switchstate (1 -> -> 3 `i `uc ]
+[; ;main.c: 208: break;
+"208
+[e $U 1366  ]
+[; ;main.c: 209: default:
+"209
+[e :U 1374 ]
+[; ;main.c: 210: break;
+"210
+[e $U 1366  ]
+"211
+}
+[; ;main.c: 211: }
+[e $U 1366  ]
+"190
 [e :U 1367 ]
 [e [\ _c , $ -> -> 0 `i `uc 1368
  , $ -> -> 1 `i `uc 1369
  , $ -> -> 2 `i `uc 1370
  , $ -> -> 3 `i `uc 1371
  , $ -> -> 4 `i `uc 1372
- 1373 ]
-"200
+ , $ -> -> 5 `i `uc 1373
+ 1374 ]
+"211
 [e :U 1366 ]
-[; ;main.c: 201: return;
-"201
+[; ;main.c: 212: return;
+"212
 [e $UE 1365  ]
-[; ;main.c: 202: }
-"202
+[; ;main.c: 213: }
+"213
 [e :UE 1365 ]
 }
-"204
+"215
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 204: void main(void) {
+[; ;main.c: 215: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 206: SYSTEM_Initialize();
-"206
+[; ;main.c: 217: SYSTEM_Initialize();
+"217
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 207: if ((DATAEE_ReadByte(0x00) != 0xFF) || (DATAEE_ReadByte(0x00) != 0x00)) {
-"207
-[e $ ! || != -> ( _DATAEE_ReadByte (1 -> -> 0 `i `uc `i -> 255 `i != -> ( _DATAEE_ReadByte (1 -> -> 0 `i `uc `i -> 0 `i 1375  ]
+[; ;main.c: 226: if ((DATAEE_ReadByte(0x00) != 0xFF) || (DATAEE_ReadByte(0x00) != 0x00)) {
+"226
+[e $ ! || != -> ( _DATAEE_ReadByte (1 -> -> 0 `i `uc `i -> 255 `i != -> ( _DATAEE_ReadByte (1 -> -> 0 `i `uc `i -> 0 `i 1376  ]
 {
-[; ;main.c: 208: switchstate(DATAEE_ReadByte(0x00));
-"208
+[; ;main.c: 227: switchstate(DATAEE_ReadByte(0x00));
+"227
 [e ( _switchstate (1 ( _DATAEE_ReadByte (1 -> -> 0 `i `uc ]
-"209
+"228
 }
-[; ;main.c: 209: } else {
-[e $U 1376  ]
-[e :U 1375 ]
-{
-[; ;main.c: 210: switchstate(5);
-"210
-[e ( _switchstate (1 -> -> 5 `i `uc ]
-"211
-}
+[; ;main.c: 228: } else {
+[e $U 1377  ]
 [e :U 1376 ]
-[; ;main.c: 211: }
-[; ;main.c: 240: while (1) {
-"240
-[e :U 1378 ]
 {
-[; ;main.c: 241: start:
-"241
-[e :U 1380 ]
-[; ;main.c: 242: while (EUSART1_Read() != 0xFF) {
-"242
-[e $U 1381  ]
-[e :U 1382 ]
-{
-"244
+[; ;main.c: 229: switchstate(5);
+"229
+[e ( _switchstate (1 -> -> 5 `i `uc ]
+"230
 }
-[e :U 1381 ]
-"242
-[e $ != -> ( _EUSART1_Read ..  `i -> 255 `i 1382  ]
-[e :U 1383 ]
-[; ;main.c: 244: }
-[; ;main.c: 245: while (1) {
-"245
-[e :U 1385 ]
-{
-[; ;main.c: 246: if (EUSART1_Read() == 0x4E) {
-"246
-[e $ ! == -> ( _EUSART1_Read ..  `i -> 78 `i 1387  ]
-{
-[; ;main.c: 257: for (uint8_t i = 0; i < 5; i++) {
-"257
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1388  ]
-[e $U 1389  ]
-[e :U 1388 ]
-{
-[; ;main.c: 258: normaloperation(i);
-"258
-[e ( _normaloperation (1 _i ]
-[; ;main.c: 259: _delay((unsigned long)((25)*(64000000/4000000.0)));
-"259
-[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 260: getvalues(i);
-"260
-[e ( _getvalues (1 _i ]
-"261
-}
-"257
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1388  ]
-[e :U 1389 ]
-"261
-}
-[; ;main.c: 261: }
-[; ;main.c: 263: rssimax = rssi[0];
+[e :U 1377 ]
+[; ;main.c: 230: }
+[; ;main.c: 263: _delay((unsigned long)((10)*(64000000/4000.0)));
 "263
-[e = _rssimax *U + &U _rssi * -> -> -> 0 `i `ui `ux -> -> # *U &U _rssi `ui `ux ]
-[; ;main.c: 264: index = 0;
-"264
-[e = _index -> -> 0 `i `uc ]
-[; ;main.c: 265: for (uint8_t i = 0; i < 5; i++) {
-"265
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1391  ]
-[e $U 1392  ]
-[e :U 1391 ]
-{
-[; ;main.c: 266: if (rssi[i] < rssimax) {
-"266
-[e $ ! < -> *U + &U _rssi * -> _i `ux -> -> # *U &U _rssi `ui `ux `i -> _rssimax `i 1394  ]
-{
-[; ;main.c: 267: rssiindex[0] = i + 1;
-"267
-[e = *U + &U _rssiindex * -> -> -> 0 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
-[; ;main.c: 268: rssiindex[1] = 0;
-"268
-[e = *U + &U _rssiindex * -> -> -> 1 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 269: rssiindex[2] = 0;
-"269
-[e = *U + &U _rssiindex * -> -> -> 2 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 270: rssiindex[3] = 0;
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 270: while (1) {
 "270
-[e = *U + &U _rssiindex * -> -> -> 3 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 271: rssiindex[4] = 0;
+[e :U 1379 ]
+{
+[; ;main.c: 271: start:
 "271
-[e = *U + &U _rssiindex * -> -> -> 4 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
+[e :U 1381 ]
+[; ;main.c: 272: while (EUSART1_Read() != 0xFF) {
+"272
+[e $U 1382  ]
+[e :U 1383 ]
+{
+"274
+}
+[e :U 1382 ]
+"272
+[e $ != -> ( _EUSART1_Read ..  `i -> 255 `i 1383  ]
+[e :U 1384 ]
+[; ;main.c: 274: }
+[; ;main.c: 277: _delay((unsigned long)((10)*(64000000/4000.0)));
 "277
-}
-[; ;main.c: 277: } else if (rssi[i] == rssimax) {
-[e $U 1395  ]
-[e :U 1394 ]
-[e $ ! == -> *U + &U _rssi * -> _i `ux -> -> # *U &U _rssi `ui `ux `i -> _rssimax `i 1396  ]
-{
-[; ;main.c: 278: rssiindex[index] = i + 1;
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 278: index = EUSART1_Read();
 "278
-[e = *U + &U _rssiindex * -> _index `ux -> -> # *U &U _rssiindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
-[; ;main.c: 279: index++;
+[e = _index ( _EUSART1_Read ..  ]
+[; ;main.c: 279: _delay((unsigned long)((10)*(64000000/4000.0)));
 "279
-[e ++ _index -> -> 1 `i `uc ]
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 280: while (!((index == 0x4E) || (index == 0x73))) {
 "280
-}
-[e :U 1396 ]
+[e $U 1385  ]
+[e :U 1386 ]
+{
+[; ;main.c: 281: index = EUSART1_Read();
 "281
-[e :U 1395 ]
-}
-"265
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1391  ]
-[e :U 1392 ]
-"281
-}
-[; ;main.c: 280: }
-[; ;main.c: 281: }
-[; ;main.c: 283: qualitymax = quality[0];
+[e = _index ( _EUSART1_Read ..  ]
+[; ;main.c: 282: _delay((unsigned long)((10)*(64000000/4000.0)));
+"282
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "283
-[e = _qualitymax *U + &U _quality * -> -> -> 0 `i `ui `ux -> -> # *U &U _quality `ui `ux ]
-[; ;main.c: 284: index = 0;
-"284
-[e = _index -> -> 0 `i `uc ]
-[; ;main.c: 285: for (uint8_t i = 0; i < 5; i++) {
-"285
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1397  ]
-[e $U 1398  ]
-[e :U 1397 ]
-{
-[; ;main.c: 286: if (quality[i] > qualitymax) {
-"286
-[e $ ! > -> *U + &U _quality * -> _i `ux -> -> # *U &U _quality `ui `ux `i -> _qualitymax `i 1400  ]
-{
-[; ;main.c: 287: qualityindex[0] = i + 1;
-"287
-[e = *U + &U _qualityindex * -> -> -> 0 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
-[; ;main.c: 288: qualityindex[1] = 0;
-"288
-[e = *U + &U _qualityindex * -> -> -> 1 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 289: qualityindex[2] = 0;
-"289
-[e = *U + &U _qualityindex * -> -> -> 2 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 290: qualityindex[3] = 0;
-"290
-[e = *U + &U _qualityindex * -> -> -> 3 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 291: qualityindex[4] = 0;
-"291
-[e = *U + &U _qualityindex * -> -> -> 4 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
-"297
 }
-[; ;main.c: 297: } else if (quality[i] == qualitymax) {
-[e $U 1401  ]
-[e :U 1400 ]
-[e $ ! == -> *U + &U _quality * -> _i `ux -> -> # *U &U _quality `ui `ux `i -> _qualitymax `i 1402  ]
+[e :U 1385 ]
+"280
+[e $ ! || == -> _index `i -> 78 `i == -> _index `i -> 115 `i 1386  ]
+[e :U 1387 ]
+[; ;main.c: 283: }
+[; ;main.c: 285: if (index == 0x4E) {
+"285
+[e $ ! == -> _index `i -> 78 `i 1388  ]
 {
-[; ;main.c: 298: qualityindex[index] = i + 1;
+[; ;main.c: 298: for (uint8_t i = 0; i < 6; i++) {
 "298
-[e = *U + &U _qualityindex * -> _index `ux -> -> # *U &U _qualityindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
-[; ;main.c: 299: index++;
-"299
-[e ++ _index -> -> 1 `i `uc ]
-"300
-}
-[e :U 1402 ]
-"301
-[e :U 1401 ]
-}
-"285
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1397  ]
-[e :U 1398 ]
-"301
-}
-[; ;main.c: 300: }
-[; ;main.c: 301: }
-[; ;main.c: 303: for (uint8_t i = 0; i < 5; i++) {
-"303
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1403  ]
-[e $U 1404  ]
-[e :U 1403 ]
+[e $ < -> _i `i -> 6 `i 1389  ]
+[e $U 1390  ]
+[e :U 1389 ]
 {
-[; ;main.c: 304: for (uint8_t j = 0; j < 5; j++) {
+[; ;main.c: 299: normaloperation(i);
+"299
+[e ( _normaloperation (1 _i ]
+[; ;main.c: 300: _delay((unsigned long)((10)*(64000000/4000.0)));
+"300
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 301: getvalues(i);
+"301
+[e ( _getvalues (1 _i ]
+"302
+}
+"298
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1389  ]
+[e :U 1390 ]
+"302
+}
+[; ;main.c: 302: }
+[; ;main.c: 304: rssimax = rssi[0];
 "304
+[e = _rssimax *U + &U _rssi * -> -> -> 0 `i `ui `ux -> -> # *U &U _rssi `ui `ux ]
+[; ;main.c: 305: index = 0;
+"305
+[e = _index -> -> 0 `i `uc ]
+[; ;main.c: 306: for (uint8_t i = 0; i < 6; i++) {
+"306
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1392  ]
+[e $U 1393  ]
+[e :U 1392 ]
+{
+[; ;main.c: 307: if (rssi[i] < rssimax) {
+"307
+[e $ ! < -> *U + &U _rssi * -> _i `ux -> -> # *U &U _rssi `ui `ux `i -> _rssimax `i 1395  ]
+{
+[; ;main.c: 308: rssiindex[0] = i + 1;
+"308
+[e = *U + &U _rssiindex * -> -> -> 0 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
+[; ;main.c: 309: rssiindex[1] = 0;
+"309
+[e = *U + &U _rssiindex * -> -> -> 1 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 310: rssiindex[2] = 0;
+"310
+[e = *U + &U _rssiindex * -> -> -> 2 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 311: rssiindex[3] = 0;
+"311
+[e = *U + &U _rssiindex * -> -> -> 3 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 312: rssiindex[4] = 0;
+"312
+[e = *U + &U _rssiindex * -> -> -> 4 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 313: rssiindex[5] = 0;
+"313
+[e = *U + &U _rssiindex * -> -> -> 5 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 317: rssimax = rssi[i];
+"317
+[e = _rssimax *U + &U _rssi * -> _i `ux -> -> # *U &U _rssi `ui `ux ]
+"318
+}
+[; ;main.c: 318: } else if (rssi[i] == rssimax) {
+[e $U 1396  ]
+[e :U 1395 ]
+[e $ ! == -> *U + &U _rssi * -> _i `ux -> -> # *U &U _rssi `ui `ux `i -> _rssimax `i 1397  ]
+{
+[; ;main.c: 319: rssiindex[index] = i + 1;
+"319
+[e = *U + &U _rssiindex * -> _index `ux -> -> # *U &U _rssiindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
+[; ;main.c: 320: index++;
+"320
+[e ++ _index -> -> 1 `i `uc ]
+"321
+}
+[e :U 1397 ]
+"322
+[e :U 1396 ]
+}
+"306
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1392  ]
+[e :U 1393 ]
+"322
+}
+[; ;main.c: 321: }
+[; ;main.c: 322: }
+[; ;main.c: 324: qualitymax = quality[0];
+"324
+[e = _qualitymax *U + &U _quality * -> -> -> 0 `i `ui `ux -> -> # *U &U _quality `ui `ux ]
+[; ;main.c: 325: index = 0;
+"325
+[e = _index -> -> 0 `i `uc ]
+[; ;main.c: 326: for (uint8_t i = 0; i < 6; i++) {
+"326
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1398  ]
+[e $U 1399  ]
+[e :U 1398 ]
+{
+[; ;main.c: 327: if (quality[i] > qualitymax) {
+"327
+[e $ ! > -> *U + &U _quality * -> _i `ux -> -> # *U &U _quality `ui `ux `i -> _qualitymax `i 1401  ]
+{
+[; ;main.c: 328: qualityindex[0] = i + 1;
+"328
+[e = *U + &U _qualityindex * -> -> -> 0 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
+[; ;main.c: 329: qualityindex[1] = 0;
+"329
+[e = *U + &U _qualityindex * -> -> -> 1 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 330: qualityindex[2] = 0;
+"330
+[e = *U + &U _qualityindex * -> -> -> 2 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 331: qualityindex[3] = 0;
+"331
+[e = *U + &U _qualityindex * -> -> -> 3 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 332: qualityindex[4] = 0;
+"332
+[e = *U + &U _qualityindex * -> -> -> 4 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 333: qualityindex[5] = 0;
+"333
+[e = *U + &U _qualityindex * -> -> -> 5 `i `ui `ux -> -> # *U &U _qualityindex `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 337: qualitymax = quality[i];
+"337
+[e = _qualitymax *U + &U _quality * -> _i `ux -> -> # *U &U _quality `ui `ux ]
+"338
+}
+[; ;main.c: 338: } else if (quality[i] == qualitymax) {
+[e $U 1402  ]
+[e :U 1401 ]
+[e $ ! == -> *U + &U _quality * -> _i `ux -> -> # *U &U _quality `ui `ux `i -> _qualitymax `i 1403  ]
+{
+[; ;main.c: 339: qualityindex[index] = i + 1;
+"339
+[e = *U + &U _qualityindex * -> _index `ux -> -> # *U &U _qualityindex `ui `ux -> + -> _i `i -> 1 `i `uc ]
+[; ;main.c: 340: index++;
+"340
+[e ++ _index -> -> 1 `i `uc ]
+"341
+}
+[e :U 1403 ]
+"342
+[e :U 1402 ]
+}
+"326
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1398  ]
+[e :U 1399 ]
+"342
+}
+[; ;main.c: 341: }
+[; ;main.c: 342: }
+[; ;main.c: 344: for (uint8_t i = 0; i < 6; i++) {
+"344
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1404  ]
+[e $U 1405  ]
+[e :U 1404 ]
+{
+[; ;main.c: 345: for (uint8_t j = 0; j < 6; j++) {
+"345
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 5 `i 1406  ]
-[e $U 1407  ]
-[e :U 1406 ]
-{
-[; ;main.c: 305: if ((rssiindex[i] == qualityindex[j]) && (rssiindex[i] != 0) && (qualityindex[j] != 0)) {
-"305
-[e $ ! && && == -> *U + &U _rssiindex * -> _i `ux -> -> # *U &U _rssiindex `ui `ux `i -> *U + &U _qualityindex * -> _j `ux -> -> # *U &U _qualityindex `ui `ux `i != -> *U + &U _rssiindex * -> _i `ux -> -> # *U &U _rssiindex `ui `ux `i -> 0 `i != -> *U + &U _qualityindex * -> _j `ux -> -> # *U &U _qualityindex `ui `ux `i -> 0 `i 1409  ]
-{
-[; ;main.c: 306: normaloperation((rssiindex[i] - 1));
-"306
-[e ( _normaloperation (1 -> - -> *U + &U _rssiindex * -> _i `ux -> -> # *U &U _rssiindex `ui `ux `i -> 1 `i `uc ]
-[; ;main.c: 307: EUSART1_Write(0x53);
-"307
-[e ( _EUSART1_Write (1 -> -> 83 `i `uc ]
-[; ;main.c: 308: _delay((unsigned long)((25)*(64000000/4000000.0)));
-"308
-[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 309: EUSART1_Write(index);
-"309
-[e ( _EUSART1_Write (1 _index ]
-[; ;main.c: 310: _delay((unsigned long)((25)*(64000000/4000000.0)));
-"310
-[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 311: goto flash;
-"311
-[e $U 1410  ]
-"312
-}
-[e :U 1409 ]
-"313
-}
-"304
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 5 `i 1406  ]
+[e $ < -> _j `i -> 6 `i 1407  ]
+[e $U 1408  ]
 [e :U 1407 ]
-"313
-}
-"314
-}
-"303
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1403  ]
-[e :U 1404 ]
-"314
-}
-[; ;main.c: 312: }
-[; ;main.c: 313: }
-[; ;main.c: 314: }
-[; ;main.c: 315: flash:
-"315
-[e :U 1410 ]
-[; ;main.c: 316: DATAEE_WriteByte(0x00, index);
-"316
-[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
-[; ;main.c: 317: goto start;
-"317
-[e $U 1380  ]
-"318
-}
-[; ;main.c: 318: } else if (EUSART1_Read() == 0x73) {
+{
+[; ;main.c: 346: if ((rssiindex[i] == qualityindex[j]) && (rssiindex[i] != 0) && (qualityindex[j] != 0)) {
+"346
+[e $ ! && && == -> *U + &U _rssiindex * -> _i `ux -> -> # *U &U _rssiindex `ui `ux `i -> *U + &U _qualityindex * -> _j `ux -> -> # *U &U _qualityindex `ui `ux `i != -> *U + &U _rssiindex * -> _i `ux -> -> # *U &U _rssiindex `ui `ux `i -> 0 `i != -> *U + &U _qualityindex * -> _j `ux -> -> # *U &U _qualityindex `ui `ux `i -> 0 `i 1410  ]
+{
+[; ;main.c: 347: normaloperation((rssiindex[i] - 1));
+"347
+[e ( _normaloperation (1 -> - -> *U + &U _rssiindex * -> _i `ux -> -> # *U &U _rssiindex `ui `ux `i -> 1 `i `uc ]
+[; ;main.c: 348: EUSART1_Write(0x53);
+"348
+[e ( _EUSART1_Write (1 -> -> 83 `i `uc ]
+[; ;main.c: 349: _delay((unsigned long)((10)*(64000000/4000.0)));
+"349
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 350: EUSART1_Write(index);
+"350
+[e ( _EUSART1_Write (1 _index ]
+[; ;main.c: 351: _delay((unsigned long)((10)*(64000000/4000.0)));
+"351
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 352: goto flash;
+"352
 [e $U 1411  ]
-[e :U 1387 ]
-[e $ ! == -> ( _EUSART1_Read ..  `i -> 115 `i 1412  ]
+"353
+}
+[e :U 1410 ]
+"354
+}
+"345
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 6 `i 1407  ]
+[e :U 1408 ]
+"354
+}
+"355
+}
+"344
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1404  ]
+[e :U 1405 ]
+"355
+}
+[; ;main.c: 353: }
+[; ;main.c: 354: }
+[; ;main.c: 355: }
+[; ;main.c: 356: flash:
+"356
+[e :U 1411 ]
+[; ;main.c: 357: DATAEE_WriteByte(0x00, index);
+"357
+[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
+[; ;main.c: 358: goto start;
+"358
+[e $U 1381  ]
+"359
+}
+[; ;main.c: 359: } else if (index == 0x73) {
+[e $U 1412  ]
+[e :U 1388 ]
+[e $ ! == -> _index `i -> 115 `i 1413  ]
 {
-[; ;main.c: 319: while ((EUSART1_Read() != 0x01) || (EUSART1_Read() != 0x02) || (EUSART1_Read() != 0x03) || (EUSART1_Read() != 0x04) || (EUSART1_Read() != 0x05) || (EUSART1_Read() != 0x06) || (EUSART1_Read() != 0x07) || (EUSART1_Read() != 0x08) || (EUSART1_Read() != 
-"319
-[e $U 1413  ]
+[; ;main.c: 363: index = EUSART1_Read();
+"363
+[e = _index ( _EUSART1_Read ..  ]
+[; ;main.c: 364: _delay((unsigned long)((10)*(64000000/4000.0)));
+"364
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 365: while (!((index == 0x01) || (index == 0x02) || (index == 0x03) || (index == 0x04) || (index == 0x05) || (index == 0x06) || (index == 0x07) || (index == 0x08) || (index == 0x09))) {
+"365
+[e $U 1414  ]
+[e :U 1415 ]
+{
+[; ;main.c: 366: index = EUSART1_Read();
+"366
+[e = _index ( _EUSART1_Read ..  ]
+[; ;main.c: 367: _delay((unsigned long)((10)*(64000000/4000.0)));
+"367
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"368
+}
 [e :U 1414 ]
-{
-"321
+"365
+[e $ ! || || || || || || || || == -> _index `i -> 1 `i == -> _index `i -> 2 `i == -> _index `i -> 3 `i == -> _index `i -> 4 `i == -> _index `i -> 5 `i == -> _index `i -> 6 `i == -> _index `i -> 7 `i == -> _index `i -> 8 `i == -> _index `i -> 9 `i 1415  ]
+[e :U 1416 ]
+[; ;main.c: 368: }
+[; ;main.c: 369: switchstate(index);
+"369
+[e ( _switchstate (1 _index ]
+[; ;main.c: 370: DATAEE_WriteByte(0x00, index);
+"370
+[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
+[; ;main.c: 371: _delay((unsigned long)((10)*(64000000/4000.0)));
+"371
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 374: goto start;
+"374
+[e $U 1381  ]
+"375
 }
 [e :U 1413 ]
-"319
-[e $ || || || || || || || || != -> ( _EUSART1_Read ..  `i -> 1 `i != -> ( _EUSART1_Read ..  `i -> 2 `i != -> ( _EUSART1_Read ..  `i -> 3 `i != -> ( _EUSART1_Read ..  `i -> 4 `i != -> ( _EUSART1_Read ..  `i -> 5 `i != -> ( _EUSART1_Read ..  `i -> 6 `i != -> ( _EUSART1_Read ..  `i -> 7 `i != -> ( _EUSART1_Read ..  `i -> 8 `i != -> ( _EUSART1_Read ..  `i -> 9 `i 1414  ]
-[e :U 1415 ]
-[; ;main.c: 321: }
-[; ;main.c: 322: switchstate(RCREG1);
-"322
-[e ( _switchstate (1 _RCREG1 ]
-[; ;main.c: 323: DATAEE_WriteByte(0x00, index);
-"323
-[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
-[; ;main.c: 324: goto start;
-"324
-[e $U 1380  ]
-"325
-}
+"376
 [e :U 1412 ]
-"326
-[e :U 1411 ]
 }
-[e :U 1384 ]
-"245
-[e $U 1385  ]
-[e :U 1386 ]
-"327
-}
-[e :U 1377 ]
-"240
-[e $U 1378  ]
-[e :U 1379 ]
-[; ;main.c: 325: }
-[; ;main.c: 326: }
-[; ;main.c: 327: }
-[; ;main.c: 328: }
-"328
-[e :UE 1374 ]
+[e :U 1378 ]
+"270
+[e $U 1379  ]
+[e :U 1380 ]
+[; ;main.c: 375: }
+[; ;main.c: 376: }
+[; ;main.c: 377: }
+"377
+[e :UE 1375 ]
 }

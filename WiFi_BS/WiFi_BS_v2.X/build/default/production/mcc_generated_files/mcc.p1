@@ -1,7 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "82 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"191 mcc_generated_files/pin_manager.h
+"219 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "95 mcc_generated_files/eusart1.h
 [v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
@@ -7208,8 +7208,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 152: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 154: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 156: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 191: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 203: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 219: void PIN_MANAGER_Initialize(void);
+[; ;pin_manager.h: 231: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -7282,9 +7282,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 116: OSCCON2 = 0x04;
 "116
 [e = _OSCCON2 -> -> 4 `i `uc ]
-[; ;mcc.c: 118: OSCTUNE = 0x00;
+[; ;mcc.c: 118: OSCTUNE = 0x40;
 "118
-[e = _OSCTUNE -> -> 0 `i `uc ]
+[e = _OSCTUNE -> -> 64 `i `uc ]
 [; ;mcc.c: 121: }
 "121
 [e :UE 1106 ]

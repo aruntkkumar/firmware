@@ -9329,6 +9329,13 @@ goto flash;
 }
 }
 }
+
+normaloperation((rssiindex[0] - 1));
+EUSART1_Write(0x53);
+_delay((unsigned long)((10)*(64000000/4000.0)));
+EUSART1_Write(index);
+_delay((unsigned long)((10)*(64000000/4000.0)));
+
 flash:
 DATAEE_WriteByte(0x00, index);
 goto start;

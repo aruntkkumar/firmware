@@ -8379,71 +8379,86 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 353: }
 [; ;main.c: 354: }
 [; ;main.c: 355: }
-[; ;main.c: 356: flash:
-"356
-[e :U 1411 ]
-[; ;main.c: 357: DATAEE_WriteByte(0x00, index);
+[; ;main.c: 357: normaloperation((rssiindex[0] - 1));
 "357
-[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
-[; ;main.c: 358: goto start;
+[e ( _normaloperation (1 -> - -> *U + &U _rssiindex * -> -> -> 0 `i `ui `ux -> -> # *U &U _rssiindex `ui `ux `i -> 1 `i `uc ]
+[; ;main.c: 358: EUSART1_Write(0x53);
 "358
-[e $U 1381  ]
+[e ( _EUSART1_Write (1 -> -> 83 `i `uc ]
+[; ;main.c: 359: _delay((unsigned long)((10)*(64000000/4000.0)));
 "359
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 360: EUSART1_Write(index);
+"360
+[e ( _EUSART1_Write (1 _index ]
+[; ;main.c: 361: _delay((unsigned long)((10)*(64000000/4000.0)));
+"361
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 363: flash:
+"363
+[e :U 1411 ]
+[; ;main.c: 364: DATAEE_WriteByte(0x00, index);
+"364
+[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
+[; ;main.c: 365: goto start;
+"365
+[e $U 1381  ]
+"366
 }
-[; ;main.c: 359: } else if (index == 0x73) {
+[; ;main.c: 366: } else if (index == 0x73) {
 [e $U 1412  ]
 [e :U 1388 ]
 [e $ ! == -> _index `i -> 115 `i 1413  ]
 {
-[; ;main.c: 363: index = EUSART1_Read();
-"363
-[e = _index ( _EUSART1_Read ..  ]
-[; ;main.c: 364: _delay((unsigned long)((10)*(64000000/4000.0)));
-"364
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;main.c: 365: while (!((index == 0x01) || (index == 0x02) || (index == 0x03) || (index == 0x04) || (index == 0x05) || (index == 0x06) || (index == 0x07) || (index == 0x08) || (index == 0x09))) {
-"365
-[e $U 1414  ]
-[e :U 1415 ]
-{
-[; ;main.c: 366: index = EUSART1_Read();
-"366
-[e = _index ( _EUSART1_Read ..  ]
-[; ;main.c: 367: _delay((unsigned long)((10)*(64000000/4000.0)));
-"367
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"368
-}
-[e :U 1414 ]
-"365
-[e $ ! || || || || || || || || == -> _index `i -> 1 `i == -> _index `i -> 2 `i == -> _index `i -> 3 `i == -> _index `i -> 4 `i == -> _index `i -> 5 `i == -> _index `i -> 6 `i == -> _index `i -> 7 `i == -> _index `i -> 8 `i == -> _index `i -> 9 `i 1415  ]
-[e :U 1416 ]
-[; ;main.c: 368: }
-[; ;main.c: 369: switchstate(index);
-"369
-[e ( _switchstate (1 _index ]
-[; ;main.c: 370: DATAEE_WriteByte(0x00, index);
+[; ;main.c: 370: index = EUSART1_Read();
 "370
-[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
+[e = _index ( _EUSART1_Read ..  ]
 [; ;main.c: 371: _delay((unsigned long)((10)*(64000000/4000.0)));
 "371
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;main.c: 374: goto start;
+[; ;main.c: 372: while (!((index == 0x01) || (index == 0x02) || (index == 0x03) || (index == 0x04) || (index == 0x05) || (index == 0x06) || (index == 0x07) || (index == 0x08) || (index == 0x09))) {
+"372
+[e $U 1414  ]
+[e :U 1415 ]
+{
+[; ;main.c: 373: index = EUSART1_Read();
+"373
+[e = _index ( _EUSART1_Read ..  ]
+[; ;main.c: 374: _delay((unsigned long)((10)*(64000000/4000.0)));
 "374
-[e $U 1381  ]
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "375
 }
-[e :U 1413 ]
+[e :U 1414 ]
+"372
+[e $ ! || || || || || || || || == -> _index `i -> 1 `i == -> _index `i -> 2 `i == -> _index `i -> 3 `i == -> _index `i -> 4 `i == -> _index `i -> 5 `i == -> _index `i -> 6 `i == -> _index `i -> 7 `i == -> _index `i -> 8 `i == -> _index `i -> 9 `i 1415  ]
+[e :U 1416 ]
+[; ;main.c: 375: }
+[; ;main.c: 376: switchstate(index);
 "376
+[e ( _switchstate (1 _index ]
+[; ;main.c: 377: DATAEE_WriteByte(0x00, index);
+"377
+[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _index ]
+[; ;main.c: 378: _delay((unsigned long)((10)*(64000000/4000.0)));
+"378
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 381: goto start;
+"381
+[e $U 1381  ]
+"382
+}
+[e :U 1413 ]
+"383
 [e :U 1412 ]
 }
 [e :U 1378 ]
 "270
 [e $U 1379  ]
 [e :U 1380 ]
-[; ;main.c: 375: }
-[; ;main.c: 376: }
-[; ;main.c: 377: }
-"377
+[; ;main.c: 382: }
+[; ;main.c: 383: }
+[; ;main.c: 384: }
+"384
 [e :UE 1375 ]
 }

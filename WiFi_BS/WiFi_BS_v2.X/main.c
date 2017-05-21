@@ -353,6 +353,13 @@ start:
                     }
                 }
             }
+            
+            normaloperation((rssiindex[0] - 1));        //Condition when RSSI and Link Quality does not match.
+            EUSART1_Write(0x53); //Hex value for char 'S'
+            __delay_ms(10);
+            EUSART1_Write(index);
+            __delay_ms(10);
+            
 flash:
             DATAEE_WriteByte(0x00, index);
             goto start;

@@ -353,8 +353,17 @@ start:
                     }
                 }
             }
-            
-            normaloperation((rssiindex[0] - 1));        //Condition when RSSI and Link Quality does not match.
+            rssimax = rssi[qualityindex[0] - 1];
+            index = qualityindex[0];
+            for (uint8_t i = 0; i < 6; i++) {
+                if(qualityindex[i] != 0) {
+                    if (rssi[qualityindex[i] - 1] > rssimax) {
+                        rssimax = rssi[qualityindex[i] - 1];
+                        index = qualityindex[i];
+                    }
+                }
+            }
+            normaloperation((index - 1));        //Condition when RSSI and Link Quality does not match.
             EUSART1_Write(0x53); //Hex value for char 'S'
             __delay_ms(10);
             EUSART1_Write(index);

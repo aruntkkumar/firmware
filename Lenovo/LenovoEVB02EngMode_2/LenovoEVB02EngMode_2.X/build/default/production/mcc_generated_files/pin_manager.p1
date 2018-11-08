@@ -9953,8 +9953,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
-[; ;pin_manager.h: 308: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 320: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 319: void PIN_MANAGER_Initialize(void);
+[; ;pin_manager.h: 331: void PIN_MANAGER_IOC(void);
 [; ;stdbool.h: 12: typedef unsigned char bool;
 "51 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]

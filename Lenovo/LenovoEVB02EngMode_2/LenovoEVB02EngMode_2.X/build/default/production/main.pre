@@ -13476,10 +13476,10 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 308 "mcc_generated_files/pin_manager.h"
+# 319 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize(void);
 
-# 320
+# 331
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
@@ -13689,9 +13689,11 @@ else{
 SPI_Exchange8bit(ADDRESSDATA1[a]);
 SPI_Exchange8bit(DATABUSPARK[a]);
 }
+
+# 153
 }
 
-# 193
+# 202
 void main(void) {
 
 
@@ -13741,11 +13743,11 @@ while ((PORTC & 0x80) != 0x80) {
 
 Byte5 = PORTC & 0x7F;
 
-# 264
+# 273
 if ((Byte4 & 0x30) == 0x10)
 MIPISPI1(Byte5);
 
-# 272
+# 281
 switch ((Byte1 & 0x38)){
 case 0x00:
 do { LATA1 = 1; } while(0);
@@ -13794,7 +13796,7 @@ do { LATB4 = 0; } while(0);
 break;
 }
 
-# 341
+# 350
 asm("sleep");
 }
 }

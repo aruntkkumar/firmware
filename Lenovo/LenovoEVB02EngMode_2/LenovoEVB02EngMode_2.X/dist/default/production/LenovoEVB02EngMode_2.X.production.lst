@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Thu Nov 08 11:31:55 2018
+                                                                                               Thu Nov 08 17:39:28 2018
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	16LF1618
@@ -2693,7 +2693,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2687 ;;
   2688 ;; *************** function _main *****************
   2689 ;; Defined at:
-  2690 ;;		line 193 in file "main.c"
+  2690 ;;		line 202 in file "main.c"
   2691 ;; Parameters:    Size  Location     Type
   2692 ;;		None
   2693 ;; Auto vars:     Size  Location     Type
@@ -2725,7 +2725,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2719                           ;psect for function _main
   2720  0758                     _main:	
   2721                           
-  2722                           ;main.c: 196: if (start == 1) goto reset;
+  2722                           ;main.c: 205: if (start == 1) goto reset;
   2723                           
   2724                           ;incstack = 0
   2725                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
@@ -2733,36 +2733,36 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2727  0759  1903               	btfsc	3,2
   2728  075A  2F65               	goto	l830
   2729                           
-  2730                           ;main.c: 198: SYSTEM_Initialize();
+  2730                           ;main.c: 207: SYSTEM_Initialize();
   2731  075B  3186  26F0  3187   	fcall	_SYSTEM_Initialize
   2732                           
-  2733                           ;main.c: 203: do { LATA2 = 0; } while(0);
+  2733                           ;main.c: 212: do { LATA2 = 0; } while(0);
   2734  075E  0022               	movlb	2	; select bank2
   2735  075F  110C               	bcf	12,2	;volatile
   2736                           
-  2737                           ;main.c: 204: do { LATA1 = 0; } while(0);
+  2737                           ;main.c: 213: do { LATA1 = 0; } while(0);
   2738  0760  108C               	bcf	12,1	;volatile
   2739                           
-  2740                           ;main.c: 205: do { LATA4 = 0; } while(0);
+  2740                           ;main.c: 214: do { LATA4 = 0; } while(0);
   2741  0761  120C               	bcf	12,4	;volatile
   2742                           
-  2743                           ;main.c: 206: do { LATB4 = 0; } while(0);
+  2743                           ;main.c: 215: do { LATB4 = 0; } while(0);
   2744  0762  120D               	bcf	13,4	;volatile
   2745                           
-  2746                           ;main.c: 207: do { LATA5 = 0; } while(0);
+  2746                           ;main.c: 216: do { LATA5 = 0; } while(0);
   2747  0763  128C               	bcf	12,5	;volatile
   2748                           
-  2749                           ;main.c: 208: do { LATB5 = 0; } while(0);
+  2749                           ;main.c: 217: do { LATB5 = 0; } while(0);
   2750  0764  128D               	bcf	13,5	;volatile
   2751  0765                     l830:	
-  2752                           ;main.c: 209: reset:
+  2752                           ;main.c: 218: reset:
   2753                           
   2754                           
-  2755                           ;main.c: 210: start = 1;
+  2755                           ;main.c: 219: start = 1;
   2756  0765  01F8               	clrf	_start
   2757  0766  0AF8               	incf	_start,f
   2758                           
-  2759                           ;main.c: 211: if (IOCCFbits.IOCCF7 == 0) {
+  2759                           ;main.c: 220: if (IOCCFbits.IOCCF7 == 0) {
   2760  0767  0027               	movlb	7	; select bank7
   2761  0768  1B99               	btfsc	25,7	;volatile
   2762  0769  2F6C               	goto	l220
@@ -2770,13 +2770,13 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2764  076B  2F6D               	goto	l836
   2765  076C                     l220:	
   2766                           
-  2767                           ;main.c: 213: else {
-  2768                           ;main.c: 214: IOCCFbits.IOCCF7 = 0;}
+  2767                           ;main.c: 222: else {
+  2768                           ;main.c: 223: IOCCFbits.IOCCF7 = 0;}
   2769  076C  1399               	bcf	25,7	;volatile
   2770  076D                     l836:	
-  2771                           ;main.c: 217: while ((PORTC & 0xC0) != 0xC0) {
+  2771                           ;main.c: 226: while ((PORTC & 0xC0) != 0xC0) {
   2772                           
-  2773                           ;main.c: 215: while (1) {
+  2773                           ;main.c: 224: while (1) {
   2774                           
   2775  076D  30C0               	movlw	192
   2776  076E  0020               	movlb	0	; select bank0
@@ -2787,14 +2787,14 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2781  0773  1D03               	btfss	3,2
   2782  0774  2F6D               	goto	l836
   2783                           
-  2784                           ;main.c: 218: }
-  2785                           ;main.c: 220: Byte1 = PORTC;
+  2784                           ;main.c: 227: }
+  2785                           ;main.c: 229: Byte1 = PORTC;
   2786  0775  080E               	movf	14,w	;volatile
   2787  0776  00FB               	movwf	??_main
   2788  0777  087B               	movf	??_main,w
   2789  0778  00F0               	movwf	_Byte1
   2790  0779                     l840:	
-  2791                           ;main.c: 222: while ((PORTC & 0xC0) != 0x40) {
+  2791                           ;main.c: 231: while ((PORTC & 0xC0) != 0x40) {
   2792                           
   2793  0779  30C0               	movlw	192
   2794  077A  050E               	andwf	14,w	;volatile
@@ -2804,15 +2804,15 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2798  077E  1D03               	btfss	3,2
   2799  077F  2F79               	goto	l840
   2800                           
-  2801                           ;main.c: 223: }
-  2802                           ;main.c: 225: Byte2 = PORTC & 0x3F;
+  2801                           ;main.c: 232: }
+  2802                           ;main.c: 234: Byte2 = PORTC & 0x3F;
   2803  0780  080E               	movf	14,w	;volatile
   2804  0781  393F               	andlw	63
   2805  0782  00FB               	movwf	??_main
   2806  0783  087B               	movf	??_main,w
   2807  0784  00F1               	movwf	_Byte2
   2808  0785                     l844:	
-  2809                           ;main.c: 227: while ((PORTC & 0xC0) != 0x80) {
+  2809                           ;main.c: 236: while ((PORTC & 0xC0) != 0x80) {
   2810                           
   2811  0785  30C0               	movlw	192
   2812  0786  050E               	andwf	14,w	;volatile
@@ -2822,15 +2822,15 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2816  078A  1D03               	btfss	3,2
   2817  078B  2F85               	goto	l844
   2818                           
-  2819                           ;main.c: 228: }
-  2820                           ;main.c: 230: Byte3 = PORTC & 0x3F;
+  2819                           ;main.c: 237: }
+  2820                           ;main.c: 239: Byte3 = PORTC & 0x3F;
   2821  078C  080E               	movf	14,w	;volatile
   2822  078D  393F               	andlw	63
   2823  078E  00FB               	movwf	??_main
   2824  078F  087B               	movf	??_main,w
   2825  0790  00F2               	movwf	_Byte3
   2826  0791                     l848:	
-  2827                           ;main.c: 232: while ((PORTC & 0xC0) != 0x40) {
+  2827                           ;main.c: 241: while ((PORTC & 0xC0) != 0x40) {
   2828                           
   2829  0791  30C0               	movlw	192
   2830  0792  050E               	andwf	14,w	;volatile
@@ -2840,28 +2840,28 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2834  0796  1D03               	btfss	3,2
   2835  0797  2F91               	goto	l848
   2836                           
-  2837                           ;main.c: 233: }
-  2838                           ;main.c: 235: Byte4 = PORTC & 0x3F;
+  2837                           ;main.c: 242: }
+  2838                           ;main.c: 244: Byte4 = PORTC & 0x3F;
   2839  0798  080E               	movf	14,w	;volatile
   2840  0799  393F               	andlw	63
   2841  079A  00FB               	movwf	??_main
   2842  079B  087B               	movf	??_main,w
   2843  079C  00F3               	movwf	_Byte4
   2844  079D                     l235:	
-  2845                           ;main.c: 237: while ((PORTC & 0x80) != 0x80) {
+  2845                           ;main.c: 246: while ((PORTC & 0x80) != 0x80) {
   2846                           
   2847  079D  1F8E               	btfss	14,7	;volatile
   2848  079E  2F9D               	goto	l235
   2849                           
-  2850                           ;main.c: 238: }
-  2851                           ;main.c: 240: Byte5 = PORTC & 0x7F;
+  2850                           ;main.c: 247: }
+  2851                           ;main.c: 249: Byte5 = PORTC & 0x7F;
   2852  079F  080E               	movf	14,w	;volatile
   2853  07A0  397F               	andlw	127
   2854  07A1  00FB               	movwf	??_main
   2855  07A2  087B               	movf	??_main,w
   2856  07A3  00F4               	movwf	_Byte5
   2857                           
-  2858                           ;main.c: 264: if ((Byte4 & 0x30) == 0x10)
+  2858                           ;main.c: 273: if ((Byte4 & 0x30) == 0x10)
   2859  07A4  3030               	movlw	48
   2860  07A5  0573               	andwf	_Byte4,w
   2861  07A6  00FB               	movwf	??_main
@@ -2870,149 +2870,149 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2864  07A9  1D03               	btfss	3,2
   2865  07AA  2FCF               	goto	l860
   2866                           
-  2867                           ;main.c: 265: MIPISPI1(Byte5);
+  2867                           ;main.c: 274: MIPISPI1(Byte5);
   2868  07AB  0874               	movf	_Byte5,w
   2869  07AC  3187  2724  3187   	fcall	_MIPISPI1
   2870                           
-  2871                           ;main.c: 272: switch ((Byte1 & 0x38)){
+  2871                           ;main.c: 281: switch ((Byte1 & 0x38)){
   2872  07AF  2FCF               	goto	l860
   2873  07B0                     l241:	
-  2874                           ;main.c: 274: do { LATA1 = 1; } while(0);
+  2874                           ;main.c: 283: do { LATA1 = 1; } while(0);
   2875                           
-  2876                           ;main.c: 273: case 0x00:
+  2876                           ;main.c: 282: case 0x00:
   2877                           
   2878  07B0  0022               	movlb	2	; select bank2
   2879  07B1  148C               	bsf	12,1	;volatile
   2880  07B2  2FC7               	goto	L1
   2881  07B3                     l249:	
-  2882                           ;main.c: 279: do { LATA1 = 0; } while(0);
+  2882                           ;main.c: 288: do { LATA1 = 0; } while(0);
   2883                           
-  2884                           ;main.c: 278: case 0x08:
+  2884                           ;main.c: 287: case 0x08:
   2885                           
-  2886                           ;main.c: 277: break;
+  2886                           ;main.c: 286: break;
   2887                           
-  2888                           ;main.c: 276: do { LATB4 = 1; } while(0);
+  2888                           ;main.c: 285: do { LATB4 = 1; } while(0);
   2889                           
-  2890                           ;main.c: 275: do { LATA4 = 1; } while(0);
+  2890                           ;main.c: 284: do { LATA4 = 1; } while(0);
   2891                           
   2892  07B3  2FCA               	goto	l298
   2893  07B4                     l256:	
-  2894                           ;main.c: 284: do { LATA1 = 1; } while(0);
+  2894                           ;main.c: 293: do { LATA1 = 1; } while(0);
   2895                           
-  2896                           ;main.c: 283: case 0x10:
+  2896                           ;main.c: 292: case 0x10:
   2897                           
-  2898                           ;main.c: 282: break;
+  2898                           ;main.c: 291: break;
   2899                           
-  2900                           ;main.c: 281: do { LATB4 = 0; } while(0);
+  2900                           ;main.c: 290: do { LATB4 = 0; } while(0);
   2901                           
-  2902                           ;main.c: 280: do { LATA4 = 0; } while(0);
+  2902                           ;main.c: 289: do { LATA4 = 0; } while(0);
   2903                           
   2904  07B4  0022               	movlb	2	; select bank2
   2905  07B5  148C               	bsf	12,1	;volatile
   2906  07B6  2FCC               	goto	L2
   2907  07B7                     l263:	
-  2908                           ;main.c: 289: do { LATA1 = 0; } while(0);
+  2908                           ;main.c: 298: do { LATA1 = 0; } while(0);
   2909                           
-  2910                           ;main.c: 288: case 0x18:
+  2910                           ;main.c: 297: case 0x18:
   2911                           
-  2912                           ;main.c: 287: break;
+  2912                           ;main.c: 296: break;
   2913                           
-  2914                           ;main.c: 286: do { LATB4 = 0; } while(0);
+  2914                           ;main.c: 295: do { LATB4 = 0; } while(0);
   2915                           
-  2916                           ;main.c: 285: do { LATA4 = 0; } while(0);
+  2916                           ;main.c: 294: do { LATA4 = 0; } while(0);
   2917                           
   2918  07B7  0022               	movlb	2	; select bank2
   2919  07B8  108C               	bcf	12,1	;volatile
   2920  07B9  2FBC               	goto	L3
   2921  07BA                     l270:	
-  2922                           ;main.c: 294: do { LATA1 = 1; } while(0);
+  2922                           ;main.c: 303: do { LATA1 = 1; } while(0);
   2923                           
-  2924                           ;main.c: 293: case 0x20:
+  2924                           ;main.c: 302: case 0x20:
   2925                           
-  2926                           ;main.c: 292: break;
+  2926                           ;main.c: 301: break;
   2927                           
-  2928                           ;main.c: 291: do { LATB4 = 0; } while(0);
+  2928                           ;main.c: 300: do { LATB4 = 0; } while(0);
   2929                           
-  2930                           ;main.c: 290: do { LATA4 = 1; } while(0);
+  2930                           ;main.c: 299: do { LATA4 = 1; } while(0);
   2931                           
   2932  07BA  0022               	movlb	2	; select bank2
   2933  07BB  148C               	bsf	12,1	;volatile
   2934  07BC                     L3:	
   2935                           
-  2936                           ;main.c: 295: do { LATA4 = 1; } while(0);
+  2936                           ;main.c: 304: do { LATA4 = 1; } while(0);
   2937  07BC  160C               	bsf	12,4	;volatile
   2938                           
-  2939                           ;main.c: 296: do { LATB4 = 0; } while(0);
+  2939                           ;main.c: 305: do { LATB4 = 0; } while(0);
   2940  07BD  2FCD               	goto	l302
   2941  07BE                     l277:	
-  2942                           ;main.c: 299: do { LATA1 = 0; } while(0);
+  2942                           ;main.c: 308: do { LATA1 = 0; } while(0);
   2943                           
-  2944                           ;main.c: 298: case 0x28:
+  2944                           ;main.c: 307: case 0x28:
   2945                           
-  2946                           ;main.c: 297: break;
+  2946                           ;main.c: 306: break;
   2947                           
   2948  07BE  0022               	movlb	2	; select bank2
   2949  07BF  108C               	bcf	12,1	;volatile
   2950  07C0  2FC3               	goto	L4
   2951  07C1                     l284:	
-  2952                           ;main.c: 304: do { LATA1 = 1; } while(0);
+  2952                           ;main.c: 313: do { LATA1 = 1; } while(0);
   2953                           
-  2954                           ;main.c: 303: case 0x30:
+  2954                           ;main.c: 312: case 0x30:
   2955                           
-  2956                           ;main.c: 302: break;
+  2956                           ;main.c: 311: break;
   2957                           
-  2958                           ;main.c: 301: do { LATB4 = 1; } while(0);
+  2958                           ;main.c: 310: do { LATB4 = 1; } while(0);
   2959                           
-  2960                           ;main.c: 300: do { LATA4 = 0; } while(0);
+  2960                           ;main.c: 309: do { LATA4 = 0; } while(0);
   2961                           
   2962  07C1  0022               	movlb	2	; select bank2
   2963  07C2  148C               	bsf	12,1	;volatile
   2964  07C3                     L4:	
   2965                           
-  2966                           ;main.c: 305: do { LATA4 = 0; } while(0);
+  2966                           ;main.c: 314: do { LATA4 = 0; } while(0);
   2967  07C3  120C               	bcf	12,4	;volatile
   2968                           
-  2969                           ;main.c: 306: do { LATB4 = 1; } while(0);
+  2969                           ;main.c: 315: do { LATB4 = 1; } while(0);
   2970  07C4  2FC8               	goto	l295
   2971  07C5                     l291:	
-  2972                           ;main.c: 309: do { LATA1 = 0; } while(0);
+  2972                           ;main.c: 318: do { LATA1 = 0; } while(0);
   2973                           
-  2974                           ;main.c: 308: case 0x38:
+  2974                           ;main.c: 317: case 0x38:
   2975                           
-  2976                           ;main.c: 307: break;
+  2976                           ;main.c: 316: break;
   2977                           
   2978  07C5  0022               	movlb	2	; select bank2
   2979  07C6  108C               	bcf	12,1	;volatile
   2980  07C7                     L1:	
   2981                           
-  2982                           ;main.c: 310: do { LATA4 = 1; } while(0);
+  2982                           ;main.c: 319: do { LATA4 = 1; } while(0);
   2983  07C7  160C               	bsf	12,4	;volatile
   2984  07C8                     l295:	
-  2985                           ;main.c: 311: do { LATB4 = 1; } while(0);
+  2985                           ;main.c: 320: do { LATB4 = 1; } while(0);
   2986                           
   2987  07C8  160D               	bsf	13,4	;volatile
   2988                           
-  2989                           ;main.c: 312: break;
+  2989                           ;main.c: 321: break;
   2990  07C9  2FF2               	goto	l247
   2991  07CA                     l298:	
-  2992                           ;main.c: 314: do { LATA1 = 0; } while(0);
+  2992                           ;main.c: 323: do { LATA1 = 0; } while(0);
   2993                           
-  2994                           ;main.c: 313: default:
+  2994                           ;main.c: 322: default:
   2995                           
   2996  07CA  0022               	movlb	2	; select bank2
   2997  07CB  108C               	bcf	12,1	;volatile
   2998  07CC                     L2:	
   2999                           
-  3000                           ;main.c: 315: do { LATA4 = 0; } while(0);
+  3000                           ;main.c: 324: do { LATA4 = 0; } while(0);
   3001  07CC  120C               	bcf	12,4	;volatile
   3002  07CD                     l302:	
-  3003                           ;main.c: 316: do { LATB4 = 0; } while(0);
+  3003                           ;main.c: 325: do { LATB4 = 0; } while(0);
   3004                           
   3005  07CD  120D               	bcf	13,4	;volatile
   3006                           
-  3007                           ;main.c: 318: }
+  3007                           ;main.c: 327: }
   3008                           
-  3009                           ;main.c: 317: break;
+  3009                           ;main.c: 326: break;
   3010  07CE  2FF2               	goto	l247
   3011  07CF                     l860:	
   3012  07CF  0870               	movf	_Byte1,w
@@ -3835,7 +3835,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Thu Nov 08 11:31:55 2018
+Symbol Table                                                                                   Thu Nov 08 17:39:28 2018
 
                          _SPI_Initialize 06DA                              __CFG_CP$OFF 0000  
                                      l92 06EC                              __CFG_LVP$ON 0000  

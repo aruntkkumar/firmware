@@ -141,6 +141,15 @@ void MIPISPI1 (uint8_t a){
         SPI_Exchange8bit(ADDRESSDATA1[a]);                                                
         SPI_Exchange8bit(DATABUSPARK[a]);                            
     }
+//    //Read the register address
+//    RB6PPS = 0x00; // RB6->LATB6                                        //Single SCC with UID as Low
+//    SDO_SetLow();
+//    SDO_SetHigh();
+//    SDO_SetLow();
+//    RB6PPS = 0x11; // RB6->MSSP:SDO
+//    SPI_Exchange8bit(0x66);
+//    Dummy = SPI_Exchange8bit(0x10);
+//    SPI_Exchange8bit(Dummy);
 }
 
 /*

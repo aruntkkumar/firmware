@@ -9945,8 +9945,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
-[; ;pin_manager.h: 308: void PIN_MANAGER_Initialize(void);
-[; ;pin_manager.h: 320: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 319: void PIN_MANAGER_Initialize(void);
+[; ;pin_manager.h: 331: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -10661,428 +10661,428 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1142 ]
 [; ;main.c: 143: }
-[; ;main.c: 144: }
-"144
+[; ;main.c: 153: }
+"153
 [e :UE 1131 ]
 }
-"193
+"202
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 193: void main(void) {
+[; ;main.c: 202: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 196: if (start == 1) goto reset;
-"196
+[; ;main.c: 205: if (start == 1) goto reset;
+"205
 [e $ ! == -> _start `i -> 1 `i 1144  ]
 [e $U 1145  ]
 [e :U 1144 ]
-[; ;main.c: 198: SYSTEM_Initialize();
-"198
+[; ;main.c: 207: SYSTEM_Initialize();
+"207
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 203: do { LATA2 = 0; } while(0);
-"203
+[; ;main.c: 212: do { LATA2 = 0; } while(0);
+"212
 [e :U 1148 ]
 {
 [e = _LATA2 -> -> 0 `i `b ]
 }
 [e :U 1147 ]
-[; ;main.c: 204: do { LATA1 = 0; } while(0);
-"204
+[; ;main.c: 213: do { LATA1 = 0; } while(0);
+"213
 [e :U 1151 ]
 {
 [e = _LATA1 -> -> 0 `i `b ]
 }
 [e :U 1150 ]
-[; ;main.c: 205: do { LATA4 = 0; } while(0);
-"205
+[; ;main.c: 214: do { LATA4 = 0; } while(0);
+"214
 [e :U 1154 ]
 {
 [e = _LATA4 -> -> 0 `i `b ]
 }
 [e :U 1153 ]
-[; ;main.c: 206: do { LATB4 = 0; } while(0);
-"206
+[; ;main.c: 215: do { LATB4 = 0; } while(0);
+"215
 [e :U 1157 ]
 {
 [e = _LATB4 -> -> 0 `i `b ]
 }
 [e :U 1156 ]
-[; ;main.c: 207: do { LATA5 = 0; } while(0);
-"207
+[; ;main.c: 216: do { LATA5 = 0; } while(0);
+"216
 [e :U 1160 ]
 {
 [e = _LATA5 -> -> 0 `i `b ]
 }
 [e :U 1159 ]
-[; ;main.c: 208: do { LATB5 = 0; } while(0);
-"208
+[; ;main.c: 217: do { LATB5 = 0; } while(0);
+"217
 [e :U 1163 ]
 {
 [e = _LATB5 -> -> 0 `i `b ]
 }
 [e :U 1162 ]
-[; ;main.c: 209: reset:
-"209
+[; ;main.c: 218: reset:
+"218
 [e :U 1145 ]
-[; ;main.c: 210: start = 1;
-"210
+[; ;main.c: 219: start = 1;
+"219
 [e = _start -> -> 1 `i `uc ]
-[; ;main.c: 211: if (IOCCFbits.IOCCF7 == 0) {
-"211
+[; ;main.c: 220: if (IOCCFbits.IOCCF7 == 0) {
+"220
 [e $ ! == -> . . _IOCCFbits 0 7 `i -> 0 `i 1164  ]
 {
-[; ;main.c: 212: asm("sleep");}
-"212
+[; ;main.c: 221: asm("sleep");}
+"221
 [; <" sleep ;# ">
 }
 [e $U 1165  ]
-"213
+"222
 [e :U 1164 ]
-[; ;main.c: 213: else {
+[; ;main.c: 222: else {
 {
-[; ;main.c: 214: IOCCFbits.IOCCF7 = 0;}
-"214
+[; ;main.c: 223: IOCCFbits.IOCCF7 = 0;}
+"223
 [e = . . _IOCCFbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 1165 ]
-[; ;main.c: 215: while (1) {
-"215
+[; ;main.c: 224: while (1) {
+"224
 [e :U 1167 ]
 {
-[; ;main.c: 217: while ((PORTC & 0xC0) != 0xC0) {
-"217
+[; ;main.c: 226: while ((PORTC & 0xC0) != 0xC0) {
+"226
 [e $U 1169  ]
 [e :U 1170 ]
 {
-"218
+"227
 }
 [e :U 1169 ]
-"217
+"226
 [e $ != & -> _PORTC `i -> 192 `i -> 192 `i 1170  ]
 [e :U 1171 ]
-[; ;main.c: 218: }
-[; ;main.c: 220: Byte1 = PORTC;
-"220
+[; ;main.c: 227: }
+[; ;main.c: 229: Byte1 = PORTC;
+"229
 [e = _Byte1 _PORTC ]
-[; ;main.c: 222: while ((PORTC & 0xC0) != 0x40) {
-"222
+[; ;main.c: 231: while ((PORTC & 0xC0) != 0x40) {
+"231
 [e $U 1172  ]
 [e :U 1173 ]
 {
-"223
+"232
 }
 [e :U 1172 ]
-"222
+"231
 [e $ != & -> _PORTC `i -> 192 `i -> 64 `i 1173  ]
 [e :U 1174 ]
-[; ;main.c: 223: }
-[; ;main.c: 225: Byte2 = PORTC & 0x3F;
-"225
+[; ;main.c: 232: }
+[; ;main.c: 234: Byte2 = PORTC & 0x3F;
+"234
 [e = _Byte2 -> & -> _PORTC `i -> 63 `i `uc ]
-[; ;main.c: 227: while ((PORTC & 0xC0) != 0x80) {
-"227
+[; ;main.c: 236: while ((PORTC & 0xC0) != 0x80) {
+"236
 [e $U 1175  ]
 [e :U 1176 ]
 {
-"228
+"237
 }
 [e :U 1175 ]
-"227
+"236
 [e $ != & -> _PORTC `i -> 192 `i -> 128 `i 1176  ]
 [e :U 1177 ]
-[; ;main.c: 228: }
-[; ;main.c: 230: Byte3 = PORTC & 0x3F;
-"230
+[; ;main.c: 237: }
+[; ;main.c: 239: Byte3 = PORTC & 0x3F;
+"239
 [e = _Byte3 -> & -> _PORTC `i -> 63 `i `uc ]
-[; ;main.c: 232: while ((PORTC & 0xC0) != 0x40) {
-"232
+[; ;main.c: 241: while ((PORTC & 0xC0) != 0x40) {
+"241
 [e $U 1178  ]
 [e :U 1179 ]
 {
-"233
+"242
 }
 [e :U 1178 ]
-"232
+"241
 [e $ != & -> _PORTC `i -> 192 `i -> 64 `i 1179  ]
 [e :U 1180 ]
-[; ;main.c: 233: }
-[; ;main.c: 235: Byte4 = PORTC & 0x3F;
-"235
+[; ;main.c: 242: }
+[; ;main.c: 244: Byte4 = PORTC & 0x3F;
+"244
 [e = _Byte4 -> & -> _PORTC `i -> 63 `i `uc ]
-[; ;main.c: 237: while ((PORTC & 0x80) != 0x80) {
-"237
+[; ;main.c: 246: while ((PORTC & 0x80) != 0x80) {
+"246
 [e $U 1181  ]
 [e :U 1182 ]
 {
-"238
+"247
 }
 [e :U 1181 ]
-"237
+"246
 [e $ != & -> _PORTC `i -> 128 `i -> 128 `i 1182  ]
 [e :U 1183 ]
-[; ;main.c: 238: }
-[; ;main.c: 240: Byte5 = PORTC & 0x7F;
-"240
+[; ;main.c: 247: }
+[; ;main.c: 249: Byte5 = PORTC & 0x7F;
+"249
 [e = _Byte5 -> & -> _PORTC `i -> 127 `i `uc ]
-[; ;main.c: 264: if ((Byte4 & 0x30) == 0x10)
-"264
+[; ;main.c: 273: if ((Byte4 & 0x30) == 0x10)
+"273
 [e $ ! == & -> _Byte4 `i -> 48 `i -> 16 `i 1184  ]
-[; ;main.c: 265: MIPISPI1(Byte5);
-"265
+[; ;main.c: 274: MIPISPI1(Byte5);
+"274
 [e ( _MIPISPI1 (1 _Byte5 ]
 [e :U 1184 ]
-[; ;main.c: 272: switch ((Byte1 & 0x38)){
-"272
+[; ;main.c: 281: switch ((Byte1 & 0x38)){
+"281
 [e $U 1186  ]
 {
-[; ;main.c: 273: case 0x00:
-"273
+[; ;main.c: 282: case 0x00:
+"282
 [e :U 1187 ]
-[; ;main.c: 274: do { LATA1 = 1; } while(0);
-"274
+[; ;main.c: 283: do { LATA1 = 1; } while(0);
+"283
 [e :U 1190 ]
 {
 [e = _LATA1 -> -> 1 `i `b ]
 }
 [e :U 1189 ]
-[; ;main.c: 275: do { LATA4 = 1; } while(0);
-"275
+[; ;main.c: 284: do { LATA4 = 1; } while(0);
+"284
 [e :U 1193 ]
 {
 [e = _LATA4 -> -> 1 `i `b ]
 }
 [e :U 1192 ]
-[; ;main.c: 276: do { LATB4 = 1; } while(0);
-"276
+[; ;main.c: 285: do { LATB4 = 1; } while(0);
+"285
 [e :U 1196 ]
 {
 [e = _LATB4 -> -> 1 `i `b ]
 }
 [e :U 1195 ]
-[; ;main.c: 277: break;
-"277
+[; ;main.c: 286: break;
+"286
 [e $U 1185  ]
-[; ;main.c: 278: case 0x08:
-"278
+[; ;main.c: 287: case 0x08:
+"287
 [e :U 1197 ]
-[; ;main.c: 279: do { LATA1 = 0; } while(0);
-"279
+[; ;main.c: 288: do { LATA1 = 0; } while(0);
+"288
 [e :U 1200 ]
 {
 [e = _LATA1 -> -> 0 `i `b ]
 }
 [e :U 1199 ]
-[; ;main.c: 280: do { LATA4 = 0; } while(0);
-"280
+[; ;main.c: 289: do { LATA4 = 0; } while(0);
+"289
 [e :U 1203 ]
 {
 [e = _LATA4 -> -> 0 `i `b ]
 }
 [e :U 1202 ]
-[; ;main.c: 281: do { LATB4 = 0; } while(0);
-"281
+[; ;main.c: 290: do { LATB4 = 0; } while(0);
+"290
 [e :U 1206 ]
 {
 [e = _LATB4 -> -> 0 `i `b ]
 }
 [e :U 1205 ]
-[; ;main.c: 282: break;
-"282
+[; ;main.c: 291: break;
+"291
 [e $U 1185  ]
-[; ;main.c: 283: case 0x10:
-"283
+[; ;main.c: 292: case 0x10:
+"292
 [e :U 1207 ]
-[; ;main.c: 284: do { LATA1 = 1; } while(0);
-"284
+[; ;main.c: 293: do { LATA1 = 1; } while(0);
+"293
 [e :U 1210 ]
 {
 [e = _LATA1 -> -> 1 `i `b ]
 }
 [e :U 1209 ]
-[; ;main.c: 285: do { LATA4 = 0; } while(0);
-"285
+[; ;main.c: 294: do { LATA4 = 0; } while(0);
+"294
 [e :U 1213 ]
 {
 [e = _LATA4 -> -> 0 `i `b ]
 }
 [e :U 1212 ]
-[; ;main.c: 286: do { LATB4 = 0; } while(0);
-"286
+[; ;main.c: 295: do { LATB4 = 0; } while(0);
+"295
 [e :U 1216 ]
 {
 [e = _LATB4 -> -> 0 `i `b ]
 }
 [e :U 1215 ]
-[; ;main.c: 287: break;
-"287
+[; ;main.c: 296: break;
+"296
 [e $U 1185  ]
-[; ;main.c: 288: case 0x18:
-"288
+[; ;main.c: 297: case 0x18:
+"297
 [e :U 1217 ]
-[; ;main.c: 289: do { LATA1 = 0; } while(0);
-"289
+[; ;main.c: 298: do { LATA1 = 0; } while(0);
+"298
 [e :U 1220 ]
 {
 [e = _LATA1 -> -> 0 `i `b ]
 }
 [e :U 1219 ]
-[; ;main.c: 290: do { LATA4 = 1; } while(0);
-"290
+[; ;main.c: 299: do { LATA4 = 1; } while(0);
+"299
 [e :U 1223 ]
 {
 [e = _LATA4 -> -> 1 `i `b ]
 }
 [e :U 1222 ]
-[; ;main.c: 291: do { LATB4 = 0; } while(0);
-"291
+[; ;main.c: 300: do { LATB4 = 0; } while(0);
+"300
 [e :U 1226 ]
 {
 [e = _LATB4 -> -> 0 `i `b ]
 }
 [e :U 1225 ]
-[; ;main.c: 292: break;
-"292
+[; ;main.c: 301: break;
+"301
 [e $U 1185  ]
-[; ;main.c: 293: case 0x20:
-"293
+[; ;main.c: 302: case 0x20:
+"302
 [e :U 1227 ]
-[; ;main.c: 294: do { LATA1 = 1; } while(0);
-"294
+[; ;main.c: 303: do { LATA1 = 1; } while(0);
+"303
 [e :U 1230 ]
 {
 [e = _LATA1 -> -> 1 `i `b ]
 }
 [e :U 1229 ]
-[; ;main.c: 295: do { LATA4 = 1; } while(0);
-"295
+[; ;main.c: 304: do { LATA4 = 1; } while(0);
+"304
 [e :U 1233 ]
 {
 [e = _LATA4 -> -> 1 `i `b ]
 }
 [e :U 1232 ]
-[; ;main.c: 296: do { LATB4 = 0; } while(0);
-"296
+[; ;main.c: 305: do { LATB4 = 0; } while(0);
+"305
 [e :U 1236 ]
 {
 [e = _LATB4 -> -> 0 `i `b ]
 }
 [e :U 1235 ]
-[; ;main.c: 297: break;
-"297
+[; ;main.c: 306: break;
+"306
 [e $U 1185  ]
-[; ;main.c: 298: case 0x28:
-"298
+[; ;main.c: 307: case 0x28:
+"307
 [e :U 1237 ]
-[; ;main.c: 299: do { LATA1 = 0; } while(0);
-"299
+[; ;main.c: 308: do { LATA1 = 0; } while(0);
+"308
 [e :U 1240 ]
 {
 [e = _LATA1 -> -> 0 `i `b ]
 }
 [e :U 1239 ]
-[; ;main.c: 300: do { LATA4 = 0; } while(0);
-"300
+[; ;main.c: 309: do { LATA4 = 0; } while(0);
+"309
 [e :U 1243 ]
 {
 [e = _LATA4 -> -> 0 `i `b ]
 }
 [e :U 1242 ]
-[; ;main.c: 301: do { LATB4 = 1; } while(0);
-"301
+[; ;main.c: 310: do { LATB4 = 1; } while(0);
+"310
 [e :U 1246 ]
 {
 [e = _LATB4 -> -> 1 `i `b ]
 }
 [e :U 1245 ]
-[; ;main.c: 302: break;
-"302
+[; ;main.c: 311: break;
+"311
 [e $U 1185  ]
-[; ;main.c: 303: case 0x30:
-"303
+[; ;main.c: 312: case 0x30:
+"312
 [e :U 1247 ]
-[; ;main.c: 304: do { LATA1 = 1; } while(0);
-"304
+[; ;main.c: 313: do { LATA1 = 1; } while(0);
+"313
 [e :U 1250 ]
 {
 [e = _LATA1 -> -> 1 `i `b ]
 }
 [e :U 1249 ]
-[; ;main.c: 305: do { LATA4 = 0; } while(0);
-"305
+[; ;main.c: 314: do { LATA4 = 0; } while(0);
+"314
 [e :U 1253 ]
 {
 [e = _LATA4 -> -> 0 `i `b ]
 }
 [e :U 1252 ]
-[; ;main.c: 306: do { LATB4 = 1; } while(0);
-"306
+[; ;main.c: 315: do { LATB4 = 1; } while(0);
+"315
 [e :U 1256 ]
 {
 [e = _LATB4 -> -> 1 `i `b ]
 }
 [e :U 1255 ]
-[; ;main.c: 307: break;
-"307
+[; ;main.c: 316: break;
+"316
 [e $U 1185  ]
-[; ;main.c: 308: case 0x38:
-"308
+[; ;main.c: 317: case 0x38:
+"317
 [e :U 1257 ]
-[; ;main.c: 309: do { LATA1 = 0; } while(0);
-"309
+[; ;main.c: 318: do { LATA1 = 0; } while(0);
+"318
 [e :U 1260 ]
 {
 [e = _LATA1 -> -> 0 `i `b ]
 }
 [e :U 1259 ]
-[; ;main.c: 310: do { LATA4 = 1; } while(0);
-"310
+[; ;main.c: 319: do { LATA4 = 1; } while(0);
+"319
 [e :U 1263 ]
 {
 [e = _LATA4 -> -> 1 `i `b ]
 }
 [e :U 1262 ]
-[; ;main.c: 311: do { LATB4 = 1; } while(0);
-"311
+[; ;main.c: 320: do { LATB4 = 1; } while(0);
+"320
 [e :U 1266 ]
 {
 [e = _LATB4 -> -> 1 `i `b ]
 }
 [e :U 1265 ]
-[; ;main.c: 312: break;
-"312
+[; ;main.c: 321: break;
+"321
 [e $U 1185  ]
-[; ;main.c: 313: default:
-"313
+[; ;main.c: 322: default:
+"322
 [e :U 1267 ]
-[; ;main.c: 314: do { LATA1 = 0; } while(0);
-"314
+[; ;main.c: 323: do { LATA1 = 0; } while(0);
+"323
 [e :U 1270 ]
 {
 [e = _LATA1 -> -> 0 `i `b ]
 }
 [e :U 1269 ]
-[; ;main.c: 315: do { LATA4 = 0; } while(0);
-"315
+[; ;main.c: 324: do { LATA4 = 0; } while(0);
+"324
 [e :U 1273 ]
 {
 [e = _LATA4 -> -> 0 `i `b ]
 }
 [e :U 1272 ]
-[; ;main.c: 316: do { LATB4 = 0; } while(0);
-"316
+[; ;main.c: 325: do { LATB4 = 0; } while(0);
+"325
 [e :U 1276 ]
 {
 [e = _LATB4 -> -> 0 `i `b ]
 }
 [e :U 1275 ]
-[; ;main.c: 317: break;
-"317
+[; ;main.c: 326: break;
+"326
 [e $U 1185  ]
-"318
+"327
 }
-[; ;main.c: 318: }
+[; ;main.c: 327: }
 [e $U 1185  ]
-"272
+"281
 [e :U 1186 ]
 [e [\ & -> _Byte1 `i -> 56 `i , $ -> 0 `i 1187
  , $ -> 8 `i 1197
@@ -11093,19 +11093,19 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> 48 `i 1247
  , $ -> 56 `i 1257
  1267 ]
-"318
+"327
 [e :U 1185 ]
-[; ;main.c: 341: asm("sleep");
-"341
+[; ;main.c: 350: asm("sleep");
+"350
 [; <" sleep ;# ">
-"342
+"351
 }
 [e :U 1166 ]
-"215
+"224
 [e $U 1167  ]
 [e :U 1168 ]
-[; ;main.c: 342: }
-[; ;main.c: 343: }
-"343
+[; ;main.c: 351: }
+[; ;main.c: 352: }
+"352
 [e :UE 1143 ]
 }

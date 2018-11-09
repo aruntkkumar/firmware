@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Thu Nov 08 17:39:28 2018
+                                                                                               Fri Nov 09 17:02:23 2018
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	16LF1618
@@ -2553,1090 +2553,1086 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2547  010D                     _LATB	set	269
   2548  010E                     _LATC	set	270
   2549  0861                     _LATA1	set	2145
-  2550  0862                     _LATA2	set	2146
-  2551  0864                     _LATA4	set	2148
-  2552  0865                     _LATA5	set	2149
-  2553  086C                     _LATB4	set	2156
-  2554  086D                     _LATB5	set	2157
-  2555  086E                     _LATB6	set	2158
-  2556  018C                     _ANSELA	set	396
-  2557  018D                     _ANSELB	set	397
-  2558  018E                     _ANSELC	set	398
-  2559  0212                     _SSP1ADD	set	530
-  2560  0215                     _SSP1CON1	set	533
-  2561  0215                     _SSP1CON1bits	set	533
-  2562  0214                     _SSP1STAT	set	532
-  2563  0214                     _SSP1STATbits	set	532
-  2564  0211                     _SSPBUF	set	529
-  2565  020D                     _WPUB	set	525
-  2566  020E                     _WPUC	set	526
-  2567  0399                     _IOCCFbits	set	921
-  2568  0397                     _IOCCP	set	919
-  2569  0E20                     _SSPCLKPPS	set	3616
-  2570  0E9E                     _RB6PPS	set	3742
-  2571  0E9F                     _RB7PPS	set	3743
-  2572                           
-  2573                           ; #config settings
-  2574  0000                     
-  2575                           	psect	cinit
-  2576  07F4                     start_initialization:	
-  2577  07F4                     __initialization:	
-  2578                           
-  2579                           ; Clear objects allocated to COMMON
-  2580  07F4  01F0               	clrf	__pbssCOMMON& (0+127)
-  2581  07F5  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
-  2582  07F6  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
-  2583  07F7  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
-  2584  07F8  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
-  2585  07F9  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
-  2586  07FA  01F6               	clrf	(__pbssCOMMON+6)& (0+127)
-  2587  07FB  01F7               	clrf	(__pbssCOMMON+7)& (0+127)
-  2588  07FC  01F8               	clrf	(__pbssCOMMON+8)& (0+127)
-  2589  07FD                     end_of_initialization:	
-  2590                           ;End of C runtime variable initialization code
-  2591                           
-  2592  07FD                     __end_of__initialization:	
-  2593  07FD  0020               	movlb	0
-  2594  07FE  3187  2F58         	ljmp	_main	;jump to C main() function
-  2595                           
-  2596                           	psect	bssCOMMON
-  2597  0070                     __pbssCOMMON:	
-  2598  0070                     _Byte1:	
-  2599  0070                     	ds	1
-  2600  0071                     _Byte2:	
-  2601  0071                     	ds	1
-  2602  0072                     _Byte3:	
-  2603  0072                     	ds	1
-  2604  0073                     _Byte4:	
-  2605  0073                     	ds	1
-  2606  0074                     _Byte5:	
-  2607  0074                     	ds	1
-  2608  0075                     _Byte6:	
-  2609  0075                     	ds	1
-  2610  0076                     _DAC_Step:	
-  2611  0076                     	ds	1
-  2612  0077                     _Dummy:	
-  2613  0077                     	ds	1
-  2614  0078                     _start:	
-  2615  0078                     	ds	1
-  2616                           
-  2617                           	psect	cstackCOMMON
-  2618  0079                     __pcstackCOMMON:	
-  2619  0079                     ?_OSCILLATOR_Initialize:	
-  2620  0079                     ??_OSCILLATOR_Initialize:	
-  2621                           ; 0 bytes @ 0x0
-  2622                           
-  2623  0079                     ?_INTERRUPT_ON_CHANGE_Initialize:	
-  2624                           ; 0 bytes @ 0x0
-  2625                           
-  2626  0079                     ??_INTERRUPT_ON_CHANGE_Initialize:	
-  2627                           ; 0 bytes @ 0x0
-  2628                           
-  2629  0079                     ?_SPI_Initialize:	
-  2630                           ; 0 bytes @ 0x0
-  2631                           
-  2632  0079                     ??_SPI_Initialize:	
-  2633                           ; 0 bytes @ 0x0
-  2634                           
-  2635  0079                     ?_DAC1_Initialize:	
-  2636                           ; 0 bytes @ 0x0
-  2637                           
-  2638  0079                     ??_DAC1_Initialize:	
-  2639                           ; 0 bytes @ 0x0
-  2640                           
-  2641  0079                     ?_PIN_MANAGER_Initialize:	
-  2642                           ; 0 bytes @ 0x0
-  2643                           
-  2644  0079                     ??_PIN_MANAGER_Initialize:	
-  2645                           ; 0 bytes @ 0x0
-  2646                           
-  2647  0079                     ?_SYSTEM_Initialize:	
-  2648                           ; 0 bytes @ 0x0
-  2649                           
-  2650  0079                     ??_SYSTEM_Initialize:	
-  2651                           ; 0 bytes @ 0x0
-  2652                           
-  2653  0079                     ??_SPI_Exchange8bit:	
-  2654                           ; 0 bytes @ 0x0
-  2655                           
-  2656  0079                     ?_MIPISPI1:	
-  2657                           ; 0 bytes @ 0x0
-  2658                           
-  2659  0079                     ?_main:	
-  2660                           ; 0 bytes @ 0x0
-  2661                           
-  2662  0079                     ?_SPI_Exchange8bit:	
-  2663                           ; 0 bytes @ 0x0
-  2664                           
-  2665  0079                     SPI_Exchange8bit@data:	
-  2666                           ; 1 bytes @ 0x0
+  2550  0864                     _LATA4	set	2148
+  2551  0865                     _LATA5	set	2149
+  2552  086C                     _LATB4	set	2156
+  2553  086D                     _LATB5	set	2157
+  2554  086E                     _LATB6	set	2158
+  2555  018C                     _ANSELA	set	396
+  2556  018D                     _ANSELB	set	397
+  2557  018E                     _ANSELC	set	398
+  2558  0212                     _SSP1ADD	set	530
+  2559  0215                     _SSP1CON1	set	533
+  2560  0215                     _SSP1CON1bits	set	533
+  2561  0214                     _SSP1STAT	set	532
+  2562  0214                     _SSP1STATbits	set	532
+  2563  0211                     _SSPBUF	set	529
+  2564  020D                     _WPUB	set	525
+  2565  020E                     _WPUC	set	526
+  2566  0399                     _IOCCFbits	set	921
+  2567  0397                     _IOCCP	set	919
+  2568  0E20                     _SSPCLKPPS	set	3616
+  2569  0E9E                     _RB6PPS	set	3742
+  2570  0E9F                     _RB7PPS	set	3743
+  2571                           
+  2572                           ; #config settings
+  2573  0000                     
+  2574                           	psect	cinit
+  2575  07F4                     start_initialization:	
+  2576  07F4                     __initialization:	
+  2577                           
+  2578                           ; Clear objects allocated to COMMON
+  2579  07F4  01F0               	clrf	__pbssCOMMON& (0+127)
+  2580  07F5  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+  2581  07F6  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+  2582  07F7  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+  2583  07F8  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+  2584  07F9  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
+  2585  07FA  01F6               	clrf	(__pbssCOMMON+6)& (0+127)
+  2586  07FB  01F7               	clrf	(__pbssCOMMON+7)& (0+127)
+  2587  07FC  01F8               	clrf	(__pbssCOMMON+8)& (0+127)
+  2588  07FD                     end_of_initialization:	
+  2589                           ;End of C runtime variable initialization code
+  2590                           
+  2591  07FD                     __end_of__initialization:	
+  2592  07FD  0020               	movlb	0
+  2593  07FE  3187  2F59         	ljmp	_main	;jump to C main() function
+  2594                           
+  2595                           	psect	bssCOMMON
+  2596  0070                     __pbssCOMMON:	
+  2597  0070                     _Byte1:	
+  2598  0070                     	ds	1
+  2599  0071                     _Byte2:	
+  2600  0071                     	ds	1
+  2601  0072                     _Byte3:	
+  2602  0072                     	ds	1
+  2603  0073                     _Byte4:	
+  2604  0073                     	ds	1
+  2605  0074                     _Byte5:	
+  2606  0074                     	ds	1
+  2607  0075                     _Byte6:	
+  2608  0075                     	ds	1
+  2609  0076                     _DAC_Step:	
+  2610  0076                     	ds	1
+  2611  0077                     _Dummy:	
+  2612  0077                     	ds	1
+  2613  0078                     _start:	
+  2614  0078                     	ds	1
+  2615                           
+  2616                           	psect	cstackCOMMON
+  2617  0079                     __pcstackCOMMON:	
+  2618  0079                     ?_OSCILLATOR_Initialize:	
+  2619  0079                     ??_OSCILLATOR_Initialize:	
+  2620                           ; 0 bytes @ 0x0
+  2621                           
+  2622  0079                     ?_INTERRUPT_ON_CHANGE_Initialize:	
+  2623                           ; 0 bytes @ 0x0
+  2624                           
+  2625  0079                     ??_INTERRUPT_ON_CHANGE_Initialize:	
+  2626                           ; 0 bytes @ 0x0
+  2627                           
+  2628  0079                     ?_SPI_Initialize:	
+  2629                           ; 0 bytes @ 0x0
+  2630                           
+  2631  0079                     ??_SPI_Initialize:	
+  2632                           ; 0 bytes @ 0x0
+  2633                           
+  2634  0079                     ?_DAC1_Initialize:	
+  2635                           ; 0 bytes @ 0x0
+  2636                           
+  2637  0079                     ??_DAC1_Initialize:	
+  2638                           ; 0 bytes @ 0x0
+  2639                           
+  2640  0079                     ?_PIN_MANAGER_Initialize:	
+  2641                           ; 0 bytes @ 0x0
+  2642                           
+  2643  0079                     ??_PIN_MANAGER_Initialize:	
+  2644                           ; 0 bytes @ 0x0
+  2645                           
+  2646  0079                     ?_SYSTEM_Initialize:	
+  2647                           ; 0 bytes @ 0x0
+  2648                           
+  2649  0079                     ??_SYSTEM_Initialize:	
+  2650                           ; 0 bytes @ 0x0
+  2651                           
+  2652  0079                     ??_SPI_Exchange8bit:	
+  2653                           ; 0 bytes @ 0x0
+  2654                           
+  2655  0079                     ?_MIPISPI1:	
+  2656                           ; 0 bytes @ 0x0
+  2657                           
+  2658  0079                     ?_main:	
+  2659                           ; 0 bytes @ 0x0
+  2660                           
+  2661  0079                     ?_SPI_Exchange8bit:	
+  2662                           ; 0 bytes @ 0x0
+  2663                           
+  2664  0079                     SPI_Exchange8bit@data:	
+  2665                           ; 1 bytes @ 0x0
+  2666                           
   2667                           
-  2668                           
-  2669                           ; 1 bytes @ 0x0
-  2670  0079                     	ds	1
-  2671  007A                     ??_MIPISPI1:	
-  2672  007A                     MIPISPI1@a:	
-  2673                           ; 0 bytes @ 0x1
+  2668                           ; 1 bytes @ 0x0
+  2669  0079                     	ds	1
+  2670  007A                     ??_MIPISPI1:	
+  2671  007A                     MIPISPI1@a:	
+  2672                           ; 0 bytes @ 0x1
+  2673                           
   2674                           
-  2675                           
-  2676                           ; 1 bytes @ 0x1
-  2677  007A                     	ds	1
-  2678  007B                     ??_main:	
-  2679                           
-  2680                           ; 0 bytes @ 0x2
-  2681  007B                     	ds	2
-  2682                           
-  2683                           	psect	maintext
-  2684  0758                     __pmaintext:	
-  2685 ;;
-  2686 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
-  2687 ;;
-  2688 ;; *************** function _main *****************
-  2689 ;; Defined at:
-  2690 ;;		line 202 in file "main.c"
-  2691 ;; Parameters:    Size  Location     Type
-  2692 ;;		None
-  2693 ;; Auto vars:     Size  Location     Type
-  2694 ;;		None
-  2695 ;; Return value:  Size  Location     Type
-  2696 ;;		None               void
-  2697 ;; Registers used:
-  2698 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  2699 ;; Tracked objects:
-  2700 ;;		On entry : B1F/0
-  2701 ;;		On exit  : 0/0
-  2702 ;;		Unchanged: 0/0
-  2703 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  2704 ;;      Params:         0       0       0       0       0       0       0       0
-  2705 ;;      Locals:         0       0       0       0       0       0       0       0
-  2706 ;;      Temps:          2       0       0       0       0       0       0       0
-  2707 ;;      Totals:         2       0       0       0       0       0       0       0
-  2708 ;;Total ram usage:        2 bytes
-  2709 ;; Hardware stack levels required when called:    2
-  2710 ;; This function calls:
-  2711 ;;		_MIPISPI1
-  2712 ;;		_SYSTEM_Initialize
-  2713 ;; This function is called by:
-  2714 ;;		Startup code after reset
-  2715 ;; This function uses a non-reentrant model
-  2716 ;;
+  2675                           ; 1 bytes @ 0x1
+  2676  007A                     	ds	1
+  2677  007B                     ??_main:	
+  2678                           
+  2679                           ; 0 bytes @ 0x2
+  2680  007B                     	ds	2
+  2681                           
+  2682                           	psect	maintext
+  2683  0759                     __pmaintext:	
+  2684 ;;
+  2685 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+  2686 ;;
+  2687 ;; *************** function _main *****************
+  2688 ;; Defined at:
+  2689 ;;		line 210 in file "main.c"
+  2690 ;; Parameters:    Size  Location     Type
+  2691 ;;		None
+  2692 ;; Auto vars:     Size  Location     Type
+  2693 ;;		None
+  2694 ;; Return value:  Size  Location     Type
+  2695 ;;		None               void
+  2696 ;; Registers used:
+  2697 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2698 ;; Tracked objects:
+  2699 ;;		On entry : B1F/0
+  2700 ;;		On exit  : 0/0
+  2701 ;;		Unchanged: 0/0
+  2702 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  2703 ;;      Params:         0       0       0       0       0       0       0       0
+  2704 ;;      Locals:         0       0       0       0       0       0       0       0
+  2705 ;;      Temps:          2       0       0       0       0       0       0       0
+  2706 ;;      Totals:         2       0       0       0       0       0       0       0
+  2707 ;;Total ram usage:        2 bytes
+  2708 ;; Hardware stack levels required when called:    2
+  2709 ;; This function calls:
+  2710 ;;		_MIPISPI1
+  2711 ;;		_SYSTEM_Initialize
+  2712 ;; This function is called by:
+  2713 ;;		Startup code after reset
+  2714 ;; This function uses a non-reentrant model
+  2715 ;;
+  2716                           
   2717                           
-  2718                           
-  2719                           ;psect for function _main
-  2720  0758                     _main:	
-  2721                           
-  2722                           ;main.c: 205: if (start == 1) goto reset;
-  2723                           
-  2724                           ;incstack = 0
-  2725                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  2726  0758  0378               	decf	_start,w
-  2727  0759  1903               	btfsc	3,2
-  2728  075A  2F65               	goto	l830
-  2729                           
-  2730                           ;main.c: 207: SYSTEM_Initialize();
-  2731  075B  3186  26F0  3187   	fcall	_SYSTEM_Initialize
-  2732                           
-  2733                           ;main.c: 212: do { LATA2 = 0; } while(0);
-  2734  075E  0022               	movlb	2	; select bank2
-  2735  075F  110C               	bcf	12,2	;volatile
-  2736                           
-  2737                           ;main.c: 213: do { LATA1 = 0; } while(0);
-  2738  0760  108C               	bcf	12,1	;volatile
-  2739                           
-  2740                           ;main.c: 214: do { LATA4 = 0; } while(0);
-  2741  0761  120C               	bcf	12,4	;volatile
-  2742                           
-  2743                           ;main.c: 215: do { LATB4 = 0; } while(0);
-  2744  0762  120D               	bcf	13,4	;volatile
-  2745                           
-  2746                           ;main.c: 216: do { LATA5 = 0; } while(0);
-  2747  0763  128C               	bcf	12,5	;volatile
-  2748                           
-  2749                           ;main.c: 217: do { LATB5 = 0; } while(0);
-  2750  0764  128D               	bcf	13,5	;volatile
-  2751  0765                     l830:	
-  2752                           ;main.c: 218: reset:
-  2753                           
+  2718                           ;psect for function _main
+  2719  0759                     _main:	
+  2720                           
+  2721                           ;main.c: 213: if (start == 1) goto reset;
+  2722                           
+  2723                           ;incstack = 0
+  2724                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2725  0759  0378               	decf	_start,w
+  2726  075A  1903               	btfsc	3,2
+  2727  075B  2F65               	goto	l824
+  2728                           
+  2729                           ;main.c: 215: SYSTEM_Initialize();
+  2730  075C  3186  26F1  3187   	fcall	_SYSTEM_Initialize
+  2731                           
+  2732                           ;main.c: 221: do { LATA1 = 0; } while(0);
+  2733  075F  0022               	movlb	2	; select bank2
+  2734  0760  108C               	bcf	12,1	;volatile
+  2735                           
+  2736                           ;main.c: 222: do { LATA4 = 0; } while(0);
+  2737  0761  120C               	bcf	12,4	;volatile
+  2738                           
+  2739                           ;main.c: 223: do { LATB4 = 0; } while(0);
+  2740  0762  120D               	bcf	13,4	;volatile
+  2741                           
+  2742                           ;main.c: 224: do { LATA5 = 0; } while(0);
+  2743  0763  128C               	bcf	12,5	;volatile
+  2744                           
+  2745                           ;main.c: 225: do { LATB5 = 0; } while(0);
+  2746  0764  128D               	bcf	13,5	;volatile
+  2747  0765                     l824:	
+  2748                           ;main.c: 226: reset:
+  2749                           
+  2750                           
+  2751                           ;main.c: 227: start = 1;
+  2752  0765  01F8               	clrf	_start
+  2753  0766  0AF8               	incf	_start,f
   2754                           
-  2755                           ;main.c: 219: start = 1;
-  2756  0765  01F8               	clrf	_start
-  2757  0766  0AF8               	incf	_start,f
-  2758                           
-  2759                           ;main.c: 220: if (IOCCFbits.IOCCF7 == 0) {
-  2760  0767  0027               	movlb	7	; select bank7
-  2761  0768  1B99               	btfsc	25,7	;volatile
-  2762  0769  2F6C               	goto	l220
-  2763  076A  0063               	sleep	;# 
-  2764  076B  2F6D               	goto	l836
-  2765  076C                     l220:	
-  2766                           
-  2767                           ;main.c: 222: else {
-  2768                           ;main.c: 223: IOCCFbits.IOCCF7 = 0;}
-  2769  076C  1399               	bcf	25,7	;volatile
-  2770  076D                     l836:	
-  2771                           ;main.c: 226: while ((PORTC & 0xC0) != 0xC0) {
-  2772                           
-  2773                           ;main.c: 224: while (1) {
-  2774                           
-  2775  076D  30C0               	movlw	192
-  2776  076E  0020               	movlb	0	; select bank0
-  2777  076F  050E               	andwf	14,w	;volatile
-  2778  0770  00FB               	movwf	??_main
-  2779  0771  30C0               	movlw	192
-  2780  0772  067B               	xorwf	??_main,w
-  2781  0773  1D03               	btfss	3,2
-  2782  0774  2F6D               	goto	l836
-  2783                           
-  2784                           ;main.c: 227: }
-  2785                           ;main.c: 229: Byte1 = PORTC;
-  2786  0775  080E               	movf	14,w	;volatile
-  2787  0776  00FB               	movwf	??_main
-  2788  0777  087B               	movf	??_main,w
-  2789  0778  00F0               	movwf	_Byte1
-  2790  0779                     l840:	
-  2791                           ;main.c: 231: while ((PORTC & 0xC0) != 0x40) {
-  2792                           
-  2793  0779  30C0               	movlw	192
-  2794  077A  050E               	andwf	14,w	;volatile
-  2795  077B  00FB               	movwf	??_main
-  2796  077C  3040               	movlw	64
-  2797  077D  067B               	xorwf	??_main,w
-  2798  077E  1D03               	btfss	3,2
-  2799  077F  2F79               	goto	l840
-  2800                           
-  2801                           ;main.c: 232: }
-  2802                           ;main.c: 234: Byte2 = PORTC & 0x3F;
-  2803  0780  080E               	movf	14,w	;volatile
-  2804  0781  393F               	andlw	63
-  2805  0782  00FB               	movwf	??_main
-  2806  0783  087B               	movf	??_main,w
-  2807  0784  00F1               	movwf	_Byte2
-  2808  0785                     l844:	
-  2809                           ;main.c: 236: while ((PORTC & 0xC0) != 0x80) {
-  2810                           
-  2811  0785  30C0               	movlw	192
-  2812  0786  050E               	andwf	14,w	;volatile
-  2813  0787  00FB               	movwf	??_main
-  2814  0788  3080               	movlw	128
-  2815  0789  067B               	xorwf	??_main,w
-  2816  078A  1D03               	btfss	3,2
-  2817  078B  2F85               	goto	l844
-  2818                           
-  2819                           ;main.c: 237: }
-  2820                           ;main.c: 239: Byte3 = PORTC & 0x3F;
-  2821  078C  080E               	movf	14,w	;volatile
-  2822  078D  393F               	andlw	63
-  2823  078E  00FB               	movwf	??_main
-  2824  078F  087B               	movf	??_main,w
-  2825  0790  00F2               	movwf	_Byte3
-  2826  0791                     l848:	
-  2827                           ;main.c: 241: while ((PORTC & 0xC0) != 0x40) {
-  2828                           
-  2829  0791  30C0               	movlw	192
-  2830  0792  050E               	andwf	14,w	;volatile
-  2831  0793  00FB               	movwf	??_main
-  2832  0794  3040               	movlw	64
-  2833  0795  067B               	xorwf	??_main,w
-  2834  0796  1D03               	btfss	3,2
-  2835  0797  2F91               	goto	l848
-  2836                           
-  2837                           ;main.c: 242: }
-  2838                           ;main.c: 244: Byte4 = PORTC & 0x3F;
-  2839  0798  080E               	movf	14,w	;volatile
-  2840  0799  393F               	andlw	63
-  2841  079A  00FB               	movwf	??_main
-  2842  079B  087B               	movf	??_main,w
-  2843  079C  00F3               	movwf	_Byte4
-  2844  079D                     l235:	
-  2845                           ;main.c: 246: while ((PORTC & 0x80) != 0x80) {
-  2846                           
-  2847  079D  1F8E               	btfss	14,7	;volatile
-  2848  079E  2F9D               	goto	l235
-  2849                           
-  2850                           ;main.c: 247: }
-  2851                           ;main.c: 249: Byte5 = PORTC & 0x7F;
-  2852  079F  080E               	movf	14,w	;volatile
-  2853  07A0  397F               	andlw	127
-  2854  07A1  00FB               	movwf	??_main
-  2855  07A2  087B               	movf	??_main,w
-  2856  07A3  00F4               	movwf	_Byte5
-  2857                           
-  2858                           ;main.c: 273: if ((Byte4 & 0x30) == 0x10)
-  2859  07A4  3030               	movlw	48
-  2860  07A5  0573               	andwf	_Byte4,w
-  2861  07A6  00FB               	movwf	??_main
-  2862  07A7  3010               	movlw	16
-  2863  07A8  067B               	xorwf	??_main,w
-  2864  07A9  1D03               	btfss	3,2
-  2865  07AA  2FCF               	goto	l860
+  2755                           ;main.c: 228: if (IOCCFbits.IOCCF7 == 0) {
+  2756  0767  0027               	movlb	7	; select bank7
+  2757  0768  1B99               	btfsc	25,7	;volatile
+  2758  0769  2F6C               	goto	l216
+  2759  076A  0063               	sleep	;# 
+  2760  076B  2F6D               	goto	l830
+  2761  076C                     l216:	
+  2762                           
+  2763                           ;main.c: 230: else {
+  2764                           ;main.c: 231: IOCCFbits.IOCCF7 = 0;}
+  2765  076C  1399               	bcf	25,7	;volatile
+  2766  076D                     l830:	
+  2767                           ;main.c: 234: while ((PORTC & 0xC0) != 0xC0) {
+  2768                           
+  2769                           ;main.c: 232: while (1) {
+  2770                           
+  2771  076D  30C0               	movlw	192
+  2772  076E  0020               	movlb	0	; select bank0
+  2773  076F  050E               	andwf	14,w	;volatile
+  2774  0770  00FB               	movwf	??_main
+  2775  0771  30C0               	movlw	192
+  2776  0772  067B               	xorwf	??_main,w
+  2777  0773  1D03               	btfss	3,2
+  2778  0774  2F6D               	goto	l830
+  2779                           
+  2780                           ;main.c: 235: }
+  2781                           ;main.c: 237: Byte1 = PORTC;
+  2782  0775  080E               	movf	14,w	;volatile
+  2783  0776  00FB               	movwf	??_main
+  2784  0777  087B               	movf	??_main,w
+  2785  0778  00F0               	movwf	_Byte1
+  2786  0779                     l834:	
+  2787                           ;main.c: 239: while ((PORTC & 0xC0) != 0x40) {
+  2788                           
+  2789  0779  30C0               	movlw	192
+  2790  077A  050E               	andwf	14,w	;volatile
+  2791  077B  00FB               	movwf	??_main
+  2792  077C  3040               	movlw	64
+  2793  077D  067B               	xorwf	??_main,w
+  2794  077E  1D03               	btfss	3,2
+  2795  077F  2F79               	goto	l834
+  2796                           
+  2797                           ;main.c: 240: }
+  2798                           ;main.c: 242: Byte2 = PORTC & 0x3F;
+  2799  0780  080E               	movf	14,w	;volatile
+  2800  0781  393F               	andlw	63
+  2801  0782  00FB               	movwf	??_main
+  2802  0783  087B               	movf	??_main,w
+  2803  0784  00F1               	movwf	_Byte2
+  2804  0785                     l838:	
+  2805                           ;main.c: 244: while ((PORTC & 0xC0) != 0x80) {
+  2806                           
+  2807  0785  30C0               	movlw	192
+  2808  0786  050E               	andwf	14,w	;volatile
+  2809  0787  00FB               	movwf	??_main
+  2810  0788  3080               	movlw	128
+  2811  0789  067B               	xorwf	??_main,w
+  2812  078A  1D03               	btfss	3,2
+  2813  078B  2F85               	goto	l838
+  2814                           
+  2815                           ;main.c: 245: }
+  2816                           ;main.c: 247: Byte3 = PORTC & 0x3F;
+  2817  078C  080E               	movf	14,w	;volatile
+  2818  078D  393F               	andlw	63
+  2819  078E  00FB               	movwf	??_main
+  2820  078F  087B               	movf	??_main,w
+  2821  0790  00F2               	movwf	_Byte3
+  2822  0791                     l842:	
+  2823                           ;main.c: 249: while ((PORTC & 0xC0) != 0x40) {
+  2824                           
+  2825  0791  30C0               	movlw	192
+  2826  0792  050E               	andwf	14,w	;volatile
+  2827  0793  00FB               	movwf	??_main
+  2828  0794  3040               	movlw	64
+  2829  0795  067B               	xorwf	??_main,w
+  2830  0796  1D03               	btfss	3,2
+  2831  0797  2F91               	goto	l842
+  2832                           
+  2833                           ;main.c: 250: }
+  2834                           ;main.c: 252: Byte4 = PORTC & 0x3F;
+  2835  0798  080E               	movf	14,w	;volatile
+  2836  0799  393F               	andlw	63
+  2837  079A  00FB               	movwf	??_main
+  2838  079B  087B               	movf	??_main,w
+  2839  079C  00F3               	movwf	_Byte4
+  2840  079D                     l231:	
+  2841                           ;main.c: 254: while ((PORTC & 0x80) != 0x80) {
+  2842                           
+  2843  079D  1F8E               	btfss	14,7	;volatile
+  2844  079E  2F9D               	goto	l231
+  2845                           
+  2846                           ;main.c: 255: }
+  2847                           ;main.c: 257: Byte5 = PORTC & 0x7F;
+  2848  079F  080E               	movf	14,w	;volatile
+  2849  07A0  397F               	andlw	127
+  2850  07A1  00FB               	movwf	??_main
+  2851  07A2  087B               	movf	??_main,w
+  2852  07A3  00F4               	movwf	_Byte5
+  2853                           
+  2854                           ;main.c: 281: if ((Byte4 & 0x30) == 0x10)
+  2855  07A4  3030               	movlw	48
+  2856  07A5  0573               	andwf	_Byte4,w
+  2857  07A6  00FB               	movwf	??_main
+  2858  07A7  3010               	movlw	16
+  2859  07A8  067B               	xorwf	??_main,w
+  2860  07A9  1D03               	btfss	3,2
+  2861  07AA  2FCF               	goto	l854
+  2862                           
+  2863                           ;main.c: 282: MIPISPI1(Byte5);
+  2864  07AB  0874               	movf	_Byte5,w
+  2865  07AC  3187  2725  3187   	fcall	_MIPISPI1
   2866                           
-  2867                           ;main.c: 274: MIPISPI1(Byte5);
-  2868  07AB  0874               	movf	_Byte5,w
-  2869  07AC  3187  2724  3187   	fcall	_MIPISPI1
-  2870                           
-  2871                           ;main.c: 281: switch ((Byte1 & 0x38)){
-  2872  07AF  2FCF               	goto	l860
-  2873  07B0                     l241:	
-  2874                           ;main.c: 283: do { LATA1 = 1; } while(0);
-  2875                           
-  2876                           ;main.c: 282: case 0x00:
-  2877                           
-  2878  07B0  0022               	movlb	2	; select bank2
-  2879  07B1  148C               	bsf	12,1	;volatile
-  2880  07B2  2FC7               	goto	L1
-  2881  07B3                     l249:	
-  2882                           ;main.c: 288: do { LATA1 = 0; } while(0);
+  2867                           ;main.c: 289: switch ((Byte1 & 0x38)){
+  2868  07AF  2FCF               	goto	l854
+  2869  07B0                     l237:	
+  2870                           ;main.c: 291: do { LATA1 = 1; } while(0);
+  2871                           
+  2872                           ;main.c: 290: case 0x00:
+  2873                           
+  2874  07B0  0022               	movlb	2	; select bank2
+  2875  07B1  148C               	bsf	12,1	;volatile
+  2876  07B2  2FC7               	goto	L1
+  2877  07B3                     l245:	
+  2878                           ;main.c: 296: do { LATA1 = 0; } while(0);
+  2879                           
+  2880                           ;main.c: 295: case 0x08:
+  2881                           
+  2882                           ;main.c: 294: break;
   2883                           
-  2884                           ;main.c: 287: case 0x08:
+  2884                           ;main.c: 293: do { LATB4 = 1; } while(0);
   2885                           
-  2886                           ;main.c: 286: break;
+  2886                           ;main.c: 292: do { LATA4 = 1; } while(0);
   2887                           
-  2888                           ;main.c: 285: do { LATB4 = 1; } while(0);
-  2889                           
-  2890                           ;main.c: 284: do { LATA4 = 1; } while(0);
+  2888  07B3  2FCA               	goto	l294
+  2889  07B4                     l252:	
+  2890                           ;main.c: 301: do { LATA1 = 1; } while(0);
   2891                           
-  2892  07B3  2FCA               	goto	l298
-  2893  07B4                     l256:	
-  2894                           ;main.c: 293: do { LATA1 = 1; } while(0);
+  2892                           ;main.c: 300: case 0x10:
+  2893                           
+  2894                           ;main.c: 299: break;
   2895                           
-  2896                           ;main.c: 292: case 0x10:
+  2896                           ;main.c: 298: do { LATB4 = 0; } while(0);
   2897                           
-  2898                           ;main.c: 291: break;
+  2898                           ;main.c: 297: do { LATA4 = 0; } while(0);
   2899                           
-  2900                           ;main.c: 290: do { LATB4 = 0; } while(0);
-  2901                           
-  2902                           ;main.c: 289: do { LATA4 = 0; } while(0);
-  2903                           
-  2904  07B4  0022               	movlb	2	; select bank2
-  2905  07B5  148C               	bsf	12,1	;volatile
-  2906  07B6  2FCC               	goto	L2
-  2907  07B7                     l263:	
-  2908                           ;main.c: 298: do { LATA1 = 0; } while(0);
+  2900  07B4  0022               	movlb	2	; select bank2
+  2901  07B5  148C               	bsf	12,1	;volatile
+  2902  07B6  2FCC               	goto	L2
+  2903  07B7                     l259:	
+  2904                           ;main.c: 306: do { LATA1 = 0; } while(0);
+  2905                           
+  2906                           ;main.c: 305: case 0x18:
+  2907                           
+  2908                           ;main.c: 304: break;
   2909                           
-  2910                           ;main.c: 297: case 0x18:
+  2910                           ;main.c: 303: do { LATB4 = 0; } while(0);
   2911                           
-  2912                           ;main.c: 296: break;
+  2912                           ;main.c: 302: do { LATA4 = 0; } while(0);
   2913                           
-  2914                           ;main.c: 295: do { LATB4 = 0; } while(0);
-  2915                           
-  2916                           ;main.c: 294: do { LATA4 = 0; } while(0);
-  2917                           
-  2918  07B7  0022               	movlb	2	; select bank2
-  2919  07B8  108C               	bcf	12,1	;volatile
-  2920  07B9  2FBC               	goto	L3
-  2921  07BA                     l270:	
-  2922                           ;main.c: 303: do { LATA1 = 1; } while(0);
+  2914  07B7  0022               	movlb	2	; select bank2
+  2915  07B8  108C               	bcf	12,1	;volatile
+  2916  07B9  2FBC               	goto	L3
+  2917  07BA                     l266:	
+  2918                           ;main.c: 311: do { LATA1 = 1; } while(0);
+  2919                           
+  2920                           ;main.c: 310: case 0x20:
+  2921                           
+  2922                           ;main.c: 309: break;
   2923                           
-  2924                           ;main.c: 302: case 0x20:
+  2924                           ;main.c: 308: do { LATB4 = 0; } while(0);
   2925                           
-  2926                           ;main.c: 301: break;
+  2926                           ;main.c: 307: do { LATA4 = 1; } while(0);
   2927                           
-  2928                           ;main.c: 300: do { LATB4 = 0; } while(0);
-  2929                           
-  2930                           ;main.c: 299: do { LATA4 = 1; } while(0);
+  2928  07BA  0022               	movlb	2	; select bank2
+  2929  07BB  148C               	bsf	12,1	;volatile
+  2930  07BC                     L3:	
   2931                           
-  2932  07BA  0022               	movlb	2	; select bank2
-  2933  07BB  148C               	bsf	12,1	;volatile
-  2934  07BC                     L3:	
-  2935                           
-  2936                           ;main.c: 304: do { LATA4 = 1; } while(0);
-  2937  07BC  160C               	bsf	12,4	;volatile
-  2938                           
-  2939                           ;main.c: 305: do { LATB4 = 0; } while(0);
-  2940  07BD  2FCD               	goto	l302
-  2941  07BE                     l277:	
-  2942                           ;main.c: 308: do { LATA1 = 0; } while(0);
+  2932                           ;main.c: 312: do { LATA4 = 1; } while(0);
+  2933  07BC  160C               	bsf	12,4	;volatile
+  2934                           
+  2935                           ;main.c: 313: do { LATB4 = 0; } while(0);
+  2936  07BD  2FCD               	goto	l298
+  2937  07BE                     l273:	
+  2938                           ;main.c: 316: do { LATA1 = 0; } while(0);
+  2939                           
+  2940                           ;main.c: 315: case 0x28:
+  2941                           
+  2942                           ;main.c: 314: break;
   2943                           
-  2944                           ;main.c: 307: case 0x28:
-  2945                           
-  2946                           ;main.c: 306: break;
-  2947                           
-  2948  07BE  0022               	movlb	2	; select bank2
-  2949  07BF  108C               	bcf	12,1	;volatile
-  2950  07C0  2FC3               	goto	L4
-  2951  07C1                     l284:	
-  2952                           ;main.c: 313: do { LATA1 = 1; } while(0);
+  2944  07BE  0022               	movlb	2	; select bank2
+  2945  07BF  108C               	bcf	12,1	;volatile
+  2946  07C0  2FC3               	goto	L4
+  2947  07C1                     l280:	
+  2948                           ;main.c: 321: do { LATA1 = 1; } while(0);
+  2949                           
+  2950                           ;main.c: 320: case 0x30:
+  2951                           
+  2952                           ;main.c: 319: break;
   2953                           
-  2954                           ;main.c: 312: case 0x30:
+  2954                           ;main.c: 318: do { LATB4 = 1; } while(0);
   2955                           
-  2956                           ;main.c: 311: break;
+  2956                           ;main.c: 317: do { LATA4 = 0; } while(0);
   2957                           
-  2958                           ;main.c: 310: do { LATB4 = 1; } while(0);
-  2959                           
-  2960                           ;main.c: 309: do { LATA4 = 0; } while(0);
+  2958  07C1  0022               	movlb	2	; select bank2
+  2959  07C2  148C               	bsf	12,1	;volatile
+  2960  07C3                     L4:	
   2961                           
-  2962  07C1  0022               	movlb	2	; select bank2
-  2963  07C2  148C               	bsf	12,1	;volatile
-  2964  07C3                     L4:	
-  2965                           
-  2966                           ;main.c: 314: do { LATA4 = 0; } while(0);
-  2967  07C3  120C               	bcf	12,4	;volatile
-  2968                           
-  2969                           ;main.c: 315: do { LATB4 = 1; } while(0);
-  2970  07C4  2FC8               	goto	l295
-  2971  07C5                     l291:	
-  2972                           ;main.c: 318: do { LATA1 = 0; } while(0);
+  2962                           ;main.c: 322: do { LATA4 = 0; } while(0);
+  2963  07C3  120C               	bcf	12,4	;volatile
+  2964                           
+  2965                           ;main.c: 323: do { LATB4 = 1; } while(0);
+  2966  07C4  2FC8               	goto	l291
+  2967  07C5                     l287:	
+  2968                           ;main.c: 326: do { LATA1 = 0; } while(0);
+  2969                           
+  2970                           ;main.c: 325: case 0x38:
+  2971                           
+  2972                           ;main.c: 324: break;
   2973                           
-  2974                           ;main.c: 317: case 0x38:
-  2975                           
-  2976                           ;main.c: 316: break;
+  2974  07C5  0022               	movlb	2	; select bank2
+  2975  07C6  108C               	bcf	12,1	;volatile
+  2976  07C7                     L1:	
   2977                           
-  2978  07C5  0022               	movlb	2	; select bank2
-  2979  07C6  108C               	bcf	12,1	;volatile
-  2980  07C7                     L1:	
-  2981                           
-  2982                           ;main.c: 319: do { LATA4 = 1; } while(0);
-  2983  07C7  160C               	bsf	12,4	;volatile
-  2984  07C8                     l295:	
-  2985                           ;main.c: 320: do { LATB4 = 1; } while(0);
-  2986                           
-  2987  07C8  160D               	bsf	13,4	;volatile
-  2988                           
-  2989                           ;main.c: 321: break;
-  2990  07C9  2FF2               	goto	l247
-  2991  07CA                     l298:	
-  2992                           ;main.c: 323: do { LATA1 = 0; } while(0);
-  2993                           
-  2994                           ;main.c: 322: default:
+  2978                           ;main.c: 327: do { LATA4 = 1; } while(0);
+  2979  07C7  160C               	bsf	12,4	;volatile
+  2980  07C8                     l291:	
+  2981                           ;main.c: 328: do { LATB4 = 1; } while(0);
+  2982                           
+  2983  07C8  160D               	bsf	13,4	;volatile
+  2984                           
+  2985                           ;main.c: 329: break;
+  2986  07C9  2FF2               	goto	l243
+  2987  07CA                     l294:	
+  2988                           ;main.c: 331: do { LATA1 = 0; } while(0);
+  2989                           
+  2990                           ;main.c: 330: default:
+  2991                           
+  2992  07CA  0022               	movlb	2	; select bank2
+  2993  07CB  108C               	bcf	12,1	;volatile
+  2994  07CC                     L2:	
   2995                           
-  2996  07CA  0022               	movlb	2	; select bank2
-  2997  07CB  108C               	bcf	12,1	;volatile
-  2998  07CC                     L2:	
-  2999                           
-  3000                           ;main.c: 324: do { LATA4 = 0; } while(0);
-  3001  07CC  120C               	bcf	12,4	;volatile
-  3002  07CD                     l302:	
-  3003                           ;main.c: 325: do { LATB4 = 0; } while(0);
+  2996                           ;main.c: 332: do { LATA4 = 0; } while(0);
+  2997  07CC  120C               	bcf	12,4	;volatile
+  2998  07CD                     l298:	
+  2999                           ;main.c: 333: do { LATB4 = 0; } while(0);
+  3000                           
+  3001  07CD  120D               	bcf	13,4	;volatile
+  3002                           
+  3003                           ;main.c: 335: }
   3004                           
-  3005  07CD  120D               	bcf	13,4	;volatile
-  3006                           
-  3007                           ;main.c: 327: }
-  3008                           
-  3009                           ;main.c: 326: break;
-  3010  07CE  2FF2               	goto	l247
-  3011  07CF                     l860:	
-  3012  07CF  0870               	movf	_Byte1,w
-  3013  07D0  3938               	andlw	56
-  3014  07D1  00FB               	movwf	??_main
-  3015  07D2  01FC               	clrf	??_main+1
-  3016                           
-  3017                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  3005                           ;main.c: 334: break;
+  3006  07CE  2FF2               	goto	l243
+  3007  07CF                     l854:	
+  3008  07CF  0870               	movf	_Byte1,w
+  3009  07D0  3938               	andlw	56
+  3010  07D1  00FB               	movwf	??_main
+  3011  07D2  01FC               	clrf	??_main+1
+  3012                           
+  3013                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  3018                           ; Switch size 1, requested type "space"
-  3019                           ; Number of cases is 1, Range of values is 0 to 0
-  3020                           ; switch strategies available:
-  3021                           ; Name         Instructions Cycles
-  3022                           ; simple_byte            4     3 (average)
-  3023                           ; direct_byte            8     6 (fixed)
-  3024                           ; jumptable            260     6 (fixed)
-  3025                           ;	Chosen strategy is simple_byte
-  3026  07D3  087C               	movf	??_main+1,w
-  3027  07D4  3A00               	xorlw	0	; case 0
-  3028  07D5  1903               	skipnz
-  3029  07D6  2FD8               	goto	l898
-  3030  07D7  2FCA               	goto	l298
-  3031  07D8                     l898:	
-  3032                           
-  3033                           ; Switch size 1, requested type "space"
-  3034                           ; Number of cases is 8, Range of values is 0 to 56
-  3035                           ; switch strategies available:
-  3036                           ; Name         Instructions Cycles
-  3037                           ; simple_byte           25    13 (average)
-  3038                           ; direct_byte          120     6 (fixed)
-  3039                           ; jumptable            260     6 (fixed)
-  3040                           ;	Chosen strategy is simple_byte
-  3041  07D8  087B               	movf	??_main,w
-  3042  07D9  3A00               	xorlw	0	; case 0
-  3043  07DA  1903               	skipnz
-  3044  07DB  2FB0               	goto	l241
-  3045  07DC  3A08               	xorlw	8	; case 8
-  3046  07DD  1903               	skipnz
-  3047  07DE  2FB3               	goto	l249
-  3048  07DF  3A18               	xorlw	24	; case 16
-  3049  07E0  1903               	skipnz
-  3050  07E1  2FB4               	goto	l256
-  3051  07E2  3A08               	xorlw	8	; case 24
-  3052  07E3  1903               	skipnz
-  3053  07E4  2FB7               	goto	l263
-  3054  07E5  3A38               	xorlw	56	; case 32
-  3055  07E6  1903               	skipnz
-  3056  07E7  2FBA               	goto	l270
-  3057  07E8  3A08               	xorlw	8	; case 40
-  3058  07E9  1903               	skipnz
-  3059  07EA  2FBE               	goto	l277
-  3060  07EB  3A18               	xorlw	24	; case 48
-  3061  07EC  1903               	skipnz
-  3062  07ED  2FC1               	goto	l284
-  3063  07EE  3A08               	xorlw	8	; case 56
-  3064  07EF  1903               	skipnz
-  3065  07F0  2FC5               	goto	l291
-  3066  07F1  2FCA               	goto	l298
-  3067  07F2                     l247:	
-  3068  07F2  0063               	sleep	;# 
-  3069  07F3  2F6D               	goto	l836
-  3070  07F4                     __end_of_main:	
-  3071                           
-  3072                           	psect	text1
-  3073  06F0                     __ptext1:	
-  3074 ;; *************** function _SYSTEM_Initialize *****************
-  3075 ;; Defined at:
-  3076 ;;		line 75 in file "mcc_generated_files/mcc.c"
-  3077 ;; Parameters:    Size  Location     Type
-  3078 ;;		None
-  3079 ;; Auto vars:     Size  Location     Type
-  3080 ;;		None
-  3081 ;; Return value:  Size  Location     Type
-  3082 ;;		None               void
-  3083 ;; Registers used:
-  3084 ;;		wreg, status,2, status,0, pclath, cstack
-  3085 ;; Tracked objects:
-  3086 ;;		On entry : 0/0
-  3087 ;;		On exit  : 0/0
-  3088 ;;		Unchanged: 0/0
-  3089 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3090 ;;      Params:         0       0       0       0       0       0       0       0
-  3091 ;;      Locals:         0       0       0       0       0       0       0       0
-  3092 ;;      Temps:          0       0       0       0       0       0       0       0
-  3093 ;;      Totals:         0       0       0       0       0       0       0       0
-  3094 ;;Total ram usage:        0 bytes
-  3095 ;; Hardware stack levels used:    1
-  3096 ;; Hardware stack levels required when called:    1
-  3097 ;; This function calls:
-  3098 ;;		_DAC1_Initialize
-  3099 ;;		_INTERRUPT_ON_CHANGE_Initialize
-  3100 ;;		_OSCILLATOR_Initialize
-  3101 ;;		_PIN_MANAGER_Initialize
-  3102 ;;		_SPI_Initialize
-  3103 ;; This function is called by:
-  3104 ;;		_main
-  3105 ;; This function uses a non-reentrant model
-  3106 ;;
+  3014                           ; Switch size 1, requested type "space"
+  3015                           ; Number of cases is 1, Range of values is 0 to 0
+  3016                           ; switch strategies available:
+  3017                           ; Name         Instructions Cycles
+  3018                           ; simple_byte            4     3 (average)
+  3019                           ; direct_byte            8     6 (fixed)
+  3020                           ; jumptable            260     6 (fixed)
+  3021                           ;	Chosen strategy is simple_byte
+  3022  07D3  087C               	movf	??_main+1,w
+  3023  07D4  3A00               	xorlw	0	; case 0
+  3024  07D5  1903               	skipnz
+  3025  07D6  2FD8               	goto	l892
+  3026  07D7  2FCA               	goto	l294
+  3027  07D8                     l892:	
+  3028                           
+  3029                           ; Switch size 1, requested type "space"
+  3030                           ; Number of cases is 8, Range of values is 0 to 56
+  3031                           ; switch strategies available:
+  3032                           ; Name         Instructions Cycles
+  3033                           ; simple_byte           25    13 (average)
+  3034                           ; direct_byte          120     6 (fixed)
+  3035                           ; jumptable            260     6 (fixed)
+  3036                           ;	Chosen strategy is simple_byte
+  3037  07D8  087B               	movf	??_main,w
+  3038  07D9  3A00               	xorlw	0	; case 0
+  3039  07DA  1903               	skipnz
+  3040  07DB  2FB0               	goto	l237
+  3041  07DC  3A08               	xorlw	8	; case 8
+  3042  07DD  1903               	skipnz
+  3043  07DE  2FB3               	goto	l245
+  3044  07DF  3A18               	xorlw	24	; case 16
+  3045  07E0  1903               	skipnz
+  3046  07E1  2FB4               	goto	l252
+  3047  07E2  3A08               	xorlw	8	; case 24
+  3048  07E3  1903               	skipnz
+  3049  07E4  2FB7               	goto	l259
+  3050  07E5  3A38               	xorlw	56	; case 32
+  3051  07E6  1903               	skipnz
+  3052  07E7  2FBA               	goto	l266
+  3053  07E8  3A08               	xorlw	8	; case 40
+  3054  07E9  1903               	skipnz
+  3055  07EA  2FBE               	goto	l273
+  3056  07EB  3A18               	xorlw	24	; case 48
+  3057  07EC  1903               	skipnz
+  3058  07ED  2FC1               	goto	l280
+  3059  07EE  3A08               	xorlw	8	; case 56
+  3060  07EF  1903               	skipnz
+  3061  07F0  2FC5               	goto	l287
+  3062  07F1  2FCA               	goto	l294
+  3063  07F2                     l243:	
+  3064  07F2  0063               	sleep	;# 
+  3065  07F3  2F6D               	goto	l830
+  3066  07F4                     __end_of_main:	
+  3067                           
+  3068                           	psect	text1
+  3069  06F1                     __ptext1:	
+  3070 ;; *************** function _SYSTEM_Initialize *****************
+  3071 ;; Defined at:
+  3072 ;;		line 75 in file "mcc_generated_files/mcc.c"
+  3073 ;; Parameters:    Size  Location     Type
+  3074 ;;		None
+  3075 ;; Auto vars:     Size  Location     Type
+  3076 ;;		None
+  3077 ;; Return value:  Size  Location     Type
+  3078 ;;		None               void
+  3079 ;; Registers used:
+  3080 ;;		wreg, status,2, status,0, pclath, cstack
+  3081 ;; Tracked objects:
+  3082 ;;		On entry : 0/0
+  3083 ;;		On exit  : 0/0
+  3084 ;;		Unchanged: 0/0
+  3085 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3086 ;;      Params:         0       0       0       0       0       0       0       0
+  3087 ;;      Locals:         0       0       0       0       0       0       0       0
+  3088 ;;      Temps:          0       0       0       0       0       0       0       0
+  3089 ;;      Totals:         0       0       0       0       0       0       0       0
+  3090 ;;Total ram usage:        0 bytes
+  3091 ;; Hardware stack levels used:    1
+  3092 ;; Hardware stack levels required when called:    1
+  3093 ;; This function calls:
+  3094 ;;		_DAC1_Initialize
+  3095 ;;		_INTERRUPT_ON_CHANGE_Initialize
+  3096 ;;		_OSCILLATOR_Initialize
+  3097 ;;		_PIN_MANAGER_Initialize
+  3098 ;;		_SPI_Initialize
+  3099 ;; This function is called by:
+  3100 ;;		_main
+  3101 ;; This function uses a non-reentrant model
+  3102 ;;
+  3103                           
+  3104                           
+  3105                           ;psect for function _SYSTEM_Initialize
+  3106  06F1                     _SYSTEM_Initialize:	
   3107                           
-  3108                           
-  3109                           ;psect for function _SYSTEM_Initialize
-  3110  06F0                     _SYSTEM_Initialize:	
-  3111                           
-  3112                           ;mcc.c: 76: OSCILLATOR_Initialize();
+  3108                           ;mcc.c: 76: OSCILLATOR_Initialize();
+  3109                           
+  3110                           ;incstack = 0
+  3111                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  3112  06F1  3186  26D5  3186   	fcall	_OSCILLATOR_Initialize
   3113                           
-  3114                           ;incstack = 0
-  3115                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
-  3116  06F0  3186  26D4  3186   	fcall	_OSCILLATOR_Initialize
-  3117                           
-  3118                           ;mcc.c: 77: PIN_MANAGER_Initialize();
-  3119  06F3  3186  26FF  3186   	fcall	_PIN_MANAGER_Initialize
-  3120                           
-  3121                           ;mcc.c: 78: DAC1_Initialize();
-  3122  06F6  3186  26CF  3186   	fcall	_DAC1_Initialize
-  3123                           
-  3124                           ;mcc.c: 79: INTERRUPT_ON_CHANGE_Initialize();
-  3125  06F9  3186  26E0  3186   	fcall	_INTERRUPT_ON_CHANGE_Initialize
-  3126                           
-  3127                           ;mcc.c: 80: SPI_Initialize();
-  3128  06FC  3186  26DA         	fcall	_SPI_Initialize
-  3129  06FE  0008               	return
-  3130  06FF                     __end_of_SYSTEM_Initialize:	
-  3131                           
-  3132                           	psect	text2
-  3133  06DA                     __ptext2:	
-  3134 ;; *************** function _SPI_Initialize *****************
-  3135 ;; Defined at:
-  3136 ;;		line 64 in file "mcc_generated_files/spi.c"
-  3137 ;; Parameters:    Size  Location     Type
-  3138 ;;		None
-  3139 ;; Auto vars:     Size  Location     Type
-  3140 ;;		None
-  3141 ;; Return value:  Size  Location     Type
-  3142 ;;		None               void
-  3143 ;; Registers used:
-  3144 ;;		wreg, status,2
-  3145 ;; Tracked objects:
-  3146 ;;		On entry : 0/0
-  3147 ;;		On exit  : 0/0
-  3148 ;;		Unchanged: 0/0
-  3149 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3150 ;;      Params:         0       0       0       0       0       0       0       0
-  3151 ;;      Locals:         0       0       0       0       0       0       0       0
-  3152 ;;      Temps:          0       0       0       0       0       0       0       0
-  3153 ;;      Totals:         0       0       0       0       0       0       0       0
-  3154 ;;Total ram usage:        0 bytes
-  3155 ;; Hardware stack levels used:    1
-  3156 ;; This function calls:
-  3157 ;;		Nothing
-  3158 ;; This function is called by:
-  3159 ;;		_SYSTEM_Initialize
-  3160 ;; This function uses a non-reentrant model
-  3161 ;;
+  3114                           ;mcc.c: 77: PIN_MANAGER_Initialize();
+  3115  06F4  3187  2700  3186   	fcall	_PIN_MANAGER_Initialize
+  3116                           
+  3117                           ;mcc.c: 78: DAC1_Initialize();
+  3118  06F7  3186  26D0  3186   	fcall	_DAC1_Initialize
+  3119                           
+  3120                           ;mcc.c: 79: INTERRUPT_ON_CHANGE_Initialize();
+  3121  06FA  3186  26E1  3186   	fcall	_INTERRUPT_ON_CHANGE_Initialize
+  3122                           
+  3123                           ;mcc.c: 80: SPI_Initialize();
+  3124  06FD  3186  26DB         	fcall	_SPI_Initialize
+  3125  06FF  0008               	return
+  3126  0700                     __end_of_SYSTEM_Initialize:	
+  3127                           
+  3128                           	psect	text2
+  3129  06DB                     __ptext2:	
+  3130 ;; *************** function _SPI_Initialize *****************
+  3131 ;; Defined at:
+  3132 ;;		line 64 in file "mcc_generated_files/spi.c"
+  3133 ;; Parameters:    Size  Location     Type
+  3134 ;;		None
+  3135 ;; Auto vars:     Size  Location     Type
+  3136 ;;		None
+  3137 ;; Return value:  Size  Location     Type
+  3138 ;;		None               void
+  3139 ;; Registers used:
+  3140 ;;		wreg, status,2
+  3141 ;; Tracked objects:
+  3142 ;;		On entry : 0/0
+  3143 ;;		On exit  : 0/0
+  3144 ;;		Unchanged: 0/0
+  3145 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3146 ;;      Params:         0       0       0       0       0       0       0       0
+  3147 ;;      Locals:         0       0       0       0       0       0       0       0
+  3148 ;;      Temps:          0       0       0       0       0       0       0       0
+  3149 ;;      Totals:         0       0       0       0       0       0       0       0
+  3150 ;;Total ram usage:        0 bytes
+  3151 ;; Hardware stack levels used:    1
+  3152 ;; This function calls:
+  3153 ;;		Nothing
+  3154 ;; This function is called by:
+  3155 ;;		_SYSTEM_Initialize
+  3156 ;; This function uses a non-reentrant model
+  3157 ;;
+  3158                           
+  3159                           
+  3160                           ;psect for function _SPI_Initialize
+  3161  06DB                     _SPI_Initialize:	
   3162                           
-  3163                           
-  3164                           ;psect for function _SPI_Initialize
-  3165  06DA                     _SPI_Initialize:	
-  3166                           
-  3167                           ;spi.c: 68: SSP1STAT = 0x00;
-  3168                           
-  3169                           ;incstack = 0
-  3170                           ; Regs used in _SPI_Initialize: [wreg+status,2]
-  3171  06DA  0024               	movlb	4	; select bank4
-  3172  06DB  0194               	clrf	20	;volatile
+  3163                           ;spi.c: 68: SSP1STAT = 0x00;
+  3164                           
+  3165                           ;incstack = 0
+  3166                           ; Regs used in _SPI_Initialize: [wreg+status,2]
+  3167  06DB  0024               	movlb	4	; select bank4
+  3168  06DC  0194               	clrf	20	;volatile
+  3169                           
+  3170                           ;spi.c: 71: SSP1CON1 = 0x20;
+  3171  06DD  3020               	movlw	32
+  3172  06DE  0095               	movwf	21	;volatile
   3173                           
-  3174                           ;spi.c: 71: SSP1CON1 = 0x20;
-  3175  06DC  3020               	movlw	32
-  3176  06DD  0095               	movwf	21	;volatile
-  3177                           
-  3178                           ;spi.c: 74: SSP1ADD = 0x00;
-  3179  06DE  0192               	clrf	18	;volatile
-  3180  06DF  0008               	return
-  3181  06E0                     __end_of_SPI_Initialize:	
-  3182                           
-  3183                           	psect	text3
-  3184  06FF                     __ptext3:	
-  3185 ;; *************** function _PIN_MANAGER_Initialize *****************
-  3186 ;; Defined at:
-  3187 ;;		line 51 in file "mcc_generated_files/pin_manager.c"
-  3188 ;; Parameters:    Size  Location     Type
-  3189 ;;		None
-  3190 ;; Auto vars:     Size  Location     Type
-  3191 ;;		None
-  3192 ;; Return value:  Size  Location     Type
-  3193 ;;		None               void
-  3194 ;; Registers used:
-  3195 ;;		wreg, status,2
-  3196 ;; Tracked objects:
-  3197 ;;		On entry : 0/0
-  3198 ;;		On exit  : 0/0
-  3199 ;;		Unchanged: 0/0
-  3200 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3201 ;;      Params:         0       0       0       0       0       0       0       0
-  3202 ;;      Locals:         0       0       0       0       0       0       0       0
-  3203 ;;      Temps:          0       0       0       0       0       0       0       0
-  3204 ;;      Totals:         0       0       0       0       0       0       0       0
-  3205 ;;Total ram usage:        0 bytes
-  3206 ;; Hardware stack levels used:    1
-  3207 ;; This function calls:
-  3208 ;;		Nothing
-  3209 ;; This function is called by:
-  3210 ;;		_SYSTEM_Initialize
-  3211 ;; This function uses a non-reentrant model
-  3212 ;;
+  3174                           ;spi.c: 74: SSP1ADD = 0x00;
+  3175  06DF  0192               	clrf	18	;volatile
+  3176  06E0  0008               	return
+  3177  06E1                     __end_of_SPI_Initialize:	
+  3178                           
+  3179                           	psect	text3
+  3180  0700                     __ptext3:	
+  3181 ;; *************** function _PIN_MANAGER_Initialize *****************
+  3182 ;; Defined at:
+  3183 ;;		line 51 in file "mcc_generated_files/pin_manager.c"
+  3184 ;; Parameters:    Size  Location     Type
+  3185 ;;		None
+  3186 ;; Auto vars:     Size  Location     Type
+  3187 ;;		None
+  3188 ;; Return value:  Size  Location     Type
+  3189 ;;		None               void
+  3190 ;; Registers used:
+  3191 ;;		wreg, status,2
+  3192 ;; Tracked objects:
+  3193 ;;		On entry : 0/0
+  3194 ;;		On exit  : 0/0
+  3195 ;;		Unchanged: 0/0
+  3196 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3197 ;;      Params:         0       0       0       0       0       0       0       0
+  3198 ;;      Locals:         0       0       0       0       0       0       0       0
+  3199 ;;      Temps:          0       0       0       0       0       0       0       0
+  3200 ;;      Totals:         0       0       0       0       0       0       0       0
+  3201 ;;Total ram usage:        0 bytes
+  3202 ;; Hardware stack levels used:    1
+  3203 ;; This function calls:
+  3204 ;;		Nothing
+  3205 ;; This function is called by:
+  3206 ;;		_SYSTEM_Initialize
+  3207 ;; This function uses a non-reentrant model
+  3208 ;;
+  3209                           
+  3210                           
+  3211                           ;psect for function _PIN_MANAGER_Initialize
+  3212  0700                     _PIN_MANAGER_Initialize:	
   3213                           
-  3214                           
-  3215                           ;psect for function _PIN_MANAGER_Initialize
-  3216  06FF                     _PIN_MANAGER_Initialize:	
-  3217                           
-  3218                           ;pin_manager.c: 52: LATA = 0x00;
-  3219                           
-  3220                           ;incstack = 0
-  3221                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
-  3222  06FF  0022               	movlb	2	; select bank2
-  3223  0700  018C               	clrf	12	;volatile
-  3224                           
-  3225                           ;pin_manager.c: 53: TRISA = 0x08;
-  3226  0701  3008               	movlw	8
-  3227  0702  0021               	movlb	1	; select bank1
-  3228  0703  008C               	movwf	12	;volatile
-  3229                           
-  3230                           ;pin_manager.c: 54: ANSELA = 0x01;
-  3231  0704  3001               	movlw	1
-  3232  0705  0023               	movlb	3	; select bank3
-  3233  0706  008C               	movwf	12	;volatile
+  3214                           ;pin_manager.c: 52: LATA = 0x00;
+  3215                           
+  3216                           ;incstack = 0
+  3217                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
+  3218  0700  0022               	movlb	2	; select bank2
+  3219  0701  018C               	clrf	12	;volatile
+  3220                           
+  3221                           ;pin_manager.c: 53: TRISA = 0x0C;
+  3222  0702  300C               	movlw	12
+  3223  0703  0021               	movlb	1	; select bank1
+  3224  0704  008C               	movwf	12	;volatile
+  3225                           
+  3226                           ;pin_manager.c: 54: ANSELA = 0x01;
+  3227  0705  3001               	movlw	1
+  3228  0706  0023               	movlb	3	; select bank3
+  3229  0707  008C               	movwf	12	;volatile
+  3230                           
+  3231                           ;pin_manager.c: 56: LATB = 0x00;
+  3232  0708  0022               	movlb	2	; select bank2
+  3233  0709  018D               	clrf	13	;volatile
   3234                           
-  3235                           ;pin_manager.c: 56: LATB = 0x00;
-  3236  0707  0022               	movlb	2	; select bank2
-  3237  0708  018D               	clrf	13	;volatile
+  3235                           ;pin_manager.c: 57: TRISB = 0x00;
+  3236  070A  0021               	movlb	1	; select bank1
+  3237  070B  018D               	clrf	13	;volatile
   3238                           
-  3239                           ;pin_manager.c: 57: TRISB = 0x00;
-  3240  0709  0021               	movlb	1	; select bank1
-  3241  070A  018D               	clrf	13	;volatile
+  3239                           ;pin_manager.c: 58: ANSELB = 0x00;
+  3240  070C  0023               	movlb	3	; select bank3
+  3241  070D  018D               	clrf	13	;volatile
   3242                           
-  3243                           ;pin_manager.c: 58: ANSELB = 0x00;
-  3244  070B  0023               	movlb	3	; select bank3
-  3245  070C  018D               	clrf	13	;volatile
+  3243                           ;pin_manager.c: 59: WPUB = 0x00;
+  3244  070E  0024               	movlb	4	; select bank4
+  3245  070F  018D               	clrf	13	;volatile
   3246                           
-  3247                           ;pin_manager.c: 59: WPUB = 0x00;
-  3248  070D  0024               	movlb	4	; select bank4
-  3249  070E  018D               	clrf	13	;volatile
+  3247                           ;pin_manager.c: 61: LATC = 0x00;
+  3248  0710  0022               	movlb	2	; select bank2
+  3249  0711  018E               	clrf	14	;volatile
   3250                           
-  3251                           ;pin_manager.c: 61: LATC = 0x00;
-  3252  070F  0022               	movlb	2	; select bank2
-  3253  0710  018E               	clrf	14	;volatile
-  3254                           
-  3255                           ;pin_manager.c: 62: TRISC = 0xFF;
-  3256  0711  30FF               	movlw	255
-  3257  0712  0021               	movlb	1	; select bank1
-  3258  0713  008E               	movwf	14	;volatile
+  3251                           ;pin_manager.c: 62: TRISC = 0xFF;
+  3252  0712  30FF               	movlw	255
+  3253  0713  0021               	movlb	1	; select bank1
+  3254  0714  008E               	movwf	14	;volatile
+  3255                           
+  3256                           ;pin_manager.c: 63: ANSELC = 0x00;
+  3257  0715  0023               	movlb	3	; select bank3
+  3258  0716  018E               	clrf	14	;volatile
   3259                           
-  3260                           ;pin_manager.c: 63: ANSELC = 0x00;
-  3261  0714  0023               	movlb	3	; select bank3
-  3262  0715  018E               	clrf	14	;volatile
+  3260                           ;pin_manager.c: 64: WPUC = 0x00;
+  3261  0717  0024               	movlb	4	; select bank4
+  3262  0718  018E               	clrf	14	;volatile
   3263                           
-  3264                           ;pin_manager.c: 64: WPUC = 0x00;
-  3265  0716  0024               	movlb	4	; select bank4
-  3266  0717  018E               	clrf	14	;volatile
+  3264                           ;pin_manager.c: 66: OPTION_REGbits.nWPUEN = 0x01;
+  3265  0719  0021               	movlb	1	; select bank1
+  3266  071A  1795               	bsf	21,7	;volatile
   3267                           
-  3268                           ;pin_manager.c: 66: OPTION_REGbits.nWPUEN = 0x01;
-  3269  0718  0021               	movlb	1	; select bank1
-  3270  0719  1795               	bsf	21,7	;volatile
-  3271                           
-  3272                           ;pin_manager.c: 75: RB6PPS = 0x11;
-  3273  071A  3011               	movlw	17
-  3274  071B  003D               	movlb	29	; select bank29
-  3275  071C  009E               	movwf	30	;volatile
-  3276                           
-  3277                           ;pin_manager.c: 76: SSPCLKPPS = 0x0F;
-  3278  071D  300F               	movlw	15
-  3279  071E  003C               	movlb	28	; select bank28
-  3280  071F  00A0               	movwf	32	;volatile
-  3281                           
-  3282                           ;pin_manager.c: 77: RB7PPS = 0x10;
-  3283  0720  3010               	movlw	16
-  3284  0721  003D               	movlb	29	; select bank29
-  3285  0722  009F               	movwf	31	;volatile
-  3286  0723  0008               	return
-  3287  0724                     __end_of_PIN_MANAGER_Initialize:	
-  3288                           
-  3289                           	psect	text4
-  3290  06D4                     __ptext4:	
-  3291 ;; *************** function _OSCILLATOR_Initialize *****************
-  3292 ;; Defined at:
-  3293 ;;		line 83 in file "mcc_generated_files/mcc.c"
-  3294 ;; Parameters:    Size  Location     Type
-  3295 ;;		None
-  3296 ;; Auto vars:     Size  Location     Type
-  3297 ;;		None
-  3298 ;; Return value:  Size  Location     Type
-  3299 ;;		None               void
-  3300 ;; Registers used:
-  3301 ;;		wreg, status,2
-  3302 ;; Tracked objects:
-  3303 ;;		On entry : 0/0
-  3304 ;;		On exit  : 0/0
-  3305 ;;		Unchanged: 0/0
-  3306 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3307 ;;      Params:         0       0       0       0       0       0       0       0
-  3308 ;;      Locals:         0       0       0       0       0       0       0       0
-  3309 ;;      Temps:          0       0       0       0       0       0       0       0
-  3310 ;;      Totals:         0       0       0       0       0       0       0       0
-  3311 ;;Total ram usage:        0 bytes
-  3312 ;; Hardware stack levels used:    1
-  3313 ;; This function calls:
-  3314 ;;		Nothing
-  3315 ;; This function is called by:
-  3316 ;;		_SYSTEM_Initialize
-  3317 ;; This function uses a non-reentrant model
-  3318 ;;
+  3268                           ;pin_manager.c: 75: RB6PPS = 0x11;
+  3269  071B  3011               	movlw	17
+  3270  071C  003D               	movlb	29	; select bank29
+  3271  071D  009E               	movwf	30	;volatile
+  3272                           
+  3273                           ;pin_manager.c: 76: SSPCLKPPS = 0x0F;
+  3274  071E  300F               	movlw	15
+  3275  071F  003C               	movlb	28	; select bank28
+  3276  0720  00A0               	movwf	32	;volatile
+  3277                           
+  3278                           ;pin_manager.c: 77: RB7PPS = 0x10;
+  3279  0721  3010               	movlw	16
+  3280  0722  003D               	movlb	29	; select bank29
+  3281  0723  009F               	movwf	31	;volatile
+  3282  0724  0008               	return
+  3283  0725                     __end_of_PIN_MANAGER_Initialize:	
+  3284                           
+  3285                           	psect	text4
+  3286  06D5                     __ptext4:	
+  3287 ;; *************** function _OSCILLATOR_Initialize *****************
+  3288 ;; Defined at:
+  3289 ;;		line 83 in file "mcc_generated_files/mcc.c"
+  3290 ;; Parameters:    Size  Location     Type
+  3291 ;;		None
+  3292 ;; Auto vars:     Size  Location     Type
+  3293 ;;		None
+  3294 ;; Return value:  Size  Location     Type
+  3295 ;;		None               void
+  3296 ;; Registers used:
+  3297 ;;		wreg, status,2
+  3298 ;; Tracked objects:
+  3299 ;;		On entry : 0/0
+  3300 ;;		On exit  : 0/0
+  3301 ;;		Unchanged: 0/0
+  3302 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3303 ;;      Params:         0       0       0       0       0       0       0       0
+  3304 ;;      Locals:         0       0       0       0       0       0       0       0
+  3305 ;;      Temps:          0       0       0       0       0       0       0       0
+  3306 ;;      Totals:         0       0       0       0       0       0       0       0
+  3307 ;;Total ram usage:        0 bytes
+  3308 ;; Hardware stack levels used:    1
+  3309 ;; This function calls:
+  3310 ;;		Nothing
+  3311 ;; This function is called by:
+  3312 ;;		_SYSTEM_Initialize
+  3313 ;; This function uses a non-reentrant model
+  3314 ;;
+  3315                           
+  3316                           
+  3317                           ;psect for function _OSCILLATOR_Initialize
+  3318  06D5                     _OSCILLATOR_Initialize:	
   3319                           
-  3320                           
-  3321                           ;psect for function _OSCILLATOR_Initialize
-  3322  06D4                     _OSCILLATOR_Initialize:	
-  3323                           
-  3324                           ;mcc.c: 85: OSCCON = 0x7A;
-  3325                           
-  3326                           ;incstack = 0
-  3327                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
-  3328  06D4  307A               	movlw	122
-  3329  06D5  0021               	movlb	1	; select bank1
-  3330  06D6  0099               	movwf	25	;volatile
-  3331                           
-  3332                           ;mcc.c: 87: OSCSTAT = 0x00;
-  3333  06D7  019A               	clrf	26	;volatile
-  3334                           
-  3335                           ;mcc.c: 89: OSCTUNE = 0x00;
-  3336  06D8  0198               	clrf	24	;volatile
-  3337  06D9  0008               	return
-  3338  06DA                     __end_of_OSCILLATOR_Initialize:	
-  3339                           
-  3340                           	psect	text5
-  3341  06E0                     __ptext5:	
-  3342 ;; *************** function _INTERRUPT_ON_CHANGE_Initialize *****************
-  3343 ;; Defined at:
-  3344 ;;		line 94 in file "mcc_generated_files/mcc.c"
-  3345 ;; Parameters:    Size  Location     Type
-  3346 ;;		None
-  3347 ;; Auto vars:     Size  Location     Type
-  3348 ;;		None
-  3349 ;; Return value:  Size  Location     Type
-  3350 ;;		None               void
-  3351 ;; Registers used:
-  3352 ;;		wreg
-  3353 ;; Tracked objects:
-  3354 ;;		On entry : 0/0
-  3355 ;;		On exit  : 0/0
-  3356 ;;		Unchanged: 0/0
-  3357 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3358 ;;      Params:         0       0       0       0       0       0       0       0
-  3359 ;;      Locals:         0       0       0       0       0       0       0       0
-  3360 ;;      Temps:          0       0       0       0       0       0       0       0
-  3361 ;;      Totals:         0       0       0       0       0       0       0       0
-  3362 ;;Total ram usage:        0 bytes
-  3363 ;; Hardware stack levels used:    1
-  3364 ;; This function calls:
-  3365 ;;		Nothing
-  3366 ;; This function is called by:
-  3367 ;;		_SYSTEM_Initialize
-  3368 ;; This function uses a non-reentrant model
-  3369 ;;
+  3320                           ;mcc.c: 85: OSCCON = 0x7A;
+  3321                           
+  3322                           ;incstack = 0
+  3323                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
+  3324  06D5  307A               	movlw	122
+  3325  06D6  0021               	movlb	1	; select bank1
+  3326  06D7  0099               	movwf	25	;volatile
+  3327                           
+  3328                           ;mcc.c: 87: OSCSTAT = 0x00;
+  3329  06D8  019A               	clrf	26	;volatile
+  3330                           
+  3331                           ;mcc.c: 89: OSCTUNE = 0x00;
+  3332  06D9  0198               	clrf	24	;volatile
+  3333  06DA  0008               	return
+  3334  06DB                     __end_of_OSCILLATOR_Initialize:	
+  3335                           
+  3336                           	psect	text5
+  3337  06E1                     __ptext5:	
+  3338 ;; *************** function _INTERRUPT_ON_CHANGE_Initialize *****************
+  3339 ;; Defined at:
+  3340 ;;		line 94 in file "mcc_generated_files/mcc.c"
+  3341 ;; Parameters:    Size  Location     Type
+  3342 ;;		None
+  3343 ;; Auto vars:     Size  Location     Type
+  3344 ;;		None
+  3345 ;; Return value:  Size  Location     Type
+  3346 ;;		None               void
+  3347 ;; Registers used:
+  3348 ;;		wreg
+  3349 ;; Tracked objects:
+  3350 ;;		On entry : 0/0
+  3351 ;;		On exit  : 0/0
+  3352 ;;		Unchanged: 0/0
+  3353 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3354 ;;      Params:         0       0       0       0       0       0       0       0
+  3355 ;;      Locals:         0       0       0       0       0       0       0       0
+  3356 ;;      Temps:          0       0       0       0       0       0       0       0
+  3357 ;;      Totals:         0       0       0       0       0       0       0       0
+  3358 ;;Total ram usage:        0 bytes
+  3359 ;; Hardware stack levels used:    1
+  3360 ;; This function calls:
+  3361 ;;		Nothing
+  3362 ;; This function is called by:
+  3363 ;;		_SYSTEM_Initialize
+  3364 ;; This function uses a non-reentrant model
+  3365 ;;
+  3366                           
+  3367                           
+  3368                           ;psect for function _INTERRUPT_ON_CHANGE_Initialize
+  3369  06E1                     _INTERRUPT_ON_CHANGE_Initialize:	
   3370                           
-  3371                           
-  3372                           ;psect for function _INTERRUPT_ON_CHANGE_Initialize
-  3373  06E0                     _INTERRUPT_ON_CHANGE_Initialize:	
-  3374                           
-  3375                           ;mcc.c: 95: INTCONbits.IOCIF = 0;
+  3371                           ;mcc.c: 95: INTCONbits.IOCIF = 0;
+  3372                           
+  3373                           ;incstack = 0
+  3374                           ; Regs used in _INTERRUPT_ON_CHANGE_Initialize: [wreg]
+  3375  06E1  100B               	bcf	11,0	;volatile
   3376                           
-  3377                           ;incstack = 0
-  3378                           ; Regs used in _INTERRUPT_ON_CHANGE_Initialize: [wreg]
-  3379  06E0  100B               	bcf	11,0	;volatile
+  3377                           ;mcc.c: 96: IOCCFbits.IOCCF7 = 0;
+  3378  06E2  0027               	movlb	7	; select bank7
+  3379  06E3  1399               	bcf	25,7	;volatile
   3380                           
-  3381                           ;mcc.c: 96: IOCCFbits.IOCCF7 = 0;
-  3382  06E1  0027               	movlb	7	; select bank7
-  3383  06E2  1399               	bcf	25,7	;volatile
-  3384                           
-  3385                           ;mcc.c: 99: INTCONbits.IOCIE = 1;
-  3386  06E3  158B               	bsf	11,3	;volatile
-  3387                           
-  3388                           ;mcc.c: 100: IOCCP = 0x80;
-  3389  06E4  3080               	movlw	128
-  3390  06E5  0097               	movwf	23	;volatile
-  3391  06E6  0008               	return
-  3392  06E7                     __end_of_INTERRUPT_ON_CHANGE_Initialize:	
-  3393                           
-  3394                           	psect	text6
-  3395  06CF                     __ptext6:	
-  3396 ;; *************** function _DAC1_Initialize *****************
-  3397 ;; Defined at:
-  3398 ;;		line 58 in file "mcc_generated_files/dac1.c"
-  3399 ;; Parameters:    Size  Location     Type
-  3400 ;;		None
-  3401 ;; Auto vars:     Size  Location     Type
-  3402 ;;		None
-  3403 ;; Return value:  Size  Location     Type
-  3404 ;;		None               void
-  3405 ;; Registers used:
-  3406 ;;		wreg, status,2
-  3407 ;; Tracked objects:
-  3408 ;;		On entry : 0/0
-  3409 ;;		On exit  : 0/0
-  3410 ;;		Unchanged: 0/0
-  3411 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3412 ;;      Params:         0       0       0       0       0       0       0       0
-  3413 ;;      Locals:         0       0       0       0       0       0       0       0
-  3414 ;;      Temps:          0       0       0       0       0       0       0       0
-  3415 ;;      Totals:         0       0       0       0       0       0       0       0
-  3416 ;;Total ram usage:        0 bytes
-  3417 ;; Hardware stack levels used:    1
-  3418 ;; This function calls:
-  3419 ;;		Nothing
-  3420 ;; This function is called by:
-  3421 ;;		_SYSTEM_Initialize
-  3422 ;; This function uses a non-reentrant model
-  3423 ;;
+  3381                           ;mcc.c: 99: INTCONbits.IOCIE = 1;
+  3382  06E4  158B               	bsf	11,3	;volatile
+  3383                           
+  3384                           ;mcc.c: 100: IOCCP = 0x80;
+  3385  06E5  3080               	movlw	128
+  3386  06E6  0097               	movwf	23	;volatile
+  3387  06E7  0008               	return
+  3388  06E8                     __end_of_INTERRUPT_ON_CHANGE_Initialize:	
+  3389                           
+  3390                           	psect	text6
+  3391  06D0                     __ptext6:	
+  3392 ;; *************** function _DAC1_Initialize *****************
+  3393 ;; Defined at:
+  3394 ;;		line 58 in file "mcc_generated_files/dac1.c"
+  3395 ;; Parameters:    Size  Location     Type
+  3396 ;;		None
+  3397 ;; Auto vars:     Size  Location     Type
+  3398 ;;		None
+  3399 ;; Return value:  Size  Location     Type
+  3400 ;;		None               void
+  3401 ;; Registers used:
+  3402 ;;		wreg, status,2
+  3403 ;; Tracked objects:
+  3404 ;;		On entry : 0/0
+  3405 ;;		On exit  : 0/0
+  3406 ;;		Unchanged: 0/0
+  3407 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3408 ;;      Params:         0       0       0       0       0       0       0       0
+  3409 ;;      Locals:         0       0       0       0       0       0       0       0
+  3410 ;;      Temps:          0       0       0       0       0       0       0       0
+  3411 ;;      Totals:         0       0       0       0       0       0       0       0
+  3412 ;;Total ram usage:        0 bytes
+  3413 ;; Hardware stack levels used:    1
+  3414 ;; This function calls:
+  3415 ;;		Nothing
+  3416 ;; This function is called by:
+  3417 ;;		_SYSTEM_Initialize
+  3418 ;; This function uses a non-reentrant model
+  3419 ;;
+  3420                           
+  3421                           
+  3422                           ;psect for function _DAC1_Initialize
+  3423  06D0                     _DAC1_Initialize:	
   3424                           
-  3425                           
-  3426                           ;psect for function _DAC1_Initialize
-  3427  06CF                     _DAC1_Initialize:	
-  3428                           
-  3429                           ;dac1.c: 60: DAC1CON0 = 0xA0;
-  3430                           
-  3431                           ;incstack = 0
-  3432                           ; Regs used in _DAC1_Initialize: [wreg+status,2]
-  3433  06CF  30A0               	movlw	160
-  3434  06D0  0022               	movlb	2	; select bank2
-  3435  06D1  0098               	movwf	24	;volatile
-  3436                           
-  3437                           ;dac1.c: 62: DAC1CON1 = 0x00;
-  3438  06D2  0199               	clrf	25	;volatile
-  3439  06D3  0008               	return
-  3440  06D4                     __end_of_DAC1_Initialize:	
-  3441                           
-  3442                           	psect	text7
-  3443  0724                     __ptext7:	
-  3444 ;; *************** function _MIPISPI1 *****************
-  3445 ;; Defined at:
-  3446 ;;		line 129 in file "main.c"
-  3447 ;; Parameters:    Size  Location     Type
-  3448 ;;  a               1    wreg     unsigned char 
-  3449 ;; Auto vars:     Size  Location     Type
-  3450 ;;  a               1    1[COMMON] unsigned char 
-  3451 ;; Return value:  Size  Location     Type
-  3452 ;;		None               void
-  3453 ;; Registers used:
-  3454 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  3455 ;; Tracked objects:
-  3456 ;;		On entry : 0/0
-  3457 ;;		On exit  : 0/0
-  3458 ;;		Unchanged: 0/0
-  3459 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3460 ;;      Params:         0       0       0       0       0       0       0       0
-  3461 ;;      Locals:         1       0       0       0       0       0       0       0
-  3462 ;;      Temps:          0       0       0       0       0       0       0       0
-  3463 ;;      Totals:         1       0       0       0       0       0       0       0
-  3464 ;;Total ram usage:        1 bytes
-  3465 ;; Hardware stack levels used:    1
-  3466 ;; Hardware stack levels required when called:    1
-  3467 ;; This function calls:
-  3468 ;;		_SPI_Exchange8bit
-  3469 ;; This function is called by:
-  3470 ;;		_main
-  3471 ;; This function uses a non-reentrant model
-  3472 ;;
+  3425                           ;dac1.c: 60: DAC1CON0 = 0xA0;
+  3426                           
+  3427                           ;incstack = 0
+  3428                           ; Regs used in _DAC1_Initialize: [wreg+status,2]
+  3429  06D0  30A0               	movlw	160
+  3430  06D1  0022               	movlb	2	; select bank2
+  3431  06D2  0098               	movwf	24	;volatile
+  3432                           
+  3433                           ;dac1.c: 62: DAC1CON1 = 0x00;
+  3434  06D3  0199               	clrf	25	;volatile
+  3435  06D4  0008               	return
+  3436  06D5                     __end_of_DAC1_Initialize:	
+  3437                           
+  3438                           	psect	text7
+  3439  0725                     __ptext7:	
+  3440 ;; *************** function _MIPISPI1 *****************
+  3441 ;; Defined at:
+  3442 ;;		line 129 in file "main.c"
+  3443 ;; Parameters:    Size  Location     Type
+  3444 ;;  a               1    wreg     unsigned char 
+  3445 ;; Auto vars:     Size  Location     Type
+  3446 ;;  a               1    1[COMMON] unsigned char 
+  3447 ;; Return value:  Size  Location     Type
+  3448 ;;		None               void
+  3449 ;; Registers used:
+  3450 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  3451 ;; Tracked objects:
+  3452 ;;		On entry : 0/0
+  3453 ;;		On exit  : 0/0
+  3454 ;;		Unchanged: 0/0
+  3455 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3456 ;;      Params:         0       0       0       0       0       0       0       0
+  3457 ;;      Locals:         1       0       0       0       0       0       0       0
+  3458 ;;      Temps:          0       0       0       0       0       0       0       0
+  3459 ;;      Totals:         1       0       0       0       0       0       0       0
+  3460 ;;Total ram usage:        1 bytes
+  3461 ;; Hardware stack levels used:    1
+  3462 ;; Hardware stack levels required when called:    1
+  3463 ;; This function calls:
+  3464 ;;		_SPI_Exchange8bit
+  3465 ;; This function is called by:
+  3466 ;;		_main
+  3467 ;; This function uses a non-reentrant model
+  3468 ;;
+  3469                           
+  3470                           
+  3471                           ;psect for function _MIPISPI1
+  3472  0725                     _MIPISPI1:	
   3473                           
-  3474                           
-  3475                           ;psect for function _MIPISPI1
-  3476  0724                     _MIPISPI1:	
-  3477                           
-  3478                           ;incstack = 0
-  3479                           ; Regs used in _MIPISPI1: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  3480                           ;MIPISPI1@a stored from wreg
-  3481  0724  00FA               	movwf	MIPISPI1@a
+  3474                           ;incstack = 0
+  3475                           ; Regs used in _MIPISPI1: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  3476                           ;MIPISPI1@a stored from wreg
+  3477  0725  00FA               	movwf	MIPISPI1@a
+  3478                           
+  3479                           ;main.c: 130: RB6PPS = 0x00;
+  3480  0726  003D               	movlb	29	; select bank29
+  3481  0727  019E               	clrf	30	;volatile
   3482                           
-  3483                           ;main.c: 130: RB6PPS = 0x00;
-  3484  0725  003D               	movlb	29	; select bank29
-  3485  0726  019E               	clrf	30	;volatile
+  3483                           ;main.c: 131: do { LATB6 = 0; } while(0);
+  3484  0728  0022               	movlb	2	; select bank2
+  3485  0729  130D               	bcf	13,6	;volatile
   3486                           
-  3487                           ;main.c: 131: do { LATB6 = 0; } while(0);
-  3488  0727  0022               	movlb	2	; select bank2
-  3489  0728  130D               	bcf	13,6	;volatile
-  3490                           
-  3491                           ;main.c: 132: do { LATB6 = 1; } while(0);
-  3492  0729  170D               	bsf	13,6	;volatile
-  3493                           
-  3494                           ;main.c: 133: do { LATB6 = 0; } while(0);
-  3495  072A  130D               	bcf	13,6	;volatile
-  3496                           
-  3497                           ;main.c: 134: RB6PPS = 0x11;
-  3498  072B  3011               	movlw	17
-  3499  072C  003D               	movlb	29	; select bank29
-  3500  072D  009E               	movwf	30	;volatile
-  3501                           
-  3502                           ;main.c: 135: SPI_Exchange8bit(SLAVEWRITEADD[0]);
-  3503  072E  308D               	movlw	low (_SLAVEWRITEADD| (0+32768))
-  3504  072F  0084               	movwf	4
-  3505  0730  3089               	movlw	high (_SLAVEWRITEADD| (0+32768))
-  3506  0731  0085               	movwf	5
-  3507  0732  0800               	movf	0,w	;code access
-  3508  0733  3186  26E7  3187   	fcall	_SPI_Exchange8bit
-  3509                           
-  3510                           ;main.c: 136: if (a == 0x60){
-  3511  0736  3060               	movlw	96
-  3512  0737  067A               	xorwf	MIPISPI1@a,w
-  3513  0738  1D03               	btfss	3,2
-  3514  0739  2F42               	goto	l748
+  3487                           ;main.c: 132: do { LATB6 = 1; } while(0);
+  3488  072A  170D               	bsf	13,6	;volatile
+  3489                           
+  3490                           ;main.c: 133: do { LATB6 = 0; } while(0);
+  3491  072B  130D               	bcf	13,6	;volatile
+  3492                           
+  3493                           ;main.c: 134: RB6PPS = 0x11;
+  3494  072C  3011               	movlw	17
+  3495  072D  003D               	movlb	29	; select bank29
+  3496  072E  009E               	movwf	30	;volatile
+  3497                           
+  3498                           ;main.c: 135: SPI_Exchange8bit(SLAVEWRITEADD[0]);
+  3499  072F  308D               	movlw	low (_SLAVEWRITEADD| (0+32768))
+  3500  0730  0084               	movwf	4
+  3501  0731  3089               	movlw	high (_SLAVEWRITEADD| (0+32768))
+  3502  0732  0085               	movwf	5
+  3503  0733  0800               	movf	0,w	;code access
+  3504  0734  3186  26E8  3187   	fcall	_SPI_Exchange8bit
+  3505                           
+  3506                           ;main.c: 136: if (a == 0x60){
+  3507  0737  3060               	movlw	96
+  3508  0738  067A               	xorwf	MIPISPI1@a,w
+  3509  0739  1D03               	btfss	3,2
+  3510  073A  2F43               	goto	l744
+  3511                           
+  3512                           ;main.c: 137: SPI_Exchange8bit(0x1B);
+  3513  073B  301B               	movlw	27
+  3514  073C  3186  26E8  3187   	fcall	_SPI_Exchange8bit
   3515                           
-  3516                           ;main.c: 137: SPI_Exchange8bit(0x1B);
-  3517  073A  301B               	movlw	27
-  3518  073B  3186  26E7  3187   	fcall	_SPI_Exchange8bit
+  3516                           ;main.c: 138: SPI_Exchange8bit(0x04);
+  3517  073F  3004               	movlw	4
+  3518  0740  3186  26E8         	fcall	_SPI_Exchange8bit
   3519                           
-  3520                           ;main.c: 138: SPI_Exchange8bit(0x04);
-  3521  073E  3004               	movlw	4
-  3522  073F  3186  26E7         	fcall	_SPI_Exchange8bit
+  3520                           ;main.c: 139: }
+  3521  0742  0008               	return
+  3522  0743                     l744:	
   3523                           
-  3524                           ;main.c: 139: }
-  3525  0741  0008               	return
-  3526  0742                     l748:	
-  3527                           
-  3528                           ;main.c: 140: else{
-  3529                           ;main.c: 141: SPI_Exchange8bit(ADDRESSDATA1[a]);
-  3530  0742  087A               	movf	MIPISPI1@a,w
-  3531  0743  3E00               	addlw	low (_ADDRESSDATA1| (0+32768))
-  3532  0744  0084               	movwf	4
-  3533  0745  3088               	movlw	high (_ADDRESSDATA1| (0+32768))
-  3534  0746  1803               	skipnc
-  3535  0747  3E01               	addlw	1
-  3536  0748  0085               	movwf	5
-  3537  0749  0800               	movf	0,w	;code access
-  3538  074A  3186  26E7  3187   	fcall	_SPI_Exchange8bit
-  3539                           
-  3540                           ;main.c: 142: SPI_Exchange8bit(DATABUSPARK[a]);
-  3541  074D  087A               	movf	MIPISPI1@a,w
-  3542  074E  3EC3               	addlw	low (_DATABUSPARK| (0+32768))
-  3543  074F  0084               	movwf	4
-  3544  0750  3088               	movlw	high (_DATABUSPARK| (0+32768))
-  3545  0751  1803               	skipnc
-  3546  0752  3E01               	addlw	1
-  3547  0753  0085               	movwf	5
-  3548  0754  0800               	movf	0,w	;code access
-  3549  0755  3186  26E7         	fcall	_SPI_Exchange8bit
-  3550  0757  0008               	return
-  3551  0758                     __end_of_MIPISPI1:	
-  3552                           
-  3553                           	psect	text8
-  3554  06E7                     __ptext8:	
-  3555 ;; *************** function _SPI_Exchange8bit *****************
-  3556 ;; Defined at:
-  3557 ;;		line 77 in file "mcc_generated_files/spi.c"
-  3558 ;; Parameters:    Size  Location     Type
-  3559 ;;  data            1    wreg     unsigned char 
-  3560 ;; Auto vars:     Size  Location     Type
-  3561 ;;  data            1    0[COMMON] unsigned char 
-  3562 ;; Return value:  Size  Location     Type
-  3563 ;;                  1    wreg      unsigned char 
-  3564 ;; Registers used:
-  3565 ;;		wreg
-  3566 ;; Tracked objects:
-  3567 ;;		On entry : 0/0
-  3568 ;;		On exit  : 0/0
-  3569 ;;		Unchanged: 0/0
-  3570 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
-  3571 ;;      Params:         0       0       0       0       0       0       0       0
-  3572 ;;      Locals:         1       0       0       0       0       0       0       0
-  3573 ;;      Temps:          0       0       0       0       0       0       0       0
-  3574 ;;      Totals:         1       0       0       0       0       0       0       0
-  3575 ;;Total ram usage:        1 bytes
-  3576 ;; Hardware stack levels used:    1
-  3577 ;; This function calls:
-  3578 ;;		Nothing
-  3579 ;; This function is called by:
-  3580 ;;		_MIPISPI1
-  3581 ;;		_SPI_Exchange8bitBuffer
-  3582 ;;		_MIPISPI
-  3583 ;; This function uses a non-reentrant model
-  3584 ;;
+  3524                           ;main.c: 140: else{
+  3525                           ;main.c: 141: SPI_Exchange8bit(ADDRESSDATA1[a]);
+  3526  0743  087A               	movf	MIPISPI1@a,w
+  3527  0744  3E00               	addlw	low (_ADDRESSDATA1| (0+32768))
+  3528  0745  0084               	movwf	4
+  3529  0746  3088               	movlw	high (_ADDRESSDATA1| (0+32768))
+  3530  0747  1803               	skipnc
+  3531  0748  3E01               	addlw	1
+  3532  0749  0085               	movwf	5
+  3533  074A  0800               	movf	0,w	;code access
+  3534  074B  3186  26E8  3187   	fcall	_SPI_Exchange8bit
+  3535                           
+  3536                           ;main.c: 142: SPI_Exchange8bit(DATABUSPARK[a]);
+  3537  074E  087A               	movf	MIPISPI1@a,w
+  3538  074F  3EC3               	addlw	low (_DATABUSPARK| (0+32768))
+  3539  0750  0084               	movwf	4
+  3540  0751  3088               	movlw	high (_DATABUSPARK| (0+32768))
+  3541  0752  1803               	skipnc
+  3542  0753  3E01               	addlw	1
+  3543  0754  0085               	movwf	5
+  3544  0755  0800               	movf	0,w	;code access
+  3545  0756  3186  26E8         	fcall	_SPI_Exchange8bit
+  3546  0758  0008               	return
+  3547  0759                     __end_of_MIPISPI1:	
+  3548                           
+  3549                           	psect	text8
+  3550  06E8                     __ptext8:	
+  3551 ;; *************** function _SPI_Exchange8bit *****************
+  3552 ;; Defined at:
+  3553 ;;		line 77 in file "mcc_generated_files/spi.c"
+  3554 ;; Parameters:    Size  Location     Type
+  3555 ;;  data            1    wreg     unsigned char 
+  3556 ;; Auto vars:     Size  Location     Type
+  3557 ;;  data            1    0[COMMON] unsigned char 
+  3558 ;; Return value:  Size  Location     Type
+  3559 ;;                  1    wreg      unsigned char 
+  3560 ;; Registers used:
+  3561 ;;		wreg
+  3562 ;; Tracked objects:
+  3563 ;;		On entry : 0/0
+  3564 ;;		On exit  : 0/0
+  3565 ;;		Unchanged: 0/0
+  3566 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+  3567 ;;      Params:         0       0       0       0       0       0       0       0
+  3568 ;;      Locals:         1       0       0       0       0       0       0       0
+  3569 ;;      Temps:          0       0       0       0       0       0       0       0
+  3570 ;;      Totals:         1       0       0       0       0       0       0       0
+  3571 ;;Total ram usage:        1 bytes
+  3572 ;; Hardware stack levels used:    1
+  3573 ;; This function calls:
+  3574 ;;		Nothing
+  3575 ;; This function is called by:
+  3576 ;;		_MIPISPI1
+  3577 ;;		_SPI_Exchange8bitBuffer
+  3578 ;;		_MIPISPI
+  3579 ;; This function uses a non-reentrant model
+  3580 ;;
+  3581                           
+  3582                           
+  3583                           ;psect for function _SPI_Exchange8bit
+  3584  06E8                     _SPI_Exchange8bit:	
   3585                           
-  3586                           
-  3587                           ;psect for function _SPI_Exchange8bit
-  3588  06E7                     _SPI_Exchange8bit:	
-  3589                           
-  3590                           ;incstack = 0
-  3591                           ; Regs used in _SPI_Exchange8bit: [wreg]
-  3592                           ;SPI_Exchange8bit@data stored from wreg
-  3593  06E7  00F9               	movwf	SPI_Exchange8bit@data
+  3586                           ;incstack = 0
+  3587                           ; Regs used in _SPI_Exchange8bit: [wreg]
+  3588                           ;SPI_Exchange8bit@data stored from wreg
+  3589  06E8  00F9               	movwf	SPI_Exchange8bit@data
+  3590                           
+  3591                           ;spi.c: 79: SSP1CON1bits.WCOL = 0;
+  3592  06E9  0024               	movlb	4	; select bank4
+  3593  06EA  1395               	bcf	21,7	;volatile
   3594                           
-  3595                           ;spi.c: 79: SSP1CON1bits.WCOL = 0;
-  3596  06E8  0024               	movlb	4	; select bank4
-  3597  06E9  1395               	bcf	21,7	;volatile
-  3598                           
-  3599                           ;spi.c: 81: SSPBUF = data;
-  3600  06EA  0879               	movf	SPI_Exchange8bit@data,w
-  3601  06EB  0091               	movwf	17	;volatile
-  3602  06EC                     l92:	
-  3603                           ;spi.c: 83: while (SSP1STATbits.BF == 0x0) {
-  3604                           
-  3605  06EC  1C14               	btfss	20,0	;volatile
-  3606  06ED  2EEC               	goto	l92
-  3607                           
-  3608                           ;spi.c: 84: }
-  3609                           ;spi.c: 86: return (SSPBUF);
-  3610  06EE  0811               	movf	17,w	;volatile
-  3611  06EF  0008               	return
-  3612  06F0                     __end_of_SPI_Exchange8bit:	
-  3613  007E                     btemp	set	126	;btemp
-  3614  007E                     wtemp	set	126
-  3615  007E                     wtemp0	set	126
-  3616  0080                     wtemp1	set	128
-  3617  0082                     wtemp2	set	130
-  3618  0084                     wtemp3	set	132
-  3619  0086                     wtemp4	set	134
-  3620  0088                     wtemp5	set	136
-  3621  007F                     wtemp6	set	127
-  3622  007E                     ttemp	set	126
-  3623  007E                     ttemp0	set	126
-  3624  0081                     ttemp1	set	129
-  3625  0084                     ttemp2	set	132
-  3626  0087                     ttemp3	set	135
-  3627  007F                     ttemp4	set	127
-  3628  007E                     ltemp	set	126
-  3629  007E                     ltemp0	set	126
-  3630  0082                     ltemp1	set	130
-  3631  0086                     ltemp2	set	134
-  3632  0080                     ltemp3	set	128
+  3595                           ;spi.c: 81: SSPBUF = data;
+  3596  06EB  0879               	movf	SPI_Exchange8bit@data,w
+  3597  06EC  0091               	movwf	17	;volatile
+  3598  06ED                     l92:	
+  3599                           ;spi.c: 83: while (SSP1STATbits.BF == 0x0) {
+  3600                           
+  3601  06ED  1C14               	btfss	20,0	;volatile
+  3602  06EE  2EED               	goto	l92
+  3603                           
+  3604                           ;spi.c: 84: }
+  3605                           ;spi.c: 86: return (SSPBUF);
+  3606  06EF  0811               	movf	17,w	;volatile
+  3607  06F0  0008               	return
+  3608  06F1                     __end_of_SPI_Exchange8bit:	
+  3609  007E                     btemp	set	126	;btemp
+  3610  007E                     wtemp	set	126
+  3611  007E                     wtemp0	set	126
+  3612  0080                     wtemp1	set	128
+  3613  0082                     wtemp2	set	130
+  3614  0084                     wtemp3	set	132
+  3615  0086                     wtemp4	set	134
+  3616  0088                     wtemp5	set	136
+  3617  007F                     wtemp6	set	127
+  3618  007E                     ttemp	set	126
+  3619  007E                     ttemp0	set	126
+  3620  0081                     ttemp1	set	129
+  3621  0084                     ttemp2	set	132
+  3622  0087                     ttemp3	set	135
+  3623  007F                     ttemp4	set	127
+  3624  007E                     ltemp	set	126
+  3625  007E                     ltemp0	set	126
+  3626  0082                     ltemp1	set	130
+  3627  0086                     ltemp2	set	134
+  3628  0080                     ltemp3	set	128
 
 
 Data Sizes:
@@ -3835,103 +3831,103 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Thu Nov 08 17:39:28 2018
+Symbol Table                                                                                   Fri Nov 09 17:02:23 2018
 
-                         _SPI_Initialize 06DA                              __CFG_CP$OFF 0000  
-                                     l92 06EC                              __CFG_LVP$ON 0000  
-                        _DAC1_Initialize 06CF                             _ADDRESSDATA1 0800  
-                           _ADDRESSDATA2 0841                                      l220 076C  
-                                    l302 07CD                                      l241 07B0  
-                                    l235 079D                                      l270 07BA  
-                                    l263 07B7                                      l247 07F2  
-                                    l256 07B4                                      l249 07B3  
-                                    l291 07C5                                      l284 07C1  
-                                    l277 07BE                                      l295 07C8  
-                                    l298 07CA                                      l830 0765  
-                                    l840 0779                                      l748 0742  
-                                    l860 07CF                                      l844 0785  
-                                    l836 076D                                      l848 0791  
-                                    l898 07D8                             __CFG_BORV$LO 0000  
+                         _SPI_Initialize 06DB                              __CFG_CP$OFF 0000  
+                                     l92 06ED                              __CFG_LVP$ON 0000  
+                        _DAC1_Initialize 06D0                             _ADDRESSDATA1 0800  
+                           _ADDRESSDATA2 0841                                      l231 079D  
+                                    l216 076C                                      l243 07F2  
+                                    l252 07B4                                      l245 07B3  
+                                    l237 07B0                                      l280 07C1  
+                                    l273 07BE                                      l266 07BA  
+                                    l291 07C8                                      l259 07B7  
+                                    l294 07CA                                      l287 07C5  
+                                    l298 07CD                                      l830 076D  
+                                    l744 0743                                      l824 0765  
+                                    l842 0791                                      l834 0779  
+                                    l854 07CF                                      l838 0785  
+                                    l892 07D8                             __CFG_BORV$LO 0000  
                            __CFG_ZCD$OFF 0000                                     _DATA 0882  
                                    _LATA 010C                                     _LATB 010D  
                                    _LATC 010E                                     _WPUB 020D  
                                    _WPUC 020E                             __CFG_WRT$OFF 0000  
-                                   _main 0758                                     fsr0h 0005  
+                                   _main 0759                                     fsr0h 0005  
                                    fsr0l 0004                                     indf0 0000  
                                    btemp 007E                    __end_of_SLAVEWRITEADD 098F  
                                    ltemp 007E                                     start 0002  
                                    ttemp 007E                                     wtemp 007E  
-                 __end_of_SPI_Initialize 06E0                            __CFG_PLLEN$ON 0000  
-         __size_of_OSCILLATOR_Initialize 0006            __end_of_OSCILLATOR_Initialize 06DA  
-                       __end_of_MIPISPI1 0758                                    ?_main 0079  
+                 __end_of_SPI_Initialize 06E1                            __CFG_PLLEN$ON 0000  
+         __size_of_OSCILLATOR_Initialize 0006            __end_of_OSCILLATOR_Initialize 06DB  
+                       __end_of_MIPISPI1 0759                                    ?_main 0079  
                           __CFG_WDTE$OFF 0000                                    _LATA1 0861  
-                                  _LATA2 0862                                    _LATA4 0864  
-                                  _LATA5 0865                                    _LATB4 086C  
-                                  _LATB5 086D                                    _LATB6 086E  
-                                  _IOCCP 0397                                    _PORTC 000E  
-                                  _TRISA 008C                                    _TRISB 008D  
-                                  _TRISC 008E                         __end_of_SLAVEADD 098D  
-                                  _Byte1 0070                                    _Byte2 0071  
-                                  _Byte3 0072                                    _Byte4 0073  
-                                  _Byte5 0074                                    _Byte6 0075  
-                          __CFG_PWRTE$ON 0000                                    _Dummy 0077  
-                                  _start 0078                           __CFG_BOREN$OFF 0000  
-                                  ltemp0 007E                                    ltemp1 0082  
-                                  ltemp2 0086                                    ltemp3 0080  
-                                  ttemp0 007E                                    ttemp1 0081  
-                                  ttemp2 0084                                    ttemp3 0087  
-                                  ttemp4 007F                                    status 0003  
-                                  wtemp0 007E                                    wtemp1 0080  
-                                  wtemp2 0082                                    wtemp3 0084  
-                                  wtemp4 0086                                    wtemp5 0088  
-                                  wtemp6 007F                             __end_of_DATA 08C3  
-                        ?_SPI_Initialize 0079                           __CFG_MCLRE$OFF 0000  
-                        __initialization 07F4                             __end_of_main 07F4  
-                __end_of_DAC1_Initialize 06D4                           __CFG_LPBOR$OFF 0000  
-                                 ??_main 007B                 __end_of_SPI_Exchange8bit 06F0  
-                                 _ANSELA 018C                                   _ANSELB 018D  
-                                 _ANSELC 018E                                   _RB6PPS 0E9E  
-                                 _RB7PPS 0E9F                                   _REGADD 0989  
-                                 _PARITY 0904                                   _OSCCON 0099  
-                                 _SSPBUF 0211                           __CFG_STVREN$ON 0000  
-                     __end_of_ACTIVEBAND 0985                        __end_of_DacOutput 0989  
-                      _SYSTEM_Initialize 06F0                  __end_of__initialization 07FD  
-                     ?_SYSTEM_Initialize 0079                                ?_MIPISPI1 0079  
-                         __pcstackCOMMON 0079                      ??_SYSTEM_Initialize 0079  
-                       ?_DAC1_Initialize 0079                                MIPISPI1@a 007A  
-                         _OPTION_REGbits 0095                __end_of_SYSTEM_Initialize 06FF  
-                             ??_MIPISPI1 007A                               __pmaintext 0758  
-                        __CFG_WDTCCS$SWC 0000                                  _OSCSTAT 009A  
-                                _OSCTUNE 0098                                  _SSP1ADD 0212  
-                       ??_SPI_Initialize 0079   __end_of_INTERRUPT_ON_CHANGE_Initialize 06E7  
-__size_of_INTERRUPT_ON_CHANGE_Initialize 0007           _INTERRUPT_ON_CHANGE_Initialize 06E0  
-                                __ptext1 06F0                                  __ptext2 06DA  
-                                __ptext3 06FF                                  __ptext4 06D4  
-                                __ptext5 06E0                                  __ptext6 06CF  
-                                __ptext7 0724                                  __ptext8 06E7  
-                  _OSCILLATOR_Initialize 06D4                 ??_PIN_MANAGER_Initialize 0079  
-                              _IOCCFbits 0399                        ?_SPI_Exchange8bit 0079  
-             __size_of_SYSTEM_Initialize 000F                     end_of_initialization 07FD  
-                     ??_SPI_Exchange8bit 0079                     SPI_Exchange8bit@data 0079  
-                    __end_of_DATABUSPARK 0904                             __pstringtext 0800  
-                              _SSPCLKPPS 0E20                         __CFG_FOSC$INTOSC 0000  
-                              _DacOutput 0985                           __end_of_REGADD 098B  
-                         __end_of_PARITY 0945                            _SLAVEWRITEADD 098D  
-                      __size_of_MIPISPI1 0034                   ?_OSCILLATOR_Initialize 0079  
-                    start_initialization 07F4          __size_of_PIN_MANAGER_Initialize 0025  
-                            _DATABUSPARK 08C3                 __size_of_DAC1_Initialize 0005  
-                            __pbssCOMMON 0070                                ___latbits 0001  
-                 _PIN_MANAGER_Initialize 06FF                         __CFG_PPS1WAY$OFF 0000  
-                               _DAC1CON0 0118                                 _DAC1CON1 0119  
-                               _DAC_Step 0076         ??_INTERRUPT_ON_CHANGE_Initialize 0079  
-        ?_INTERRUPT_ON_CHANGE_Initialize 0079                                 _MIPISPI1 0724  
-                               _SLAVEADD 098B                __size_of_SPI_Exchange8bit 0009  
-                   __CFG_WDTCPS$WDTCPS1F 0000                                 _SSP1CON1 0215  
-                               _SSP1STAT 0214                        ??_DAC1_Initialize 0079  
-                             _ACTIVEBAND 0945                     __end_of_ADDRESSDATA1 0841  
-                   __end_of_ADDRESSDATA2 0882                  __size_of_SPI_Initialize 0006  
-                ??_OSCILLATOR_Initialize 0079                             _SSP1CON1bits 0215  
-                          __size_of_main 009C                     __CFG_WDTCWS$WDTCWSSW 0000  
-                           _SSP1STATbits 0214                               _INTCONbits 000B  
-                ?_PIN_MANAGER_Initialize 0079                        __CFG_CLKOUTEN$OFF 0000  
-                       _SPI_Exchange8bit 06E7           __end_of_PIN_MANAGER_Initialize 0724  
+                                  _LATA4 0864                                    _LATA5 0865  
+                                  _LATB4 086C                                    _LATB5 086D  
+                                  _LATB6 086E                                    _IOCCP 0397  
+                                  _PORTC 000E                                    _TRISA 008C  
+                                  _TRISB 008D                                    _TRISC 008E  
+                       __end_of_SLAVEADD 098D                                    _Byte1 0070  
+                                  _Byte2 0071                                    _Byte3 0072  
+                                  _Byte4 0073                                    _Byte5 0074  
+                                  _Byte6 0075                            __CFG_PWRTE$ON 0000  
+                                  _Dummy 0077                                    _start 0078  
+                         __CFG_BOREN$OFF 0000                                    ltemp0 007E  
+                                  ltemp1 0082                                    ltemp2 0086  
+                                  ltemp3 0080                                    ttemp0 007E  
+                                  ttemp1 0081                                    ttemp2 0084  
+                                  ttemp3 0087                                    ttemp4 007F  
+                                  status 0003                                    wtemp0 007E  
+                                  wtemp1 0080                                    wtemp2 0082  
+                                  wtemp3 0084                                    wtemp4 0086  
+                                  wtemp5 0088                                    wtemp6 007F  
+                           __end_of_DATA 08C3                          ?_SPI_Initialize 0079  
+                         __CFG_MCLRE$OFF 0000                          __initialization 07F4  
+                           __end_of_main 07F4                  __end_of_DAC1_Initialize 06D5  
+                         __CFG_LPBOR$OFF 0000                                   ??_main 007B  
+               __end_of_SPI_Exchange8bit 06F1                                   _ANSELA 018C  
+                                 _ANSELB 018D                                   _ANSELC 018E  
+                                 _RB6PPS 0E9E                                   _RB7PPS 0E9F  
+                                 _REGADD 0989                                   _PARITY 0904  
+                                 _OSCCON 0099                                   _SSPBUF 0211  
+                         __CFG_STVREN$ON 0000                       __end_of_ACTIVEBAND 0985  
+                      __end_of_DacOutput 0989                        _SYSTEM_Initialize 06F1  
+                __end_of__initialization 07FD                       ?_SYSTEM_Initialize 0079  
+                              ?_MIPISPI1 0079                           __pcstackCOMMON 0079  
+                    ??_SYSTEM_Initialize 0079                         ?_DAC1_Initialize 0079  
+                              MIPISPI1@a 007A                           _OPTION_REGbits 0095  
+              __end_of_SYSTEM_Initialize 0700                               ??_MIPISPI1 007A  
+                             __pmaintext 0759                          __CFG_WDTCCS$SWC 0000  
+                                _OSCSTAT 009A                                  _OSCTUNE 0098  
+                                _SSP1ADD 0212                         ??_SPI_Initialize 0079  
+ __end_of_INTERRUPT_ON_CHANGE_Initialize 06E8  __size_of_INTERRUPT_ON_CHANGE_Initialize 0007  
+         _INTERRUPT_ON_CHANGE_Initialize 06E1                                  __ptext1 06F1  
+                                __ptext2 06DB                                  __ptext3 0700  
+                                __ptext4 06D5                                  __ptext5 06E1  
+                                __ptext6 06D0                                  __ptext7 0725  
+                                __ptext8 06E8                    _OSCILLATOR_Initialize 06D5  
+               ??_PIN_MANAGER_Initialize 0079                                _IOCCFbits 0399  
+                      ?_SPI_Exchange8bit 0079               __size_of_SYSTEM_Initialize 000F  
+                   end_of_initialization 07FD                       ??_SPI_Exchange8bit 0079  
+                   SPI_Exchange8bit@data 0079                      __end_of_DATABUSPARK 0904  
+                           __pstringtext 0800                                _SSPCLKPPS 0E20  
+                       __CFG_FOSC$INTOSC 0000                                _DacOutput 0985  
+                         __end_of_REGADD 098B                           __end_of_PARITY 0945  
+                          _SLAVEWRITEADD 098D                        __size_of_MIPISPI1 0034  
+                 ?_OSCILLATOR_Initialize 0079                      start_initialization 07F4  
+        __size_of_PIN_MANAGER_Initialize 0025                              _DATABUSPARK 08C3  
+               __size_of_DAC1_Initialize 0005                              __pbssCOMMON 0070  
+                              ___latbits 0001                   _PIN_MANAGER_Initialize 0700  
+                       __CFG_PPS1WAY$OFF 0000                                 _DAC1CON0 0118  
+                               _DAC1CON1 0119                                 _DAC_Step 0076  
+       ??_INTERRUPT_ON_CHANGE_Initialize 0079          ?_INTERRUPT_ON_CHANGE_Initialize 0079  
+                               _MIPISPI1 0725                                 _SLAVEADD 098B  
+              __size_of_SPI_Exchange8bit 0009                     __CFG_WDTCPS$WDTCPS1F 0000  
+                               _SSP1CON1 0215                                 _SSP1STAT 0214  
+                      ??_DAC1_Initialize 0079                               _ACTIVEBAND 0945  
+                   __end_of_ADDRESSDATA1 0841                     __end_of_ADDRESSDATA2 0882  
+                __size_of_SPI_Initialize 0006                  ??_OSCILLATOR_Initialize 0079  
+                           _SSP1CON1bits 0215                            __size_of_main 009B  
+                   __CFG_WDTCWS$WDTCWSSW 0000                             _SSP1STATbits 0214  
+                             _INTCONbits 000B                  ?_PIN_MANAGER_Initialize 0079  
+                      __CFG_CLKOUTEN$OFF 0000                         _SPI_Exchange8bit 06E8  
+         __end_of_PIN_MANAGER_Initialize 0725  

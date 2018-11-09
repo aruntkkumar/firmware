@@ -87,31 +87,20 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #define SW1_CTL0_SetAnalogMode()   do { ANSA1 = 1; } while(0)
 #define SW1_CTL0_SetDigitalMode()   do { ANSA1 = 0; } while(0)
-// get/set MAIN_NIC_LDO_EN aliases
-#define MAIN_NIC_LDO_EN_TRIS               TRISA2
-#define MAIN_NIC_LDO_EN_LAT                LATA2
-#define MAIN_NIC_LDO_EN_PORT               RA2
-#define MAIN_NIC_LDO_EN_ANS                ANSA2
-#define MAIN_NIC_LDO_EN_SetHigh()    do { LATA2 = 1; } while(0)
-#define MAIN_NIC_LDO_EN_SetLow()   do { LATA2 = 0; } while(0)
-#define MAIN_NIC_LDO_EN_Toggle()   do { LATA2 = ~LATA2; } while(0)
-#define MAIN_NIC_LDO_EN_GetValue()         RA2
-#define MAIN_NIC_LDO_EN_SetDigitalInput()    do { TRISA2 = 1; } while(0)
-#define MAIN_NIC_LDO_EN_SetDigitalOutput()   do { TRISA2 = 0; } while(0)
-
-#define MAIN_NIC_LDO_EN_SetAnalogMode()   do { ANSA2 = 1; } while(0)
-#define MAIN_NIC_LDO_EN_SetDigitalMode()   do { ANSA2 = 0; } while(0)
 // get/set SDI aliases
-#define SDI_TRIS               TRISA3
-#define SDI_LAT                LATA3
-#define SDI_PORT               RA3
-#define SDI_SetHigh()    do { LATA3 = 1; } while(0)
-#define SDI_SetLow()   do { LATA3 = 0; } while(0)
-#define SDI_Toggle()   do { LATA3 = ~LATA3; } while(0)
-#define SDI_GetValue()         RA3
-#define SDI_SetDigitalInput()    do { TRISA3 = 1; } while(0)
-#define SDI_SetDigitalOutput()   do { TRISA3 = 0; } while(0)
+#define SDI_TRIS               TRISA2
+#define SDI_LAT                LATA2
+#define SDI_PORT               RA2
+#define SDI_ANS                ANSA2
+#define SDI_SetHigh()    do { LATA2 = 1; } while(0)
+#define SDI_SetLow()   do { LATA2 = 0; } while(0)
+#define SDI_Toggle()   do { LATA2 = ~LATA2; } while(0)
+#define SDI_GetValue()         RA2
+#define SDI_SetDigitalInput()    do { TRISA2 = 1; } while(0)
+#define SDI_SetDigitalOutput()   do { TRISA2 = 0; } while(0)
 
+#define SDI_SetAnalogMode()   do { ANSA2 = 1; } while(0)
+#define SDI_SetDigitalMode()   do { ANSA2 = 0; } while(0)
 // get/set SW1_CTL1 aliases
 #define SW1_CTL1_TRIS               TRISA4
 #define SW1_CTL1_LAT                LATA4

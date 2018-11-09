@@ -141,14 +141,22 @@ void MIPISPI1 (uint8_t a){
         SPI_Exchange8bit(ADDRESSDATA1[a]);                                                
         SPI_Exchange8bit(DATABUSPARK[a]);                            
     }
-//    //Read the register address
+    //Read the register address
 //    RB6PPS = 0x00; // RB6->LATB6                                        //Single SCC with UID as Low
 //    SDO_SetLow();
 //    SDO_SetHigh();
 //    SDO_SetLow();
 //    RB6PPS = 0x11; // RB6->MSSP:SDO
 //    SPI_Exchange8bit(0x66);
-//    Dummy = SPI_Exchange8bit(0x10);
+//    SPI_Exchange8bit(0x10);    
+//  When adding the below mentioned, remove the above line. (currently the routine does not work)   
+//    Dummy = SPI_Exchange8bit(0x10);                                     //Dummy = D6 D5 D4 D3 D2 D1 D0 P B
+//    Dummy = Dummy >> 1;                                                 //Dummy = 0 D6 D5 D4 D3 D2 D1 D0 P                                                 
+//    if ((Dummy & 0x01) == 0x01)                                         //Parity check                                          
+//        Dummy |= 0x80;                                                  //Add D7. Now Dummy = D7 D6 D5 D4 D3 D2 D1 D0 P
+//    SPI_Exchange8bit(Dummy);
+//    //Dummy &= 0xFE;                                                      //Dummy = D7 D6 D5 D4 D3 D2 D1 D0 0
+//    Dummy = Dummy >> 1;                                                 //Dummy = 0 D7 D6 D5 D4 D3 D2 D1 D0
 //    SPI_Exchange8bit(Dummy);
 }
 
@@ -209,7 +217,7 @@ void main(void) {
     //PE_OE_SetLow();
     //PE_D_SetLow();
     //PE_CLK_SetLow();
-    MAIN_NIC_LDO_EN_SetLow(); //0: OFF / MCM sleep mode
+    //MAIN_NIC_LDO_EN_SetLow(); //0: OFF / MCM sleep mode
     SW1_CTL0_SetLow();
     SW1_CTL1_SetLow();
     SW1_CTL2_SetLow();

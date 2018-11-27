@@ -57,12 +57,12 @@ const uint8_t ACTIVEBAND[64]=  {0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
                                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                 0, 0, 0, 0};    // Defined bands 5, 8, 12, 13, 20, 26, 29
 const uint8_t SLAVEWRITEADD[2]={0x64, 0x74};    // USID LOW/HIGH and C2 C1 C0 A4 (Refer SSC Datasheet)
-const uint8_t ADDRESSDATA1[65]={0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, //Only for USID LOW
+const uint8_t ADDRESSDATA1L[65]={0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, //Only for USID LOW
                                 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18,
                                 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19,
                                 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19, 0x19,
                                 0x1A};          // A3=0 A2=0 A1=0 A0=1 P=1 D7=0 D6 D5
-const uint8_t ADDRESSDATA2[65]={0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, //Only for USID HIGH
+const uint8_t ADDRESSDATA1H[65]={0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, //Only for USID HIGH
                                 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10,
                                 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11,
                                 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11,
@@ -72,7 +72,11 @@ const uint8_t DATABUSPARK[65]= {0x04, 0x08, 0x10, 0x1C, 0x20, 0x2C, 0x34, 0x38, 
                                 0x00, 0x0C, 0x14, 0x18, 0x24, 0x28, 0x30, 0x3C, 0x44, 0x48, 0x50, 0x5C, 0x60, 0x6C, 0x74, 0x78,
                                 0x84, 0x88, 0x90, 0x9C, 0xA0, 0xAC, 0xB4, 0xB8, 0xC0, 0xCC, 0xD4, 0xD8, 0xE4, 0xE8, 0xF0, 0xFC,
                                 0x00};          // D4 D3 D2 D1 D0 P B 0
-
+const uint8_t SLAVEWRITEADD2[2]={0x68, 0x78};    // USID LOW/HIGH and 1 D6 D5 D4 (Refer CXA4484GK Datasheet)
+const uint8_t DATABUSPARK2L[16]={0x00, 0x18, 0x28, 0x30, 0x48, 0x50, 0x60, 0x78, 0x88, 0x90, 0xA0, 0xB8, 0xC0, 0xD8, 0xE8, 0xF0}; // D3 D2 D1 D0 P B 0 0 (Only for UID Low)
+const uint8_t DATABUSPARK2H[16]={0x08, 0x10, 0x20, 0x38, 0x40, 0x58, 0x68, 0x70, 0x80, 0x98, 0xA8, 0xB0, 0xC8, 0xD0, 0xE0, 0xF8}; // D3 D2 D1 D0 P B 0 0 (Only for UID High)
+const uint8_t ADDRESSDATA2[2]=  {0x00, 0x08};   //For CXA4484GK A3 A2 A1 A0 P D7 D6 D5
+const uint8_t DATABUSPARK2[16]= {0x04, 0x08, 0x10, 0x1C, 0x20, 0x2C, 0x34, 0x38, 0x40, 0x4C, 0x54, 0x58, 0x64, 0x68, 0x70, 0x7C};
 
 uint8_t Byte1, Byte2, Byte3, Byte4, Byte5, Byte6; // First 6 bytes from RFFE
 uint8_t DAC_Step, Dummy, start = 0;
@@ -115,14 +119,14 @@ void MIPISPI (uint8_t a, uint8_t b){                                    //WONT W
     SDO_SetLow();
     RB6PPS = 0x11; // RB6->MSSP:SDO
     SPI_Exchange8bit(SLAVEWRITEADD[0]);
-    SPI_Exchange8bit(ADDRESSDATA1[a]);
+    SPI_Exchange8bit(ADDRESSDATA1L[a]);
     SPI_Exchange8bit(DATABUSPARK[a]);
     RB6PPS = 0x00; // RB6->LATB6                                        //Second SCC should have UID as High              
     SDO_SetHigh();
     SDO_SetLow();
     RB6PPS = 0x11; // RB6->MSSP:SDO
     SPI_Exchange8bit(SLAVEWRITEADD[1]);
-    SPI_Exchange8bit(ADDRESSDATA2[b]);
+    SPI_Exchange8bit(ADDRESSDATA1H[b]);
     SPI_Exchange8bit(DATABUSPARK[b]);    
 }
 
@@ -138,26 +142,71 @@ void MIPISPI1 (uint8_t a){
         SPI_Exchange8bit(0x04);                                         //Same for USID = High                         
     }
     else{
-        SPI_Exchange8bit(ADDRESSDATA1[a]);                                                
+        SPI_Exchange8bit(ADDRESSDATA1L[a]);                                                
         SPI_Exchange8bit(DATABUSPARK[a]);                            
     }
-    //Read the register address
+//    //Read the register address
 //    RB6PPS = 0x00; // RB6->LATB6                                        //Single SCC with UID as Low
 //    SDO_SetLow();
 //    SDO_SetHigh();
 //    SDO_SetLow();
 //    RB6PPS = 0x11; // RB6->MSSP:SDO
 //    SPI_Exchange8bit(0x66);
-//    SPI_Exchange8bit(0x10);    
-//  When adding the below mentioned, remove the above line. (currently the routine does not work)   
-//    Dummy = SPI_Exchange8bit(0x10);                                     //Dummy = D6 D5 D4 D3 D2 D1 D0 P B
-//    Dummy = Dummy >> 1;                                                 //Dummy = 0 D6 D5 D4 D3 D2 D1 D0 P                                                 
-//    if ((Dummy & 0x01) == 0x01)                                         //Parity check                                          
-//        Dummy |= 0x80;                                                  //Add D7. Now Dummy = D7 D6 D5 D4 D3 D2 D1 D0 P
+//    Dummy = SPI_Exchange8bit(0x10);    
+//    //When adding the below mentioned, remove the above line. (currently the routine does not work)   
+//    //Dummy = SPI_Exchange8bit(0x10);                                     //Dummy = D6 D5 D4 D3 D2 D1 D0 P B
+////    SSP1CON1bits.WCOL = 0;
+////    while (SSP1STATbits.BF == 0x0) {
+////    }
+////    Dummy = SSPBUF;
+////    Dummy = Dummy >> 1;                                                 //Dummy = 0 D6 D5 D4 D3 D2 D1 D0 P                                                 
+////    if ((Dummy & 0x01) == 0x01)                                         //Parity check                                          
+////        Dummy |= 0x80;                                                  //Add D7. Now Dummy = D7 D6 D5 D4 D3 D2 D1 D0 P
+//    Dummy = SPI_Exchange8bit(Dummy);
+////    Dummy &= 0xFE;                                                      //Dummy = D7 D6 D5 D4 D3 D2 D1 D0 0
+////    Dummy = Dummy >> 1;                                                 //Dummy = 0 D7 D6 D5 D4 D3 D2 D1 D0
 //    SPI_Exchange8bit(Dummy);
-//    //Dummy &= 0xFE;                                                      //Dummy = D7 D6 D5 D4 D3 D2 D1 D0 0
-//    Dummy = Dummy >> 1;                                                 //Dummy = 0 D7 D6 D5 D4 D3 D2 D1 D0
 //    SPI_Exchange8bit(Dummy);
+}
+
+void MIPISPI2 (uint8_t a){
+    RB6PPS = 0x00; // RB6->LATB6                                        //Single CXA4484GK with UID as Low
+    SDO_SetLow();
+    SDO_SetHigh();
+    SDO_SetLow();
+    RB6PPS = 0x11; // RB6->MSSP:SDO
+//    SPI_Exchange8bit(SLAVEWRITEADD2[0]);                   
+//    SPI_Exchange8bit(DATABUSPARK2L[a]);
+    SPI_Exchange8bit(SLAVEWRITEADD[0]);                   
+    SPI_Exchange8bit(ADDRESSDATA2[0]);                                                
+    SPI_Exchange8bit(DATABUSPARK2[a]);      
+    RB6PPS = 0x00; // RB6->LATB6                                        //Single CXA4484GK with UID as High
+    SDO_SetLow();
+    SDO_SetHigh();
+    SDO_SetLow();
+    RB6PPS = 0x11; // RB6->MSSP:SDO
+//    SPI_Exchange8bit(SLAVEWRITEADD2[1]);                   
+//    SPI_Exchange8bit(DATABUSPARK2H[a]);
+    SPI_Exchange8bit(SLAVEWRITEADD[1]);                   
+    SPI_Exchange8bit(ADDRESSDATA2[1]);                                                
+    SPI_Exchange8bit(DATABUSPARK2[a]); 
+}
+
+void MIPISPI3 (uint8_t a){
+    RB6PPS = 0x00; // RB6->LATB6                                        //First SCC should have UID as Low            
+    SDO_SetHigh();
+    SDO_SetLow();
+    RB6PPS = 0x11; // RB6->MSSP:SDO
+    SPI_Exchange8bit(SLAVEWRITEADD[0]);
+    SPI_Exchange8bit(ADDRESSDATA1L[a]);
+    SPI_Exchange8bit(DATABUSPARK[a]);
+    RB6PPS = 0x00; // RB6->LATB6                                        //Second SCC should have UID as High              
+    SDO_SetHigh();
+    SDO_SetLow();
+    RB6PPS = 0x11; // RB6->MSSP:SDO
+    SPI_Exchange8bit(SLAVEWRITEADD[1]);
+    SPI_Exchange8bit(ADDRESSDATA1H[a]);
+    SPI_Exchange8bit(DATABUSPARK[a]);   
 }
 
 /*
@@ -280,6 +329,10 @@ void main(void) {
 //        //MIPISPI(Byte5, Byte6);
         if ((Byte4 & 0x30) == 0x10)
             MIPISPI1(Byte5);
+        else if ((Byte4 & 0x30) == 0x20)
+            MIPISPI2(Byte5);
+        else if ((Byte4 & 0x30) == 0x30)
+            MIPISPI3(Byte5);
 
         // RF Switch Selection Sequence
         /*PE_OE_SetHigh();

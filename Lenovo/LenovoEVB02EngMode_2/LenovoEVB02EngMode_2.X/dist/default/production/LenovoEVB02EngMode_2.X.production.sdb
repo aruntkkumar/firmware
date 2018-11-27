@@ -7,9 +7,13 @@
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"129 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\main.c
+"133 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\main.c
 [v _MIPISPI1 MIPISPI1 `(v  1 e 0 0 ]
-"210
+"172
+[v _MIPISPI2 MIPISPI2 `(v  1 e 0 0 ]
+"195
+[v _MIPISPI3 MIPISPI3 `(v  1 e 0 0 ]
+"259
 [v _main main `(v  1 e 0 0 ]
 "58 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\mcc_generated_files/dac1.c
 [v _DAC1_Initialize DAC1_Initialize `(v  1 e 0 0 ]
@@ -162,23 +166,27 @@
 "59 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\main.c
 [v _SLAVEWRITEADD SLAVEWRITEADD `DCC[2]uc  1 e 2 0 ]
 "60
-[v _ADDRESSDATA1 ADDRESSDATA1 `DCC[65]uc  1 e 65 0 ]
+[v _ADDRESSDATA1L ADDRESSDATA1L `DCC[65]uc  1 e 65 0 ]
 "65
-[v _ADDRESSDATA2 ADDRESSDATA2 `DCC[65]uc  1 e 65 0 ]
+[v _ADDRESSDATA1H ADDRESSDATA1H `DCC[65]uc  1 e 65 0 ]
 "70
 [v _DATABUSPARK DATABUSPARK `DCC[65]uc  1 e 65 0 ]
-"77
+"78
+[v _ADDRESSDATA2 ADDRESSDATA2 `DCC[2]uc  1 e 2 0 ]
+"79
+[v _DATABUSPARK2 DATABUSPARK2 `DCC[16]uc  1 e 16 0 ]
+"81
 [v _Byte1 Byte1 `uc  1 e 1 0 ]
 [v _Byte2 Byte2 `uc  1 e 1 0 ]
 [v _Byte3 Byte3 `uc  1 e 1 0 ]
 [v _Byte4 Byte4 `uc  1 e 1 0 ]
 [v _Byte5 Byte5 `uc  1 e 1 0 ]
-"78
+"82
 [v _start start `uc  1 e 1 0 ]
-"210
+"259
 [v _main main `(v  1 e 0 0 ]
 {
-"360
+"413
 } 0
 "75 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
@@ -210,13 +218,29 @@
 {
 "63
 } 0
-"129 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\main.c
+"195 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\main.c
+[v _MIPISPI3 MIPISPI3 `(v  1 e 0 0 ]
+{
+[v MIPISPI3@a a `uc  1 a 1 wreg ]
+[v MIPISPI3@a a `uc  1 a 1 wreg ]
+[v MIPISPI3@a a `uc  1 a 1 1 ]
+"210
+} 0
+"172
+[v _MIPISPI2 MIPISPI2 `(v  1 e 0 0 ]
+{
+[v MIPISPI2@a a `uc  1 a 1 wreg ]
+[v MIPISPI2@a a `uc  1 a 1 wreg ]
+[v MIPISPI2@a a `uc  1 a 1 1 ]
+"193
+} 0
+"133
 [v _MIPISPI1 MIPISPI1 `(v  1 e 0 0 ]
 {
 [v MIPISPI1@a a `uc  1 a 1 wreg ]
 [v MIPISPI1@a a `uc  1 a 1 wreg ]
 [v MIPISPI1@a a `uc  1 a 1 1 ]
-"161
+"170
 } 0
 "77 C:\Users\arun.kumar\Desktop\git_show\firmware\Lenovo\LenovoEVB02EngMode_2\LenovoEVB02EngMode_2.X\mcc_generated_files/spi.c
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
